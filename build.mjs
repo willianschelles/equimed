@@ -13,7 +13,12 @@ const root = dirname(fileURLToPath(import.meta.url));
 // BASE_PATH="/equimed" rewrites root-relative links for a GitHub Pages *project* preview URL.
 // Leave empty (default) for the real domain. Canonical/sitemap always use site.url.
 const basePath = (process.env.BASE_PATH ?? '').replace(/\/$/, '');
-const withBase = (html) => (basePath ? html.replace(/(href|src)="\/(?!\/)/g, `$1="${basePath}/`) : html);
+const withBase = (html) =>
+  basePath
+    ? html
+        .replace(/(href|src)="\/(?!\/)/g, `$1="${basePath}/`)
+        .replace(/ srcset="([^"]*)"/g, (_, v) => ` srcset="${v.replace(/(^|,\s*)\//g, `$1${basePath}/`)}"`)
+    : html;
 const out = join(root, 'dist');
 const json = (f) => JSON.parse(readFileSync(join(root, 'content', f), 'utf8'));
 
