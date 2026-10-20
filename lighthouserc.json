@@ -27,6 +27,7 @@
         "csp-xss": "off",
         "bf-cache": "off",
         "render-blocking-resources": "warn",
+        "uses-responsive-images": "warn",
         "render-blocking-insight": "off",
         "network-dependency-tree-insight": "off",
         "lcp-discovery-insight": "warn",
