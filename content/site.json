@@ -1,0 +1,54 @@
+{
+  "name": "Equimed",
+  "legalName": "Equimed Equipamentos Médicos",
+  "tagline": "Equipamentos médico-hospitalares",
+  "shortDescription": "Assistência técnica, locação e venda de equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia. Equipamentos veterinários. Curitiba, PR.",
+  "url": "https://www.equimedpr.com.br",
+  "publishCname": false,
+  "foundingYear": 2014,
+  "email": "equimedpr@gmail.com",
+  "phones": [
+    { "display": "+55 (41) 9 9920-1460", "e164": "+5541999201460" },
+    { "display": "+55 (41) 9 9889-3793", "e164": "+5541998893793" }
+  ],
+  "whatsapp": {
+    "number": "5541998893793",
+    "display": "(41) 9 9889-3793",
+    "message": "Olá, Equimed! Vim pelo site e gostaria de um orçamento.\n\nEquipamento: \nMarca/modelo: \nPreciso de: (manutenção / locação / compra)\n"
+  },
+  "address": {
+    "street": "R. Paulina Ader, 72 - Imóvel 2",
+    "neighborhood": "Novo Mundo",
+    "city": "Curitiba",
+    "state": "PR",
+    "stateName": "Paraná",
+    "postalCode": "81050-250",
+    "country": "BR",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=R.+Paulina+Ader,+72+-+Novo+Mundo,+Curitiba+-+PR"
+  },
+  "geo": { "latitude": -25.4958, "longitude": -49.2982 },
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "openingHoursDisplay": "Segunda a sexta, das 8h às 18h",
+  "social": {
+    "facebook": "https://www.facebook.com/equimedpr.paulo.10"
+  },
+  "sisterCompany": {
+    "name": "Multmed",
+    "url": "https://www.multmedpr.com.br",
+    "description": "Manutenção especializada em perfuradores e serras ortopédicas, laudos e testes de segurança elétrica."
+  },
+  "googleSiteVerification": "IoVo5RINm8X5juaFUB7-wmZSGnumpumbML3E1sDt_io",
+  "nav": [
+    { "label": "Início", "href": "/" },
+    { "label": "Serviços", "href": "/servicos/" },
+    { "label": "Especialidades", "href": "/especialidades/" },
+    { "label": "Marcas", "href": "/marcas/" },
+    { "label": "Sobre nós", "href": "/sobre/" },
+    { "label": "Contato", "href": "/contato/" }
+  ],
+  "specialtiesServed": [
+    "Artroscopia", "Endoscopia", "Laparoscopia", "Medicina veterinária",
+    "Ortopedia", "Otorrinolaringologia", "Urologia"
+  ],
+  "warranty": { "used": "3 meses", "new": "1 ano" }
+}

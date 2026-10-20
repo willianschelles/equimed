@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 140" role="img" aria-labelledby="t">
+  <title id="t">Equimed Equipamentos Médicos</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark: pulse -->
+  <rect x="0" y="10" width="120" height="120" rx="28" fill="url(#g)"/>
+  <path d="M18 76h18l10-26 15 50 13-40 7 16h21" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark EQUIMED, monoline, cap height 70 (y 18..88) -->
+  <g fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 18)">
+    <!-- E -->
+    <path d="M6 6h44M6 6v58M6 35h34M6 64h44"/>
+    <!-- Q -->
+    <circle cx="106" cy="35" r="29"/><path d="M118 48l20 22"/>
+    <!-- U -->
+    <path d="M166 6v34a24 24 0 0 0 48 0V6"/>
+    <!-- I -->
+    <path d="M244 6v58"/>
+    <!-- M with pulse notch -->
+    <path d="M280 64V6l28 40 28-40v58"/>
+    <!-- E -->
+    <path d="M366 6h44M366 6v58M366 35h34M366 64h44"/>
+    <!-- D -->
+    <path d="M440 6h20a29 29 0 0 1 0 58h-20z"/>
+  </g>
+  <text x="152" y="122" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="500" letter-spacing="3" fill="currentColor" opacity="0.72">EQUIPAMENTOS MÉDICOS</text>
+</svg>

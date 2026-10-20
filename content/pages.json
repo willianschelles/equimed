@@ -1,0 +1,213 @@
+{
+  "home": {
+    "title": "Equimed | Equipamentos médicos em Curitiba: manutenção e locação",
+    "description": "Assistência técnica, locação e venda de equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia. Stryker, Karl Storz, Smith & Nephew. Curitiba, PR.",
+    "eyebrow": "Equipamentos médico-hospitalares desde 2014",
+    "headline": "Assistência técnica, locação e venda de equipamentos de videocirurgia",
+    "lead": "Manutenção corretiva, preventiva e preditiva de torres de vídeo, artrobombas, insufladores, perfuradores e serras. Equipamentos novos e seminovos com garantia, e locação com menos burocracia. Atendemos hospitais, clínicas, distribuidoras e veterinários em Curitiba e em todo o Brasil.",
+    "highlights": [
+      {
+        "title": "Manutenção",
+        "text": "Corretiva, preventiva e preditiva por técnicos especializados. Orçamento técnico dentro da realidade."
+      },
+      {
+        "title": "Locação",
+        "text": "Equipamentos novos e seminovos para artroscopia, laparoscopia, ortopedia e veterinária."
+      },
+      {
+        "title": "Venda",
+        "text": "Garantia de 3 meses nos seminovos e de 1 ano na maioria dos novos. Condições de pagamento facilitadas."
+      }
+    ],
+    "howItWorks": {
+      "title": "Como funciona",
+      "paragraphs": [
+        "A Equimed, apoiada por uma equipe experiente e profissional, apta às novas tendências e à tecnologia na indústria médica, oferece produtos de última geração com excelente condição de pagamento para novos e seminovos. A empresa oferece <strong>garantia de 3 meses</strong> para equipamentos seminovos e, para a maioria dos novos, <strong>garantia de 1 ano</strong>.",
+        "As manutenções preventiva, corretiva e preditiva são cuidadosamente analisadas por técnicos especializados em diversos equipamentos. Não inventamos problema nem dificuldades. Temos <em>política de responsabilidade com o cliente</em>. Orçamento técnico dentro da realidade.",
+        "A empresa disponibiliza locação de equipamentos médicos novos e seminovos para as especialidades de <strong>Artroscopia, Endoscopia, Laparoscopia, Medicina veterinária, Ortopedia, Otorrinolaringologia e Urologia</strong>. Seu aparelho usado poderá ser trocado por um top de linha com tecnologia de última geração."
+      ]
+    },
+    "steps": {
+      "title": "Do primeiro contato à devolução do equipamento",
+      "items": [
+        {
+          "title": "Contato",
+          "text": "Envie marca, modelo e o defeito pelo WhatsApp ou pelo formulário."
+        },
+        {
+          "title": "Diagnóstico",
+          "text": "Recebemos o equipamento, avaliamos e enviamos o orçamento técnico."
+        },
+        {
+          "title": "Reparo e testes",
+          "text": "Manutenção conforme a especificação do fabricante, com testes funcionais."
+        },
+        {
+          "title": "Devolução com garantia",
+          "text": "Equipamento testado, com garantia do serviço."
+        }
+      ]
+    },
+    "trust": [
+      {
+        "title": "Desde 2014",
+        "text": "Mais de uma década atendendo hospitais, clínicas e distribuidoras."
+      },
+      {
+        "title": "Garantia",
+        "text": "3 meses nos seminovos e na maioria dos novos, 1 ano."
+      },
+      {
+        "title": "Especialistas em videocirurgia",
+        "text": "Uma das principais empresas de assistência técnica voltada a equipamentos de videocirurgia."
+      },
+      {
+        "title": "Curitiba e todo o Brasil",
+        "text": "Sede em Curitiba, PR. Envio e recebimento de equipamentos para todo o país."
+      }
+    ]
+  },
+  "services": {
+    "title": "Serviços: manutenção, locação e venda | Equimed Curitiba",
+    "description": "Manutenção corretiva e preventiva, locação de equipamentos cirúrgicos e venda de equipamentos médicos e veterinários novos e seminovos com garantia. Curitiba.",
+    "heading": "Serviços",
+    "lead": "Três frentes para manter o seu centro cirúrgico operando: manutenção, locação e venda.",
+    "items": [
+      {
+        "slug": "manutencao",
+        "name": "Manutenção",
+        "shortName": "Assistência técnica",
+        "icon": "wrench",
+        "summary": "Nossa equipe técnica é especializada em diversos equipamentos e presta manutenção corretiva, preventiva e preditiva. Temos uma política de responsabilidade com o cliente, proporcionando um serviço ágil e dentro da realidade.",
+        "title": "Assistência técnica em videocirurgia e ortopedia | Equimed",
+        "description": "Manutenção corretiva, preventiva e preditiva de câmeras, fontes de luz, monitores, insufladores, artrobombas, perfuradores e serras. Stryker, Storz, Olympus.",
+        "intro": [
+          "A Equimed tem orgulho em ser uma das principais empresas no segmento de assistência técnica voltada a equipamentos de videocirurgia. Executa serviços de manutenção clínica e atualização em equipamentos de ressonância magnética, raio-x e mamógrafos, além de manutenção em endoscópios rígidos e flexíveis. Conta com uma equipe técnica altamente treinada para solução de defeitos.",
+          "As manutenções preventiva, corretiva e preditiva são cuidadosamente analisadas por técnicos especializados. Não inventamos problema nem dificuldades: o orçamento técnico é sempre dentro da realidade."
+        ],
+        "bullets": {
+          "title": "O que atendemos",
+          "items": [
+            "Câmeras de vídeo e cabeças de câmera (Stryker, Karl Storz, Smith & Nephew Dyonics, Richard Wolf, Olympus)",
+            "Fontes de luz xenon e LED, incluindo transformação de fonte de xenon para LED",
+            "Monitores cirúrgicos",
+            "Insufladores de CO2 e artrobombas",
+            "Perfuradores, serras e shavers, com atualização de firmware",
+            "Endoscópios rígidos e flexíveis",
+            "Ensaio de segurança elétrica"
+          ]
+        },
+        "faq": [
+          {
+            "q": "Vocês atendem fora de Curitiba?",
+            "a": "Sim. Recebemos equipamentos de todo o Brasil por transportadora e devolvemos testados e embalados."
+          },
+          {
+            "q": "Como funciona o orçamento?",
+            "a": "Você envia marca, modelo e o defeito pelo WhatsApp. Após o diagnóstico em bancada, enviamos o orçamento técnico para aprovação antes de qualquer reparo."
+          },
+          {
+            "q": "O serviço tem garantia?",
+            "a": "Sim. Todo serviço executado sai com garantia, e os equipamentos seminovos vendidos têm garantia de 3 meses."
+          }
+        ]
+      },
+      {
+        "slug": "locacao",
+        "name": "Locação",
+        "shortName": "Locação",
+        "icon": "cycle",
+        "summary": "A empresa disponibiliza equipamentos médicos e veterinários com o melhor custo-benefício e menos burocracia. Temos aparelhos de última geração para melhor atendê-lo.",
+        "title": "Locação de equipamentos cirúrgicos e veterinários | Equimed",
+        "description": "Locação de equipamentos médicos novos e seminovos para artroscopia, laparoscopia, ortopedia, urologia e veterinária, com manutenção incluída. Curitiba, PR.",
+        "intro": [
+          "A empresa disponibiliza locação de equipamentos médicos novos e seminovos para as especialidades de Artroscopia, Endoscopia, Laparoscopia, Medicina veterinária, Ortopedia, Otorrinolaringologia e Urologia.",
+          "Equipamentos de última geração, com o melhor custo-benefício e menos burocracia. Seu aparelho usado poderá ser trocado por um top de linha com tecnologia de última geração."
+        ],
+        "bullets": {
+          "title": "Equipamentos disponíveis para locação",
+          "items": [
+            "Torres de vídeo completas: câmera, fonte de luz e monitor",
+            "Artrobombas e insufladores",
+            "Perfuradores e serras ortopédicas Stryker",
+            "Equipamentos veterinários para cirurgia"
+          ]
+        },
+        "faq": [
+          {
+            "q": "Posso alugar por procedimento?",
+            "a": "Sim. Consulte a disponibilidade e as condições para locação por procedimento ou por período."
+          },
+          {
+            "q": "A manutenção está incluída na locação?",
+            "a": "Sim. Equipamentos locados são entregues revisados e testados, e a manutenção durante o período é por nossa conta."
+          }
+        ]
+      },
+      {
+        "slug": "venda",
+        "name": "Venda",
+        "shortName": "Venda de equipamentos",
+        "icon": "handshake",
+        "summary": "Apoiada por uma equipe experiente e profissional, apta às novas tendências e à tecnologia na indústria médica, a Equimed oferece produtos de última geração, novos e seminovos. Garantia de 3 meses para os seminovos.",
+        "title": "Venda de equipamentos médicos novos e seminovos | Equimed",
+        "description": "Equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia novos e seminovos, revisados e com garantia. Equipamentos veterinários. Curitiba, PR.",
+        "intro": [
+          "A Equimed oferece produtos de última geração com excelente condição de pagamento para novos e seminovos. A empresa oferece garantia de 3 meses para equipamentos seminovos e, para a maioria dos novos, garantia de 1 ano.",
+          "A Equimed testa cuidadosamente, de maneira exaustiva, todos os equipamentos seminovos para garantir sua funcionalidade de acordo com as especificações do fabricante original."
+        ],
+        "bullets": {
+          "title": "Linhas de produtos",
+          "items": [
+            "Videocirurgia: câmeras, fontes de luz e monitores",
+            "Artroscopia: artrobombas, instrumental e acessórios STAHL",
+            "Laparoscopia: insufladores de CO2",
+            "Ortopedia e trauma: perfuradores, serras e carregadores Stryker System 5 e 6",
+            "Equipamentos veterinários para cirurgia"
+          ]
+        },
+        "faq": [
+          {
+            "q": "Equipamento seminovo tem garantia?",
+            "a": "Sim. Todos os seminovos são revisados, testados e vendidos com garantia de 3 meses."
+          },
+          {
+            "q": "Vocês aceitam o meu equipamento usado?",
+            "a": "Sim. Seu aparelho usado poderá ser trocado por um top de linha com tecnologia de última geração."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre a Equimed: equipamentos médicos em Curitiba desde 2014",
+    "description": "A Equimed atua na compra, locação e assistência técnica de equipamentos médicos e na venda de equipamentos veterinários. Fundada em 2014 em Curitiba, PR.",
+    "heading": "Sobre nós",
+    "paragraphs": [
+      "A Equimed atua na compra, locação e assistência técnica de equipamentos médicos e na venda de equipamentos veterinários.",
+      "Trabalhamos com as principais marcas do segmento de videocirurgia, tais como Stryker, Karl Storz, Linvatec, Smith & Nephew Dyonics, Richard Wolf, Pentax, Olympus, Arthrex, NDS, Covidien, Ethicon, entre outras.",
+      "Fundada em 2014, estabeleceu-se como fundamental no fornecimento de equipamentos médicos, instrumentos e sistemas de vídeo para as especialidades de Artroscopia, Endoscopia, Laparoscopia, Medicina veterinária, Ortopedia, Otorrinolaringologia e Urologia.",
+      "A empresa tem orgulho em ser uma das principais no segmento de assistência técnica voltada a equipamentos de videocirurgia. Executa serviços de manutenção clínica e atualização em equipamentos de ressonância magnética, raio-x e mamógrafos, além de manutenção em endoscópios rígidos e flexíveis. Conta com uma equipe técnica altamente treinada para solução de defeitos.",
+      "A Equimed testa cuidadosamente, de maneira exaustiva, todos os equipamentos seminovos para garantir sua funcionalidade de acordo com as especificações do fabricante original.",
+      "Tem um atendimento de excelência e com foco no resultado para garantir a satisfação do cliente desde o primeiro contato até o recebimento do equipamento."
+    ]
+  },
+  "contact": {
+    "title": "Contato e orçamento | Equimed Curitiba",
+    "description": "Fale com a Equimed pelo WhatsApp, telefone ou e-mail. Orçamento de manutenção, locação ou compra de equipamentos médicos. R. Paulina Ader, 72, Curitiba, PR.",
+    "heading": "Fale conosco",
+    "lead": "Solicite um orçamento. Quanto mais detalhes sobre o equipamento (marca, modelo e defeito), mais rápida a resposta."
+  },
+  "specialties": {
+    "title": "Especialidades e produtos | Equimed Equipamentos Médicos",
+    "description": "Catálogo por especialidade: câmeras de vídeo, fontes de luz, monitores, artrobombas, insufladores, perfuradores, serras e carregadores Stryker, Storz e NDS.",
+    "heading": "Especialidades",
+    "lead": "Equipamentos para venda, locação e manutenção, organizados por especialidade cirúrgica."
+  },
+  "brands": {
+    "title": "Marcas atendidas: Stryker, Karl Storz, Olympus e mais | Equimed",
+    "description": "Assistência técnica e equipamentos das principais marcas de videocirurgia e ortopedia: Stryker, Karl Storz, Smith & Nephew, Richard Wolf, Olympus e Arthrex.",
+    "heading": "Marcas",
+    "lead": "Trabalhamos com as principais marcas do segmento de videocirurgia e ortopedia. Assistência técnica independente, com manutenção conforme a especificação do fabricante."
+  }
+}

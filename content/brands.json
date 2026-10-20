@@ -1,0 +1,21 @@
+[
+  { "name": "Smith & Nephew", "slug": "smith-nephew" },
+  { "name": "Karl Storz", "slug": "karl-storz" },
+  { "name": "Richard Wolf", "slug": "richard-wolf" },
+  { "name": "Pentax", "slug": "pentax" },
+  { "name": "Olympus", "slug": "olympus" },
+  { "name": "Ethicon", "slug": "ethicon" },
+  { "name": "Fujinon", "slug": "fujinon" },
+  { "name": "Arthrex", "slug": "arthrex" },
+  { "name": "ArthroCare", "slug": "arthrocare" },
+  { "name": "Biomet", "slug": "biomet" },
+  { "name": "Sony", "slug": "sony" },
+  { "name": "NDS Surgical Imaging", "slug": "nds" },
+  { "name": "Gyrus ACMI", "slug": "gyrus-acmi" },
+  { "name": "Hall", "slug": "hall" },
+  { "name": "MicroAire", "slug": "microaire" },
+  { "name": "Aesculap", "slug": "aesculap" },
+  { "name": "Valleylab", "slug": "valleylab" },
+  { "name": "Zimmer", "slug": "zimmer" },
+  { "name": "Stryker", "slug": "stryker" }
+]

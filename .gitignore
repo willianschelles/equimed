@@ -1,0 +1,7 @@
+dist/
+.lighthouseci/
+node_modules/
+.DS_Store
+report.md
+findings.json
+seo-report.md

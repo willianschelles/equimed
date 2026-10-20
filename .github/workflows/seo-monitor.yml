@@ -1,0 +1,70 @@
+# The SEO robot. Runs on the 1st of every month (and on demand), audits the LIVE site,
+# fetches PageSpeed Insights scores, and keeps exactly one GitHub Issue ("Monitor SEO")
+# open while there is something to fix. GitHub e-mails the repository owner on every
+# issue update, which is the alert channel. Closes the issue automatically when clean.
+name: SEO monitor
+
+on:
+  schedule:
+    - cron: '0 9 1 * *' # 09:00 UTC on the 1st of each month (06:00 Curitiba)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Audit live site
+        id: audit
+        env:
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }} # optional; raises the PageSpeed API quota
+        run: |
+          set +e
+          node tools/seo-audit.mjs --site "$(node -p "require('./content/site.json').url")" --psi --out report.md --json findings.json
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          echo "errors=$(node -p "require('./findings.json').errors")" >> "$GITHUB_OUTPUT"
+          echo "warns=$(node -p "require('./findings.json').warns")" >> "$GITHUB_OUTPUT"
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: |
+            report.md
+            findings.json
+
+      - name: Open, update or close the monitor issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ERRORS: ${{ steps.audit.outputs.errors }}
+          WARNS: ${{ steps.audit.outputs.warns }}
+        run: |
+          set -e
+          TITLE="Monitor SEO: ajustes pendentes"
+          EXISTING=$(gh issue list --label seo-monitor --state open --json number --jq '.[0].number // empty')
+          gh label create seo-monitor --description "Aberto automaticamente pelo robô de SEO" --color 0E8A16 2>/dev/null || true
+          {
+            echo "Execução automática de $(date -u +%Y-%m-%d). Erros: ${ERRORS} · Atenções: ${WARNS}."
+            echo "Relatório completo abaixo. Para aplicar uma correção, siga **Como corrigir** em cada item e veja docs/CONTENT-EDITING.md."
+            echo
+            cat report.md
+          } > body.md
+
+          if [ "${ERRORS}" -gt 0 ] || [ "${WARNS}" -gt 0 ]; then
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --body-file body.md
+            else
+              gh issue create --title "$TITLE" --label seo-monitor --body-file body.md
+            fi
+          elif [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "✅ Verificação de $(date -u +%Y-%m-%d): nenhum problema encontrado. Fechando automaticamente."
+            gh issue close "$EXISTING"
+          fi

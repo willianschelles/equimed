@@ -1,0 +1,14 @@
+{
+  "name": "Equimed Equipamentos Médicos",
+  "short_name": "Equimed",
+  "description": "Assistência técnica, locação e venda de equipamentos médicos em Curitiba.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/assets/img/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/img/site/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

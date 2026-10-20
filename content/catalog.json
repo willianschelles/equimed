@@ -1,0 +1,920 @@
+{
+  "specialties": [
+    {
+      "slug": "video-cirurgia",
+      "name": "Vídeo-Cirurgia",
+      "description": "Torre de vídeo completa: câmeras HD, fontes de luz xenon e LED e monitores cirúrgicos. Manutenção, locação e venda de equipamentos novos e seminovos.",
+      "categories": [
+        {
+          "slug": "cameras-de-video",
+          "name": "Câmeras de Vídeo",
+          "description": "Unidades de controle de câmera (CCU) e cabeças de câmera 3CCD HD para videocirurgia."
+        },
+        {
+          "slug": "monitores-de-video",
+          "name": "Monitores de Vídeo",
+          "description": "Monitores cirúrgicos HD de 19\" a 26\", com e sem fio."
+        },
+        {
+          "slug": "fonte-de-luz",
+          "name": "Fonte de Luz",
+          "description": "Fontes de luz xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED."
+        }
+      ]
+    },
+    {
+      "slug": "artroscopia",
+      "name": "Artroscopia",
+      "description": "Artrobombas, instrumentos e acessórios para artroscopia de joelho e ombro.",
+      "categories": [
+        {
+          "slug": "artrobomba",
+          "name": "Artrobomba",
+          "description": "Bombas de irrigação e distensão articular para artroscopia."
+        },
+        {
+          "slug": "acessorios",
+          "name": "Acessórios",
+          "description": "Cabos de fibra óptica, endocouplers, lâmpadas, caixas de esterilização e soluções de limpeza."
+        },
+        {
+          "slug": "instrumentos",
+          "name": "Instrumentos",
+          "description": "Instrumental STAHL para artroscopia."
+        }
+      ]
+    },
+    {
+      "slug": "laparoscopia",
+      "name": "Laparoscopia",
+      "description": "Insufladores de CO2 para videolaparoscopia.",
+      "categories": [
+        {
+          "slug": "insufladores",
+          "name": "Insufladores",
+          "description": "Insufladores de CO2 de 30 e 40 lpm para laparoscopia."
+        }
+      ]
+    },
+    {
+      "slug": "ortopedia-trauma",
+      "name": "Ortopedia - Trauma",
+      "description": "Perfuradores, serras e carregadores de bateria Stryker System 5 e System 6, seminovos, revisados e testados.",
+      "categories": [
+        {
+          "slug": "perfuradores",
+          "name": "Perfuradores",
+          "description": "Perfuradores ortopédicos Stryker System 5 e System 6."
+        },
+        {
+          "slug": "serras",
+          "name": "Serras",
+          "description": "Serras ortopédicas Stryker System 5 e System 6."
+        },
+        {
+          "slug": "carregadores",
+          "name": "Carregadores",
+          "description": "Carregadores de bateria para sistemas Stryker."
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "slug": "stryker-camera-1488hd",
+      "name": "Stryker Câmera de Vídeo",
+      "model": "1488HD, 3CCD Digital HD 1488-010-000",
+      "brand": "Stryker",
+      "specialty": "video-cirurgia",
+      "category": "cameras-de-video",
+      "image": "stryker-camera-1488hd",
+      "summary": "Câmera de Vídeo Stryker 1488HD, 3CCD Digital HD, modelo 1488-010-000.",
+      "paragraphs": [],
+      "specs": [
+        [
+          "Entradas de câmera",
+          "1"
+        ],
+        [
+          "Ajuste de matiz (hue)",
+          "Sim"
+        ],
+        [
+          "Iluminação",
+          "Automática e manual"
+        ],
+        [
+          "Balanço de branco",
+          "Manual"
+        ],
+        [
+          "Transiluminação",
+          "Sim"
+        ],
+        [
+          "Ganho de vídeo",
+          "9 níveis"
+        ],
+        [
+          "Nitidez",
+          "64 níveis de realce"
+        ],
+        [
+          "Controles adicionais",
+          "9 configurações por especialidade, controles remotos para fotos e gravação, zoom, aumento/redução de ganho, ativação run/standby da L9000"
+        ]
+      ]
+    },
+    {
+      "slug": "storz-camera-image1-hub",
+      "name": "Storz Câmera de Vídeo",
+      "model": "Image1 HUB, 3CCD Digital HD 22201020-104",
+      "brand": "Karl Storz",
+      "specialty": "video-cirurgia",
+      "category": "cameras-de-video",
+      "image": "storz-camera-image1-hub",
+      "summary": "Câmera de Vídeo Storz Image1 HUB, 3CCD Digital HD, modelo 22201020-104.",
+      "paragraphs": [
+        "Com resolução de 1.920 x 1.080 e varredura progressiva, a unidade de controle de câmera (CCU) garante uma imagem sem atrasos e reprodução de cor natural."
+      ],
+      "list": {
+        "title": "Cabeças de câmera HD Image1 HUB compatíveis",
+        "items": [
+          "Ref. 22220061-3 — cabeça de câmera HD H3-ZA autoclavável",
+          "Ref. 22220060-3 — cabeça de câmera HD H3-FA autoclavável",
+          "Ref. 22220055-3 — cabeça de câmera HD H3-Z",
+          "Ref. 22220053-3 — cabeça de câmera HD H3-ZI inline",
+          "Ref. 22220050 — cabeça de câmera HD H3",
+          "Ref. 22220054-3 — cabeça de câmera HD H3-M CoView",
+          "Ref. 22220056-3 — cabeça de câmera HD H3-P pêndulo"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "dyonics-camera-560p",
+      "name": "Dyonics Câmera de Vídeo",
+      "model": "560P, 3CCD Digital HD",
+      "brand": "Smith & Nephew",
+      "specialty": "video-cirurgia",
+      "category": "cameras-de-video",
+      "image": "dyonics-camera-560p",
+      "summary": "Câmera de Vídeo Dyonics 560P, 3CCD Digital HD.",
+      "paragraphs": [
+        "O sistema de câmera de alta definição 560 série 3-CCD, com transmissão digital, produz imagem HD 1080 pura.",
+        "Cabeça de câmera compatível: Smith & Nephew 560H não autoclavável, modelo 72200561."
+      ],
+      "specs": [
+        [
+          "Alimentação",
+          "100–240 VAC, 50/60 Hz, fusível duplo"
+        ],
+        [
+          "Classificação",
+          "CISPR 11 Classe A; proteção contra choque elétrico Classe 1 com parte aplicada tipo CF"
+        ],
+        [
+          "Dimensões da CCU",
+          "4,25\" A x 12\" L x 15\" P"
+        ],
+        [
+          "Peso da CCU",
+          "9,9 lb (4,5 kg)"
+        ],
+        [
+          "Saída de vídeo",
+          "50/60 Hz"
+        ],
+        [
+          "Resolução",
+          "1920 x 1080i (nativa)"
+        ],
+        [
+          "Relação sinal-ruído",
+          "64 dB"
+        ],
+        [
+          "Obturador",
+          "NTSC 1/60 a 1/10.000 s; PAL 1/50 a 1/10.000 s"
+        ]
+      ]
+    },
+    {
+      "slug": "nds-monitor-26-radiance-g2",
+      "name": "NDS Monitor de Vídeo 26\"",
+      "model": "Radiance G2",
+      "brand": "NDS Surgical Imaging",
+      "specialty": "video-cirurgia",
+      "category": "monitores-de-video",
+      "image": "nds-monitor-26-radiance-g2",
+      "summary": "Monitor de Vídeo NDS Radiance G2 26\" HB: sistema de visualização cirúrgica high-end com a luminância mais alta entre os monitores cirúrgicos de 26\".",
+      "paragraphs": [],
+      "specs": [
+        [
+          "Alimentação",
+          "24 V DC (mínimo 21,6 V)"
+        ],
+        [
+          "Consumo",
+          "60 W (típico)"
+        ],
+        [
+          "Dimensões (L x A x P)",
+          "673 x 418 x 88 mm (26,5 x 16,5 x 3,5\")"
+        ],
+        [
+          "Peso",
+          "8,0 kg (17,5 lb)"
+        ],
+        [
+          "Temperatura de operação",
+          "0 a +40 °C"
+        ],
+        [
+          "Temperatura de armazenamento",
+          "-20 a +50 °C"
+        ],
+        [
+          "Umidade",
+          "Operação 20–85% UR; armazenamento 5–85% UR"
+        ],
+        [
+          "Fixação",
+          "VESA 100 mm"
+        ]
+      ]
+    },
+    {
+      "slug": "nds-monitor-19-endovue",
+      "name": "NDS Monitor de Vídeo 19\"",
+      "model": "EndoVue",
+      "brand": "NDS Surgical Imaging",
+      "specialty": "video-cirurgia",
+      "category": "monitores-de-video",
+      "image": "nds-monitor-19-endovue",
+      "summary": "Monitor de Vídeo NDS EndoVue 19\": display de endoscopia high-end que aceita sinais analógicos e digitais de alta definição de diversas fontes de imagem médica.",
+      "paragraphs": [],
+      "specs": [
+        [
+          "Tamanho da tela",
+          "19\" diagonal"
+        ],
+        [
+          "Área de imagem",
+          "376 x 301 mm (L x A)"
+        ],
+        [
+          "Resolução",
+          "1280 x 1024"
+        ],
+        [
+          "Proporção",
+          "5:4"
+        ],
+        [
+          "Ângulo de visão",
+          "178°"
+        ],
+        [
+          "Luminância",
+          "250 cd/m² típica"
+        ],
+        [
+          "Contraste",
+          "1.000:1 (típico)"
+        ],
+        [
+          "Cores",
+          "16,7 milhões (8 bits)"
+        ],
+        [
+          "Tempo de resposta",
+          "18 ms"
+        ],
+        [
+          "Latência",
+          "20 ms"
+        ],
+        [
+          "Entradas de vídeo",
+          "DVI-D, RGBS/VGA/YPbPr (HD-15 ou DVI-I via adaptador), S-Video, composto"
+        ],
+        [
+          "Saída de vídeo",
+          "DVI-D"
+        ],
+        [
+          "Dimensões (L x A x P)",
+          "445 x 374 x 70 mm"
+        ],
+        [
+          "Peso",
+          "4,9 kg (10,7 lb)"
+        ]
+      ]
+    },
+    {
+      "slug": "storz-monitor-wideview-24",
+      "name": "Storz Monitor de Vídeo",
+      "model": "WideView 24\" LCD HD",
+      "brand": "Karl Storz",
+      "specialty": "video-cirurgia",
+      "category": "monitores-de-video",
+      "image": "storz-monitor-wideview-24",
+      "summary": "Monitor de Vídeo Storz WideView 24\" no formato HD 16:9, resolução máxima de 1920 x 1200 pixels.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Exibição em 1080p/50 e 1080p/60, compatível com PAL/NTSC",
+          "Vidro frontal com revestimento antirreflexo"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-monitor-wise",
+      "name": "Stryker Monitor de Vídeo WiSe",
+      "model": "HDTV Surgical Display",
+      "brand": "Stryker",
+      "specialty": "video-cirurgia",
+      "category": "monitores-de-video",
+      "image": "stryker-monitor-wise",
+      "summary": "Monitor de Vídeo Stryker WiSe HDTV Surgical Display: plataforma de exibição sem fio da Stryker.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características e benefícios",
+        "items": [
+          "Resolução HDTV 1080p sem fio",
+          "Mais liberdade de posicionamento do que soluções com fio",
+          "Elimina cabos DVI na sala cirúrgica",
+          "Transmissão de 1 transmissor para até 3 monitores",
+          "Também disponível em 19\" para clínicas e modernizações"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-fonte-de-luz-l9000-led",
+      "name": "Stryker Fonte de Luz",
+      "model": "L9000 LED",
+      "brand": "Stryker",
+      "specialty": "video-cirurgia",
+      "category": "fonte-de-luz",
+      "image": "stryker-fonte-de-luz-l9000-led",
+      "summary": "Fonte de Luz Stryker L9000 LED.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características e benefícios",
+        "items": [
+          "Tecnologia Safelight para maior segurança do paciente e da equipe",
+          "Controle remoto pela cabeça de câmera HD 3-chip 1288",
+          "Economia de custos: sem troca de lâmpadas",
+          "Eco-friendly"
+        ]
+      },
+      "specs": [
+        [
+          "Alimentação",
+          "100–240 VAC, 50/60 Hz, 400 W"
+        ],
+        [
+          "Fusíveis (2)",
+          "5,0 A 250 V"
+        ],
+        [
+          "Dimensões",
+          "12,1 cm A x 31,8 cm L x 42,7 cm P"
+        ],
+        [
+          "Peso",
+          "7,3 kg (16 lb)"
+        ]
+      ]
+    },
+    {
+      "slug": "storz-fonte-de-luz-300w-xenon",
+      "name": "Storz Fonte de Luz",
+      "model": "300W Xenon 20133120",
+      "brand": "Karl Storz",
+      "specialty": "video-cirurgia",
+      "category": "fonte-de-luz",
+      "image": "storz-fonte-de-luz-300w-xenon",
+      "summary": "Fonte de Luz Storz 300 W Xenon, modelo 20133120.",
+      "paragraphs": [
+        "Fonte de luz com lâmpada xenon de arco curto de 300 W, para endoscopia cirúrgica, com refletor parabólico. A lâmpada PE300BF tem expectativa de vida de 1.000 horas e garantia de até 500 horas."
+      ],
+      "specs": []
+    },
+    {
+      "slug": "dyonics-fonte-de-luz-500xl",
+      "name": "Dyonics Fonte de Luz",
+      "model": "300W Xenon 500XL",
+      "brand": "Smith & Nephew",
+      "specialty": "video-cirurgia",
+      "category": "fonte-de-luz",
+      "image": "dyonics-fonte-de-luz-500xl",
+      "summary": "Fonte de Luz Dyonics 300 W Xenon, modelo 500XL.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Tecnologia comprovada: mais de 18% mais brilhante do que fontes LED stand-alone, com 300 W de luz xenon constante",
+          "Ideal para visualização em ambientes artroscópicos desafiadores",
+          "Interface intuitiva: controle da fonte pela câmera Smith & Nephew 560 HD",
+          "Painel LCD com mensagens ao usuário, incluindo horas de uso da lâmpada",
+          "Torreta rotativa compatível com múltiplos cabos de luz",
+          "Obturador digital com espera automática ao remover o cabo de luz",
+          "Ventilador de operação silenciosa (46,1 dBA)"
+        ]
+      },
+      "specs": [
+        [
+          "Lâmpada",
+          "Xenon arco curto 300 W"
+        ],
+        [
+          "Temperatura de cor",
+          "5700–6000 K"
+        ],
+        [
+          "Vida útil da lâmpada",
+          "500 horas"
+        ],
+        [
+          "Display",
+          "LCD de 2 linhas x 32 caracteres (horas da lâmpada, status e intensidade)"
+        ],
+        [
+          "Porta do cabo de luz",
+          "Torreta para terminais Smith & Nephew/Wolf, Olympus, ACMI ou Storz"
+        ],
+        [
+          "Comunicação",
+          "RS-232 bidirecional"
+        ],
+        [
+          "Alimentação",
+          "100–240 VAC ±10%, 50/60 Hz, 500 VA"
+        ],
+        [
+          "Fusível",
+          "10 A 250 V duplo, ação lenta"
+        ],
+        [
+          "Dimensões",
+          "11,4 cm A x 38,1 cm C x 30,5 cm L"
+        ],
+        [
+          "Peso",
+          "8,6 kg (18 lb)"
+        ],
+        [
+          "Temperatura de operação",
+          "5–45 °C"
+        ]
+      ]
+    },
+    {
+      "slug": "stryker-bomba-arthropump",
+      "name": "Stryker Bomba",
+      "model": "Arthropump Hermes Ready 350-357-000",
+      "brand": "Stryker",
+      "specialty": "artroscopia",
+      "category": "artrobomba",
+      "image": "stryker-bomba-arthropump",
+      "summary": "Bomba Stryker Arthropump Hermes Ready, modelo 350-357-000.",
+      "paragraphs": [
+        "Fornece fluido para distensão das cavidades articulares em procedimentos diagnósticos ou operatórios."
+      ],
+      "specs": [
+        [
+          "Alimentação",
+          "100–240 V, fusível T 5 A"
+        ],
+        [
+          "Frequência",
+          "50–60 Hz"
+        ],
+        [
+          "Consumo máximo",
+          "75 W"
+        ],
+        [
+          "Dimensões (L x A x P)",
+          "360 x 145 x 300 mm"
+        ],
+        [
+          "Peso",
+          "aprox. 8,5 kg"
+        ]
+      ]
+    },
+    {
+      "slug": "dyonics-bomba-access-25",
+      "name": "Dyonics Bomba",
+      "model": "Access 25",
+      "brand": "Smith & Nephew",
+      "specialty": "artroscopia",
+      "category": "artrobomba",
+      "image": "dyonics-bomba-access-25",
+      "summary": "Bomba Dyonics Access 25 para artroscopia.",
+      "paragraphs": [],
+      "specs": [
+        [
+          "Alimentação",
+          "100–120 / 200–240 V ±10%, 50/60 Hz"
+        ],
+        [
+          "Potência nominal",
+          "300 VA"
+        ],
+        [
+          "Pressão de saída",
+          "10 a 150 mmHg"
+        ],
+        [
+          "Vazão (cânula alto fluxo)",
+          "0,5 a 2,5 L/min"
+        ],
+        [
+          "Vazão (cânula médio fluxo)",
+          "0,5 a 1,6 L/min"
+        ],
+        [
+          "Vazão (cânula baixo fluxo)",
+          "0,3 a 0,5 L/min"
+        ],
+        [
+          "Fusíveis",
+          "duplos, 4 A / 250 V"
+        ],
+        [
+          "Dimensões (A x L x P)",
+          "146 x 305 x 362 mm"
+        ],
+        [
+          "Peso",
+          "5,6 kg (12,4 lb)"
+        ]
+      ]
+    },
+    {
+      "slug": "stahl-caixa-de-esterilizacao",
+      "name": "STAHL Caixa de Esterilização para Instrumentos",
+      "model": "A8006 / A8010",
+      "brand": "STAHL",
+      "specialty": "artroscopia",
+      "category": "acessorios",
+      "image": "stahl-caixa-de-esterilizacao",
+      "summary": "Bandeja para esterilização de instrumentos de artroscopia, eliminando ou inativando todas as formas de vida e outros agentes biológicos.",
+      "paragraphs": [],
+      "list": {
+        "title": "Modelos",
+        "items": [
+          "A8006 — caixa de esterilização para 6 instrumentos de artroscopia",
+          "A8010 — caixa de esterilização para 10 instrumentos de artroscopia"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "lampadas-p3300bf",
+      "name": "Lâmpadas",
+      "model": "P3300BF",
+      "brand": "Excelitas / Osram",
+      "specialty": "artroscopia",
+      "category": "acessorios",
+      "image": "lampadas-p3300bf",
+      "summary": "Lâmpadas HTI e Xenon para fontes de luz, modelo P3300BF. Excelitas e Osram.",
+      "paragraphs": [],
+      "list": {
+        "title": "Potências disponíveis",
+        "items": [
+          "175 W",
+          "300 W"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stahl-cabo-de-fibra-optica",
+      "name": "STAHL Cabo de Fibra Óptica",
+      "model": "",
+      "brand": "STAHL",
+      "specialty": "artroscopia",
+      "category": "acessorios",
+      "image": "stahl-cabo-de-fibra-optica",
+      "summary": "Meio de transmissão de luz de alta velocidade. Contém minúsculos filamentos de vidro ou plástico que transportam feixes de luz.",
+      "paragraphs": [],
+      "list": {
+        "title": "Terminais compatíveis",
+        "items": [
+          "WL — Wolf / Stryker / Dyonics",
+          "SL — Storz",
+          "OL — Olympus / Linvatec",
+          "AL — ACMI"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stahl-acessorios-de-limpeza",
+      "name": "STAHL Acessórios de Limpeza",
+      "model": "",
+      "brand": "STAHL",
+      "specialty": "artroscopia",
+      "category": "acessorios",
+      "image": "stahl-acessorios-de-limpeza",
+      "summary": "Soluções de limpeza para instrumentos e dispositivos médicos.",
+      "paragraphs": [],
+      "list": {
+        "title": "Produtos",
+        "items": [
+          "9600 — Lubrificante para instrumentos",
+          "9700 — Detergente enzimático Surgi-clean",
+          "9800 — Sabão pré-limpeza"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "endocouplers",
+      "name": "Endocouplers",
+      "model": "",
+      "brand": "",
+      "specialty": "artroscopia",
+      "category": "acessorios",
+      "image": "endocouplers",
+      "summary": "Endocouplers para acoplar a cabeça da câmera ao artroscópio.",
+      "paragraphs": [],
+      "specs": []
+    },
+    {
+      "slug": "stahl-access",
+      "name": "STAHL Access",
+      "model": "Access",
+      "brand": "STAHL",
+      "specialty": "artroscopia",
+      "category": "instrumentos",
+      "image": "stahl-access",
+      "summary": "Instrumental STAHL Access para artroscopia de joelho e artroscopia de ombro. Permite as menores incisões possíveis com instrumento.",
+      "paragraphs": [],
+      "specs": []
+    },
+    {
+      "slug": "stryker-insuflador-core-40-lpm",
+      "name": "Stryker Insuflador",
+      "model": "620-040-503, 40 lpm Core",
+      "brand": "Stryker",
+      "specialty": "laparoscopia",
+      "category": "insufladores",
+      "image": "stryker-insuflador-core-40-lpm",
+      "summary": "Insuflador Stryker Core 40 lpm, modelo 620-040-503. Preserva o pneumoperitônio sob condições extremas durante os procedimentos.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Ampla escala de taxa de fluxo",
+          "Status exibido na tela LCD e no vídeo",
+          "Compatível com comando de voz"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "storz-insuflador-30-lpm",
+      "name": "Storz Insuflador",
+      "model": "26432020, 30 lpm",
+      "brand": "Karl Storz",
+      "specialty": "laparoscopia",
+      "category": "insufladores",
+      "image": "storz-insuflador-30-lpm",
+      "summary": "Insuflador Storz 26432020 para laparoscopias com vazão de até 30 lpm. Insuflação segura.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Insuflação de alta vazão de 30 L de gás CO2",
+          "Fluxo ideal com conexão LUER Lock"
+        ]
+      },
+      "specs": [
+        [
+          "Tensão",
+          "100–240 VAC, 50/60 Hz"
+        ],
+        [
+          "Peso",
+          "aprox. 7 kg (15,4 lb)"
+        ],
+        [
+          "Dimensões",
+          "30,5 x 16,4 x 23,3 cm (12 x 6,5 x 9,2\")"
+        ]
+      ]
+    },
+    {
+      "slug": "dyonics-insuflador-40-lpm",
+      "name": "Dyonics Insuflador",
+      "model": "40 lpm",
+      "brand": "Smith & Nephew",
+      "specialty": "laparoscopia",
+      "category": "insufladores",
+      "image": "dyonics-insuflador-40-lpm",
+      "summary": "Insuflador Dyonics 40 lpm. O único insuflador com torneira, que oferece gás CO2 aquecido durante a cirurgia.",
+      "paragraphs": [],
+      "specs": []
+    },
+    {
+      "slug": "stryker-5-perfurador",
+      "name": "Stryker 5 - Perfurador",
+      "model": "System 5",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "perfuradores",
+      "image": "stryker-5-perfurador",
+      "condition": "seminovo",
+      "summary": "Perfurador Stryker System 5, de grande potência e resistência. Usado em cirurgias artroscópicas e ortopédicas.",
+      "paragraphs": [
+        "Acompanha carregador e bateria. Temos vários acessórios de bloca. Todos os itens com garantia."
+      ],
+      "list": {
+        "title": "Condição",
+        "items": [
+          "Perfurador seminovo",
+          "Revisado e testado",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-6-perfurador",
+      "name": "Stryker 6 - Perfurador",
+      "model": "System 6",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "perfuradores",
+      "image": "stryker-6-perfurador",
+      "condition": "seminovo",
+      "summary": "Perfurador Stryker System 6: perfuração em alta velocidade e fresagem em elevado torque. Usado em cirurgias artroscópicas e ortopédicas.",
+      "paragraphs": [
+        "Acompanha carregador e bateria. Todos os itens com garantia."
+      ],
+      "list": {
+        "title": "Condição",
+        "items": [
+          "Perfurador seminovo",
+          "Revisado e testado",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-5-perfurador-e-serra",
+      "name": "Stryker 5 - Perfurador e Serra",
+      "model": "System 5",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "perfuradores",
+      "alsoIn": [
+        "serras"
+      ],
+      "image": "stryker-5-perfurador-e-serra",
+      "condition": "seminovo",
+      "summary": "Perfurador e Serra Stryker System 5: equipamentos para cirurgia com elevada potência e resistência.",
+      "paragraphs": [
+        "Acompanha carregador, bateria e vários acessórios. Todos os itens com garantia."
+      ],
+      "list": {
+        "title": "Condição",
+        "items": [
+          "Equipamentos seminovos",
+          "Revisados e testados",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-6-perfurador-e-serra",
+      "name": "Stryker 6 - Perfurador e Serra",
+      "model": "System 6",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "perfuradores",
+      "alsoIn": [
+        "serras"
+      ],
+      "image": "stryker-6-perfurador-e-serra",
+      "condition": "seminovo",
+      "summary": "Perfurador e Serra Stryker System 6: equipamentos médicos para cirurgia com elevada potência e resistência, a preço incrível.",
+      "paragraphs": [],
+      "list": {
+        "title": "O conjunto Stryker System 6 inclui",
+        "items": [
+          "Perfurador",
+          "Serra",
+          "Bateria",
+          "Carregador inteligente para séries Stryker 3, 5, 6 e 7",
+          "Equipamentos seminovos, revisados e testados",
+          "Todos os itens com garantia"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-5-serra",
+      "name": "Stryker 5 - Serra",
+      "model": "System 5",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "serras",
+      "image": "stryker-5-serra",
+      "condition": "seminovo",
+      "summary": "Serra Stryker System 5, de grande potência e resistência. Usada em cirurgias artroscópicas e ortopédicas.",
+      "paragraphs": [
+        "Acompanha carregador e bateria. Todos os itens com garantia."
+      ],
+      "list": {
+        "title": "Condição",
+        "items": [
+          "Serra seminova",
+          "Revisada e testada",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-6-serra",
+      "name": "Stryker 6 - Serra",
+      "model": "System 6",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "serras",
+      "image": "stryker-6-serra",
+      "condition": "seminovo",
+      "summary": "Serra Stryker System 6, compacta e com excelente ergonomia. Usada em cirurgias artroscópicas e ortopédicas.",
+      "paragraphs": [
+        "Acompanha carregador e bateria. Todos os itens com garantia."
+      ],
+      "list": {
+        "title": "Condição",
+        "items": [
+          "Serra seminova",
+          "Revisada e testada",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "stryker-5-carregador-de-bateria",
+      "name": "Stryker 5 - Carregador de Bateria",
+      "model": "System 5",
+      "brand": "Stryker",
+      "specialty": "ortopedia-trauma",
+      "category": "carregadores",
+      "image": "stryker-5-carregador-de-bateria",
+      "condition": "seminovo",
+      "summary": "Carregador para baterias Stryker System 5.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Carrega até 4 baterias simultaneamente",
+          "Aviso de carga completa",
+          "Aviso de problemas na bateria",
+          "Equipamento seminovo, revisado e testado",
+          "Garantia de 3 meses"
+        ]
+      },
+      "specs": []
+    },
+    {
+      "slug": "carregador-de-bateria-inteligente",
+      "name": "Carregador de Bateria Inteligente",
+      "model": "Séries Stryker 3, 5, 6 e 7",
+      "brand": "",
+      "specialty": "ortopedia-trauma",
+      "category": "carregadores",
+      "image": "carregador-de-bateria-inteligente",
+      "summary": "Carregador avançado para as séries Stryker 3, 5, 6 e 7, capaz de carregar e balancear baterias Li-ion, LiPo, LiFe, NiCd e NiMH.",
+      "paragraphs": [],
+      "list": {
+        "title": "Características",
+        "items": [
+          "Grande variedade de correntes de carga",
+          "Função Store, para armazenamento seguro da bateria",
+          "Função de limite de tempo",
+          "Monitoramento da tensão de entrada",
+          "Armazenamento de dados"
+        ]
+      },
+      "specs": []
+    }
+  ]
+}
