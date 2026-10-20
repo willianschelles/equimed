@@ -27,8 +27,9 @@ jobs:
         run: |
           export BASE_PATH=$(node -p "require('./content/site.json').publishCname ? '' : '/${{ github.event.repository.name }}'")
           npm run build
-      - name: SEO audit of the build (skipped for the project-path preview: links are rebased)
-        run: node -e "process.exit(require('./content/site.json').publishCname ? 0 : 0)" && if [ "$(node -p "require('./content/site.json').publishCname")" = "true" ]; then npm run check:seo; fi
+      - name: SEO audit (only for the real-domain build; preview links are rebased)
+        run: |
+          if [ "$(node -p "require('./content/site.json').publishCname")" = "true" ]; then npm run check:seo; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
