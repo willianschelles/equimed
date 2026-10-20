@@ -10,7 +10,7 @@ const header = (ctx, path) => {
   return `
 <header class="site-header">
   <div class="container site-header__row">
-    <a class="brand" href="/" aria-label="${esc(site.name)}: página inicial">
+    <a class="brand" href="/">
       ${ctx.logoSvg}
     </a>
     <nav class="site-nav" aria-label="Principal">

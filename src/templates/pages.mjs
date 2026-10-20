@@ -29,10 +29,10 @@ const ctaBar = (site, { title = 'Precisa de manutenção, locação ou um equipa
 
 const faq = (items) =>
   items?.length
-    ? `<section class="section container prose">
+    ? `<section class="section container"><div class="prose">
   <h2>Perguntas frequentes</h2>
   ${items.map((f) => `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n  ')}
-</section>`
+</div></section>`
     : '';
 
 const faqJsonLd = (items) =>
@@ -41,24 +41,26 @@ const faqJsonLd = (items) =>
     mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   };
 
-const productCard = (ctx, p) => `
+/* Card images are decorative (the card title names the item), hence alt="". The first cards of a
+   grid load eagerly because one of them is usually the Largest Contentful Paint element. */
+const productCard = (ctx, p, { level = 3, eager = false } = {}) => `
 <li class="card">
   <a class="card__link" href="${productUrl(p)}">
-    <figure class="card__media">${img(ctx, `/assets/img/products/${p.image}.webp`, `${p.name} ${p.model}`.trim())}</figure>
+    <figure class="card__media">${img(ctx, `/assets/img/products/${p.image}.webp`, '', { lazy: !eager, sizes: '(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 90vw' })}</figure>
     <div class="card__body">
-      <h3 class="card__title">${esc(p.name)}</h3>
+      <h${level} class="card__title">${esc(p.name)}</h${level}>
       ${p.model ? `<p class="card__meta">${esc(p.model)}</p>` : ''}
       ${p.condition ? `<p class="badge">Seminovo revisado · garantia 3 meses</p>` : ''}
     </div>
   </a>
 </li>`;
 
-const categoryCard = (ctx, c) => `
+const categoryCard = (ctx, c, { level = 3, eager = false } = {}) => `
 <li class="card">
   <a class="card__link" href="${categoryUrl(c)}">
-    <figure class="card__media">${img(ctx, `/assets/img/categories/${c.slug}.webp`, c.name)}</figure>
+    <figure class="card__media">${img(ctx, `/assets/img/categories/${c.slug}.webp`, '', { lazy: !eager, sizes: '(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 90vw' })}</figure>
     <div class="card__body">
-      <h3 class="card__title">${esc(c.name)}</h3>
+      <h${level} class="card__title">${esc(c.name)}</h${level}>
       <p class="card__meta">${c.products.length} ${c.products.length === 1 ? 'produto' : 'produtos'}</p>
     </div>
   </a>
@@ -232,11 +234,11 @@ export function specialties(ctx) {
 ${pageHeader(c.heading, c.lead)}
 ${catalog.specialties
   .map(
-    (s) => `<section class="section container">
+    (s, si) => `<section class="section container">
   <h2 class="section__title"><a href="${specialtyUrl(s)}">${esc(s.name)}</a></h2>
   <p class="lead">${esc(s.description)}</p>
   <ul class="grid grid--3">
-    ${s.categories.map((cat) => categoryCard(ctx, cat)).join('\n    ')}
+    ${s.categories.map((cat, i) => categoryCard(ctx, cat, { eager: si === 0 && i < 3 })).join('\n    ')}
   </ul>
 </section>`,
   )
@@ -252,7 +254,7 @@ export function specialty(ctx, s) {
 ${pageHeader(s.name, s.description)}
 <section class="section container">
   <ul class="grid grid--3">
-    ${s.categories.map((cat) => categoryCard(ctx, cat)).join('\n    ')}
+    ${s.categories.map((cat, i) => categoryCard(ctx, cat, { level: 2, eager: i < 3 })).join('\n    ')}
   </ul>
 </section>
 ${ctaBar(site, { message: `Olá, Equimed! Vim pelo site e tenho interesse em equipamentos de ${s.name}.\n\nPreciso de: (manutenção / locação / compra)\nEquipamento: \n` })}`;
@@ -274,7 +276,7 @@ export function category(ctx, c) {
 ${pageHeader(c.name, c.description)}
 <section class="section container">
   <ul class="grid grid--3">
-    ${c.products.map((p) => productCard(ctx, p)).join('\n    ')}
+    ${c.products.map((p, i) => productCard(ctx, p, { level: 2, eager: i < 3 })).join('\n    ')}
   </ul>
 </section>
 ${ctaBar(site, { title: `Não encontrou o modelo? Consulte-nos sobre ${c.name.toLowerCase()}.`, message: `Olá, Equimed! Vim pelo site e procuro ${c.name.toLowerCase()} (${c.specialty.name}).\n\nMarca/modelo: \nPreciso de: (manutenção / locação / compra)\n` })}`;
@@ -382,7 +384,7 @@ export function brandsPage(ctx) {
 ${pageHeader(b.heading, b.lead)}
 <section class="section container">
   <ul class="brands">
-    ${brands.map((x) => `<li>${img(ctx, `/assets/img/brands/${x.slug}.webp`, x.name)}<span class="visually-hidden">${esc(x.name)}</span></li>`).join('\n    ')}
+    ${brands.map((x) => `<li>${img(ctx, `/assets/img/brands/${x.slug}.webp`, x.name)}</li>`).join('\n    ')}
   </ul>
 </section>
 ${ctaBar(site)}`;

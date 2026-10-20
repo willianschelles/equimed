@@ -26,7 +26,11 @@
         "uses-long-cache-ttl": "off",
         "csp-xss": "off",
         "bf-cache": "off",
-        "render-blocking-resources": "warn"
+        "render-blocking-resources": "warn",
+        "render-blocking-insight": "off",
+        "network-dependency-tree-insight": "off",
+        "lcp-discovery-insight": "warn",
+        "image-delivery-insight": "warn"
       }
     },
     "upload": { "target": "temporary-public-storage" }

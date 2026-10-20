@@ -28,7 +28,13 @@ export function imageSize(buf) {
 export function img(ctx, src, alt, { lazy = true, sizes, cls } = {}) {
   const dim = ctx.images[src];
   if (!dim) throw new Error(`Unknown image ${src}`);
-  return `<img src="${src}" alt="${esc(alt)}" width="${dim.width}" height="${dim.height}"${
+  const variants = [480, 960]
+    .map((w) => [src.replace(/\.webp$/, `-${w}.webp`), w])
+    .filter(([v]) => ctx.images[v])
+    .map(([v, w]) => `${v} ${w}w`);
+  const srcset = variants.length ? ` srcset="${[...variants, `${src} ${dim.width}w`].join(', ')}"` : '';
+  if (srcset && !sizes) sizes = '(min-width: 64rem) 50vw, 100vw';
+  return `<img src="${src}"${srcset} alt="${esc(alt)}" width="${dim.width}" height="${dim.height}"${
     lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high"'
   }${sizes ? ` sizes="${sizes}"` : ''}${cls ? ` class="${cls}"` : ''}>`;
 }
