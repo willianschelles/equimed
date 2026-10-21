@@ -215,13 +215,12 @@ export function home(ctx) {
   const { site, copy, families, brands, services, articles } = ctx;
   const h = copy.home;
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
-  const rows = [
-    { href: '/manutencao/', name: 'Manutenção', text: 'Corretiva e preventiva por família, marca e modelo. Avaliação em bancada e orçamento detalhado antes de qualquer reparo.', src: '/assets/img/photos/stryker-system7-desmontado-recorte.webp' },
-    { href: '/locacao/', name: 'Locação', text: 'Conjuntos de perfurador e serra com bateria e carregador, revisados e entregues para o dia da cirurgia.', src: '/assets/img/photos/seminovo-stryker-6-conjunto-recorte.webp' },
-    { href: '/venda/', name: 'Venda', text: `Seminovos revisados em bancada, com ${site.warranty.used} de garantia e relatório do que foi feito.`, src: '/assets/img/photos/stryker-system7-recorte.webp' },
-    { href: '/software/', name: 'Software', text: 'Atualização de firmware, desbloqueio e desenvolvimento sob medida para baterias, carregadores e consoles que travam com a mecânica em ordem.', src: '/assets/img/products/carregador-de-bateria-inteligente.webp' },
+  const cards = [
+    { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'] },
+    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'seminovo-stryker-6-conjunto', points: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante o reparo'] },
+    { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: ['Seminovos revisados', `${site.warranty.used} de garantia`, 'Proposta para licitação'] },
+    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'bench-soldering', points: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'] },
   ];
-  const ticket = ['Recebido na bancada', 'Avaliação técnica', 'Orçamento detalhado enviado', 'Reparo e teste de segurança elétrica', 'Devolução com garantia'];
   const body = `
 <section class="hx">
   <canvas class="hx__monitor" data-ecg aria-hidden="true"></canvas>
@@ -238,12 +237,6 @@ export function home(ctx) {
     </div>
     <div class="hx__bench">
       <figure class="hx__photo" data-speed="0.12">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
-      <div class="ticket fx-in" style="--d:1.1s" data-lift="-0.1" aria-label="Exemplo de acompanhamento de um equipamento na bancada">
-        <div class="ticket__head"><p class="ticket__title">Perfurador Stryker System 7</p><p class="ticket__tag">Exemplo</p></div>
-        <ol class="ticket__steps" data-ticket>
-          ${ticket.map((t) => `<li class="tstep"><span class="tstep__dot">${icon('check', 12)}</span>${esc(t)}</li>`).join('\n          ')}
-        </ol>
-      </div>
     </div>
   </div>
 </section>
@@ -260,12 +253,15 @@ export function home(ctx) {
 <section class="section" id="servicos">
   <div class="container">
     <div class="sx-head rise"><h2 class="sx-title">O que a bancada faz</h2><p class="sx-lead">Diagnóstico antes do reparo, orçamento detalhado e garantia em cada serviço.</p></div>
-    <div class="idx">
-      ${rows.map((r) => `<a class="idx__row rise" href="${r.href}">
-        <h3 class="idx__name">${r.name}</h3>
-        <p class="idx__text">${esc(r.text)}</p>
-        <span class="idx__thumb">${img(ctx, r.src, '', { sizes: '11rem' })}</span>
-        <span class="idx__go">${icon('arrow', 18)}</span>
+    <div class="scards">
+      ${cards.map((c) => `<a class="scard rise" href="${c.href}">
+        <figure class="scard__media">${photo(ctx, c.photo, '', { sizes: '(min-width: 64rem) 40rem, 100vw' })}</figure>
+        <div class="scard__body">
+          <h3 class="scard__name">${c.name}</h3>
+          <p class="scard__text">${esc(c.text)}</p>
+          <ul class="scard__points">${c.points.map((t) => `<li>${icon('check', 14)} ${esc(t)}</li>`).join('')}</ul>
+          <span class="scard__go">Ver ${c.name.toLowerCase()} ${icon('arrow', 16)}</span>
+        </div>
       </a>`).join('\n      ')}
     </div>
   </div>

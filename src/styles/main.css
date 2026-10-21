@@ -572,6 +572,24 @@
   .idx__row:hover .idx__thumb img { filter: none; opacity: 1; scale: 1.05; }
   .idx__row:hover .idx__go { background: var(--color-petrol-link); border-color: var(--color-petrol-link); color: #FFFFFF; rotate: -45deg; }
 
+  /* Service cards: duotone photo, text on top */
+  .scards { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+  @media (width >= 56rem) { .scards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .scard { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: flex-end; min-height: 26rem; border-radius: var(--radius-card); color: #FFFFFF; text-decoration: none; background: var(--color-petrol); }
+  .scard__media { position: absolute; inset: 0; z-index: -2; margin: 0; }
+  .scard__media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: scale .8s var(--ease-out-soft), filter .6s; }
+  .scard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(18,50,74,.6) 0%, rgba(18,50,74,.8) 45%, rgba(10,18,26,.95) 100%); mix-blend-mode: multiply; }
+  .scard::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 30%, rgba(10,18,26,.55) 100%); }
+  .scard:hover .scard__media img { scale: 1.05; filter: grayscale(.6) contrast(1.05); }
+  .scard__body { display: grid; gap: .8rem; padding: clamp(1.5rem, 3vw, 2.25rem); max-width: 34rem; }
+  .scard__name { margin: 0; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.4rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
+  .scard__text { margin: 0; color: rgba(255,255,255,.86); }
+  .scard__points { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; margin: 0; padding: 0; list-style: none; font-size: .875rem; color: rgba(255,255,255,.9); }
+  .scard__points li { display: inline-flex; align-items: center; gap: .35rem; }
+  .scard__points .icon { color: var(--color-signal); }
+  .scard__go { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; margin-top: .4rem; padding: .7rem 1.1rem; border-radius: 6px; background: #FFFFFF; color: var(--color-navy); font-weight: 600; font-size: .9375rem; transition: background-color .2s, gap .2s; }
+  .scard:hover .scard__go { gap: .8rem; }
+
   /* Parallax band */
   .band { position: relative; isolation: isolate; overflow: hidden; min-height: clamp(26rem, 75vh, 42rem); display: grid; align-items: end; color: #FFFFFF; background: var(--color-navy); }
   .band__media { position: absolute; inset: -25% 0; z-index: -2; }
