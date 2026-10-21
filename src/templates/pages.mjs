@@ -171,24 +171,10 @@ const articleCard = (a, { level = 3, ctx } = {}) => `
 
 const SERVICE_META = {
   manutencao: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'],
-  locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante reparo'],
+  locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante o reparo'],
   venda: ['Seminovos revisados', '3 meses de garantia', 'Proposta para licitação'],
   software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
 };
-const serviceCard = (s, { level = 2, index = 1, ctx } = {}) => `
-<li class="tile">
-  <a class="tile__link" href="/${s.slug}/">
-    <span class="tile__media">${photo(ctx, s.photo, '', { sizes: '(min-width: 64rem) 36rem, 100vw' })}</span>
-    <span class="tile__body">
-      <span class="tile__num">0${index}</span>
-      <h${level} class="tile__title">${esc(s.name)}</h${level}>
-      <p class="tile__text">${esc(s.summary)}</p>
-      <ul class="tile__meta">${SERVICE_META[s.slug].map((m) => `<li>${icon('check', 14)} ${esc(m)}</li>`).join('')}</ul>
-      <span class="tile__more">Ver ${esc(s.name.toLowerCase())} ${icon('arrow', 18)}</span>
-    </span>
-  </a>
-</li>`;
-
 const aside = (site, { title = 'Solicite um orçamento', text = 'Envie marca, modelo, número de série e o defeito. Respondemos em horário comercial.', message, place = 'aside' } = {}) => `
 <aside class="aside-card">
   <h2>${esc(title)}</h2>
@@ -216,27 +202,27 @@ export function home(ctx) {
   const h = copy.home;
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
   const cards = [
-    { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'] },
-    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'seminovo-stryker-6-conjunto', points: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante o reparo'] },
-    { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: ['Seminovos revisados', `${site.warranty.used} de garantia`, 'Proposta para licitação'] },
-    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'bench-soldering', points: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'] },
+    { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
+    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'seminovo-stryker-6-conjunto', points: SERVICE_META.locacao },
+    { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
+    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'bench-soldering', points: SERVICE_META.software },
   ];
   const body = `
 <section class="hx">
   <canvas class="hx__monitor" data-ecg aria-hidden="true"></canvas>
-  <div class="container hx__grid">
+  <div class="container hx__grid" data-hero>
     <div class="hx__copy" data-hero-copy>
       <p class="hx__kicker fx-in" style="--d:.1s"><i></i>${esc(h.eyebrow)}</p>
       <h1 data-words>Equipamento cirúrgico pronto para a próxima cirurgia.</h1>
-      <p class="hx__lead fx-in" style="--d:.7s">${esc(h.lead)}</p>
-      <div class="hx__ctas fx-in" style="--d:.85s">
+      <p class="hx__lead fx-in" style="--d:.45s">${esc(h.lead)}</p>
+      <div class="hx__ctas fx-in" style="--d:.55s">
         <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar no WhatsApp</a>
         <a class="button button--ghost button--lg" href="#como-funciona">Ver como funciona</a>
       </div>
-      <p class="hx__note fx-in" style="--d:1s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
+      <p class="hx__note fx-in" style="--d:.65s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo" data-speed="0.06">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
     </div>
   </div>
 </section>

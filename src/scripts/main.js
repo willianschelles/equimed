@@ -143,7 +143,7 @@ if (words && !reduce) {
 // ECG monitor sweeping the bottom of the hero.
 function monitor(canvas) {
   const g = canvas.getContext('2d');
-  const dpr = Math.min(2, devicePixelRatio || 1);
+  const dpr = Math.min(1.5, devicePixelRatio || 1);
   let W = 0, H = 0, base = 0, amp = 0, beat = 0, buf = new Float32Array(0), head = 0, last = performance.now(), visible = true, travelled = 0;
   const wave = (t, k) => {
     if (t > 0.1 && t < 0.2) return 0.12 * Math.sin((Math.PI * (t - 0.1)) / 0.1);
@@ -177,12 +177,15 @@ function monitor(canvas) {
         const v = buf[x]; if (Number.isNaN(v)) { on = false; continue; }
         const y = base - v * amp; if (on) g.lineTo(x, y); else { g.moveTo(x, y); on = true; }
       }
-      g.strokeStyle = `rgba(91,184,224,${a.toFixed(3)})`; g.lineWidth = 2;
-      g.shadowColor = `rgba(91,184,224,${(a * 0.8).toFixed(3)})`; g.shadowBlur = 8 * a; g.stroke();
+      g.strokeStyle = `rgba(91,184,224,${(a * 0.22).toFixed(3)})`; g.lineWidth = 6; g.stroke();
+      g.strokeStyle = `rgba(91,184,224,${a.toFixed(3)})`; g.lineWidth = 2; g.stroke();
     }
     const hv = buf[Math.floor(head) % buf.length];
-    if (!Number.isNaN(hv)) { g.shadowBlur = 18; g.shadowColor = 'rgba(160,215,240,1)'; g.fillStyle = '#EAF6FC'; g.beginPath(); g.arc(head, base - hv * amp, 3, 0, Math.PI * 2); g.fill(); }
-    g.shadowBlur = 0;
+    if (!Number.isNaN(hv)) {
+      const hy = base - hv * amp;
+      g.fillStyle = 'rgba(160,215,240,.25)'; g.beginPath(); g.arc(head, hy, 9, 0, Math.PI * 2); g.fill();
+      g.fillStyle = '#EAF6FC'; g.beginPath(); g.arc(head, hy, 3, 0, Math.PI * 2); g.fill();
+    }
   }
   return {
     tick(now) {
@@ -202,13 +205,15 @@ const header = $('.site-header');
 const progress = $('.site-header__progress');
 const fab = $('.whatsapp-fab');
 const hero = $('.hx');
+const heroGrid = $('[data-hero]');
 const heroCopy = $('[data-hero-copy]');
 const speeds = $$('[data-speed]').map((el) => ({ el, inner: el.firstElementChild, s: parseFloat(el.dataset.speed) }));
-const lifts = $$('[data-lift]').map((el) => ({ el, s: parseFloat(el.dataset.lift) }));
 const flow = $('[data-flow]');
 const flowSteps = flow ? $$('.flow__step', flow) : [];
 if (flow && !reduce) flow.dataset.armed = '';
 const cta = $('.cta-hx, .cta-bar');
+const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const smooth = (a, b, v) => { const t = clamp01((v - a) / (b - a)); return t * t * (3 - 2 * t); };
 
 // Horizontal rail: pinned and driven by vertical scroll on large screens, native swipe elsewhere.
 const hs = $('[data-hs]'), rail = $('[data-rail]'), railBar = $('[data-rail-bar]');
@@ -236,54 +241,57 @@ if (rail) {
   rail.addEventListener('scroll', syncRail, { passive: true });
 }
 
+// Scroll-linked effects. All layout reads happen first, then all writes, so a frame never forces a reflow.
+let heroH = 0, maxY = 0;
+const measure = () => { heroH = hero ? hero.offsetHeight : 0; maxY = document.documentElement.scrollHeight - innerHeight; };
 function frame() {
-  const y = scrollY, vh = innerHeight, max = document.documentElement.scrollHeight - vh;
-  const heroH = hero ? hero.offsetHeight : 0;
-  header?.classList.toggle('is-light', hero ? y > heroH - 80 : y > 120);
-  progress?.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
-  if (hero) fab?.classList.toggle('is-hidden', y < heroH * 0.6);
+  const y = scrollY, vh = innerHeight;
+  const boxes = reduce ? [] : speeds.map(({ el }) => el.getBoundingClientRect());
+  const hsBox = pinned ? hs.getBoundingClientRect() : null, hsH = pinned ? hs.offsetHeight : 0;
+  const flowBox = flow && !reduce ? flow.getBoundingClientRect() : null;
+  const ctaBox = cta && !reduce ? cta.getBoundingClientRect() : null;
 
-  if (!reduce) {
-    for (const { el, inner, s } of speeds) {
-      const r = el.getBoundingClientRect();
-      if (!inner || r.bottom < -200 || r.top > vh + 200) continue;
-      inner.style.transform = `translate3d(0, ${(-((r.top + r.height / 2) - vh / 2) * s).toFixed(1)}px, 0)`;
-    }
-    for (const { el, s } of lifts) el.style.transform = `translate3d(0, ${(Math.min(y, vh) * s).toFixed(1)}px, 0)`;
-    if (heroCopy && y < heroH) {
-      heroCopy.style.transform = `translate3d(0, ${(y * 0.28).toFixed(1)}px, 0)`;
-      heroCopy.style.opacity = Math.max(0, 1 - y / (heroH * 0.75)).toFixed(3);
-    }
+  header?.classList.toggle('is-scrolled', y > 8);
+  header?.classList.toggle('is-light', hero ? y > heroH - 80 : y > 120);
+  progress?.style.setProperty('--p', maxY > 0 ? (y / maxY).toFixed(4) : 0);
+  if (hero) fab?.classList.toggle('is-hidden', y < heroH * 0.6);
+  // Hero: copy and photo drift together, gently, and the copy fades on an eased curve.
+  if (heroGrid && !reduce && y <= heroH) {
+    heroGrid.style.transform = `translate3d(0, ${(y * 0.12).toFixed(1)}px, 0)`;
+    heroCopy.style.opacity = (1 - smooth(heroH * 0.12, heroH * 0.7, y)).toFixed(3);
   }
-  if (pinned) {
-    const r = hs.getBoundingClientRect();
-    const t = Math.min(1, Math.max(0, -r.top / (hs.offsetHeight - vh)));
+  speeds.forEach(({ inner, s }, i) => {
+    const r = boxes[i];
+    if (!r || !inner || r.bottom < -200 || r.top > vh + 200) return;
+    inner.style.transform = `translate3d(0, ${(-((r.top + r.height / 2) - vh / 2) * s).toFixed(1)}px, 0)`;
+  });
+  if (hsBox) {
+    const t = clamp01(-hsBox.top / (hsH - vh));
     rail.style.transform = `translate3d(${(-t * dist).toFixed(1)}px, 0, 0)`;
     railBar.style.setProperty('--rp', (0.15 + 0.85 * t).toFixed(3));
   }
-  if (flow && !reduce) {
-    const r = flow.getBoundingClientRect();
-    const t = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.25)));
+  if (flowBox) {
+    const t = clamp01((vh * 0.85 - flowBox.top) / (flowBox.height + vh * 0.25));
     flow.style.setProperty('--fp', t.toFixed(3));
     flowSteps.forEach((s, i) => s.classList.toggle('is-lit', t >= (i + 0.35) / flowSteps.length));
   }
-  if (cta && !reduce) {
-    const r = cta.getBoundingClientRect();
-    cta.style.setProperty('--cp', Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.9))).toFixed(3));
-  }
+  if (ctaBox) cta.style.setProperty('--cp', clamp01((vh - ctaBox.top) / (vh * 0.9)).toFixed(3));
 }
 
-setupPin(); syncRail();
-addEventListener('resize', () => { setupPin(); syncRail(); frame(); });
+// One rAF loop drives the ECG; scroll effects recompute only when scroll or size changed.
+let dirty = true;
+const invalidate = () => { dirty = true; };
+setupPin(); syncRail(); measure();
+addEventListener('scroll', invalidate, { passive: true });
+addEventListener('resize', () => { setupPin(); syncRail(); measure(); invalidate(); });
+addEventListener('load', () => { measure(); invalidate(); });
 if (ecg && reduce) ecg.still();
-let ticking = false;
-if (ecg && !reduce) {
-  const loop = (now) => { ecg.tick(now); frame(); requestAnimationFrame(loop); };
+const loop = (now) => {
+  if (ecg && !reduce) ecg.tick(now);
+  if (dirty) { dirty = false; frame(); }
   requestAnimationFrame(loop);
-} else {
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); } }, { passive: true });
-  frame();
-}
+};
+requestAnimationFrame(loop);
 
 // Entrances on scroll (home markup carries .rise; inner pages get it here).
 $$('main .section__head, main .section__title:not(.section__head *), main .grid > li, main .mcards > li, main .fams > li, main .faq-block, main .steps > li').forEach((el) => el.classList.add('rise'));
@@ -291,11 +299,5 @@ if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
   $$('.rise').forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 70}ms`; io.observe(el); });
 } else $$('.rise').forEach((el) => el.classList.add('is-in'));
-
-// Bench ticket: steps light up in sequence.
-$$('[data-ticket] .tstep').forEach((li, i) => {
-  const apply = () => li.classList.add(i < 3 ? 'is-done' : i === 3 ? 'is-now' : 'is-next');
-  if (reduce) apply(); else setTimeout(apply, 1500 + i * 380);
-});
 
 requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('is-loaded')));
