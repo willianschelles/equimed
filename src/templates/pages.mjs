@@ -143,7 +143,7 @@ const serviceCard = (s, { level = 2, index = 1 } = {}) => `
     <span class="index__num">0${index}</span>
     <div><h${level} class="index__title">${esc(s.name)}</h${level}><p class="index__text">${esc(s.summary)}</p></div>
     <p class="index__meta">${SERVICE_META[s.slug].map((m) => `<span>${esc(m)}</span>`).join('')}</p>
-    <span class="index__arrow">${icon('arrow', 20)}</span>
+    <span class="index__arrow">Ver serviço ${icon('arrow', 18)}</span>
   </a>
 </li>`;
 
@@ -189,15 +189,15 @@ export function home(ctx) {
       <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
         <span class="bento__media">${photo(ctx, 'drill-powerpro', 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
         <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
-        <span class="bento__label"><b>Fig. 01</b> Perfuradores e serras · Stryker System 5–8, ConMed Hall</span>
+        <span class="bento__label">Perfuradores e serras · Stryker System 5–8, ConMed Hall</span>
       </a>
       <a class="bento__tile" href="/manutencao/cameras-de-video/">
         <span class="bento__media">${photo(ctx, 'storz-or-towers', 'Sala cirúrgica com torres de vídeo e monitores Karl Storz', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
-        <span class="bento__label"><b>Fig. 02</b> Torres de vídeo</span>
+        <span class="bento__label">Torres de vídeo</span>
       </a>
       <a class="bento__tile" href="/manutencao/artrobombas/">
         <span class="bento__media">${photo(ctx, 'arthroscopy-or', 'Equipe cirúrgica em artroscopia de joelho com monitor', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
-        <span class="bento__label"><b>Fig. 03</b> Artroscopia</span>
+        <span class="bento__label">Artroscopia</span>
       </a>
     </div>
   </div>
@@ -412,7 +412,7 @@ export function software(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e preciso de uma solução de software.\n\nEquipamento: \nMarca/modelo: \nSituação: (atualização / desbloqueio / desenvolvimento)\n`;
   const charger = products.find((p) => p.slug === 'carregador-de-bateria-inteligente');
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvolvimento', ctx, photoName: s.photo, photoAlt: 'Óptica de laparoscopia Karl Storz' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvolvimento', ctx, photoName: s.photo, photoAlt: 'Técnico reparando uma placa eletrônica na bancada' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
