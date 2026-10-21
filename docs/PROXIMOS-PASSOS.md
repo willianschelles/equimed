@@ -12,6 +12,9 @@ Mostrar o preview e colher respostas para os itens de `docs/PROPOSTA.md`, seçã
 - [ ] Garantia do serviço (hoje "com garantia", sem prazo) e se a avaliação técnica é cobrada.
 - [ ] Horário (seg–sex 8h–18h foi assumido) e Instagram (se existir).
 - [ ] Ressonância, raio-x e mamografia: continuam atendidos? (hoje removidos)
+- [ ] Fotos do pai (perfuradores de manutenção, Stryker System 7): substituir as placas provisórias em
+      `src/assets/img/photos/perfurador-stryker*.webp`, `conjunto-stryker-carregador*.webp`, `conjunto-stryker-5*.webp`
+      (hero e cabeçalhos de Manutenção, Locação e Venda). Recorte 16:9, 1600/960/480 px.
 - [ ] Fotos reais: 7 linhas sem foto (System 7, System 8, baterias 7/8, Hall PowerPro/MPower, Linvatec Advantage,
       IMAGE1 S, Stryker Core) e, se possível, fotos novas dos seminovos em fundo branco e da bancada.
 - [ ] Preencher valores e prazos na tabela da seção 5 da proposta antes de enviar ao pai.

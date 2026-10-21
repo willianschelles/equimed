@@ -187,9 +187,9 @@ export function home(ctx) {
     </div>
     <div class="hero__media bento">
       <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
-        <span class="bento__media">${photo(ctx, 'drill-powerpro', 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
+        <span class="bento__media">${photo(ctx, 'perfurador-stryker', 'Perfurador ortopédico Stryker System com bateria', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
         <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
-        <span class="bento__label">Perfuradores e serras · Stryker System 5–8, ConMed Hall</span>
+        <span class="bento__label">Perfurador Stryker · atendemos System 5, 6, 7 e 8</span>
       </a>
       <a class="bento__tile" href="/manutencao/cameras-de-video/">
         <span class="bento__media">${photo(ctx, 'laparoscopy-team', 'Equipe cirúrgica em videolaparoscopia com monitor HD e torre de vídeo', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
@@ -276,7 +276,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador e serra Stryker System 6 sobre o carregador inteligente EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -359,7 +359,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Sala cirúrgica com torres de vídeo e monitores' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System com bateria' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -386,7 +386,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Centro cirúrgico equipado para videolaparoscopia' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Conjunto de perfuradores e serra Stryker System 5' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
