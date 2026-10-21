@@ -20,7 +20,7 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
 const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
 
 /* ---------------- Shared blocks ---------------- */
-const sectionHead = (index, title, lead) => `<div class="section__head"><span class="section__index">${index}</span><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>`;
+const sectionHead = (index, title, lead) => `<div class="section__head${index ? '' : ' section__head--plain'}">${index ? `<span class="section__index">${index}</span>` : ''}<h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>`;
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
@@ -72,6 +72,20 @@ const faqJsonLd = (items) =>
     '@type': 'FAQPage',
     mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   };
+
+const brandHead = (ctx, slug, name) => {
+  const b = slug ? ctx.brands.find((x) => x.slug === slug) : null;
+  const logo = b?.logo ? img(ctx, `/assets/img/brands/${b.logo}.webp`, '') : `<span class="mcard__word">${esc(name)}</span>`;
+  return slug ? `<a class="mcard__head" href="${brandUrl({ slug })}" aria-label="${esc(name)}">${logo}</a>` : `<span class="mcard__head">${logo}</span>`;
+};
+/** items: [{ ctx, slug, name, title, models: [] }] */
+const modelCards = (ctx, items) => `<ul class="mcards">${items.map((it) => `<li class="mcard">
+  ${it.head ?? brandHead(ctx, it.slug, it.name)}
+  <div class="mcard__body">
+    <h3 class="mcard__title">${esc(it.title ?? it.name)}</h3>
+    <ul class="mcard__chips">${it.models.map((m) => `<li>${esc(m)}</li>`).join('')}</ul>
+  </div>
+</li>`).join('')}</ul>`;
 
 const checklist = (items) => `<ul class="checklist">${items.map((i) => `<li>${icon('check', 18)} <span>${esc(i)}</span></li>`).join('')}</ul>`;
 
@@ -356,9 +370,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
     <h2>O que fazemos</h2>
     ${checklist(m.whatWeDo)}
     <h2>Marcas e modelos atendidos</h2>
-    <dl class="models">
-      ${m.brands.map((b) => `<div><dt>${b.slug ? `<a href="${brandUrl({ slug: b.slug })}">${esc(b.brand)}</a>` : esc(b.brand)}</dt><dd>${esc(b.models.join(' · '))}</dd></div>`).join('\n      ')}
-    </dl>
+    ${modelCards(ctx, m.brands.map((b) => ({ slug: b.slug, name: b.brand, models: b.models })))}
     <p class="small">A lista não é exaustiva. Se o seu modelo não está aqui, pergunte pelo WhatsApp.</p>
     ${independence(site)}
     ${f.products.length ? `<p><a class="button button--ghost" href="${familyUrl(f)}">Ver ${f.shortName.toLowerCase()} para venda e locação ${icon('arrow', 16)}</a></p>` : ''}
@@ -503,7 +515,7 @@ export function family(ctx, f) {
 ${pageHeader(f.name, f.lead, { ctx, photoName: f.photo, photos: f.photos, photoAlt: f.name, eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
 ${grid(available, 'Disponíveis para venda ou locação')}
 ${grid(serviced, 'Atendidos em manutenção')}
-${f.maintenance ? `<section class="section section--tint"><div class="container prose"><h2>Marcas e modelos atendidos em manutenção</h2><dl class="models">${f.maintenance.brands.map((b) => `<div><dt>${b.slug ? `<a href="${brandUrl({ slug: b.slug })}">${esc(b.brand)}</a>` : esc(b.brand)}</dt><dd>${esc(b.models.join(' · '))}</dd></div>`).join('')}</dl><p><a class="button button--ghost" href="${maintenanceUrl(f)}">Defeitos comuns e o que fazemos ${icon('arrow', 16)}</a></p></div></section>` : ''}
+${f.maintenance ? `<section class="section section--tint"><div class="container">${sectionHead(null, 'Marcas e modelos atendidos em manutenção')}${modelCards(ctx, f.maintenance.brands.map((b) => ({ slug: b.slug, name: b.brand, models: b.models })))}<p><a class="button button--ghost" href="${maintenanceUrl(f)}">Defeitos comuns e o que fazemos ${icon('arrow', 16)}</a></p></div></section>` : ''}
 ${ctaBar(site, { title: `Não encontrou o modelo? Consulte-nos sobre ${f.shortName.toLowerCase()}.`, message, place: `familia-${f.slug}` })}`;
   const jsonLd = [{ '@type': 'ItemList', name: f.name, itemListElement: f.products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: site.url + productUrl(p), name: p.name })) }];
   return {
@@ -620,7 +632,7 @@ ${pageHeader(b.focus ? `Assistência técnica em equipamentos ${b.name}` : `Equi
     ${(b.paragraphs ?? [`Atendemos equipamentos ${b.name} em manutenção, conforme a família do equipamento. Envie o modelo e o defeito pelo WhatsApp para a avaliação técnica.`]).map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
     ${independence(site)}
     ${fams.length ? `<h2>Famílias atendidas</h2><ul class="pills">${fams.map((f) => `<li><a href="${f.maintenance ? maintenanceUrl(f) : familyUrl(f)}">${esc(f.shortName)}</a></li>`).join('')}</ul>` : ''}
-    ${fams.filter((f) => f.maintenance).map((f) => { const m = f.maintenance.brands.find((x) => x.slug === b.slug || (b.slug === 'conmed' && x.slug === 'linvatec') || (b.slug === 'nacionais-e-chineses' && x.slug === null)); return m ? `<h3>${esc(f.shortName)}</h3><p>${esc(m.models.join(' · '))}</p>` : ''; }).join('')}
+    ${(() => { const rows = fams.filter((f) => f.maintenance).map((f) => { const m = f.maintenance.brands.find((x) => x.slug === b.slug || (b.slug === 'conmed' && x.slug === 'linvatec') || (b.slug === 'nacionais-e-chineses' && x.slug === null)); return m ? { head: `<a class="mcard__head mcard__head--icon" href="${maintenanceUrl(f)}" aria-label="${esc(f.shortName)}">${icon(f.icon, 26)}</a>`, name: f.shortName, models: m.models } : null; }).filter(Boolean); return rows.length ? `<h2>Modelos atendidos</h2>${modelCards(ctx, rows)}` : ''; })()}
   </div>
   ${aside(site, { message, place: `marca-${b.slug}` })}
 </section>
