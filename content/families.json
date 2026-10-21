@@ -166,7 +166,7 @@
       ]
     },
     "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha.",
-    "photo": "bench-electronics-open",
+    "photo": "bench-hands",
     "cover": "carregador-de-bateria-inteligente"
   },
   {
@@ -350,7 +350,7 @@
       ]
     },
     "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED.",
-    "photo": "bench-electronics-open",
+    "photo": "bench-multimeter",
     "cover": "stryker-fonte-de-luz-l9000-led"
   },
   {
@@ -513,7 +513,7 @@
       ]
     },
     "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão.",
-    "photo": "bench-safety-test",
+    "photo": "bench-multimeter",
     "cover": "stryker-insuflador-core-40-lpm"
   },
   {
@@ -589,7 +589,7 @@
       "faq": []
     },
     "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração.",
-    "photo": "bench-safety-test",
+    "photo": "bench-hands",
     "cover": "stryker-bomba-arthropump"
   },
   {
@@ -669,7 +669,7 @@
       "faq": []
     },
     "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz.",
-    "photo": "bench-safety-test",
+    "photo": "bench-hands",
     "cover": null
   },
   {

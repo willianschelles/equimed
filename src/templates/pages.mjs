@@ -245,16 +245,16 @@ export function home(ctx) {
         <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado', 'Perfurador Stryker System 7 desmontado na bancada', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">01 — MANUTENÇÃO</span><h3 class="svc__title">Avaliação técnica antes de qualquer reparo</h3><p class="svc__text">${esc(services.manutencao.summary)}</p><span class="svc__more">Ver manutenção →</span></div>
       </a>
-      <a class="svc__tile svc__tile--photo" href="/locacao/">
-        <figure class="svc__media">${photo(ctx, 'bench-safety-test', 'Técnica testando equipamento com analisador de segurança elétrica antes da entrega', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Equipamento testado, no dia da cirurgia</h3><p class="svc__text">Por procedimento, período ou reserva durante o reparo.</p></div>
+      <a class="svc__tile svc__tile--card" href="/locacao/">
+        <figure class="svc__media">${photo(ctx, 'seminovo-stryker-6-conjunto', 'Conjunto de perfurador e serra Stryker com carregador, pronto para locação', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Conjunto revisado no dia da cirurgia</h3></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/venda/">
         <figure class="svc__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">03 — VENDA</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
       </a>
       <a class="svc__tile svc__tile--band" href="/software/">
-        <figure class="svc__media">${photo(ctx, 'bench-electronics-open', 'Técnico trocando placa eletrônica de um equipamento médico', { sizes: '100vw' })}</figure>
+        <figure class="svc__media">${photo(ctx, 'bench-hands', 'Técnico inspecionando um equipamento médico na bancada', { sizes: '100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">04 — SOFTWARE</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
       </a>
     </div>
