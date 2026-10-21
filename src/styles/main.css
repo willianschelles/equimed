@@ -522,11 +522,10 @@
   .hx__ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
   .hx__note { margin: 0; font-size: .9375rem; color: var(--color-on-dark-3); }
   .hx__bench { position: relative; }
-  .hx__photo { margin: 0; aspect-ratio: 1 / 1; border-radius: var(--radius-panel); overflow: hidden; background: var(--color-navy-2); box-shadow: 0 40px 80px -40px rgba(0,0,0,.8); }
+  .hx__photo { margin: 0; aspect-ratio: 4 / 3; border-radius: var(--radius-panel); overflow: hidden; background: var(--color-navy-2); box-shadow: 0 40px 80px -40px rgba(0,0,0,.8); }
   .js .hx__photo { clip-path: inset(100% 0 0 0 round var(--radius-panel)); transition: clip-path 1.3s var(--ease-out-soft) .35s; }
   .is-loaded .hx__photo { clip-path: inset(0 0 0 0 round var(--radius-panel)); }
-  .hx__photo img { position: relative; top: -12.5%; width: 100%; height: 125%; object-fit: cover; object-position: 30% 50%; }
-  @media (width < 64rem) { .hx__photo { aspect-ratio: 4 / 3; } }
+  .hx__photo img { position: relative; top: -6%; width: 100%; height: 112%; object-fit: cover; object-position: 36% 60%; filter: brightness(1.08) contrast(1.04); }
   .ticket { position: absolute; left: -2.5rem; bottom: 2rem; width: min(22rem, 92%); padding: 1.25rem 1.35rem 1.1rem; background: rgba(255,255,255,.97); color: var(--color-ink); border-radius: 14px; box-shadow: 0 30px 60px -24px rgba(0,0,0,.6); }
   @media (width < 64rem) { .ticket { position: relative; left: auto; bottom: auto; width: auto; max-width: 26rem; margin: -3.5rem .75rem 0; } }
   .ticket__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: .85rem; border-bottom: 1px solid var(--color-line); }

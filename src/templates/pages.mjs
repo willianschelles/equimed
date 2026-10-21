@@ -236,7 +236,7 @@ export function home(ctx) {
       <p class="hx__note fx-in" style="--d:1s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo" data-speed="0.12">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
+      <figure class="hx__photo" data-speed="0.06">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
