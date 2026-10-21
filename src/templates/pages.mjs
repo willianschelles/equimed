@@ -213,7 +213,7 @@ export function home(ctx) {
   const fams = families.filter((f) => f.cover).slice(0, 7);
   const body = `
 <section class="hero">
-  <figure class="hero__photo">${photo(ctx, 'laparoscopy-team', '', { lazy: false, sizes: '100vw' })}</figure>
+  <figure class="hero__photo">${photo(ctx, 'bench-multimeter', '', { lazy: false, sizes: '100vw' })}</figure>
   <div class="container hero__copy">
     <p class="eyebrow">${esc(h.eyebrow)}</p>
     <h1>Equipamento cirúrgico <strong>pronto para a próxima cirurgia.</strong></h1>
@@ -246,15 +246,15 @@ export function home(ctx) {
         <div class="svc__body"><span class="svc__label">01 — MANUTENÇÃO</span><h3 class="svc__title">Avaliação técnica antes de qualquer reparo</h3><p class="svc__text">${esc(services.manutencao.summary)}</p><span class="svc__more">Ver manutenção →</span></div>
       </a>
       <a class="svc__tile svc__tile--photo" href="/locacao/">
-        <figure class="svc__media">${photo(ctx, 'arthroscopy-or', 'Equipe em artroscopia de joelho', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Equipamento no dia da cirurgia</h3><p class="svc__text">Por procedimento, período ou reserva durante o reparo.</p></div>
+        <figure class="svc__media">${photo(ctx, 'bench-safety-test', 'Técnica testando equipamento com analisador de segurança elétrica antes da entrega', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Equipamento testado, no dia da cirurgia</h3><p class="svc__text">Por procedimento, período ou reserva durante o reparo.</p></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/venda/">
         <figure class="svc__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">03 — VENDA</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
       </a>
       <a class="svc__tile svc__tile--band" href="/software/">
-        <figure class="svc__media">${photo(ctx, 'electronics-bench', 'Técnico reparando placa eletrônica', { sizes: '100vw' })}</figure>
+        <figure class="svc__media">${photo(ctx, 'bench-electronics-open', 'Técnico trocando placa eletrônica de um equipamento médico', { sizes: '100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">04 — SOFTWARE</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
       </a>
     </div>

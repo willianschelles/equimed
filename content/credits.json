@@ -1,59 +1,11 @@
 [
  {
-  "file": "ortho-surgery",
-  "title": "Healing the wounds of freedom 160610-F-HX936-049.jpg",
-  "author": "Tech. Sgt. Tyrona Lawson",
-  "license": "Public domain",
-  "licenseUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:Healing_the_wounds_of_freedom_160610-F-HX936-049.jpg"
- },
- {
   "file": "storz-optic",
   "title": "Karl Storz Laparaskopie Optik (13564).jpg",
   "author": "Ibrahim Husain Meraj",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Karl_Storz_Laparaskopie_Optik_(13564).jpg"
- },
- {
-  "file": "arthroscopy-or",
-  "title": "Kniegelenksarthroskopie.jpg",
-  "author": "Ligamentaxis",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Kniegelenksarthroskopie.jpg"
- },
- {
-  "file": "laparoscopy-or",
-  "title": "Laparoscopic stomach surgery.jpg",
-  "author": "Samuel Bendet, US Air Force",
-  "license": "Public domain",
-  "licenseUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:Laparoscopic_stomach_surgery.jpg"
- },
- {
-  "file": "drill-powerpro",
-  "title": "Pneumatic surgical drill.jpg",
-  "author": "Phalinn Ooi from Kuala Lumpur, Malaysia",
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Pneumatic_surgical_drill.jpg"
- },
- {
-  "file": "operating-theatre",
-  "title": "Wings Laparoscopic operating theatre.jpg",
-  "author": "Dr.jayesh amin",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Wings_Laparoscopic_operating_theatre.jpg"
- },
- {
-  "file": "storz-or-towers",
-  "title": "Комплекс телемедицины от компании KARL STORZ.jpg",
-  "author": "Mitroxa",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%8B_%D0%BE%D1%82_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8_KARL_STORZ.jpg"
  },
  {
   "file": "electronics-bench",
@@ -72,11 +24,27 @@
   "source": "https://commons.wikimedia.org/wiki/File:JH_NEURO3_038.jpg"
  },
  {
-  "file": "laparoscopy-team",
-  "title": "Laparoscopic surgery in Afghanistan 141130-N-JY715-109.jpg",
-  "author": "Lt.Cmdr. Jesse Ehrenfeld",
+  "file": "bench-safety-test",
+  "title": "52nd MDG maintains equipment despite COVID-19 (6163347).jpg",
+  "author": "U.S. Air Force photo by Senior Airman Melody Howley",
   "license": "Public domain",
   "licenseUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:Laparoscopic_surgery_in_Afghanistan_141130-N-JY715-109.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:52nd_MDG_maintains_equipment_despite_COVID-19_(6163347).jpg"
+ },
+ {
+  "file": "bench-electronics-open",
+  "title": "Biomedical Technicians Test Hospital Equipment (8587865).jpg",
+  "author": "U.S. Navy photo by Petty Officer 2nd Class Adriones Johnson",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "source": "https://commons.wikimedia.org/wiki/File:Biomedical_Technicians_Test_Hospital_Equipment_(8587865).jpg"
+ },
+ {
+  "file": "bench-multimeter",
+  "title": "Iquitos Medical Team provides aid to Peruvian Hospital during Resolute Sentinel 2024 (8473657).jpg",
+  "author": "U.S. Air Force photo by Senior Airman Zachary Nordheim",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "source": "https://commons.wikimedia.org/wiki/File:Iquitos_Medical_Team_provides_aid_to_Peruvian_Hospital_during_Resolute_Sentinel_2024_(8473657).jpg"
  }
 ]
