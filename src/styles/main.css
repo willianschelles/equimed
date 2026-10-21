@@ -37,7 +37,7 @@
     /* Ink: graphite and petrol blue. Signal: the orange of the original Equimed service banner, used only for tags and rules. */
     --ink: oklch(22% 0.015 250);
     --ink-2: oklch(40% 0.015 250);
-    --ink-3: oklch(55% 0.012 250);
+    --ink-3: oklch(49% 0.012 250);
     --petrol: oklch(38% 0.085 232);
     --petrol-2: oklch(48% 0.1 230);
     --petrol-tint: oklch(94% 0.02 225);
