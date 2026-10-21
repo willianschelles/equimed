@@ -208,7 +208,7 @@ const lifts = $$('[data-lift]').map((el) => ({ el, s: parseFloat(el.dataset.lift
 const flow = $('[data-flow]');
 const flowSteps = flow ? $$('.flow__step', flow) : [];
 if (flow && !reduce) flow.dataset.armed = '';
-const cta = $('.cta-hx');
+const cta = $('.cta-hx, .cta-bar');
 
 // Horizontal rail: pinned and driven by vertical scroll on large screens, native swipe elsewhere.
 const hs = $('[data-hs]'), rail = $('[data-rail]'), railBar = $('[data-rail-bar]');
@@ -285,7 +285,8 @@ if (ecg && !reduce) {
   frame();
 }
 
-// Entrances on scroll.
+// Entrances on scroll (home markup carries .rise; inner pages get it here).
+$$('main .section__head, main .section__title:not(.section__head *), main .grid > li, main .mcards > li, main .fams > li, main .faq-block, main .steps > li').forEach((el) => el.classList.add('rise'));
 if (!reduce && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
   $$('.rise').forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 70}ms`; io.observe(el); });

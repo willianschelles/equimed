@@ -35,7 +35,7 @@ const gallery = (ctx, names, alt) => names.length <= 1
     </div>
   </div>`;
 const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '' } = {}) => `
-<div class="page-hero"><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
+<div class="page-hero"><svg class="pulse pulse--hero" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/></svg><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
   <div class="page-header__copy">
     ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
     <h1>${esc(heading)}</h1>
@@ -47,6 +47,7 @@ const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
 <section class="cta-bar">
+  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
   <div class="container cta-bar__row">
     <div>
       <h2 class="cta-bar__title">${esc(title)}</h2>
