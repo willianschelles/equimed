@@ -137,13 +137,17 @@ const SERVICE_META = {
   venda: ['Seminovos revisados', '3 meses de garantia', 'Proposta para licitação'],
   software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
 };
-const serviceCard = (s, { level = 2, index = 1 } = {}) => `
-<li>
-  <a class="index__row" href="/${s.slug}/">
-    <span class="index__num">0${index}</span>
-    <div><h${level} class="index__title">${esc(s.name)}</h${level}><p class="index__text">${esc(s.summary)}</p></div>
-    <p class="index__meta">${SERVICE_META[s.slug].map((m) => `<span>${esc(m)}</span>`).join('')}</p>
-    <span class="index__arrow">Ver serviço ${icon('arrow', 18)}</span>
+const serviceCard = (s, { level = 2, index = 1, ctx } = {}) => `
+<li class="tile">
+  <a class="tile__link" href="/${s.slug}/">
+    <span class="tile__media">${photo(ctx, s.photo, '', { sizes: '(min-width: 64rem) 36rem, 100vw' })}</span>
+    <span class="tile__body">
+      <span class="tile__num">0${index}</span>
+      <h${level} class="tile__title">${esc(s.name)}</h${level}>
+      <p class="tile__text">${esc(s.summary)}</p>
+      <ul class="tile__meta">${SERVICE_META[s.slug].map((m) => `<li>${icon('check', 14)} ${esc(m)}</li>`).join('')}</ul>
+      <span class="tile__more">Ver ${esc(s.name.toLowerCase())} ${icon('arrow', 18)}</span>
+    </span>
   </a>
 </li>`;
 
@@ -211,8 +215,8 @@ export function home(ctx) {
 
 <section class="section container">
   ${sectionHead('01', h.servicesTitle)}
-  <ul class="index">
-    ${Object.values(services).map((s, i) => serviceCard(s, { level: 3, index: i + 1 })).join('\n    ')}
+  <ul class="tiles">
+    ${Object.values(services).map((s, i) => serviceCard(s, { level: 3, index: i + 1, ctx })).join('\n    ')}
   </ul>
 </section>
 
@@ -502,7 +506,12 @@ export function product(ctx, p) {
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>
     ${p.model ? `<p class="product__model">${esc(p.model)}</p>` : ''}
-    ${statusBadges(p)}
+    <ul class="status">
+      ${p.services.includes('venda') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para venda</li>` : ''}
+      ${p.services.includes('locacao') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para locação</li>` : ''}
+      ${p.services.includes('manutencao') ? `<li class="status__pill status__pill--petrol">${icon('wrench', 16)} Atendido em manutenção</li>` : ''}
+      ${p.condition === 'seminovo' ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} Seminovo revisado · 3 meses de garantia</li>` : ''}
+    </ul>
     <div class="prose">
       <p>${esc(p.summary)}</p>
       ${(p.paragraphs ?? []).map((t) => `<p>${esc(t)}</p>`).join('\n      ')}

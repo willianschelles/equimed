@@ -9,6 +9,14 @@ const header = (ctx, path) => {
   const { site } = ctx;
   return `
 <header class="site-header">
+  <div class="topbar">
+    <div class="container topbar__row">
+      <span>${icon('phone', 14)} ${site.phones.map((p) => `<a href="tel:${p.e164}" data-track="phone_click">${esc(p.display)}</a>`).join(' · ')}</span>
+      <span>${icon('mail', 14)} <a href="mailto:${site.email}" data-track="email_click">${esc(site.email)}</a></span>
+      <span class="topbar__hours">${icon('clock', 14)} ${esc(site.openingHoursDisplay)}</span>
+      <span class="topbar__tag">Assistência técnica independente multimarcas · Curitiba, PR</span>
+    </div>
+  </div>
   <div class="container site-header__row">
     <a class="brand" href="/" title="Página inicial">
       ${ctx.logoSvg}
