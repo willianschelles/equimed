@@ -261,8 +261,8 @@ export function home(ctx) {
   </div>
 </section>
 
-<section class="hs" id="equipamentos" data-hs>
-  <div class="hs__sticky">
+<section class="hs" id="equipamentos">
+  <div class="hs__inner">
     <div class="container">
       <div class="sx-head rise"><h2 class="sx-title">Equipamentos que passam pela bancada</h2><p class="sx-lead">Organizados por família. Cada uma tem modelos, defeitos comuns e testes próprios.</p></div>
     </div>
@@ -271,6 +271,7 @@ export function home(ctx) {
       <li class="fam fam--ask"><a class="fam__link" href="${wa(site, 'Olá, EquimedPR! Vim pelo site e não encontrei o meu equipamento.\n\nEquipamento: \nMarca/modelo: \n')}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="familias-ask"><span class="fam__ask">Não achou o seu? Atendemos também shavers e equipamentos nacionais e chineses.</span><span class="fam__more">Perguntar no WhatsApp ${icon('arrow', 16)}</span></a></li>
     </ul>
     <div class="container rail-ctrl">
+      <a class="rail-all" href="/equipamentos/">Ver todos os equipamentos ${icon('arrow', 16)}</a>
       <div class="rail-bar" aria-hidden="true"><span data-rail-bar></span></div>
       <button type="button" class="rail-btn rail-btn--prev" data-rail-prev aria-label="Anteriores">${icon('arrow', 18)}</button>
       <button type="button" class="rail-btn" data-rail-next aria-label="Próximos">${icon('arrow', 18)}</button>
@@ -399,6 +400,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
   </div>
   ${aside(site, { message, place: `manutencao-${f.slug}` })}
 </section>
+${f.products.length ? `<section class="section container"><h2 class="section__title">Modelos com página própria</h2><p class="lead">Fotos, especificações e o que fazemos em cada um.</p><ul class="grid grid--3">${f.products.map((p) => productCard(ctx, p)).join('')}</ul></section>` : ''}
 ${related.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a, { ctx })).join('')}</ul></div></section>` : ''}
 ${faq(m.faq)}
 ${ctaBar(site, { title: `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, message, place: `manutencao-${f.slug}-cta` })}`;

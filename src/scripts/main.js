@@ -215,20 +215,12 @@ const cta = $('.cta-hx, .cta-bar');
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (a, b, v) => { const t = clamp01((v - a) / (b - a)); return t * t * (3 - 2 * t); };
 
-// Horizontal rail: pinned and driven by vertical scroll on large screens, native swipe elsewhere.
-const hs = $('[data-hs]'), rail = $('[data-rail]'), railBar = $('[data-rail-bar]');
+// Horizontal rail: native swipe and trackpad, arrow buttons, and drag with the mouse.
+// It never captures the page's vertical scroll.
+const rail = $('[data-rail]'), railBar = $('[data-rail-bar]');
 const prev = $('[data-rail-prev]'), next = $('[data-rail-next]');
-let pinned = false, dist = 0;
-function setupPin() {
-  if (!hs) return;
-  pinned = !reduce && innerWidth >= 1024 && innerHeight >= 640;
-  hs.classList.toggle('is-pinned', pinned);
-  rail.style.transform = '';
-  if (pinned) { dist = Math.max(0, rail.scrollWidth - innerWidth); hs.style.height = `${innerHeight + dist}px`; }
-  else hs.style.height = '';
-}
 function syncRail() {
-  if (!rail || pinned) return;
+  if (!rail) return;
   const max = rail.scrollWidth - rail.clientWidth, vis = rail.clientWidth / rail.scrollWidth;
   const t = max > 0 ? rail.scrollLeft / max : 1;
   railBar.style.setProperty('--rp', (vis + (1 - vis) * t).toFixed(3));
@@ -239,6 +231,24 @@ if (rail) {
   prev.addEventListener('click', () => rail.scrollBy({ left: -step() * 2, behavior: reduce ? 'auto' : 'smooth' }));
   next.addEventListener('click', () => rail.scrollBy({ left: step() * 2, behavior: reduce ? 'auto' : 'smooth' }));
   rail.addEventListener('scroll', syncRail, { passive: true });
+  let x0 = 0, left0 = 0, moved = false;
+  rail.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    x0 = e.clientX; left0 = rail.scrollLeft; moved = false;
+    const move = (ev) => {
+      const dx = ev.clientX - x0;
+      if (!moved && Math.abs(dx) > 6) { moved = true; rail.classList.add('is-dragging'); }
+      if (moved) rail.scrollLeft = left0 - dx;
+    };
+    const up = () => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+      if (!moved) return;
+      rail.classList.remove('is-dragging');
+      const w = step(); rail.scrollTo({ left: Math.round(rail.scrollLeft / w) * w, behavior: reduce ? 'auto' : 'smooth' });
+    };
+    addEventListener('pointermove', move); addEventListener('pointerup', up);
+  });
+  rail.addEventListener('dragstart', (e) => e.preventDefault());
 }
 
 // Scroll-linked effects. All layout reads happen first, then all writes, so a frame never forces a reflow.
@@ -247,14 +257,14 @@ const measure = () => { heroH = hero ? hero.offsetHeight : 0; maxY = document.do
 function frame() {
   const y = scrollY, vh = innerHeight;
   const boxes = reduce ? [] : speeds.map(({ el }) => el.getBoundingClientRect());
-  const hsBox = pinned ? hs.getBoundingClientRect() : null, hsH = pinned ? hs.offsetHeight : 0;
   const flowBox = flow && !reduce ? flow.getBoundingClientRect() : null;
-  const ctaBox = cta && !reduce ? cta.getBoundingClientRect() : null;
+  const ctaBox = cta ? cta.getBoundingClientRect() : null;
 
   header?.classList.toggle('is-scrolled', y > 8);
   header?.classList.toggle('is-light', hero ? y > heroH - 80 : y > 120);
   progress?.style.setProperty('--p', maxY > 0 ? (y / maxY).toFixed(4) : 0);
-  if (hero) fab?.classList.toggle('is-hidden', y < heroH * 0.6);
+  // The floating WhatsApp button steps aside on the hero and once the closing CTA (which has its own) is on screen.
+  if (fab) fab.classList.toggle('is-hidden', (hero && y < heroH * 0.6) || (ctaBox ? ctaBox.top < vh * 0.85 : false));
   // Hero: copy and photo drift together, gently, and the copy fades on an eased curve.
   if (heroGrid && !reduce && y <= heroH) {
     heroGrid.style.transform = `translate3d(0, ${(y * 0.12).toFixed(1)}px, 0)`;
@@ -265,25 +275,20 @@ function frame() {
     if (!r || !inner || r.bottom < -200 || r.top > vh + 200) return;
     inner.style.transform = `translate3d(0, ${(-((r.top + r.height / 2) - vh / 2) * s).toFixed(1)}px, 0)`;
   });
-  if (hsBox) {
-    const t = clamp01(-hsBox.top / (hsH - vh));
-    rail.style.transform = `translate3d(${(-t * dist).toFixed(1)}px, 0, 0)`;
-    railBar.style.setProperty('--rp', (0.15 + 0.85 * t).toFixed(3));
-  }
   if (flowBox) {
     const t = clamp01((vh * 0.85 - flowBox.top) / (flowBox.height + vh * 0.25));
     flow.style.setProperty('--fp', t.toFixed(3));
     flowSteps.forEach((s, i) => s.classList.toggle('is-lit', t >= (i + 0.35) / flowSteps.length));
   }
-  if (ctaBox) cta.style.setProperty('--cp', clamp01((vh - ctaBox.top) / (vh * 0.9)).toFixed(3));
+  if (ctaBox && !reduce) cta.style.setProperty('--cp', clamp01((vh - ctaBox.top) / (vh * 0.9)).toFixed(3));
 }
 
 // One rAF loop drives the ECG; scroll effects recompute only when scroll or size changed.
 let dirty = true;
 const invalidate = () => { dirty = true; };
-setupPin(); syncRail(); measure();
+syncRail(); measure();
 addEventListener('scroll', invalidate, { passive: true });
-addEventListener('resize', () => { setupPin(); syncRail(); measure(); invalidate(); });
+addEventListener('resize', () => { syncRail(); measure(); invalidate(); });
 addEventListener('load', () => { measure(); invalidate(); });
 if (ecg && reduce) ecg.still();
 const loop = (now) => {
