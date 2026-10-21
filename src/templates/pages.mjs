@@ -191,9 +191,9 @@ export function home(ctx) {
     </div>
     <div class="hero__media bento">
       <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
-        <span class="bento__media">${photo(ctx, 'perfurador-stryker', 'Perfurador ortopédico Stryker System com bateria', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
+        <span class="bento__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7 com mandril e broca, atendido pela EquimedPR', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
         <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
-        <span class="bento__label">Perfurador Stryker · atendemos System 5, 6, 7 e 8</span>
+        <span class="bento__label">Perfurador Stryker System 7 · atendemos System 5, 6, 7 e 8</span>
       </a>
       <a class="bento__tile" href="/manutencao/cameras-de-video/">
         <span class="bento__media">${photo(ctx, 'laparoscopy-team', 'Equipe cirúrgica em videolaparoscopia com monitor HD e torre de vídeo', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
@@ -280,7 +280,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador e serra Stryker System 6 sobre o carregador inteligente EquimedPR' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 desmontado na bancada: carcaça e módulo do motor' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -363,7 +363,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System com bateria' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 montado' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -390,7 +390,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Conjunto de perfuradores e serra Stryker System 5' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 com peças internas na bancada' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -501,7 +501,7 @@ export function product(ctx, p) {
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `
 <article class="product container">
-  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : 'Foto ilustrativa do modelo'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
   <div class="product__body">
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>

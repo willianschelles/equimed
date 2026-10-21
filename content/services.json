@@ -73,7 +73,7 @@
         "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
       }
     ],
-    "photo": "conjunto-stryker-carregador"
+    "photo": "stryker-system7-desmontado"
   },
   "locacao": {
     "slug": "locacao",
@@ -132,7 +132,7 @@
         "a": "Para equipamentos seminovos do nosso estoque, sim. Consulte as condições."
       }
     ],
-    "photo": "perfurador-stryker"
+    "photo": "stryker-system7"
   },
   "venda": {
     "slug": "venda",
@@ -176,7 +176,7 @@
         "a": "Não. A EquimedPR trabalha com equipamentos eletromédicos. Não trabalhamos com implantes nem com instrumentais cirúrgicos."
       }
     ],
-    "photo": "conjunto-stryker-5"
+    "photo": "stryker-system7-pecas"
   },
   "software": {
     "slug": "software",
