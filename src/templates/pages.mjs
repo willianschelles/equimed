@@ -21,7 +21,7 @@ const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Lo
 
 /* ---------------- Shared blocks ---------------- */
 const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div>${index ? `<span class="section__index">${index}</span>` : ''}<h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
-const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
+const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
   : `<div class="gallery" data-gallery>
@@ -124,18 +124,16 @@ const productCard = (ctx, p, { level = 3, eager = false } = {}) => `
 const familyCard = (ctx, f, { level = 3, href } = {}) => {
   const serviced = f.products.filter((p) => !p.services.includes('venda') && !p.services.includes('locacao')).length;
   const available = f.products.length - serviced;
-  const brands = (f.maintenance?.brands ?? []).filter((b) => b.slug).map((b) => b.brand.replace('ConMed ', '')).slice(0, 4);
   const media = f.cover
     ? img(ctx, `/assets/img/products/${f.cover}.webp`, '', { sizes: '(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 90vw' })
-    : photo(ctx, f.photo, '', { sizes: '(min-width: 64rem) 22rem, 90vw' });
+    : `<span class="fam__glyph">${icon(f.icon, 56)}</span>`;
   return `
 <li class="fam">
   <a class="fam__link" href="${href ?? familyUrl(f)}">
-    <span class="fam__media${f.cover ? '' : ' fam__media--photo'}">${media}<span class="fam__icon">${icon(f.icon, 20)}</span></span>
+    <span class="fam__media">${media}</span>
     <span class="fam__body">
       <h${level} class="fam__title">${esc(f.shortName)}</h${level}>
       <span class="fam__text">${esc(f.short)}</span>
-      ${brands.length ? `<span class="fam__brands">${esc(brands.join(', '))}</span>` : ''}
       <span class="fam__tags">
         ${f.maintenance ? '<span class="fam__tag fam__tag--petrol">Manutenção</span>' : ''}
         ${available ? `<span class="fam__tag fam__tag--ok">${available} à venda / locação</span>` : ''}
@@ -242,19 +240,19 @@ export function home(ctx) {
     ${sectionHead(null, h.servicesTitle, null, '<span class="section__index">Manutenção · Locação · Venda · Software</span>')}
     <div class="svc">
       <a class="svc__tile svc__tile--feature" href="/manutencao/">
-        <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado', 'Perfurador Stryker System 7 desmontado na bancada', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
+        <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado-recorte', 'Perfurador Stryker System 7 desmontado na bancada EquimedPR', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">01 — MANUTENÇÃO</span><h3 class="svc__title">Avaliação técnica antes de qualquer reparo</h3><p class="svc__text">${esc(services.manutencao.summary)}</p><span class="svc__more">Ver manutenção →</span></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/locacao/">
-        <figure class="svc__media">${photo(ctx, 'seminovo-stryker-6-conjunto', 'Conjunto de perfurador e serra Stryker com carregador, pronto para locação', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <figure class="svc__media">${photo(ctx, 'seminovo-stryker-6-conjunto-recorte', 'Conjunto de perfurador e serra Stryker com carregador, pronto para locação', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Conjunto revisado no dia da cirurgia</h3></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/venda/">
-        <figure class="svc__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <figure class="svc__media">${photo(ctx, 'stryker-system7-recorte', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
         <div class="svc__body"><span class="svc__label">03 — VENDA</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
       </a>
       <a class="svc__tile svc__tile--band" href="/software/">
-        <figure class="svc__media">${photo(ctx, 'bench-hands', 'Técnico inspecionando um equipamento médico na bancada', { sizes: '100vw' })}</figure>
+        <figure class="svc__media">${img(ctx, '/assets/img/products/carregador-de-bateria-inteligente.webp', 'Carregador inteligente multilinha EquimedPR', { sizes: '(min-width: 64rem) 30rem, 60vw' })}</figure>
         <div class="svc__body"><span class="svc__label">04 — SOFTWARE</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
       </a>
     </div>
