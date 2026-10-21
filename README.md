@@ -40,6 +40,8 @@ Não há `npm install`: nada a instalar. O Lighthouse CI roda via `npx` apenas n
 
 ## Publicação
 
+Roteiro completo da virada Heroku → GitHub Pages (DNS no Registro.br, ordem segura, verificação): [docs/DNS-CUTOVER.md](docs/DNS-CUTOVER.md).
+
 Push na branch `main` → workflow **Deploy** → GitHub Pages. Enquanto `publishCname` for `false` em
 `content/site.json`, o site fica no endereço de preview `https://willianschelles.github.io/equimed/`.
 Para virar a chave do domínio: (1) ajuste o DNS abaixo, (2) mude `publishCname` para `true`, (3) push.
