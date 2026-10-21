@@ -2,6 +2,7 @@
 // Static site generator for equimedpr.com.br. Zero dependencies: Node >= 20.
 // Reads content/*.json, renders src/templates, writes dist/.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -57,7 +58,10 @@ for (const p of products) {
 for (const b of brands) for (const s of b.families) if (!families.find((f) => f.slug === s)) throw new Error(`Brand ${b.slug}: unknown family ${s}`);
 for (const a of articles) for (const s of a.families) if (!families.find((f) => f.slug === s)) throw new Error(`Article ${a.slug}: unknown family ${s}`);
 
-const ctx = { site, products, families, brands, services, articles, copy, credits, images, logoSvg, buildDate: new Date().toISOString().slice(0, 10) };
+// Content hashes for cache busting: GitHub Pages serves assets with max-age=600, so the URL must change on every edit.
+const hash = (p) => createHash('sha1').update(readFileSync(join(root, p))).digest('hex').slice(0, 8);
+const assetVersion = { css: hash('src/styles/main.css'), js: hash('src/scripts/main.js') };
+const ctx = { site, products, families, brands, services, articles, copy, credits, images, logoSvg, assetVersion, buildDate: new Date().toISOString().slice(0, 10) };
 
 // Page registry: path -> rendered page descriptor.
 const registry = [];

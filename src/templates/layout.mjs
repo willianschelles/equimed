@@ -207,7 +207,7 @@ ${analyticsMeta}
 <link rel="manifest" href="/assets/site.webmanifest">
 <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css?v=${ctx.assetVersion.css}">
 <script type="application/ld+json">${jsonLd}</script>
 </head>
 <body>
@@ -219,7 +219,7 @@ ${page.body}
 </main>
 ${footer(ctx)}
 ${consent(site)}
-<script src="/assets/js/main.js" type="module"></script>
+<script src="/assets/js/main.js?v=${ctx.assetVersion.js}" type="module"></script>
 </body>
 </html>
 `;
