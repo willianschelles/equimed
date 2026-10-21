@@ -148,13 +148,12 @@
   .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
   /* Top bar */
-  .topbar { background: var(--petrol); color: oklch(92% 0.02 225); font-family: var(--font-mono); font-size: var(--step--2); letter-spacing: 0.02em; }
-  .topbar__row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); align-items: center; min-height: 2.1rem; }
-  .topbar__row span { display: inline-flex; align-items: center; gap: var(--space-2); }
-  .topbar a { color: white; text-decoration: none; }
-  .topbar a:hover { text-decoration: underline; color: white; }
-  .topbar__tag { margin-inline-start: auto; color: oklch(80% 0.06 70); }
-  @media (width < 64rem) { .topbar__hours, .topbar__tag { display: none; } }
+  .topbar { background: var(--petrol); color: oklch(88% 0.025 225); font-size: 0.8125rem; }
+  .topbar__row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); min-height: 2rem; }
+  .topbar__links { display: inline-flex; gap: var(--space-5); }
+  .topbar a { display: inline-flex; align-items: center; gap: 0.35rem; color: white; text-decoration: none; font-weight: 500; }
+  .topbar a:hover { color: white; text-decoration: underline; }
+  @media (width < 48rem) { .topbar__tag { display: none; } .topbar__row { justify-content: flex-end; } }
 
   /* Header: thin, with a mono service line */
   .site-header { position: sticky; inset-block-start: 0; z-index: 50; background: color-mix(in oklch, var(--paper) 94%, transparent); backdrop-filter: blur(10px); border-block-end: 1px solid var(--rule); }

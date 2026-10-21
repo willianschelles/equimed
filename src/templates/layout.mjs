@@ -11,10 +11,8 @@ const header = (ctx, path) => {
 <header class="site-header">
   <div class="topbar">
     <div class="container topbar__row">
-      <span>${icon('phone', 14)} ${site.phones.map((p) => `<a href="tel:${p.e164}" data-track="phone_click">${esc(p.display)}</a>`).join(' · ')}</span>
-      <span>${icon('mail', 14)} <a href="mailto:${site.email}" data-track="email_click">${esc(site.email)}</a></span>
-      <span class="topbar__hours">${icon('clock', 14)} ${esc(site.openingHoursDisplay)}</span>
       <span class="topbar__tag">Assistência técnica independente multimarcas · Curitiba, PR</span>
+      <span class="topbar__links"><a href="tel:${site.phones[1].e164}" data-track="phone_click">${icon('phone', 13)} ${esc(site.phones[1].display)}</a><a href="/contato/">Contato</a></span>
     </div>
   </div>
   <div class="container site-header__row">
@@ -33,7 +31,6 @@ const header = (ctx, path) => {
         </ul>
         <div class="site-nav__actions">
           <a class="button button--whatsapp" href="${whatsappUrl(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="header">${icon('whatsapp', 20)} <span>Orçamento</span></a>
-          <a class="site-nav__contact" href="/contato/">Contato</a>
         </div>
       </div>
     </nav>

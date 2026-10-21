@@ -204,7 +204,6 @@ export function home(ctx) {
     <div class="hero__media bento">
       <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
         <span class="bento__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7 com mandril e broca, atendido pela EquimedPR', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
-        <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
         <span class="bento__label">Perfurador Stryker System 7 · atendemos System 5, 6, 7 e 8</span>
       </a>
       <a class="bento__tile" href="/manutencao/cameras-de-video/">
