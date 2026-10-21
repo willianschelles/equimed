@@ -7,3 +7,5 @@ findings.json
 seo-report.md
 
 incoming/
+tools/bin/
+.cache/

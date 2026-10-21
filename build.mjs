@@ -3,6 +3,8 @@
 // Reads content/*.json, renders src/templates, writes dist/.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -58,9 +60,19 @@ for (const p of products) {
 for (const b of brands) for (const s of b.families) if (!families.find((f) => f.slug === s)) throw new Error(`Brand ${b.slug}: unknown family ${s}`);
 for (const a of articles) for (const s of a.families) if (!families.find((f) => f.slug === s)) throw new Error(`Article ${a.slug}: unknown family ${s}`);
 
+// CSS: Tailwind v4 standalone CLI (tools/setup-tailwind.sh). It scans src/templates for utility classes.
+const tailwind = process.env.TAILWIND_BIN ?? join(root, 'tools/bin/tailwindcss');
+if (!existsSync(tailwind)) {
+  console.error('Tailwind CLI não encontrado. Rode: tools/setup-tailwind.sh (ou npm run setup).');
+  process.exit(1);
+}
+const cssOut = join(root, '.cache/main.css');
+mkdirSync(dirname(cssOut), { recursive: true });
+execFileSync(tailwind, ['-i', join(root, 'src/styles/main.css'), '-o', cssOut, '--minify'], { stdio: ['ignore', 'ignore', 'inherit'] });
+
 // Content hashes for cache busting: GitHub Pages serves assets with max-age=600, so the URL must change on every edit.
-const hash = (p) => createHash('sha1').update(readFileSync(join(root, p))).digest('hex').slice(0, 8);
-const assetVersion = { css: hash('src/styles/main.css'), js: hash('src/scripts/main.js') };
+const hash = (p) => createHash('sha1').update(readFileSync(p)).digest('hex').slice(0, 8);
+const assetVersion = { css: hash(cssOut), js: hash(join(root, 'src/scripts/main.js')) };
 const ctx = { site, products, families, brands, services, articles, copy, credits, images, logoSvg, assetVersion, buildDate: new Date().toISOString().slice(0, 10) };
 
 // Page registry: path -> rendered page descriptor.
@@ -147,7 +159,8 @@ for (const { path, page } of registry) {
 
 cpSync(join(root, 'src/assets'), join(out, 'assets'), { recursive: true });
 writeFileSync(join(out, 'assets/site.webmanifest'), withBase(readFileSync(join(root, 'src/assets/site.webmanifest'), 'utf8')).replace(/"start_url": "\/"/, `"start_url": "${basePath || '/'}"`));
-cpSync(join(root, 'src/styles'), join(out, 'assets/css'), { recursive: true });
+mkdirSync(join(out, 'assets/css'), { recursive: true });
+cpSync(cssOut, join(out, 'assets/css/main.css'));
 cpSync(join(root, 'src/scripts'), join(out, 'assets/js'), { recursive: true });
 
 const urls = registry.filter((r) => r.sitemap);

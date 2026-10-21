@@ -4,8 +4,11 @@
   "private": true,
   "description": "Site institucional da Equimed Equipamentos Médicos. Estático, sem dependências.",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "setup": "tools/setup-tailwind.sh",
     "build": "node build.mjs",
     "serve": "node tools/serve.mjs",
     "dev": "npm run build && npm run serve",

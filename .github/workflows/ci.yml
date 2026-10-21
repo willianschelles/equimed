@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install Tailwind CSS CLI (standalone, pinned)
+        run: tools/setup-tailwind.sh
       - run: npm run build
       - name: SEO audit (build)
         run: node tools/seo-audit.mjs --dir dist --strict --out seo-report.md

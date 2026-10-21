@@ -8,13 +8,7 @@ const navLink = (item, path) => {
 const header = (ctx, path) => {
   const { site } = ctx;
   return `
-<header class="site-header">
-  <div class="topbar">
-    <div class="container topbar__row">
-      <span class="topbar__tag">Assistência técnica independente multimarcas · Curitiba, PR</span>
-      <span class="topbar__links"><a href="tel:${site.phones[1].e164}" data-track="phone_click">${icon('phone', 13)} ${esc(site.phones[1].display)}</a><a href="/contato/">Contato</a></span>
-    </div>
-  </div>
+<header class="site-header${path === '/' ? ' site-header--overlay' : ''}">
   <div class="container site-header__row">
     <a class="brand" href="/" title="Página inicial">
       ${ctx.logoSvg}
@@ -30,7 +24,8 @@ const header = (ctx, path) => {
           ${site.nav.map((i) => navLink(i, path)).join('\n          ')}
         </ul>
         <div class="site-nav__actions">
-          <a class="button button--whatsapp" href="${whatsappUrl(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="header">${icon('whatsapp', 20)} <span>Orçamento</span></a>
+          <a class="site-nav__phone" href="tel:${site.phones[1].e164}" data-track="phone_click">${esc(site.phones[1].display)}</a>
+          <a class="button button--light" href="${whatsappUrl(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="header">${icon('whatsapp', 18)} <span>Orçamento</span></a>
         </div>
       </div>
     </nav>
@@ -109,12 +104,12 @@ const consent = (site) =>
 
 const breadcrumbs = (items) =>
   items?.length
-    ? `<nav class="breadcrumbs container" aria-label="Você está em">
+    ? `<div class="crumbbar"><nav class="breadcrumbs container" aria-label="Você está em">
   <ol>
     <li><a href="/">Início</a></li>
     ${items.map((b, i) => (i === items.length - 1 ? `<li aria-current="page">${esc(b.name)}</li>` : `<li><a href="${b.href}">${esc(b.name)}</a></li>`)).join('\n    ')}
   </ol>
-</nav>`
+</nav></div>`
     : '';
 
 const breadcrumbJsonLd = (site, items) => ({
@@ -184,7 +179,7 @@ export function layout(ctx, page) {
 ${page.noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index,follow,max-image-preview:large">'}
 ${page.redirect ? `<meta http-equiv="refresh" content="0; url=${page.redirect}">` : ''}
 <meta name="google-site-verification" content="${site.googleSiteVerification}">
-<meta name="theme-color" content="#0f3d5c">
+<meta name="theme-color" content="#0A121A">
 <meta name="color-scheme" content="light">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="${page.ogType ?? 'website'}">

@@ -9,14 +9,17 @@ HTML e CSS puros, sem frameworks nem dependências de runtime. Substitui o app D
 - Proposta de escopo, etapas e itens a validar (resposta às diretrizes de out/2026): [docs/PROPOSTA.md](docs/PROPOSTA.md)
 - Checklist do que falta (validação, virada de DNS, contas Google/Meta): [docs/PROXIMOS-PASSOS.md](docs/PROXIMOS-PASSOS.md)
 
-## Linguagem visual (v3, out/2026)
+## Linguagem visual (v4, out/2026)
 
-Pesquisa de design em sites do setor (MS Medical, Multmed, Multy Surgical, Avante, Soma, Agiliti, Integrity)
-mostrou que o que é nativo do mercado é a **ficha técnica**, não a landing page: marca sobre modelo, tags de
-condição como vocabulário fechado, fluxo numerado de recebimento → laudo → reparo → testes, tabelas de
-compatibilidade e números de garantia. Daí: IBM Plex Sans + Plex Mono (etiquetas, referências, specs),
-réguas finas em vez de cards sombreados, seções numeradas, listas-índice e grades tipo datasheet, fotos em
-placas com legenda "Fig. 01". Modo claro fixo. Tudo em `src/styles/main.css`.
+Direção "D" escolhida no canvas de design (https://claude.ai/artifact/VfobQgVQyrFSoBJKpTHKgD): foto em tela cheia e
+tipografia editorial (IBM Plex Sans + Mono), com blocos escuros trabalhados (navy #0A121A, petróleo #12324A),
+cards arredondados e destaque laranja. Seções alternam claro e escuro. Referências: Intuitive, CMR Surgical,
+Butterfly, ConMed.
+
+CSS: **Tailwind CSS v4** via CLI standalone (binário, sem npm). `tools/setup-tailwind.sh` baixa a versão fixada
+para `tools/bin/` (ignorado pelo git); o build gera `dist/assets/css/main.css` minificado. Tokens ficam em
+`@theme` e os componentes em `@layer components` de `src/styles/main.css`; utilitários podem ser usados direto
+nos templates.
 
 ## Como funciona
 
@@ -37,7 +40,7 @@ npm run check        # build + auditoria SEO do build (falha se houver erro)
 npm run check:seo:live   # auditoria do site no ar + PageSpeed Insights
 ```
 
-Não há `npm install`: nada a instalar. O Lighthouse CI roda via `npx` apenas no CI.
+Não há `npm install`. Antes do primeiro build, rode `npm run setup` (baixa o Tailwind standalone). O Lighthouse CI roda via `npx` apenas no CI.
 
 ## Publicação
 

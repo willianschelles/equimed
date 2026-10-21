@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install Tailwind CSS CLI (standalone, pinned)
+        run: tools/setup-tailwind.sh
       - name: Build (project-path preview until publishCname is true)
         run: |
           export BASE_PATH=$(node -p "require('./content/site.json').publishCname ? '' : '/${{ github.event.repository.name }}'")

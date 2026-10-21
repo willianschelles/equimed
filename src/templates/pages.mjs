@@ -20,7 +20,7 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
 const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
 
 /* ---------------- Shared blocks ---------------- */
-const sectionHead = (index, title, lead) => `<div class="section__head${index ? '' : ' section__head--plain'}">${index ? `<span class="section__index">${index}</span>` : ''}<h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>`;
+const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div>${index ? `<span class="section__index">${index}</span>` : ''}<h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
@@ -35,7 +35,7 @@ const gallery = (ctx, names, alt) => names.length <= 1
     </div>
   </div>`;
 const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '' } = {}) => `
-<header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
+<div class="page-hero"><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
   <div class="page-header__copy">
     ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
     <h1>${esc(heading)}</h1>
@@ -43,7 +43,7 @@ const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos
     ${extra}
   </div>
   ${photos?.length ? gallery(ctx, photos, photoAlt) : photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
-</header>`;
+</header></div>`;
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
 <section class="cta-bar">
@@ -207,95 +207,97 @@ const stepsBlock = (title, items, index = '04') => `
 
 /* ---------------- Home ---------------- */
 export function home(ctx) {
-  const { site, copy, families, brands, services, articles, products } = ctx;
+  const { site, copy, families, brands, services, articles } = ctx;
   const h = copy.home;
-      const body = `
+  const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
+  const fams = families.filter((f) => f.cover).slice(0, 7);
+  const body = `
 <section class="hero">
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow">${esc(h.eyebrow)}</p>
-      <h1>${esc(h.headline)}</h1>
-      <p class="lead">${esc(h.lead)}</p>
-      <div class="hero__actions">
-        <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 22)} Orçamento pelo WhatsApp</a>
-        <a class="button button--primary button--lg" href="/manutencao/">Manutenção ${icon('arrow', 18)}</a>
-      </div>
-      <ul class="hero__phones">
-        ${site.phones.map((p) => `<li>${icon('phone', 16)} <a href="tel:${p.e164}" data-track="phone_click">${esc(p.display)}</a></li>`).join('')}
-        <li>${icon('pin', 16)} Curitiba, PR · atendemos todo o Brasil</li>
-      </ul>
-    </div>
-    <div class="hero__media bento">
-      <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
-        <span class="bento__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7 com mandril e broca, atendido pela EquimedPR', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
-        <span class="bento__label">Perfurador Stryker System 7 · atendemos System 5, 6, 7 e 8</span>
-      </a>
-      <a class="bento__tile" href="/manutencao/cameras-de-video/">
-        <span class="bento__media">${photo(ctx, 'laparoscopy-team', 'Equipe cirúrgica em videolaparoscopia com monitor HD e torre de vídeo', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
-        <span class="bento__label">Torres de vídeo</span>
-      </a>
-      <a class="bento__tile" href="/manutencao/artrobombas/">
-        <span class="bento__media">${photo(ctx, 'arthroscopy-or', 'Equipe cirúrgica em artroscopia de joelho com monitor', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
-        <span class="bento__label">Artroscopia</span>
-      </a>
+  <figure class="hero__photo">${photo(ctx, 'laparoscopy-team', '', { lazy: false, sizes: '100vw' })}</figure>
+  <div class="container hero__copy">
+    <p class="eyebrow">${esc(h.eyebrow)}</p>
+    <h1>Equipamento cirúrgico <strong>pronto para a próxima cirurgia.</strong></h1>
+    <p class="lead">${esc(h.lead)}</p>
+    <div class="hero__actions">
+      <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar no WhatsApp</a>
+      <a class="button button--ghost button--lg" href="/manutencao/">Conheça a bancada ${icon('arrow', 18)}</a>
     </div>
   </div>
 </section>
 
-<section class="proof">
-  <ul class="container proof__list">
-    ${h.proof.map((p) => `<li><strong>${esc(p.value)}</strong><span>${esc(p.label)}</span></li>`).join('\n    ')}
-  </ul>
-</section>
+<div class="container stats" role="list">
+  <div class="stat" role="listitem"><span class="stat__label">DESDE</span><span class="stat__value">${site.foundingYear}</span><span class="stat__text">atendendo hospitais e clínicas</span></div>
+  <div class="stat" role="listitem"><span class="stat__label">LINHAS STRYKER</span><span class="stat__value">5–8</span><span class="stat__text">System 5, 6, 7 e 8 atendidos</span></div>
+  <div class="stat" role="listitem"><span class="stat__label">GARANTIA</span><span class="stat__value">3<small> meses</small></span><span class="stat__text">em todo seminovo revisado</span></div>
+  <div class="stat" role="listitem"><span class="stat__label">ATENDIMENTO</span><span class="stat__value">BR</span><span class="stat__text">envio e retorno por transportadora</span></div>
+</div>
 
-<section class="section container">
-  ${sectionHead('01', h.servicesTitle)}
-  <ul class="tiles">
-    ${Object.values(services).map((s, i) => serviceCard(s, { level: 3, index: i + 1, ctx })).join('\n    ')}
-  </ul>
-</section>
-
-<section class="section section--tint">
-  <div class="container">
-    ${sectionHead('02', h.familiesTitle, h.familiesLead)}
-    <ul class="fams">
-      ${families.map((f) => familyCard(ctx, f)).join('\n      ')}
-    </ul>
-  </div>
-</section>
-
-<section class="section container">
-  ${sectionHead('03', h.brandsTitle, 'Atendemos também outras marcas de videocirurgia e ortopedia, conforme a família do equipamento.')}
-  <ul class="brand-grid">
-    ${brands.filter((b) => b.focus).map((b) => brandTile(ctx, b)).join('\n    ')}
-  </ul>
-  <p class="section__foot"><a class="button button--ghost" href="/marcas/">Todas as marcas atendidas ${icon('arrow', 16)}</a></p>
-  ${independence(site)}
+<section class="section container statement">
+  <span class="statement__label">QUEM SOMOS</span>
+  <p class="statement__text">Desde ${site.foundingYear} cuidamos do que mantém o centro cirúrgico funcionando. <strong>Diagnóstico em bancada, orçamento descritivo e garantia</strong> em perfuradores, serras, câmeras, fontes de luz e insufladores.</p>
 </section>
 
 <section class="section section--dark">
   <div class="container">
-    <h2 class="section__title">${esc(h.whyTitle)}</h2>
-    <ul class="why">
-      ${h.why.map((w, i) => `<li><span class="why__icon">0${i + 1}</span><h3>${esc(w.title)}</h3><p>${esc(w.text)}</p></li>`).join('\n      ')}
+    ${sectionHead(null, h.servicesTitle, null, '<span class="section__index">Manutenção · Locação · Venda · Software</span>')}
+    <div class="svc">
+      <a class="svc__tile svc__tile--feature" href="/manutencao/">
+        <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado', 'Perfurador Stryker System 7 desmontado na bancada', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">01 — MANUTENÇÃO</span><h3 class="svc__title">Avaliação técnica antes de qualquer reparo</h3><p class="svc__text">${esc(services.manutencao.summary)}</p><span class="svc__more">Ver manutenção →</span></div>
+      </a>
+      <a class="svc__tile svc__tile--photo" href="/locacao/">
+        <figure class="svc__media">${photo(ctx, 'arthroscopy-or', 'Equipe em artroscopia de joelho', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Equipamento no dia da cirurgia</h3><p class="svc__text">Por procedimento, período ou reserva durante o reparo.</p></div>
+      </a>
+      <a class="svc__tile svc__tile--card" href="/venda/">
+        <figure class="svc__media">${photo(ctx, 'stryker-system7', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">03 — VENDA</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
+      </a>
+      <a class="svc__tile svc__tile--band" href="/software/">
+        <figure class="svc__media">${photo(ctx, 'electronics-bench', 'Técnico reparando placa eletrônica', { sizes: '100vw' })}</figure>
+        <div class="svc__body"><span class="svc__label">04 — SOFTWARE</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    ${sectionHead(null, h.familiesTitle, h.familiesLead, '<a class="button button--ghost" href="/equipamentos/">Todas as famílias ' + icon('arrow', 16) + '</a>')}
+    <ul class="fams">
+      ${fams.map((f) => familyCard(ctx, f)).join('\n      ')}
+      <li class="fam--ask"><a class="fam__link" href="${wa(site, 'Olá, EquimedPR! Vim pelo site e não encontrei o meu equipamento.\n\nEquipamento: \nMarca/modelo: \n')}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="familias-ask"><span class="fam__label">NÃO ACHOU O SEU?</span><span class="fam__ask">Atendemos também shavers, cabos de fibra óptica e equipamentos nacionais e chineses.</span><span class="fam__more">Perguntar pelo WhatsApp ${icon('arrow', 16)}</span></a></li>
     </ul>
   </div>
 </section>
 
-${stepsBlock(h.stepsTitle, copy.steps)}
+<section class="section section--dark" style="padding-block: 3.5rem;">
+  <div class="container logos">
+    <span class="logos__label">MARCAS EM FOCO</span>
+    ${logoBrands.map((b) => `<a href="${brandUrl(b)}">${img(ctx, `/assets/img/brands/${b.logo}.webp`, b.name)}</a>`).join('\n    ')}
+  </div>
+</section>
 
-<section class="section section--tint">
+<section class="section section--petrol">
   <div class="container">
-    ${sectionHead('05', h.articlesTitle, 'Guias escritos pela equipe técnica para quem cuida do equipamento.')}
+    ${sectionHead(null, h.stepsTitle)}
+    <ol class="steps">
+      ${copy.steps.map((s) => `<li class="step"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join('\n      ')}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    ${sectionHead(null, h.articlesTitle, 'Guias escritos pela equipe técnica para quem cuida do equipamento.', '<a class="button button--ghost" href="/conteudo/">Todo o conteúdo ' + icon('arrow', 16) + '</a>')}
     <ul class="grid grid--3">
       ${articles.slice(0, 3).map((a) => articleCard(a)).join('\n      ')}
     </ul>
-    <p class="section__foot"><a class="button button--ghost" href="/conteudo/">Todo o conteúdo técnico ${icon('arrow', 16)}</a></p>
   </div>
 </section>
 
 ${faq(h.faq, h.faqTitle)}
-${ctaBar(site, { place: 'home-cta' })}`;
+${ctaBar(site, { title: 'Equipamento parado? Fale com a bancada.', text: '(41) 9 9889-3793 · segunda a sexta, das 8h às 18h. Envie marca, modelo e o defeito.', place: 'home-cta' })}`;
 
   return { title: h.title, description: h.description, body, jsonLd: [faqJsonLd(h.faq)].filter(Boolean) };
 }
