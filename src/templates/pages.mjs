@@ -148,15 +148,16 @@ const familyCard = (ctx, f, { level = 3, href } = {}) => {
 const brandTile = (ctx, b, { level = 3 } = {}) => `
 <li class="brand-tile${b.focus ? ' brand-tile--focus' : ''}">
   <a href="${brandUrl(b)}">
-    <span class="brand-tile__logo">${b.logo ? img(ctx, `/assets/img/brands/${b.logo}.webp`, '') : `<span class="brand-tile__word">${esc(b.name)}</span>`}</span>
+    <span class="brand-tile__logo">${b.logo ? img(ctx, `/assets/img/brands/${b.logo}.webp`, '') : `<span class="brand-tile__word${b.name.length > 14 ? ' brand-tile__word--long' : ''}">${esc(b.name)}</span>`}</span>
     <h${level} class="brand-tile__name">${esc(b.name)}</h${level}>
     <p class="brand-tile__lead">${esc(b.lead)}</p>
   </a>
 </li>`;
 
-const articleCard = (a, { level = 3 } = {}) => `
+const articleCard = (a, { level = 3, ctx } = {}) => `
 <li class="card card--article">
   <a class="card__link" href="${articleUrl(a)}">
+    ${ctx && a.cover ? `<figure class="card__cover${a.cover.includes('-recorte') || a.cover.includes('/products/') ? ' card__cover--cutout' : ''}">${img(ctx, a.cover, '', { sizes: '(min-width: 64rem) 24rem, 90vw' })}</figure>` : ''}
     <div class="card__body">
       <p class="card__meta">${esc(a.readingMinutes)} min de leitura</p>
       <h${level} class="card__title">${esc(a.title)}</h${level}>
@@ -290,7 +291,7 @@ export function home(ctx) {
   <div class="container">
     ${sectionHead(null, h.articlesTitle, 'Guias escritos pela equipe técnica para quem cuida do equipamento.', '<a class="button button--ghost" href="/conteudo/">Todo o conteúdo ' + icon('arrow', 16) + '</a>')}
     <ul class="grid grid--3">
-      ${articles.slice(0, 3).map((a) => articleCard(a)).join('\n      ')}
+      ${articles.slice(0, 3).map((a) => articleCard(a, { ctx })).join('\n      ')}
     </ul>
   </div>
 </section>
@@ -378,7 +379,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
   </div>
   ${aside(site, { message, place: `manutencao-${f.slug}` })}
 </section>
-${related.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a)).join('')}</ul></div></section>` : ''}
+${related.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a, { ctx })).join('')}</ul></div></section>` : ''}
 ${faq(m.faq)}
 ${ctaBar(site, { title: `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, message, place: `manutencao-${f.slug}-cta` })}`;
   return {
@@ -654,7 +655,7 @@ export function articles(ctx) {
 ${pageHeader(c.heading, c.lead)}
 <section class="section container">
   <ul class="grid grid--3">
-    ${articles.map((a) => articleCard(a, { level: 2 })).join('\n    ')}
+    ${articles.map((a) => articleCard(a, { level: 2, ctx })).join('\n    ')}
   </ul>
 </section>
 ${ctaBar(site)}`;
@@ -681,7 +682,7 @@ export function article(ctx, a) {
     ${aside(site, { title: 'Fale com a equipe técnica', text: 'Dúvida sobre o seu equipamento? Envie marca, modelo e o sintoma.', place: `artigo-${a.slug}` })}
   </div>
 </article>
-<section class="section section--tint"><div class="container"><h2 class="section__title">Mais conteúdo técnico</h2><ul class="grid grid--3">${others.map((x) => articleCard(x)).join('')}</ul></div></section>
+<section class="section section--tint"><div class="container"><h2 class="section__title">Mais conteúdo técnico</h2><ul class="grid grid--3">${others.map((x) => articleCard(x, { ctx })).join('')}</ul></div></section>
 ${ctaBar(site)}`;
   return {
     title: fitTitle(a.metaTitle), description: fitDescription(a.description), body, ogType: 'article',

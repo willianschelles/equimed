@@ -262,6 +262,11 @@
   .card__meta, .card__text { color: var(--color-ink-2); font-size: 0.9375rem; margin: 0; }
   .card__more { margin-block-start: auto; padding-block-start: 0.75rem; color: var(--color-petrol-link); font-weight: 600; font-size: 0.9375rem; display: inline-flex; align-items: center; gap: 0.35rem; }
   .card--article .card__body { padding: 1.6rem; }
+  .card__cover { margin: 0; aspect-ratio: 16 / 9; overflow: hidden; border-block-end: 1px solid var(--color-line); }
+  .card__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s var(--ease-out-soft); }
+  .card__cover--cutout { background: var(--plate-studio); padding: 0.75rem; }
+  .card__cover--cutout img { object-fit: contain; }
+  .card__link:hover .card__cover img { transform: scale(1.04); }
   .card--article .card__meta { font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.06em; font-weight: 600; text-transform: uppercase; color: var(--color-accent); }
   @container (width > 24rem) { .card__media { aspect-ratio: 16 / 10; } }
 
@@ -303,8 +308,9 @@
   .brand-tile a { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding-block-end: 1.25rem; background: #FFFFFF; border: 1px solid var(--color-line); border-radius: var(--radius-card); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s var(--ease-out-soft), box-shadow 0.2s var(--ease-out-soft); }
   .brand-tile a:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -26px rgba(10,18,26,0.45); color: inherit; }
   .brand-tile__logo { display: grid; place-items: center; height: 5rem; padding: 0.9rem 1.25rem; background: #FFFFFF; border-block-end: 1px solid var(--color-line); }
+  .brand-tile__word--long { font-size: 0.9375rem; line-height: 1.25; }
   .brand-tile__logo img { max-height: 100%; width: auto; max-width: 100%; object-fit: contain; }
-  .brand-tile__word { font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-petrol); text-align: center; font-size: 0.9375rem; }
+  .brand-tile__word { font-weight: 700; letter-spacing: -0.01em; color: var(--color-petrol); text-align: center; font-size: 1.375rem; line-height: 1.1; }
   .brand-tile__name { margin: 0; padding: 0.5rem 1.25rem 0; font-size: 1.0625rem; font-weight: 600; }
   .brand-tile__lead { margin: 0; padding-inline: 1.25rem; color: var(--color-ink-2); font-size: 0.9375rem; }
   .brand-grid--compact .brand-tile__logo { height: 4rem; }

@@ -6,13 +6,52 @@
     "description": "O passo a passo da avaliação técnica na EquimedPR: recebimento, inspeção em bancada, diagnóstico, orçamento detalhado e o que você recebe junto com o equipamento.",
     "date": "2026-10-20",
     "readingMinutes": 4,
-    "families": ["perfuradores-e-serras", "cameras-de-video", "fontes-de-luz"],
+    "cover": "/assets/img/photos/stryker-system7-desmontado-recorte.webp",
+    "families": [
+      "perfuradores-e-serras",
+      "cameras-de-video",
+      "fontes-de-luz"
+    ],
     "sections": [
-      { "h": "Por que a avaliação vem antes do orçamento", "p": ["Um orçamento sem avaliação é um chute. Dois perfuradores com o mesmo sintoma, perda de potência, podem ter causas diferentes: escovas gastas, rolamento travado, bateria no fim da vida ou vedação rompida que deixou vapor entrar. Cada causa tem custo e prazo próprios.", "Por isso o fluxo da EquimedPR começa pela avaliação em bancada e só depois chega ao orçamento. Você aprova sabendo o que será feito."] },
-      { "h": "O que acontece quando o equipamento chega", "list": ["Registro de entrada com fotos do estado do equipamento, acessórios e número de série.", "Teste inicial para reproduzir o defeito relatado.", "Desmontagem e inspeção visual e elétrica dos subconjuntos: motor, engrenagens, vedações, placas, cabos e conectores.", "Medições: resistência de isolamento, consumo, rotação, torque, temperatura, pressão ou intensidade luminosa, conforme a família.", "Lista de itens que já falharam e dos que estão no fim da vida útil."] },
-      { "h": "O que o orçamento detalhado contém", "p": ["O orçamento separa o diagnóstico (o que foi encontrado), a intervenção (o que será feito), as peças (o que será trocado), o prazo e o valor. Quando há mais de um caminho, por exemplo recuperar uma bateria ou substituí-la, os dois são apresentados com os números.", "Nada é executado sem a sua aprovação por escrito, por WhatsApp ou e-mail."] },
-      { "h": "O que você recebe na devolução", "list": ["Relatório de manutenção com as peças substituídas e os testes realizados.", "Teste de segurança elétrica e laudo, quando aplicável ou solicitado.", "Garantia do serviço, descrita no relatório.", "Equipamento embalado para transporte, com rastreio quando enviado por transportadora."] },
-      { "h": "Como agilizar", "p": ["Envie pelo WhatsApp marca, modelo, número de série, o defeito e, se possível, um vídeo curto do sintoma. Isso permite separar peças antes da chegada e reduz o prazo."] }
+      {
+        "h": "Por que a avaliação vem antes do orçamento",
+        "p": [
+          "Um orçamento sem avaliação é um chute. Dois perfuradores com o mesmo sintoma, perda de potência, podem ter causas diferentes: escovas gastas, rolamento travado, bateria no fim da vida ou vedação rompida que deixou vapor entrar. Cada causa tem custo e prazo próprios.",
+          "Por isso o fluxo da EquimedPR começa pela avaliação em bancada e só depois chega ao orçamento. Você aprova sabendo o que será feito."
+        ]
+      },
+      {
+        "h": "O que acontece quando o equipamento chega",
+        "list": [
+          "Registro de entrada com fotos do estado do equipamento, acessórios e número de série.",
+          "Teste inicial para reproduzir o defeito relatado.",
+          "Desmontagem e inspeção visual e elétrica dos subconjuntos: motor, engrenagens, vedações, placas, cabos e conectores.",
+          "Medições: resistência de isolamento, consumo, rotação, torque, temperatura, pressão ou intensidade luminosa, conforme a família.",
+          "Lista de itens que já falharam e dos que estão no fim da vida útil."
+        ]
+      },
+      {
+        "h": "O que o orçamento detalhado contém",
+        "p": [
+          "O orçamento separa o diagnóstico (o que foi encontrado), a intervenção (o que será feito), as peças (o que será trocado), o prazo e o valor. Quando há mais de um caminho, por exemplo recuperar uma bateria ou substituí-la, os dois são apresentados com os números.",
+          "Nada é executado sem a sua aprovação por escrito, por WhatsApp ou e-mail."
+        ]
+      },
+      {
+        "h": "O que você recebe na devolução",
+        "list": [
+          "Relatório de manutenção com as peças substituídas e os testes realizados.",
+          "Teste de segurança elétrica e laudo, quando aplicável ou solicitado.",
+          "Garantia do serviço, descrita no relatório.",
+          "Equipamento embalado para transporte, com rastreio quando enviado por transportadora."
+        ]
+      },
+      {
+        "h": "Como agilizar",
+        "p": [
+          "Envie pelo WhatsApp marca, modelo, número de série, o defeito e, se possível, um vídeo curto do sintoma. Isso permite separar peças antes da chegada e reduz o prazo."
+        ]
+      }
     ]
   },
   {
@@ -22,13 +61,53 @@
     "description": "Guia prático das linhas Stryker System 5, 6, 7 e 8 de perfuradores e serras: compatibilidade de baterias e carregadores, pontos de desgaste e o que avaliar antes de comprar seminovo.",
     "date": "2026-10-20",
     "readingMinutes": 6,
-    "families": ["perfuradores-e-serras", "baterias-e-carregadores"],
+    "cover": "/assets/img/photos/stryker-system7-recorte.webp",
+    "families": [
+      "perfuradores-e-serras",
+      "baterias-e-carregadores"
+    ],
     "sections": [
-      { "h": "As quatro linhas em uso no Brasil", "p": ["As linhas System 5, 6, 7 e 8 da Stryker são peças de mão a bateria para ortopedia e trauma: perfurador rotativo de gatilho duplo, serra sagital e serra recíproca, e, nas linhas mais recentes, serra de esterno. As quatro convivem no parque instalado brasileiro, e todas são atendidas pela EquimedPR em manutenção."] },
-      { "h": "Baterias e carregadores: o ponto de atenção", "p": ["Cada linha tem sua família de baterias e de carregadores, e a compatibilidade entre linhas não é garantida. Ao comprar um conjunto seminovo, confirme que baterias e carregador pertencem à mesma linha da peça de mão. O carregador inteligente EquimedPR cobre as séries 3, 5, 6 e 7 em uma única bancada."], "list": ["System 5 e 6: baterias e carregadores da própria linha, grande disponibilidade no mercado de seminovos.", "System 7: baterias padrão, small e asséptica, com carregador da linha.", "System 8: linha atual, com baterias e carregador próprios e eletrônica de gerenciamento mais integrada."] },
-      { "h": "Onde cada linha desgasta", "list": ["Vedações e entrada de vapor: comum em todas as linhas após anos de autoclave. Sintoma: oxidação interna, ruído e perda de potência.", "Gatilhos: o conjunto de gatilho duplo acumula ciclos e passa a falhar de forma intermitente.", "Mandris e travas de lâmina: folga e dificuldade de encaixe nos acessórios.", "Eletrônica de bateria: nas linhas 7 e 8, a comunicação entre bateria, peça de mão e carregador pode bloquear o uso mesmo com células boas. Veja nossa página de soluções de software."] },
-      { "h": "Seminovo: o que verificar antes de comprar", "list": ["Relatório de revisão com as peças trocadas e os testes de rotação, torque e temperatura.", "Teste de capacidade das baterias (não apenas se carregam, mas quanto entregam).", "Estado das vedações e do mandril, com teste de estanqueidade.", "Garantia por escrito. Na EquimedPR, seminovos têm 3 meses."] },
-      { "h": "Atendido, à venda ou em locação?", "p": ["Na EquimedPR, as quatro linhas são atendidas em manutenção. Para venda e locação, o estoque recorrente é de System 5 e System 6 seminovos revisados; System 7 e 8 dependem de disponibilidade. Consulte pelo WhatsApp."] }
+      {
+        "h": "As quatro linhas em uso no Brasil",
+        "p": [
+          "As linhas System 5, 6, 7 e 8 da Stryker são peças de mão a bateria para ortopedia e trauma: perfurador rotativo de gatilho duplo, serra sagital e serra recíproca, e, nas linhas mais recentes, serra de esterno. As quatro convivem no parque instalado brasileiro, e todas são atendidas pela EquimedPR em manutenção."
+        ]
+      },
+      {
+        "h": "Baterias e carregadores: o ponto de atenção",
+        "p": [
+          "Cada linha tem sua família de baterias e de carregadores, e a compatibilidade entre linhas não é garantida. Ao comprar um conjunto seminovo, confirme que baterias e carregador pertencem à mesma linha da peça de mão. O carregador inteligente EquimedPR cobre as séries 3, 5, 6 e 7 em uma única bancada."
+        ],
+        "list": [
+          "System 5 e 6: baterias e carregadores da própria linha, grande disponibilidade no mercado de seminovos.",
+          "System 7: baterias padrão, small e asséptica, com carregador da linha.",
+          "System 8: linha atual, com baterias e carregador próprios e eletrônica de gerenciamento mais integrada."
+        ]
+      },
+      {
+        "h": "Onde cada linha desgasta",
+        "list": [
+          "Vedações e entrada de vapor: comum em todas as linhas após anos de autoclave. Sintoma: oxidação interna, ruído e perda de potência.",
+          "Gatilhos: o conjunto de gatilho duplo acumula ciclos e passa a falhar de forma intermitente.",
+          "Mandris e travas de lâmina: folga e dificuldade de encaixe nos acessórios.",
+          "Eletrônica de bateria: nas linhas 7 e 8, a comunicação entre bateria, peça de mão e carregador pode bloquear o uso mesmo com células boas. Veja nossa página de soluções de software."
+        ]
+      },
+      {
+        "h": "Seminovo: o que verificar antes de comprar",
+        "list": [
+          "Relatório de revisão com as peças trocadas e os testes de rotação, torque e temperatura.",
+          "Teste de capacidade das baterias (não apenas se carregam, mas quanto entregam).",
+          "Estado das vedações e do mandril, com teste de estanqueidade.",
+          "Garantia por escrito. Na EquimedPR, seminovos têm 3 meses."
+        ]
+      },
+      {
+        "h": "Atendido, à venda ou em locação?",
+        "p": [
+          "Na EquimedPR, as quatro linhas são atendidas em manutenção. Para venda e locação, o estoque recorrente é de System 5 e System 6 seminovos revisados; System 7 e 8 dependem de disponibilidade. Consulte pelo WhatsApp."
+        ]
+      }
     ]
   },
   {
@@ -38,11 +117,36 @@
     "description": "Perda de potência, aquecimento, ruído, gatilho intermitente, vapor na carcaça, bateria que não dura e vibração na serra: o que cada sinal indica e o que fazer antes do próximo procedimento.",
     "date": "2026-10-20",
     "readingMinutes": 4,
-    "families": ["perfuradores-e-serras", "baterias-e-carregadores"],
+    "cover": "/assets/img/photos/seminovo-stryker-6-perfurador-recorte.webp",
+    "families": [
+      "perfuradores-e-serras",
+      "baterias-e-carregadores"
+    ],
     "sections": [
-      { "h": "Por que não esperar a falha total", "p": ["Um perfurador que falha durante a cirurgia atrasa o procedimento e, muitas vezes, transforma um reparo simples em uma troca de motor. Os sinais abaixo aparecem semanas ou meses antes da falha."] },
-      { "h": "Os sete sinais", "list": ["Perda de potência: o equipamento diminui a rotação sob carga. Causas comuns: escovas, rolamentos ou bateria.", "Aquecimento: a carcaça esquenta mais do que o normal em poucos minutos. Indica atrito interno ou motor com problema.", "Ruído novo: estalos, zumbido ou raspagem apontam para engrenagens ou rolamentos.", "Gatilho intermitente: o motor parte e para, ou a segunda velocidade não entra. Conjunto de gatilho ou contatos.", "Vapor ou umidade dentro da carcaça após autoclave: vedações comprometidas. Quanto antes, menor a oxidação interna.", "Bateria que não dura o procedimento: células no fim da vida ou eletrônica de gerenciamento bloqueando.", "Serra com vibração anormal ou lâmina que não trava: mecanismo de oscilação ou trava de lâmina desgastados."] },
-      { "h": "O que fazer", "p": ["Tire o equipamento de uso, registre o sintoma (um vídeo curto ajuda) e envie marca, modelo e número de série pelo WhatsApp. A avaliação técnica identifica a causa e o orçamento informa o custo antes de qualquer reparo. Se precisar, a EquimedPR fornece conjunto reserva em locação durante o reparo, conforme disponibilidade."] }
+      {
+        "h": "Por que não esperar a falha total",
+        "p": [
+          "Um perfurador que falha durante a cirurgia atrasa o procedimento e, muitas vezes, transforma um reparo simples em uma troca de motor. Os sinais abaixo aparecem semanas ou meses antes da falha."
+        ]
+      },
+      {
+        "h": "Os sete sinais",
+        "list": [
+          "Perda de potência: o equipamento diminui a rotação sob carga. Causas comuns: escovas, rolamentos ou bateria.",
+          "Aquecimento: a carcaça esquenta mais do que o normal em poucos minutos. Indica atrito interno ou motor com problema.",
+          "Ruído novo: estalos, zumbido ou raspagem apontam para engrenagens ou rolamentos.",
+          "Gatilho intermitente: o motor parte e para, ou a segunda velocidade não entra. Conjunto de gatilho ou contatos.",
+          "Vapor ou umidade dentro da carcaça após autoclave: vedações comprometidas. Quanto antes, menor a oxidação interna.",
+          "Bateria que não dura o procedimento: células no fim da vida ou eletrônica de gerenciamento bloqueando.",
+          "Serra com vibração anormal ou lâmina que não trava: mecanismo de oscilação ou trava de lâmina desgastados."
+        ]
+      },
+      {
+        "h": "O que fazer",
+        "p": [
+          "Tire o equipamento de uso, registre o sintoma (um vídeo curto ajuda) e envie marca, modelo e número de série pelo WhatsApp. A avaliação técnica identifica a causa e o orçamento informa o custo antes de qualquer reparo. Se precisar, a EquimedPR fornece conjunto reserva em locação durante o reparo, conforme disponibilidade."
+        ]
+      }
     ]
   },
   {
@@ -52,12 +156,43 @@
     "description": "Diferenças práticas entre assistência independente e autorizada em equipamentos médicos: garantia, peças, prazos, custo e quando cada uma faz sentido. Com transparência sobre o que a EquimedPR é e não é.",
     "date": "2026-10-20",
     "readingMinutes": 5,
+    "cover": "/assets/img/photos/bench-hands.webp",
     "families": [],
     "sections": [
-      { "h": "O que a EquimedPR é", "p": ["A EquimedPR é uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores de nenhum fabricante. As marcas citadas no site identificam os equipamentos que atendemos, e pertencem aos seus titulares."] },
-      { "h": "Quando a autorizada é o caminho", "list": ["Equipamento dentro do prazo de garantia do fabricante.", "Reparos que exigem peças ou calibrações disponíveis apenas no fabricante.", "Exigência contratual ou de licitação por assistência autorizada."] },
-      { "h": "Quando a independente faz sentido", "list": ["Equipamento fora de garantia, que é a maior parte do parque instalado.", "Linhas descontinuadas ou sem suporte do fabricante no Brasil.", "Necessidade de reparo em nível de componente, em vez de troca de módulo inteiro.", "Prazo e custo: a independente costuma ter fila menor e orçamento por item.", "Parque multimarcas, em que uma única assistência atende torres de vídeo e perfuradores de fabricantes diferentes."] },
-      { "h": "O que exigir de qualquer assistência", "list": ["Avaliação técnica e orçamento detalhado antes do reparo.", "Relatório de manutenção com peças substituídas e testes realizados.", "Teste de segurança elétrica quando aplicável.", "Garantia do serviço por escrito.", "Clareza sobre o que a empresa é: independente ou autorizada."] }
+      {
+        "h": "O que a EquimedPR é",
+        "p": [
+          "A EquimedPR é uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores de nenhum fabricante. As marcas citadas no site identificam os equipamentos que atendemos, e pertencem aos seus titulares."
+        ]
+      },
+      {
+        "h": "Quando a autorizada é o caminho",
+        "list": [
+          "Equipamento dentro do prazo de garantia do fabricante.",
+          "Reparos que exigem peças ou calibrações disponíveis apenas no fabricante.",
+          "Exigência contratual ou de licitação por assistência autorizada."
+        ]
+      },
+      {
+        "h": "Quando a independente faz sentido",
+        "list": [
+          "Equipamento fora de garantia, que é a maior parte do parque instalado.",
+          "Linhas descontinuadas ou sem suporte do fabricante no Brasil.",
+          "Necessidade de reparo em nível de componente, em vez de troca de módulo inteiro.",
+          "Prazo e custo: a independente costuma ter fila menor e orçamento por item.",
+          "Parque multimarcas, em que uma única assistência atende torres de vídeo e perfuradores de fabricantes diferentes."
+        ]
+      },
+      {
+        "h": "O que exigir de qualquer assistência",
+        "list": [
+          "Avaliação técnica e orçamento detalhado antes do reparo.",
+          "Relatório de manutenção com peças substituídas e testes realizados.",
+          "Teste de segurança elétrica quando aplicável.",
+          "Garantia do serviço por escrito.",
+          "Clareza sobre o que a empresa é: independente ou autorizada."
+        ]
+      }
     ]
   },
   {
@@ -67,11 +202,35 @@
     "description": "Por que baterias de perfuradores Stryker e ConMed perdem capacidade, como a eletrônica de gerenciamento bloqueia a carga e quando vale recuperar, trocar células ou substituir.",
     "date": "2026-10-20",
     "readingMinutes": 4,
-    "families": ["baterias-e-carregadores", "perfuradores-e-serras"],
+    "cover": "/assets/img/products/carregador-de-bateria-inteligente.webp",
+    "families": [
+      "baterias-e-carregadores",
+      "perfuradores-e-serras"
+    ],
     "sections": [
-      { "h": "Três causas, três soluções", "list": ["Células no fim da vida: a capacidade real cai abaixo do que o procedimento exige. Solução: substituição de células, com teste de capacidade antes e depois.", "Eletrônica de gerenciamento bloqueada: após descarga profunda ou erro de comunicação, a placa impede a carga mesmo com células boas. Solução: reset e atualização de firmware, quando a linha permite.", "Contatos e carcaça: oxidação, trava quebrada ou vapor interno. Solução: reparo mecânico e limpeza de contatos."] },
-      { "h": "Como medimos", "p": ["Na avaliação, a bateria passa por ciclos controlados de carga e descarga, com medição de capacidade e de resistência interna por célula. O resultado mostra se a recuperação faz sentido ou se a substituição é mais econômica. Você recebe os números no orçamento."] },
-      { "h": "Como prolongar a vida das baterias", "list": ["Não armazene baterias totalmente descarregadas.", "Use o carregador correto da linha ou um carregador com função de armazenamento, como o carregador inteligente EquimedPR.", "Faça rodízio entre as baterias do conjunto.", "Siga o procedimento de reprocessamento indicado para a linha: baterias não assépticas não vão à autoclave."] }
+      {
+        "h": "Três causas, três soluções",
+        "list": [
+          "Células no fim da vida: a capacidade real cai abaixo do que o procedimento exige. Solução: substituição de células, com teste de capacidade antes e depois.",
+          "Eletrônica de gerenciamento bloqueada: após descarga profunda ou erro de comunicação, a placa impede a carga mesmo com células boas. Solução: reset e atualização de firmware, quando a linha permite.",
+          "Contatos e carcaça: oxidação, trava quebrada ou vapor interno. Solução: reparo mecânico e limpeza de contatos."
+        ]
+      },
+      {
+        "h": "Como medimos",
+        "p": [
+          "Na avaliação, a bateria passa por ciclos controlados de carga e descarga, com medição de capacidade e de resistência interna por célula. O resultado mostra se a recuperação faz sentido ou se a substituição é mais econômica. Você recebe os números no orçamento."
+        ]
+      },
+      {
+        "h": "Como prolongar a vida das baterias",
+        "list": [
+          "Não armazene baterias totalmente descarregadas.",
+          "Use o carregador correto da linha ou um carregador com função de armazenamento, como o carregador inteligente EquimedPR.",
+          "Faça rodízio entre as baterias do conjunto.",
+          "Siga o procedimento de reprocessamento indicado para a linha: baterias não assépticas não vão à autoclave."
+        ]
+      }
     ]
   },
   {
@@ -81,12 +240,40 @@
     "description": "Comparação prática entre fontes de luz xenon e LED para videocirurgia: custo de lâmpadas, calor, ruído, vida útil e quando a conversão de xenon para LED compensa.",
     "date": "2026-10-20",
     "readingMinutes": 4,
-    "families": ["fontes-de-luz"],
+    "cover": "/assets/img/products/stryker-fonte-de-luz-l9000-led.webp",
+    "families": [
+      "fontes-de-luz"
+    ],
     "sections": [
-      { "h": "Xenon: luz intensa, custo recorrente", "p": ["A lâmpada xenon de arco curto de 300 W entrega luz branca intensa, mas tem vida útil de centenas de horas e precisa de ignitor de alta tensão e ventilação robusta. O custo recorrente das lâmpadas e o calor gerado são os pontos fracos."] },
-      { "h": "LED: sem lâmpada, mais eletrônica", "p": ["Fontes LED eliminam a troca de lâmpada, aquecem menos e são mais silenciosas. Em troca, dependem de drivers e de gestão térmica, que são os itens que falham com o tempo. Equipamentos de fabricantes nacionais e chineses em geral já são LED."] },
-      { "h": "Quando a conversão compensa", "list": ["Gabinete, torreta e painel em bom estado.", "Uso frequente, que torna o custo das lâmpadas relevante.", "Modelo compatível com o módulo LED, confirmado na avaliação técnica.", "Necessidade de reduzir calor e ruído na sala."] },
-      { "h": "Quando manter o xenon", "list": ["Uso esporádico, com lâmpada ainda dentro da vida útil.", "Procedimentos em que a equipe prefere a resposta de cor do xenon.", "Equipamento com gabinete ou eletrônica comprometidos, em que a conversão não se paga."] }
+      {
+        "h": "Xenon: luz intensa, custo recorrente",
+        "p": [
+          "A lâmpada xenon de arco curto de 300 W entrega luz branca intensa, mas tem vida útil de centenas de horas e precisa de ignitor de alta tensão e ventilação robusta. O custo recorrente das lâmpadas e o calor gerado são os pontos fracos."
+        ]
+      },
+      {
+        "h": "LED: sem lâmpada, mais eletrônica",
+        "p": [
+          "Fontes LED eliminam a troca de lâmpada, aquecem menos e são mais silenciosas. Em troca, dependem de drivers e de gestão térmica, que são os itens que falham com o tempo. Equipamentos de fabricantes nacionais e chineses em geral já são LED."
+        ]
+      },
+      {
+        "h": "Quando a conversão compensa",
+        "list": [
+          "Gabinete, torreta e painel em bom estado.",
+          "Uso frequente, que torna o custo das lâmpadas relevante.",
+          "Modelo compatível com o módulo LED, confirmado na avaliação técnica.",
+          "Necessidade de reduzir calor e ruído na sala."
+        ]
+      },
+      {
+        "h": "Quando manter o xenon",
+        "list": [
+          "Uso esporádico, com lâmpada ainda dentro da vida útil.",
+          "Procedimentos em que a equipe prefere a resposta de cor do xenon.",
+          "Equipamento com gabinete ou eletrônica comprometidos, em que a conversão não se paga."
+        ]
+      }
     ]
   }
 ]
