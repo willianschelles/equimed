@@ -1,13 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 140" role="img" aria-labelledby="t">
   <title id="t">Equimed Equipamentos Médicos</title>
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#0ea5e9"/>
-    </linearGradient>
-  </defs>
   <!-- Mark: pulse -->
-  <rect x="0" y="10" width="120" height="120" rx="28" fill="url(#g)"/>
+  <rect x="0" y="10" width="120" height="120" rx="8" fill="#1f4a63"/>
   <path d="M18 76h18l10-26 15 50 13-40 7 16h21" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- Wordmark EQUIMED, monoline, cap height 70 (y 18..88) -->
   <g fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(150 18)">

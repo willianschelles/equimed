@@ -20,6 +20,7 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
 const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
 
 /* ---------------- Shared blocks ---------------- */
+const sectionHead = (index, title, lead) => `<div class="section__head"><span class="section__index">${index}</span><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>`;
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
 const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photoAlt = '' } = {}) => `
 <header class="page-header container${photoName ? ' page-header--media' : ''}">
@@ -66,9 +67,11 @@ const independence = (site) => `<p class="notice">${icon('shield', 18)} <span>${
 
 const statusBadges = (p) => {
   const b = [];
-  if (p.condition === 'seminovo') b.push('<span class="badge badge--warm">Seminovo revisado · garantia 3 meses</span>');
+  if (p.condition === 'seminovo') b.push('<span class="badge badge--warm">Seminovo revisado · 3 meses de garantia</span>');
   if (p.condition === 'novo') b.push('<span class="badge badge--warm">Novo</span>');
-  for (const s of p.services) b.push(`<span class="badge badge--${s}">${SERVICE_LABEL[s]}</span>`);
+  const sells = p.services.includes('venda') || p.services.includes('locacao');
+  if (!sells) b.push('<span class="badge badge--manutencao">Atendido em manutenção</span>');
+  else b.push(`<span class="badge badge--venda">${p.services.filter((s) => s !== 'manutencao').map((s) => SERVICE_LABEL[s]).join(' · ')}</span>`);
   return `<p class="badges">${b.join(' ')}</p>`;
 };
 
@@ -84,6 +87,7 @@ const productCard = (ctx, p, { level = 3, eager = false } = {}) => `
   <a class="card__link" href="${productUrl(p)}">
     ${media(ctx, p, { eager })}
     <div class="card__body">
+      ${p.brand ? `<p class="card__brand">${esc(p.brand)}</p>` : ''}
       <h${level} class="card__title">${esc(p.name)}</h${level}>
       ${p.model ? `<p class="card__meta">${esc(p.model)}</p>` : ''}
       ${statusBadges(p)}
@@ -91,17 +95,20 @@ const productCard = (ctx, p, { level = 3, eager = false } = {}) => `
   </a>
 </li>`;
 
-const familyCard = (ctx, f, { level = 3, href } = {}) => `
-<li class="card card--family">
-  <a class="card__link" href="${href ?? familyUrl(f)}">
-    <span class="card__icon">${icon(f.icon, 30)}</span>
-    <div class="card__body">
-      <h${level} class="card__title">${esc(f.name)}</h${level}>
-      <p class="card__meta">${esc(f.short)}</p>
-      <span class="card__more">${f.products.length ? `${f.products.length} ${f.products.length === 1 ? 'item' : 'itens'} · ` : ''}Ver ${icon('arrow', 16)}</span>
-    </div>
+const familyCard = (ctx, f, { level = 3, href } = {}) => {
+  const serviced = f.products.filter((p) => !p.services.includes('venda') && !p.services.includes('locacao')).length;
+  const available = f.products.length - serviced;
+  return `
+<li>
+  <a class="spec__row" href="${href ?? familyUrl(f)}">
+    <span class="spec__icon">${icon(f.icon, 22)}</span>
+    <h${level} class="spec__name">${esc(f.name)}</h${level}>
+    <p class="spec__desc">${esc(f.short)}</p>
+    <p class="spec__count">${available ? `<b>${available} à venda/locação</b>` : ''}${serviced ? `<b>${serviced} ${serviced === 1 ? 'linha atendida' : 'linhas atendidas'}</b>` : ''}${!available && !serviced ? '<b>manutenção</b>' : ''}</p>
+    <span class="spec__arrow">${icon('arrow', 18)}</span>
   </a>
 </li>`;
+};
 
 const brandTile = (ctx, b, { level = 3 } = {}) => `
 <li class="brand-tile${b.focus ? ' brand-tile--focus' : ''}">
@@ -124,15 +131,19 @@ const articleCard = (a, { level = 3 } = {}) => `
   </a>
 </li>`;
 
-const serviceCard = (s, { level = 2 } = {}) => `
-<li class="card card--service">
-  <a class="card__link" href="/${s.slug}/">
-    <span class="card__icon">${icon(s.icon, 28)}</span>
-    <div class="card__body">
-      <h${level} class="card__title">${esc(s.name)}</h${level}>
-      <p class="card__text">${esc(s.summary)}</p>
-      <span class="card__more">Saiba mais ${icon('arrow', 16)}</span>
-    </div>
+const SERVICE_META = {
+  manutencao: ['Avaliação em bancada', 'Orçamento descritivo', 'Relatório e garantia'],
+  locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante reparo'],
+  venda: ['Seminovos revisados', '3 meses de garantia', 'Proposta para licitação'],
+  software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
+};
+const serviceCard = (s, { level = 2, index = 1 } = {}) => `
+<li>
+  <a class="index__row" href="/${s.slug}/">
+    <span class="index__num">0${index}</span>
+    <div><h${level} class="index__title">${esc(s.name)}</h${level}><p class="index__text">${esc(s.summary)}</p></div>
+    <p class="index__meta">${SERVICE_META[s.slug].map((m) => `<span>${esc(m)}</span>`).join('')}</p>
+    <span class="index__arrow">${icon('arrow', 20)}</span>
   </a>
 </li>`;
 
@@ -146,9 +157,9 @@ const aside = (site, { title = 'Solicite um orçamento', text = 'Envie marca, mo
   <p class="small">${icon('truck', 16)} Recebemos equipamentos de todo o Brasil por transportadora.</p>
 </aside>`;
 
-const stepsBlock = (title, items) => `
+const stepsBlock = (title, items, index = '04') => `
 <section class="section container">
-  <h2 class="section__title">${esc(title)}</h2>
+  ${sectionHead(index, title)}
   <ol class="steps">
     ${items.map((s) => `<li class="step"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join('\n    ')}
   </ol>
@@ -175,18 +186,18 @@ export function home(ctx) {
       </ul>
     </div>
     <div class="hero__media bento">
-      <a class="bento__tile bento__tile--big frame" href="/manutencao/perfuradores-e-serras/">
-        ${photo(ctx, 'drill-powerpro', 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}
+      <a class="bento__tile bento__tile--big" href="/manutencao/perfuradores-e-serras/">
+        <span class="bento__media">${photo(ctx, 'drill-powerpro', 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}</span>
         <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
-        <span class="bento__label">Perfuradores e serras: Stryker System 5 a 8, ConMed Hall</span>
+        <span class="bento__label"><b>Fig. 01</b> Perfuradores e serras · Stryker System 5–8, ConMed Hall</span>
       </a>
-      <a class="bento__tile frame" href="/manutencao/cameras-de-video/">
-        ${photo(ctx, 'storz-or-towers', 'Sala cirúrgica com torres de vídeo e monitores Karl Storz', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}
-        <span class="bento__label">Torres de vídeo</span>
+      <a class="bento__tile" href="/manutencao/cameras-de-video/">
+        <span class="bento__media">${photo(ctx, 'storz-or-towers', 'Sala cirúrgica com torres de vídeo e monitores Karl Storz', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
+        <span class="bento__label"><b>Fig. 02</b> Torres de vídeo</span>
       </a>
-      <a class="bento__tile frame" href="/manutencao/artrobombas/">
-        ${photo(ctx, 'arthroscopy-or', 'Equipe cirúrgica em artroscopia de joelho com monitor', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}
-        <span class="bento__label">Artroscopia</span>
+      <a class="bento__tile" href="/manutencao/artrobombas/">
+        <span class="bento__media">${photo(ctx, 'arthroscopy-or', 'Equipe cirúrgica em artroscopia de joelho com monitor', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
+        <span class="bento__label"><b>Fig. 03</b> Artroscopia</span>
       </a>
     </div>
   </div>
@@ -199,29 +210,23 @@ export function home(ctx) {
 </section>
 
 <section class="section container">
-  <h2 class="section__title">${esc(h.servicesTitle)}</h2>
-  <ul class="grid grid--4">
-    ${Object.values(services).map((s) => serviceCard(s, { level: 3 })).join('\n    ')}
+  ${sectionHead('01', h.servicesTitle)}
+  <ul class="index">
+    ${Object.values(services).map((s, i) => serviceCard(s, { level: 3, index: i + 1 })).join('\n    ')}
   </ul>
 </section>
 
 <section class="section section--tint">
   <div class="container">
-    <div class="section__head">
-      <h2 class="section__title">${esc(h.familiesTitle)}</h2>
-      <p class="lead">${esc(h.familiesLead)}</p>
-    </div>
-    <ul class="grid grid--3">
+    ${sectionHead('02', h.familiesTitle, h.familiesLead)}
+    <ul class="spec">
       ${families.map((f) => familyCard(ctx, f)).join('\n      ')}
     </ul>
   </div>
 </section>
 
 <section class="section container">
-  <div class="section__head">
-    <h2 class="section__title">${esc(h.brandsTitle)}</h2>
-    <p class="lead">Atendemos também outras marcas de videocirurgia e ortopedia, conforme a família do equipamento.</p>
-  </div>
+  ${sectionHead('03', h.brandsTitle, 'Atendemos também outras marcas de videocirurgia e ortopedia, conforme a família do equipamento.')}
   <ul class="brand-grid">
     ${brands.filter((b) => b.focus).map((b) => brandTile(ctx, b)).join('\n    ')}
   </ul>
@@ -233,7 +238,7 @@ export function home(ctx) {
   <div class="container">
     <h2 class="section__title">${esc(h.whyTitle)}</h2>
     <ul class="why">
-      ${h.why.map((w) => `<li><span class="why__icon">${icon(w.icon, 26)}</span><h3>${esc(w.title)}</h3><p>${esc(w.text)}</p></li>`).join('\n      ')}
+      ${h.why.map((w, i) => `<li><span class="why__icon">0${i + 1}</span><h3>${esc(w.title)}</h3><p>${esc(w.text)}</p></li>`).join('\n      ')}
     </ul>
   </div>
 </section>
@@ -242,10 +247,7 @@ ${stepsBlock(h.stepsTitle, copy.steps)}
 
 <section class="section section--tint">
   <div class="container">
-    <div class="section__head">
-      <h2 class="section__title">${esc(h.articlesTitle)}</h2>
-      <p class="lead">Guias escritos pela equipe técnica para quem cuida do equipamento.</p>
-    </div>
+    ${sectionHead('05', h.articlesTitle, 'Guias escritos pela equipe técnica para quem cuida do equipamento.')}
     <ul class="grid grid--3">
       ${articles.slice(0, 3).map((a) => articleCard(a)).join('\n      ')}
     </ul>
@@ -285,17 +287,14 @@ ${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente m
 
 <section class="section section--tint">
   <div class="container">
-    <div class="section__head">
-      <h2 class="section__title">${esc(s.familiesTitle)}</h2>
-      <p class="lead">${esc(s.familiesLead)}</p>
-    </div>
-    <ul class="grid grid--3">
+    ${sectionHead('01', s.familiesTitle, s.familiesLead)}
+    <ul class="spec">
       ${families.filter((f) => f.maintenance).map((f) => familyCard(ctx, f, { href: maintenanceUrl(f) })).join('\n      ')}
     </ul>
   </div>
 </section>
 
-${stepsBlock(s.process.title, s.process.steps)}
+${stepsBlock(s.process.title, s.process.steps, '02')}
 
 <section class="section container">
   <div class="panel">
@@ -422,7 +421,7 @@ ${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvo
 </section>
 <section class="section section--tint"><div class="container">
   <ul class="grid grid--3">
-    ${s.areas.map((a) => `<li class="card card--service"><div class="card__link"><span class="card__icon">${icon(a.icon, 28)}</span><div class="card__body"><h2 class="card__title">${esc(a.title)}</h2><p class="card__text">${esc(a.text)}</p>${checklist(a.list)}</div></div></li>`).join('\n    ')}
+    ${s.areas.map((a, i) => `<li class="card"><div class="card__link"><div class="card__body"><p class="card__brand">0${i + 1}</p><h2 class="card__title">${esc(a.title)}</h2><p class="card__text">${esc(a.text)}</p>${checklist(a.list)}</div></div></li>`).join('\n    ')}
   </ul>
 </div></section>
 <section class="section container">
@@ -447,13 +446,13 @@ export function equipment(ctx) {
   const body = `
 ${pageHeader(c.heading, c.lead)}
 <section class="section container">
-  <h2 class="section__title">${esc(c.familiesTitle)}</h2>
-  <ul class="grid grid--3">
+  ${sectionHead('01', c.familiesTitle)}
+  <ul class="spec">
     ${families.map((f) => familyCard(ctx, f)).join('\n    ')}
   </ul>
 </section>
 <section class="section section--tint"><div class="container">
-  <h2 class="section__title">${esc(c.brandsTitle)}</h2>
+  ${sectionHead('02', c.brandsTitle)}
   <ul class="brand-grid">
     ${brands.filter((b) => b.focus).map((b) => brandTile(ctx, b)).join('\n    ')}
   </ul>
@@ -498,7 +497,7 @@ export function product(ctx, p) {
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `
 <article class="product container">
-  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto do equipamento seminovo do estoque EquimedPR' : 'Foto ilustrativa do modelo'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : 'Foto ilustrativa do modelo'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
   <div class="product__body">
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>

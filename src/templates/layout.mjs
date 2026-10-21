@@ -197,8 +197,8 @@ ${analyticsMeta}
 <link rel="icon" href="/assets/img/site/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/site/apple-touch-icon.png">
 <link rel="manifest" href="/assets/site.webmanifest">
-<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/main.css">
 <script type="application/ld+json">${jsonLd}</script>
 </head>

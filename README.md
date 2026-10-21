@@ -8,6 +8,15 @@ HTML e CSS puros, sem frameworks nem dependências de runtime. Substitui o app D
 - Estratégia de SEO e marketing, robô de monitoramento, mensuração e opções: [docs/SEO-MARKETING.md](docs/SEO-MARKETING.md)
 - Proposta de escopo, etapas e itens a validar (resposta às diretrizes de out/2026): [docs/PROPOSTA.md](docs/PROPOSTA.md)
 
+## Linguagem visual (v3, out/2026)
+
+Pesquisa de design em sites do setor (MS Medical, Multmed, Multy Surgical, Avante, Soma, Agiliti, Integrity)
+mostrou que o que é nativo do mercado é a **ficha técnica**, não a landing page: marca sobre modelo, tags de
+condição como vocabulário fechado, fluxo numerado de recebimento → laudo → reparo → testes, tabelas de
+compatibilidade e números de garantia. Daí: IBM Plex Sans + Plex Mono (etiquetas, referências, specs),
+réguas finas em vez de cards sombreados, seções numeradas, listas-índice e grades tipo datasheet, fotos em
+placas com legenda "Fig. 01". Modo claro fixo. Tudo em `src/styles/main.css`.
+
 ## Como funciona
 
 ```
@@ -15,7 +24,7 @@ content/         <- TODO o conteúdo editável (JSON): site, pages, services, fa
 src/templates/   <- templates (JS puro, template literals): layout + páginas
 src/styles/      <- main.css (cascade layers, custom properties, container queries, light-dark)
 src/scripts/     <- main.js (progressive enhancement: consentimento + GA4/Meta, eventos de lead, formulário -> WhatsApp/e-mail)
-src/assets/      <- imagens WebP, fontes woff2 (Inter, Manrope), logo SVG, favicon, OG image, manifest
+src/assets/      <- imagens WebP (produtos, fotos de ambiente), fontes woff2 (IBM Plex Sans/Mono), logo SVG, favicon, OG image
 build.mjs        <- gerador estático (Node >= 20, zero dependências) -> dist/
 tools/           <- seo-audit.mjs (robô), serve.mjs (preview), optimize-images.sh, clean-product-photos.py
 .github/         <- deploy (Pages), ci (PR), seo-monitor (mensal)
