@@ -9,8 +9,14 @@
   "foundingYear": 2014,
   "email": "equimedpr@gmail.com",
   "phones": [
-    { "display": "(41) 9 9920-1460", "e164": "+5541999201460" },
-    { "display": "(41) 9 9889-3793", "e164": "+5541998893793" }
+    {
+      "display": "(41) 9 9920-1460",
+      "e164": "+5541999201460"
+    },
+    {
+      "display": "(41) 9 9889-3793",
+      "e164": "+5541998893793"
+    }
   ],
   "whatsapp": {
     "number": "5541998893793",
@@ -27,7 +33,10 @@
     "country": "BR",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=R.+Paulina+Ader,+72+-+Novo+Mundo,+Curitiba+-+PR"
   },
-  "geo": { "latitude": -25.4958, "longitude": -49.2982 },
+  "geo": {
+    "latitude": -25.4958,
+    "longitude": -49.2982
+  },
   "openingHours": "Mo-Fr 08:00-18:00",
   "openingHoursDisplay": "Segunda a sexta, das 8h às 18h",
   "social": {
@@ -46,16 +55,51 @@
     "metaPixelId": ""
   },
   "nav": [
-    { "label": "Manutenção", "href": "/manutencao/" },
-    { "label": "Locação", "href": "/locacao/" },
-    { "label": "Venda", "href": "/venda/" },
-    { "label": "Software", "href": "/software/" },
-    { "label": "Equipamentos", "href": "/equipamentos/", "title": "Marcas e equipamentos atendidos" },
-    { "label": "Conteúdo técnico", "href": "/conteudo/" },
-    { "label": "Sobre", "href": "/sobre/" }
+    {
+      "label": "Manutenção",
+      "href": "/manutencao/"
+    },
+    {
+      "label": "Locação",
+      "href": "/locacao/"
+    },
+    {
+      "label": "Venda",
+      "href": "/venda/"
+    },
+    {
+      "label": "Software",
+      "href": "/software/"
+    },
+    {
+      "label": "Equipamentos",
+      "href": "/equipamentos/",
+      "title": "Marcas e equipamentos atendidos"
+    },
+    {
+      "label": "Marcas",
+      "href": "/marcas/"
+    },
+    {
+      "label": "Conteúdo técnico",
+      "href": "/conteudo/"
+    },
+    {
+      "label": "Sobre",
+      "href": "/sobre/"
+    }
   ],
-  "focusBrands": ["stryker", "conmed", "linvatec", "karl-storz"],
+  "focusBrands": [
+    "stryker",
+    "conmed",
+    "linvatec",
+    "karl-storz"
+  ],
   "independenceNotice": "A EquimedPR é uma assistência técnica independente. Não somos assistência autorizada, representante ou distribuidora oficial de nenhum fabricante. As marcas citadas pertencem aos seus respectivos titulares e são mencionadas apenas para identificar os equipamentos atendidos.",
   "scopeNotice": "Não trabalhamos com implantes nem com instrumentais cirúrgicos.",
-  "warranty": { "used": "3 meses", "new": "1 ano", "service": "90 dias" }
+  "warranty": {
+    "used": "3 meses",
+    "new": "1 ano",
+    "service": "90 dias"
+  }
 }
