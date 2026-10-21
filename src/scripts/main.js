@@ -115,3 +115,15 @@ const menu = document.getElementById('site-menu');
 menu?.addEventListener('click', (event) => {
   if (event.target.closest('a')) menu.hidePopover?.();
 });
+
+/* 5. Header galleries: arrows and dots over a CSS scroll-snap track. */
+for (const g of document.querySelectorAll('[data-gallery]')) {
+  const track = g.querySelector('.gallery__track');
+  const dots = [...g.querySelectorAll('.gallery__dot')];
+  const count = dots.length;
+  const index = () => Math.round(track.scrollLeft / track.clientWidth);
+  const go = (i) => track.scrollTo({ left: ((i + count) % count) * track.clientWidth, behavior: 'smooth' });
+  g.querySelectorAll('.gallery__btn').forEach((b) => b.addEventListener('click', () => go(index() + Number(b.dataset.dir))));
+  dots.forEach((d) => d.addEventListener('click', () => go(Number(d.dataset.index))));
+  track.addEventListener('scroll', () => { const i = index(); dots.forEach((d, k) => d.classList.toggle('is-active', k === i)); }, { passive: true });
+}

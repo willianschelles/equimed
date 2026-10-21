@@ -22,15 +22,27 @@ const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Lo
 /* ---------------- Shared blocks ---------------- */
 const sectionHead = (index, title, lead) => `<div class="section__head"><span class="section__index">${index}</span><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>`;
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
-const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photoAlt = '' } = {}) => `
-<header class="page-header container${photoName ? ' page-header--media' : ''}">
+const gallery = (ctx, names, alt) => names.length <= 1
+  ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
+  : `<div class="gallery" data-gallery>
+    <div class="gallery__track frame">
+      ${names.map((n, i) => `<figure class="gallery__slide" id="foto-${i + 1}">${photo(ctx, n, `${alt} (foto ${i + 1} de ${names.length})`, { lazy: i > 0 })}</figure>`).join('')}
+    </div>
+    <div class="gallery__nav">
+      <button type="button" class="gallery__btn" data-dir="-1" aria-label="Foto anterior">${icon('arrow', 18)}</button>
+      <span class="gallery__dots">${names.map((_, i) => `<button type="button" class="gallery__dot${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-label="Foto ${i + 1}"></button>`).join('')}</span>
+      <button type="button" class="gallery__btn" data-dir="1" aria-label="Próxima foto">${icon('arrow', 18)}</button>
+    </div>
+  </div>`;
+const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '' } = {}) => `
+<header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
   <div class="page-header__copy">
     ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
     <h1>${esc(heading)}</h1>
     ${lead ? `<p class="lead">${esc(lead)}</p>` : ''}
     ${extra}
   </div>
-  ${photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
+  ${photos?.length ? gallery(ctx, photos, photoAlt) : photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
 </header>`;
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
@@ -280,7 +292,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 desmontado na bancada: carcaça e módulo do motor' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfurador Stryker System 7 na bancada da EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -326,7 +338,7 @@ export function maintenanceFamily(ctx, f) {
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção em ${f.shortName.toLowerCase()}.\n\nMarca/modelo: \nDefeito: \n`;
   const related = articles.filter((a) => a.families.includes(f.slug)).slice(0, 3);
   const body = `
-${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento', ctx, photoName: f.photo, photoAlt: f.name + ' em uso no centro cirúrgico' })}
+${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento', ctx, photoName: f.photo, photos: f.photos, photoAlt: f.name })}
 <section class="section container service-layout">
   <div class="prose">
     ${m.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -363,7 +375,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 montado' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfurador Stryker System 7' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -390,7 +402,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Perfurador Stryker System 7 com peças internas na bancada' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfurador Stryker System 7 na bancada da EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -479,7 +491,7 @@ export function family(ctx, f) {
   <ul class="grid grid--3">${list.map((p, i) => productCard(ctx, p, { level: 3, eager: i < 3 })).join('')}</ul>
 </section>` : '';
   const body = `
-${pageHeader(f.name, f.lead, { ctx, photoName: f.photo, photoAlt: f.name + ' em uso no centro cirúrgico', eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
+${pageHeader(f.name, f.lead, { ctx, photoName: f.photo, photos: f.photos, photoAlt: f.name, eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
 ${grid(available, 'Disponíveis para venda ou locação')}
 ${grid(serviced, 'Atendidos em manutenção')}
 ${f.maintenance ? `<section class="section section--tint"><div class="container prose"><h2>Marcas e modelos atendidos em manutenção</h2><dl class="models">${f.maintenance.brands.map((b) => `<div><dt>${b.slug ? `<a href="${brandUrl({ slug: b.slug })}">${esc(b.brand)}</a>` : esc(b.brand)}</dt><dd>${esc(b.models.join(' · '))}</dd></div>`).join('')}</dl><p><a class="button button--ghost" href="${maintenanceUrl(f)}">Defeitos comuns e o que fazemos ${icon('arrow', 16)}</a></p></div></section>` : ''}
