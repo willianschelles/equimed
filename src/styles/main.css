@@ -599,7 +599,19 @@
   .band__sub { margin: 0; max-width: 34rem; color: var(--color-on-dark-2); font-size: 1.125rem; }
 
   /* Horizontal rail (pinned on desktop) */
-  .hs { position: relative; background: var(--color-mist); }
+  .hs { position: relative; isolation: isolate; background: radial-gradient(55% 70% at 12% 0%, rgba(91,184,224,.16) 0%, transparent 60%), radial-gradient(50% 70% at 100% 100%, rgba(31,74,99,.14) 0%, transparent 60%), linear-gradient(180deg, #EDF3F7 0%, #E4ECF1 100%); }
+  .hs::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(rgba(31,74,99,.14) 1px, transparent 1.2px); background-size: 22px 22px; mask-image: linear-gradient(180deg, #000 0%, transparent 55%); -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 55%); }
+  .hs .sx-title { color: var(--color-ink); }
+  .rail .fam__link { position: relative; border: 1px solid rgba(31,74,99,.1); box-shadow: 0 1px 2px rgba(10,18,26,.04), 0 12px 28px -22px rgba(10,18,26,.35); transition: transform .35s var(--ease-out-soft), box-shadow .35s var(--ease-out-soft), border-color .25s; }
+  .rail .fam__media { position: relative; transition: background .4s; }
+  .rail .fam__media::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: linear-gradient(90deg, var(--color-petrol-link), var(--color-signal)); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s var(--ease-out-soft); }
+  .rail .fam__link:hover { transform: translateY(-6px); border-color: rgba(31,74,99,.35); box-shadow: 0 2px 4px rgba(10,18,26,.05), 0 30px 50px -28px rgba(18,50,74,.55); }
+  .rail .fam__link:hover .fam__media { background: radial-gradient(120% 95% at 50% 30%, #FFFFFF 0%, #EAF5FB 55%, #D5E9F3 100%); }
+  .rail .fam__link:hover .fam__media::after { transform: scaleX(1); }
+  .rail .fam__link:hover .fam__media img { transform: scale(1.07) translateY(-2px); }
+  .rail .fam__more .icon { transition: translate .25s var(--ease-out-soft); }
+  .rail .fam__link:hover .fam__more .icon { translate: 4px 0; }
+  .rail .fam__link:focus-visible { outline-offset: 4px; }
   .hs__sticky { padding-block: clamp(4.5rem, 9vw, 7rem); overflow: hidden; }
   .hs.is-pinned .hs__sticky { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-block: 5rem 2.5rem; }
   .rail { display: grid; grid-auto-flow: column; grid-auto-columns: min(19rem, 82%); gap: 1rem; margin: 0; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: max(1.25rem, (100% - 80rem) / 2); padding: 0 max(1.25rem, (100% - 80rem) / 2) .5rem; scrollbar-width: none; }
@@ -608,10 +620,9 @@
   .rail > .fam { scroll-snap-align: start; }
   .rail .fam__tags { display: none; }
   .rail .fam__brands { margin-block-start: auto; padding-block-start: .5rem; }
-  .rail .fam__link:hover { transform: translateY(-4px); }
   .rail-ctrl { display: flex; align-items: center; gap: 1.25rem; margin-top: 1.75rem; }
-  .rail-bar { flex: 1; height: 2px; background: var(--color-line); border-radius: 2px; overflow: hidden; }
-  .rail-bar span { display: block; height: 100%; width: 100%; background: var(--color-ink); transform-origin: 0 50%; transform: scaleX(var(--rp, .2)); }
+  .rail-bar { flex: 1; height: 3px; background: rgba(31,74,99,.14); border-radius: 2px; overflow: hidden; }
+  .rail-bar span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--color-petrol-link), var(--color-signal)); transform-origin: 0 50%; transform: scaleX(var(--rp, .2)); }
   .rail-btn { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--color-line); background: #FFFFFF; color: var(--color-ink); cursor: pointer; transition: border-color .15s, background-color .15s, color .15s; }
   .rail-btn:hover:not(:disabled) { background: var(--color-ink); color: #FFFFFF; border-color: var(--color-ink); }
   .rail-btn:disabled { opacity: .35; cursor: default; }
