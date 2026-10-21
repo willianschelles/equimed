@@ -1,0 +1,238 @@
+{
+  "manutencao": {
+    "slug": "manutencao",
+    "name": "Manutenção",
+    "heading": "Manutenção de equipamentos médicos",
+    "icon": "wrench",
+    "title": "Manutenção de equipamentos médicos: Stryker, ConMed, Karl Storz",
+    "description": "Assistência técnica independente multimarcas: manutenção de perfuradores, serras, baterias, câmeras, fontes de luz, insufladores, artrobombas e shavers.",
+    "lead": "Assistência técnica independente multimarcas, com avaliação técnica em bancada, orçamento descritivo e garantia do serviço. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses.",
+    "summary": "Corretiva e preventiva por família de equipamento, marca e modelo. Avaliação técnica em bancada e orçamento descritivo antes de qualquer reparo.",
+    "intro": [
+      "A EquimedPR mantém equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia desde 2014. O trabalho é organizado por família de equipamento, porque cada uma tem modos de falha, peças e testes próprios: um perfurador a bateria não se avalia como uma câmera, e uma fonte de luz xenon não se repara como um insuflador.",
+      "Somos uma assistência técnica independente. Isso significa que não dependemos da política de peças ou de prazos do fabricante, e que podemos reparar componentes em vez de trocar módulos inteiros quando isso é tecnicamente adequado. Também significa que não somos autorizados nem representantes de nenhuma marca, e dizemos isso com clareza."
+    ],
+    "process": {
+      "title": "Como funciona a avaliação técnica",
+      "steps": [
+        {
+          "title": "Contato",
+          "text": "Envie marca, modelo, número de série e o defeito pelo WhatsApp. Fotos e vídeos ajudam a antecipar o diagnóstico."
+        },
+        {
+          "title": "Recebimento",
+          "text": "Você entrega em Curitiba ou envia por transportadora. Registramos o estado do equipamento na chegada, com fotos."
+        },
+        {
+          "title": "Avaliação em bancada",
+          "text": "Desmontagem, inspeção e testes para identificar a causa. Verificamos também itens que podem falhar em seguida."
+        },
+        {
+          "title": "Orçamento descritivo",
+          "text": "Você recebe o diagnóstico, as peças, o prazo e o valor. O reparo só começa com a sua aprovação."
+        },
+        {
+          "title": "Reparo e testes",
+          "text": "Execução conforme a especificação da linha, teste funcional e, quando aplicável, teste de segurança elétrica."
+        },
+        {
+          "title": "Devolução com garantia",
+          "text": "Relatório de manutenção, peças substituídas e garantia do serviço. Devolução embalada e rastreada."
+        }
+      ]
+    },
+    "familiesTitle": "Manutenção por família de equipamento",
+    "familiesLead": "Cada página descreve os defeitos mais comuns, o que fazemos e as marcas e modelos atendidos.",
+    "preventive": {
+      "title": "Manutenção preventiva e contratos",
+      "text": "Para hospitais e clínicas com várias torres e conjuntos de perfuradores, montamos um plano de manutenção preventiva com periodicidade por família de equipamento, teste de segurança elétrica e relatório para a engenharia clínica. Equipamento reserva pode ser incluído no contrato."
+    },
+    "faq": [
+      {
+        "q": "Vocês atendem fora de Curitiba?",
+        "a": "Sim. Recebemos equipamentos de todo o Brasil por transportadora e devolvemos testados, embalados e com rastreio. Combine o envio pelo WhatsApp antes de despachar."
+      },
+      {
+        "q": "A avaliação técnica é cobrada?",
+        "a": "Informamos as condições da avaliação no primeiro contato, de acordo com a família do equipamento. Se o orçamento for aprovado, o valor da avaliação é abatido do serviço."
+      },
+      {
+        "q": "Qual é o prazo de um reparo?",
+        "a": "Depende da família e da disponibilidade de peças. O prazo é informado no orçamento, antes da aprovação, e você é avisado se algo mudar."
+      },
+      {
+        "q": "O serviço tem garantia?",
+        "a": "Sim. Todo serviço executado sai com garantia, descrita no relatório de manutenção."
+      },
+      {
+        "q": "Vocês emitem laudo e teste de segurança elétrica?",
+        "a": "Sim, para os equipamentos atendidos. O teste de segurança elétrica e o laudo podem ser incluídos na manutenção ou contratados separadamente para a engenharia clínica."
+      },
+      {
+        "q": "A EquimedPR é assistência autorizada?",
+        "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
+      }
+    ]
+  },
+  "locacao": {
+    "slug": "locacao",
+    "name": "Locação",
+    "heading": "Locação de equipamentos médicos",
+    "icon": "cycle",
+    "title": "Locação de equipamentos cirúrgicos e perfuradores | EquimedPR",
+    "description": "Locação de torres de videocirurgia, artrobombas, insufladores e perfuradores e serras Stryker, por procedimento ou período, com manutenção incluída. Curitiba.",
+    "lead": "Torres de vídeo, artrobombas, insufladores e conjuntos de perfurador e serra Stryker para hospitais, clínicas e equipes cirúrgicas. Por procedimento, por período ou como equipamento reserva durante um reparo.",
+    "summary": "Torres de vídeo, artrobombas, insufladores e conjuntos de perfurador e serra, por procedimento ou por período, com manutenção incluída.",
+    "intro": [
+      "A locação resolve três situações: um procedimento pontual sem equipamento próprio, a cobertura enquanto o seu equipamento está em manutenção e a operação regular de uma clínica que prefere não imobilizar capital.",
+      "Os equipamentos locados saem revisados e testados, e a manutenção durante o período é por nossa conta. A entrega pode ser feita em Curitiba e região, ou por transportadora para o restante do país, conforme o prazo e o tipo de equipamento."
+    ],
+    "items": {
+      "title": "Equipamentos disponíveis para locação",
+      "list": [
+        "Torre de videocirurgia completa: câmera HD, fonte de luz, monitor e carrinho",
+        "Artrobombas e insufladores de CO2",
+        "Conjunto de perfurador e serra Stryker System 5 ou System 6 com baterias e carregador",
+        "Equipamento reserva durante manutenção de equipamento próprio"
+      ]
+    },
+    "modes": {
+      "title": "Modalidades",
+      "list": [
+        {
+          "title": "Por procedimento",
+          "text": "Para cirurgias pontuais. Entrega, retirada e suporte combinados pelo WhatsApp."
+        },
+        {
+          "title": "Por período",
+          "text": "Semanal ou mensal, com valor decrescente conforme o prazo. Indicado para clínicas e centros cirúrgicos."
+        },
+        {
+          "title": "Reserva durante o reparo",
+          "text": "Equipamento equivalente enquanto o seu está em manutenção na EquimedPR, sujeito à disponibilidade."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "A manutenção está incluída na locação?",
+        "a": "Sim. Os equipamentos saem revisados e testados, e a manutenção durante o período é por nossa conta. Danos por uso inadequado são avaliados caso a caso."
+      },
+      {
+        "q": "Posso alugar por procedimento?",
+        "a": "Sim. Consulte a disponibilidade e as condições para locação por procedimento ou por período."
+      },
+      {
+        "q": "Vocês entregam fora de Curitiba?",
+        "a": "Sim, por transportadora, conforme o prazo e o tipo de equipamento. Para procedimentos pontuais fora da região, consulte com antecedência."
+      },
+      {
+        "q": "É possível comprar o equipamento locado ao final do período?",
+        "a": "Para equipamentos seminovos do nosso estoque, sim. Consulte as condições."
+      }
+    ]
+  },
+  "venda": {
+    "slug": "venda",
+    "name": "Venda",
+    "heading": "Venda de equipamentos médicos novos e seminovos",
+    "icon": "handshake",
+    "title": "Venda de equipamentos médicos seminovos revisados com garantia",
+    "description": "Equipamentos de videocirurgia e ortopedia seminovos, revisados e testados, com garantia de 3 meses. Perfuradores Stryker, câmeras, fontes de luz e monitores.",
+    "lead": "Equipamentos seminovos revisados e testados conforme a especificação da linha, com garantia de 3 meses, e equipamentos novos conforme a disponibilidade. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
+    "summary": "Seminovos revisados e testados com garantia de 3 meses. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
+    "intro": [
+      "Todo equipamento seminovo vendido pela EquimedPR passa pela mesma avaliação técnica da manutenção: desmontagem, inspeção, substituição do que está no fim da vida útil, testes funcionais e teste de segurança elétrica quando aplicável. O relatório acompanha o equipamento.",
+      "A garantia é de 3 meses para seminovos e de 1 ano para a maioria dos equipamentos novos. Aceitamos o seu equipamento usado como parte do pagamento, mediante avaliação."
+    ],
+    "items": {
+      "title": "Linhas disponíveis",
+      "list": [
+        "Perfuradores, serras, baterias e carregadores Stryker System 5 e System 6",
+        "Câmeras de vídeo HD Stryker, Karl Storz e Smith & Nephew",
+        "Fontes de luz xenon e LED e lâmpadas de reposição",
+        "Monitores cirúrgicos NDS, Karl Storz e Stryker",
+        "Insufladores de CO2 e artrobombas",
+        "Cabos de fibra óptica e endocouplers"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Equipamento seminovo tem garantia?",
+        "a": "Sim. Todos os seminovos são revisados, testados e vendidos com garantia de 3 meses, com relatório do que foi feito."
+      },
+      {
+        "q": "Vocês aceitam o meu equipamento usado?",
+        "a": "Sim. O seu equipamento pode entrar como parte do pagamento, após avaliação técnica."
+      },
+      {
+        "q": "Vocês vendem para licitação e compras públicas?",
+        "a": "Sim. Emitimos proposta técnica e comercial com as especificações do equipamento. Consulte pelo e-mail ou WhatsApp."
+      },
+      {
+        "q": "Vocês vendem implantes ou instrumentais?",
+        "a": "Não. A EquimedPR trabalha com equipamentos eletromédicos. Não trabalhamos com implantes nem com instrumentais cirúrgicos."
+      }
+    ]
+  },
+  "software": {
+    "slug": "software",
+    "name": "Soluções de software",
+    "heading": "Soluções de software para equipamentos médicos",
+    "icon": "code",
+    "title": "Software para equipamentos médicos: atualização e desbloqueio",
+    "description": "Atualização e desbloqueio de software de perfuradores, baterias, carregadores e consoles, e desenvolvimento de soluções sob medida. Stryker, ConMed, Storz.",
+    "lead": "Atualização e correção de firmware, desbloqueio de funções e de contadores de serviço, e desenvolvimento de soluções sob medida para equipamentos médicos, como o carregador inteligente multilinha da EquimedPR.",
+    "summary": "Atualização e desbloqueio de firmware de perfuradores, baterias e consoles, e desenvolvimento de soluções sob medida.",
+    "intro": [
+      "Boa parte dos equipamentos atuais depende de software: a peça de mão verifica a bateria, a bateria registra ciclos, o carregador decide se carrega, e o console bloqueia funções por contador ou por senha de serviço. Quando algo nessa cadeia trava, o equipamento fica parado mesmo com a mecânica em ordem.",
+      "A EquimedPR desenvolve e aplica soluções de software para esses casos, sempre para equipamentos de titularidade do cliente, com registro do que foi feito e sem alterar funções de segurança."
+    ],
+    "areas": [
+      {
+        "title": "Atualização de software e firmware",
+        "icon": "update",
+        "text": "Atualização e correção de firmware de perfuradores, serras, baterias, carregadores e consoles, incluindo correção de erros que bloqueiam o uso após descarga profunda ou após a troca de células.",
+        "list": [
+          "Perfuradores e serras Stryker System 5, 6, 7 e 8",
+          "Baterias e carregadores Stryker e ConMed",
+          "Consoles de shaver e artrobombas"
+        ]
+      },
+      {
+        "title": "Desbloqueio de funções e contadores",
+        "icon": "unlock",
+        "text": "Liberação de equipamentos bloqueados por contador de ciclos, senha de serviço ou vínculo com acessório, quando o bloqueio não tem função de segurança do paciente. Avaliamos cada caso e informamos o que é possível antes de executar.",
+        "list": [
+          "Bloqueios por contador de uso ou de ciclos de autoclave",
+          "Senhas de serviço e modos técnicos",
+          "Vínculo entre peça de mão, bateria e carregador"
+        ]
+      },
+      {
+        "title": "Desenvolvimento sob medida",
+        "icon": "code",
+        "text": "Projetos de software e eletrônica para necessidades específicas: bancadas de teste, carregadores multilinha, interfaces de diagnóstico e registro de dados de equipamentos.",
+        "list": [
+          "Carregador inteligente EquimedPR para séries Stryker 3, 5, 6 e 7",
+          "Bancadas e rotinas de teste para engenharia clínica",
+          "Ferramentas de diagnóstico e registro de uso"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "O desbloqueio é legal e seguro?",
+        "a": "Trabalhamos apenas com equipamentos de titularidade do cliente e não alteramos funções de segurança do paciente. Bloqueios que existem por motivo de segurança não são removidos. Em cada caso informamos o que é possível e o que não é antes de executar."
+      },
+      {
+        "q": "A atualização de firmware mantém a garantia do fabricante?",
+        "a": "Equipamentos dentro da garantia do fabricante devem ser tratados com a assistência autorizada. Nossos serviços são indicados para equipamentos fora da garantia, que é o caso da maior parte do parque instalado."
+      },
+      {
+        "q": "Vocês desenvolvem software para outros equipamentos?",
+        "a": "Sim. Descreva a necessidade pelo WhatsApp ou pelo e-mail e avaliamos a viabilidade técnica, o prazo e o investimento."
+      }
+    ]
+  }
+}

@@ -1,21 +1,85 @@
 [
-  { "name": "Smith & Nephew", "slug": "smith-nephew" },
-  { "name": "Karl Storz", "slug": "karl-storz" },
-  { "name": "Richard Wolf", "slug": "richard-wolf" },
-  { "name": "Pentax", "slug": "pentax" },
-  { "name": "Olympus", "slug": "olympus" },
-  { "name": "Ethicon", "slug": "ethicon" },
-  { "name": "Fujinon", "slug": "fujinon" },
-  { "name": "Arthrex", "slug": "arthrex" },
-  { "name": "ArthroCare", "slug": "arthrocare" },
-  { "name": "Biomet", "slug": "biomet" },
-  { "name": "Sony", "slug": "sony" },
-  { "name": "NDS Surgical Imaging", "slug": "nds" },
-  { "name": "Gyrus ACMI", "slug": "gyrus-acmi" },
-  { "name": "Hall", "slug": "hall" },
-  { "name": "MicroAire", "slug": "microaire" },
-  { "name": "Aesculap", "slug": "aesculap" },
-  { "name": "Valleylab", "slug": "valleylab" },
-  { "name": "Zimmer", "slug": "zimmer" },
-  { "name": "Stryker", "slug": "stryker" }
+  {
+    "slug": "stryker",
+    "name": "Stryker",
+    "logo": "stryker",
+    "focus": true,
+    "lead": "Perfuradores e serras System 5, 6, 7 e 8, baterias e carregadores, câmeras 1488, 1588 e 1688, fontes L9000 e L10, insufladores Pneumosure e Core, artrobombas e shavers Core e CrossFire.",
+    "description": "Manutenção de equipamentos Stryker: perfuradores e serras System 5, 6, 7 e 8, baterias, câmeras 1488/1588/1688, fontes de luz L9000, insufladores, artrobombas e shavers. Assistência independente.",
+    "paragraphs": [
+      "A linha Stryker é a mais atendida pela EquimedPR. Em ortopedia e trauma, trabalhamos com as peças de mão, baterias e carregadores das linhas System 5, System 6, System 7 e System 8, incluindo perfurador rotativo de gatilho duplo, serra sagital, serra recíproca e serra de esterno.",
+      "Em videocirurgia, atendemos câmeras 1188, 1288, 1488, 1588 AIM e 1688 AIM, fontes de luz X8000, L9000 e L10, monitores Vision Elect e WiSe, insufladores Core e Pneumosure, artrobombas Arthropump e Crossflow e consoles de shaver Core e CrossFire.",
+      "Equipamentos seminovos Stryker System 5 e System 6 revisados e testados estão disponíveis para venda e locação, com garantia de 3 meses."
+    ],
+    "families": ["perfuradores-e-serras", "baterias-e-carregadores", "cameras-de-video", "fontes-de-luz", "monitores-cirurgicos", "insufladores", "artrobombas", "shavers"]
+  },
+  {
+    "slug": "conmed",
+    "name": "ConMed",
+    "logo": null,
+    "focus": true,
+    "lead": "Perfuradores e serras Hall PowerPro, PowerPro Max e MPower 2, baterias e carregadores, insufladores e consoles de eletrocirurgia e artroscopia ConMed.",
+    "description": "Assistência técnica independente em equipamentos ConMed: perfuradores e serras Hall PowerPro e MPower 2, baterias e carregadores, insufladores e consoles de artroscopia. Curitiba, PR.",
+    "paragraphs": [
+      "A ConMed reúne as linhas Hall Surgical e Linvatec. Em ortopedia, atendemos as peças de mão a bateria Hall PowerPro, PowerPro Max e MPower 2, além de baterias, carregadores e acessórios de encaixe.",
+      "Em videocirurgia e artroscopia, atendemos câmeras, fontes de luz, insufladores, artrobombas e consoles de shaver das linhas ConMed e Linvatec. A avaliação técnica identifica a origem do defeito e o orçamento separa cada item."
+    ],
+    "families": ["perfuradores-e-serras", "baterias-e-carregadores", "cameras-de-video", "fontes-de-luz", "insufladores", "artrobombas", "shavers"]
+  },
+  {
+    "slug": "linvatec",
+    "name": "Linvatec",
+    "logo": null,
+    "focus": true,
+    "lead": "Consoles e peças de mão de shaver Advantage Drive e Advantage Turbo, câmeras IM4000 e IM8000, fontes de luz LS7700 e LS8000, artrobombas e perfuradores Linvatec Hall.",
+    "description": "Assistência técnica independente em equipamentos Linvatec: shavers Advantage Drive e Turbo, câmeras IM4000 e IM8000, fontes de luz LS7700 e LS8000, artrobombas e perfuradores Hall.",
+    "paragraphs": [
+      "A linha Linvatec, hoje parte da ConMed, é referência em artroscopia. Atendemos consoles e peças de mão de shaver Advantage Drive, Advantage Turbo, D3000 e D4000, com teste de rotação, torque e aspiração em bancada.",
+      "Também atendemos câmeras IM4000 e IM8000, fontes de luz LS7700 xenon e LS8000 LED, artrobombas e as peças de mão ortopédicas Linvatec Hall, incluindo baterias e carregadores."
+    ],
+    "families": ["shavers", "cameras-de-video", "fontes-de-luz", "artrobombas", "perfuradores-e-serras", "baterias-e-carregadores"]
+  },
+  {
+    "slug": "karl-storz",
+    "name": "Karl Storz",
+    "logo": "karl-storz",
+    "focus": true,
+    "lead": "Câmeras TELECAM, IMAGE1 HUB e IMAGE1 S, fontes Xenon Nova e Power LED, monitores WideView, insufladores Endoflator e Thermoflator, Arthropump Power e Unidrive.",
+    "description": "Manutenção de equipamentos Karl Storz: câmeras IMAGE1 HUB e IMAGE1 S, fontes de luz Xenon Nova e Power LED, monitores WideView, insufladores Endoflator e Thermoflator e Arthropump. Assistência independente.",
+    "paragraphs": [
+      "Em videocirurgia Karl Storz, atendemos unidades de controle e cabeças de câmera TELECAM, IMAGE1 HUB HD e IMAGE1 S, incluindo as cabeças H3-Z, H3-ZA, H3-FA e H3-M, fontes de luz Xenon Nova 175 e 300 e Power LED 175 e 300, e monitores WideView.",
+      "Em laparoscopia e artroscopia, atendemos insufladores Endoflator e Thermoflator, Arthropump Power e Plus e os motores Unidrive. Equipamentos seminovos Karl Storz revisados estão disponíveis para venda e locação conforme o estoque."
+    ],
+    "families": ["cameras-de-video", "fontes-de-luz", "monitores-cirurgicos", "insufladores", "artrobombas", "shavers"]
+  },
+  {
+    "slug": "nacionais-e-chineses",
+    "name": "Equipamentos nacionais e chineses",
+    "logo": null,
+    "focus": true,
+    "lead": "Torres de vídeo Full HD e 4K, fontes de luz LED, insufladores, artrobombas, perfuradores e serras de fabricantes nacionais e asiáticos distribuídos no Brasil.",
+    "description": "Assistência técnica em equipamentos de videocirurgia e ortopedia de fabricantes nacionais e chineses: câmeras Full HD e 4K, fontes LED, insufladores, artrobombas, perfuradores e serras.",
+    "paragraphs": [
+      "Equipamentos de fabricantes nacionais e chineses são cada vez mais comuns em clínicas e hospitais brasileiros, e muitas vezes ficam sem suporte quando o distribuidor muda ou encerra a linha.",
+      "A EquimedPR atende câmeras Full HD e 4K, fontes de luz LED, insufladores, artrobombas, shavers, perfuradores e serras a bateria dessas origens, com diagnóstico em bancada e reparo de placas, fontes, motores e peças mecânicas. Para peças sem fornecimento, avaliamos componentes compatíveis e informamos no orçamento."
+    ],
+    "families": ["cameras-de-video", "fontes-de-luz", "insufladores", "artrobombas", "shavers", "perfuradores-e-serras", "baterias-e-carregadores", "monitores-cirurgicos"]
+  },
+  { "slug": "smith-nephew", "name": "Smith & Nephew", "logo": "smith-nephew", "focus": false, "lead": "Câmeras Dyonics 560P, fontes 300XL e 500XL, artrobombas Access 25, insufladores e shavers Dyonics Power.", "families": ["cameras-de-video", "fontes-de-luz", "artrobombas", "insufladores", "shavers"] },
+  { "slug": "richard-wolf", "name": "Richard Wolf", "logo": "richard-wolf", "focus": false, "lead": "Câmeras, fontes de luz e insufladores Richard Wolf.", "families": ["cameras-de-video", "fontes-de-luz", "insufladores"] },
+  { "slug": "olympus", "name": "Olympus", "logo": "olympus", "focus": false, "lead": "Câmeras, fontes de luz e insufladores Olympus para videocirurgia.", "families": ["cameras-de-video", "fontes-de-luz", "insufladores"] },
+  { "slug": "nds", "name": "NDS Surgical Imaging", "logo": "nds", "focus": false, "lead": "Monitores cirúrgicos Radiance e EndoVue.", "families": ["monitores-cirurgicos"] },
+  { "slug": "sony", "name": "Sony", "logo": "sony", "focus": false, "lead": "Monitores de grau médico Sony.", "families": ["monitores-cirurgicos"] },
+  { "slug": "pentax", "name": "Pentax", "logo": "pentax", "focus": false, "lead": "Processadores e fontes de luz Pentax.", "families": ["cameras-de-video", "fontes-de-luz"] },
+  { "slug": "fujinon", "name": "Fujinon", "logo": "fujinon", "focus": false, "lead": "Processadores e fontes de luz Fujinon.", "families": ["cameras-de-video", "fontes-de-luz"] },
+  { "slug": "arthrex", "name": "Arthrex", "logo": "arthrex", "focus": false, "lead": "Câmeras, fontes de luz, artrobombas e shavers Arthrex.", "families": ["cameras-de-video", "fontes-de-luz", "artrobombas", "shavers"] },
+  { "slug": "arthrocare", "name": "ArthroCare", "logo": "arthrocare", "focus": false, "lead": "Consoles ArthroCare para artroscopia.", "families": ["shavers"] },
+  { "slug": "gyrus-acmi", "name": "Gyrus ACMI", "logo": "gyrus-acmi", "focus": false, "lead": "Fontes de luz e câmeras Gyrus ACMI.", "families": ["cameras-de-video", "fontes-de-luz"] },
+  { "slug": "hall", "name": "Hall Surgical", "logo": "hall", "focus": false, "lead": "Perfuradores e serras Hall (ConMed).", "families": ["perfuradores-e-serras", "baterias-e-carregadores"] },
+  { "slug": "microaire", "name": "MicroAire", "logo": "microaire", "focus": false, "lead": "Perfuradores e serras MicroAire.", "families": ["perfuradores-e-serras", "baterias-e-carregadores"] },
+  { "slug": "aesculap", "name": "Aesculap", "logo": "aesculap", "focus": false, "lead": "Motores e perfuradores Aesculap.", "families": ["perfuradores-e-serras", "baterias-e-carregadores"] },
+  { "slug": "zimmer", "name": "Zimmer", "logo": "zimmer", "focus": false, "lead": "Perfuradores e serras Zimmer.", "families": ["perfuradores-e-serras", "baterias-e-carregadores"] },
+  { "slug": "biomet", "name": "Biomet", "logo": "biomet", "focus": false, "lead": "Perfuradores e serras Biomet.", "families": ["perfuradores-e-serras", "baterias-e-carregadores"] },
+  { "slug": "ethicon", "name": "Ethicon", "logo": "ethicon", "focus": false, "lead": "Geradores e consoles Ethicon.", "families": [] },
+  { "slug": "valleylab", "name": "Valleylab", "logo": "valleylab", "focus": false, "lead": "Geradores de eletrocirurgia Valleylab.", "families": [] }
 ]

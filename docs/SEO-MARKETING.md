@@ -4,31 +4,28 @@ Princípio: **ninguém vai olhar isso toda semana.** Então tudo o que depende d
 transformado em (a) decisão tomada uma vez e gravada no código, ou (b) verificação automática que só
 fala quando precisa de ação, e diz exatamente o que fazer.
 
-## 1. Quem busca, o que busca (pesquisa de campo, out/2026)
+## 1. Posicionamento e quem busca
 
-Personas e vocabulário, do mais frequente ao menos:
+Posicionamento (diretrizes de 20/10/2026): **assistência técnica independente multimarcas** em equipamentos
+médicos, com manutenção, locação, venda e soluções de software. Foco: Stryker, ConMed, Linvatec, Karl Storz,
+equipamentos nacionais e chineses. Fora do escopo: implantes e instrumentais; nunca sugerir assistência autorizada.
 
 | Quem | O que precisa ver | Palavras que usa |
 |---|---|---|
-| Engenharia clínica / manutenção hospitalar | escopo por equipamento, laudo, teste de segurança elétrica, prazo, equipamento reserva | "assistência técnica videocirurgia", "manutenção fonte de luz xenon", "conserto câmera Karl Storz", "manutenção insuflador" |
-| Compras / suprimentos / licitação | CNPJ, garantia, locação com manutenção incluída, comodato | "locação de torre de videocirurgia", "comodato equipamentos cirúrgicos" |
-| Cirurgião ortopedista / artroscopista | compatibilidade de marca e modelo, backup no dia da cirurgia | "perfurador Stryker System 6 seminovo", "artrobomba", "shaver" |
-| Distribuidora de OPME / implantes | reparo rápido, empréstimo, instrumental | "manutenção motor Stryker", "caixa de instrumental" |
-| Veterinário cirurgião | preço, seminovo, parcelamento, WhatsApp | "equipamento cirúrgico veterinário", "videocirurgia veterinária" |
+| Engenharia clínica / manutenção hospitalar | escopo por família e modelo, processo de avaliação, laudo e teste de segurança elétrica, prazo, reserva | "manutenção perfurador Stryker", "assistência técnica Karl Storz", "manutenção fonte de luz xenon" |
+| Compras / suprimentos / licitação | garantia, proposta técnica, locação com manutenção incluída | "locação de torre de videocirurgia", "venda perfurador seminovo" |
+| Cirurgião ortopedista / artroscopista | compatibilidade de linha (System 5/6/7/8), bateria, backup no dia | "System 7 bateria", "shaver Linvatec manutenção" |
+| Distribuidora / locadora de equipamentos | reparo rápido, atualização de software, carregador multilinha | "desbloqueio Stryker", "atualização firmware perfurador" |
 
-Decisões gravadas no site a partir disso:
+Decisões gravadas no site:
 
-- **WhatsApp é o CTA principal** em todas as páginas (botão fixo, barra de CTA, formulário que gera a
-  mensagem). A mensagem já vem com os campos que a equipe precisa (equipamento, marca/modelo, necessidade).
-- URLs e títulos em português com marca + modelo + tipo (`/produtos/stryker-fonte-de-luz-l9000-led/`),
-  porque é assim que se busca.
-- Página por serviço (`/servicos/manutencao/`, `/locacao/`, `/venda/`) com FAQ: cada pergunta é uma busca
-  de cauda longa e vira *rich result* via FAQPage.
-- "Curitiba", "Paraná" e "todo o Brasil" aparecem nos títulos e no texto, não só no rodapé.
-- Sinais de confiança no texto: desde 2014, garantia 3 meses/1 ano, revisado e testado conforme fabricante,
-  assistência técnica **independente** (honestidade sobre autorização de fábrica conta a favor).
-
-Palavras-chave alvo (valide no Search Console depois de 60 dias): ver lista no fim deste arquivo.
+- **WhatsApp é o CTA principal** em todas as páginas, com mensagem pré-preenchida por contexto (família, marca, produto).
+- **Uma página por serviço × família** (`/manutencao/<família>/`) e **uma por marca** (`/marcas/<marca>/`):
+  são as páginas que respondem "manutenção de perfuradores Stryker", "assistência ConMed/Linvatec", "manutenção Karl Storz".
+- Produtos com estado explícito: atendido em manutenção, à venda, em locação. Linhas atuais (System 7 e 8) presentes
+  mesmo sem estoque, porque a busca é por manutenção.
+- Conteúdo técnico original (`/conteudo/`) com FAQ e entidades nomeadas: é o que motores de busca e assistentes de IA citam.
+- Aviso de independência em todas as páginas de marca, produto e serviço.
 
 ## 2. O que já está no código (não precisa manter)
 
@@ -36,9 +33,11 @@ Palavras-chave alvo (valide no Search Console depois de 60 dias): ver lista no f
 - Dados estruturados JSON-LD: `MedicalBusiness`/`LocalBusiness` (endereço, telefone, horário, geo),
   `Product` + `Offer` por produto, `Service` + `FAQPage` por serviço, `BreadcrumbList`, `ItemList`.
 - `sitemap.xml` e `robots.txt` gerados no build. Página 404 real. `google-site-verification` mantido.
-- Performance: HTML estático, CSS único sem framework, imagens WebP com `width/height` (sem layout shift),
-  `loading="lazy"`, sem fontes externas, sem JS de terceiros. Zero cookies, zero LGPD a gerenciar.
-- Acessibilidade: HTML semântico, skip link, foco visível, contraste, `lang="pt-BR"`, modo escuro.
+- Performance: HTML estático, CSS único sem framework, fontes próprias (Inter e Manrope, subset latin), imagens WebP
+  com `width/height` e `srcset`, `loading="lazy"`, sem JS de terceiros até o consentimento.
+- Acessibilidade: HTML semântico, skip link, foco visível, contraste AA, `lang="pt-BR"`, modo escuro.
+- Mensuração (seção 6): GA4 e Pixel da Meta opcionais, eventos de lead, consentimento LGPD.
+- 66 redirecionamentos dos endereços antigos (Django) para os novos.
 
 ## 3. O robô (`tools/seo-audit.mjs` + workflow `SEO monitor`)
 
@@ -75,19 +74,28 @@ Recomendação: faça B e C agora (gratuitos, uma vez só). D e F quando quiser 
 
 ## 5. Palavras-chave alvo (para acompanhar no Search Console)
 
-Serviço: manutenção de equipamentos médicos Curitiba · assistência técnica videocirurgia · assistência técnica
-torre de vídeo · conserto câmera de vídeo cirúrgica · manutenção câmera Karl Storz · manutenção fonte de luz
-xenon · troca de lâmpada xenon por LED · manutenção insuflador de CO2 · manutenção artrobomba · manutenção
-endoscópio rígido · reparo perfurador ortopédico · manutenção motor Stryker System 5 / System 6.
+Serviço × marca: manutenção de perfuradores Stryker · manutenção Stryker System 7 · manutenção System 8 ·
+assistência técnica ConMed · assistência Linvatec · manutenção Hall PowerPro · manutenção equipamentos Karl Storz ·
+manutenção câmera IMAGE1 · manutenção fonte de luz xenon · conversão xenon para LED · manutenção insuflador ·
+manutenção artrobomba · manutenção shaver · recuperação bateria Stryker · carregador bateria Stryker.
 
-Locação: locação de equipamentos cirúrgicos · locação de torre de videocirurgia · locação de equipamentos
-para artroscopia · locação por procedimento · comodato de equipamentos cirúrgicos.
+Software: atualização firmware perfurador · desbloqueio equipamento médico · carregador inteligente Stryker.
 
-Venda: equipamentos de videocirurgia seminovos · perfurador ortopédico Stryker seminovo · carregador de
-bateria Stryker · instrumental artroscopia STAHL · equipamento cirúrgico veterinário · câmera de vídeo
-cirúrgica seminova.
+Locação e venda: locação de torre de videocirurgia · locação perfurador Stryker · perfurador Stryker seminovo ·
+câmera de vídeo cirúrgica seminova · fonte de luz LED seminova.
 
-Marca + modelo: Stryker 1488HD · Stryker L9000 · Storz Image1 HUB · Storz 20133120 · Dyonics 560P ·
-Dyonics 500XL · NDS Radiance G2 · Stryker WiSe · Stryker System 6.
+Local: + Curitiba · + Paraná · + Brasil (envio por transportadora).
 
-Local: + Curitiba · + Paraná · + Sul do Brasil.
+## 6. Mensuração e marketing
+
+- **GA4**: preencha `analytics.ga4MeasurementId` em `content/site.json` (formato `G-XXXXXXX`). Eventos enviados:
+  `whatsapp_click`, `phone_click`, `email_click`, `form_submit` e `generate_lead` (com `place` = hero, header,
+  footer, fab, produto, cta). Marque `generate_lead` como conversão no GA4 para ver a origem dos contatos.
+- **Meta**: preencha `analytics.metaPixelId`. O pixel dispara `PageView` e os mesmos eventos como `trackCustom`.
+  Para campanhas, verifique o domínio no Meta Business e use os eventos acima como conversões personalizadas.
+- **Consentimento**: o aviso só aparece quando há algum ID preenchido; nada é carregado antes do "Aceitar".
+  A escolha fica no navegador do visitante e pode ser trocada em `/privacidade/`.
+- **Links compartilhados**: cada página tem Open Graph e Twitter Card; a imagem padrão é
+  `src/assets/img/site/og-image.png` (1200×630). Produtos com foto usam a própria foto.
+- **Contas e acessos**: Search Console, Business Profile, GA4 e Meta devem ser criados na conta da EquimedPR,
+  com o desenvolvedor como usuário convidado.

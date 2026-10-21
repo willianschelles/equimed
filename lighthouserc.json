@@ -4,9 +4,10 @@
       "staticDistDir": "./dist",
       "url": [
         "http://localhost/index.html",
-        "http://localhost/servicos/manutencao/index.html",
-        "http://localhost/especialidades/video-cirurgia/cameras-de-video/index.html",
-        "http://localhost/produtos/stryker-camera-1488hd/index.html",
+        "http://localhost/manutencao/perfuradores-e-serras/index.html",
+        "http://localhost/equipamentos/cameras-de-video/index.html",
+        "http://localhost/produtos/stryker-6-perfurador/index.html",
+        "http://localhost/software/index.html",
         "http://localhost/contato/index.html"
       ],
       "numberOfRuns": 1,

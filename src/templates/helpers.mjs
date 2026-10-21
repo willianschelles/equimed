@@ -24,7 +24,7 @@ export function imageSize(buf) {
   return { width: undefined, height: undefined };
 }
 
-/** <img> with intrinsic size from the build-time image index. */
+/** <img> with intrinsic size from the build-time image index and srcset from -480/-960 variants. */
 export function img(ctx, src, alt, { lazy = true, sizes, cls } = {}) {
   const dim = ctx.images[src];
   if (!dim) throw new Error(`Unknown image ${src}`);
@@ -40,8 +40,10 @@ export function img(ctx, src, alt, { lazy = true, sizes, cls } = {}) {
 }
 
 export const productUrl = (p) => `/produtos/${p.slug}/`;
-export const categoryUrl = (c) => `/especialidades/${c.specialty.slug}/${c.slug}/`;
-export const specialtyUrl = (s) => `/especialidades/${s.slug}/`;
+export const familyUrl = (f) => `/equipamentos/${f.slug}/`;
+export const maintenanceUrl = (f) => `/manutencao/${f.slug}/`;
+export const brandUrl = (b) => `/marcas/${b.slug}/`;
+export const articleUrl = (a) => `/conteudo/${a.slug}/`;
 
 /** Inline SVG icons (stroke-based, inherit currentColor). */
 export const icon = (name, size = 24) => {
@@ -65,7 +67,27 @@ export const icon = (name, size = 24) => {
     check: '<path d="M20 6 9 17l-5-5"/>',
     menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
     close: '<path d="M18 6 6 18M6 6l12 12"/>',
+    chevron: '<path d="m6 9 6 6 6-6"/>',
     facebook: '<path fill="currentColor" stroke="none" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.55-.14-2.84-.14C11.96 2 10 3.66 10 6.7v2.8H7v4h3V22h4z"/>',
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/>',
+    code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+    update: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/><path d="M12 8v5l3 2"/>',
+    unlock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.8-1.3"/><circle cx="12" cy="16" r="1" fill="currentColor"/>',
+    clipboard: '<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1H9z"/><path d="m9 14 2 2 4-4"/>',
+    truck: '<path d="M10 17h4V5H2v12h3"/><path d="M14 9h4l4 4v4h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+    /* Equipment families */
+    drill: '<path d="M3 8h11l2-2h4v6h-4l-2-2H3z"/><path d="M6 12v6a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-6"/><path d="M20 9h2"/><path d="M6 15h5"/>',
+    battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 10v4"/><path d="m11 9-2 3h4l-2 3"/>',
+    camera: '<rect x="3" y="7" width="12" height="10" rx="2"/><path d="m15 11 6-3v8l-6-3"/><circle cx="9" cy="12" r="2.5"/>',
+    light: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+    monitor: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    gas: '<path d="M9 2h6v3H9z"/><rect x="7" y="5" width="10" height="17" rx="3"/><path d="M12 10a3 3 0 1 0 0 6"/><path d="M12 13h3"/>',
+    pump: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><path d="M8.5 8.5 10 10M14 14l1.5 1.5"/>',
+    shaver: '<path d="M4 20 14 10"/><path d="M11 7 17 13"/><path d="m14 4 6 6-3 3-6-6z"/><path d="M4 20H2v-2"/>',
+    cable: '<path d="M3 8h4v8H3z"/><path d="M17 8h4v8h-4z"/><path d="M7 12c3 0 3-5 6-5s3 10 6 10"/>',
+    service: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+    tag: '<path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5"/>',
   };
-  return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]}</svg>`;
+  if (!paths[name]) throw new Error(`Unknown icon ${name}`);
+  return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]}</svg>`;
 };

@@ -1,95 +1,23 @@
 {
-  "specialties": [
-    {
-      "slug": "video-cirurgia",
-      "name": "Vídeo-Cirurgia",
-      "description": "Torre de vídeo completa: câmeras HD, fontes de luz xenon e LED e monitores cirúrgicos. Manutenção, locação e venda de equipamentos novos e seminovos.",
-      "categories": [
-        {
-          "slug": "cameras-de-video",
-          "name": "Câmeras de Vídeo",
-          "description": "Unidades de controle de câmera (CCU) e cabeças de câmera 3CCD HD para videocirurgia."
-        },
-        {
-          "slug": "monitores-de-video",
-          "name": "Monitores de Vídeo",
-          "description": "Monitores cirúrgicos HD de 19\" a 26\", com e sem fio."
-        },
-        {
-          "slug": "fonte-de-luz",
-          "name": "Fonte de Luz",
-          "description": "Fontes de luz xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED."
-        }
-      ]
-    },
-    {
-      "slug": "artroscopia",
-      "name": "Artroscopia",
-      "description": "Artrobombas, instrumentos e acessórios para artroscopia de joelho e ombro.",
-      "categories": [
-        {
-          "slug": "artrobomba",
-          "name": "Artrobomba",
-          "description": "Bombas de irrigação e distensão articular para artroscopia."
-        },
-        {
-          "slug": "acessorios",
-          "name": "Acessórios",
-          "description": "Cabos de fibra óptica, endocouplers, lâmpadas, caixas de esterilização e soluções de limpeza."
-        },
-        {
-          "slug": "instrumentos",
-          "name": "Instrumentos",
-          "description": "Instrumental STAHL para artroscopia."
-        }
-      ]
-    },
-    {
-      "slug": "laparoscopia",
-      "name": "Laparoscopia",
-      "description": "Insufladores de CO2 para videolaparoscopia.",
-      "categories": [
-        {
-          "slug": "insufladores",
-          "name": "Insufladores",
-          "description": "Insufladores de CO2 de 30 e 40 lpm para laparoscopia."
-        }
-      ]
-    },
-    {
-      "slug": "ortopedia-trauma",
-      "name": "Ortopedia - Trauma",
-      "description": "Perfuradores, serras e carregadores de bateria Stryker System 5 e System 6, seminovos, revisados e testados.",
-      "categories": [
-        {
-          "slug": "perfuradores",
-          "name": "Perfuradores",
-          "description": "Perfuradores ortopédicos Stryker System 5 e System 6."
-        },
-        {
-          "slug": "serras",
-          "name": "Serras",
-          "description": "Serras ortopédicas Stryker System 5 e System 6."
-        },
-        {
-          "slug": "carregadores",
-          "name": "Carregadores",
-          "description": "Carregadores de bateria para sistemas Stryker."
-        }
-      ]
-    }
-  ],
   "products": [
     {
       "slug": "stryker-camera-1488hd",
-      "name": "Stryker Câmera de Vídeo",
-      "model": "1488HD, 3CCD Digital HD 1488-010-000",
+      "name": "Câmera de vídeo Stryker 1488 HD",
+      "model": "3CCD Digital HD, ref. 1488-010-000",
       "brand": "Stryker",
-      "specialty": "video-cirurgia",
-      "category": "cameras-de-video",
+      "brandSlug": "stryker",
+      "family": "cameras-de-video",
       "image": "stryker-camera-1488hd",
-      "summary": "Câmera de Vídeo Stryker 1488HD, 3CCD Digital HD, modelo 1488-010-000.",
+      "legacyName": "Stryker Câmera de Vídeo",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
+      "summary": "Unidade de controle de câmera Stryker 1488 HD, 3CCD Digital HD, ref. 1488-010-000, para torres de videocirurgia. Seminovo revisado e testado.",
       "paragraphs": [],
+      "list": null,
       "specs": [
         [
           "Entradas de câmera",
@@ -127,12 +55,19 @@
     },
     {
       "slug": "storz-camera-image1-hub",
-      "name": "Storz Câmera de Vídeo",
-      "model": "Image1 HUB, 3CCD Digital HD 22201020-104",
+      "name": "Câmera de vídeo Karl Storz IMAGE1 HUB HD",
+      "model": "3CCD Digital HD, ref. 22201020-104",
       "brand": "Karl Storz",
-      "specialty": "video-cirurgia",
-      "category": "cameras-de-video",
+      "brandSlug": "karl-storz",
+      "family": "cameras-de-video",
       "image": "storz-camera-image1-hub",
+      "legacyName": "Storz Câmera de Vídeo",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Câmera de Vídeo Storz Image1 HUB, 3CCD Digital HD, modelo 22201020-104.",
       "paragraphs": [
         "Com resolução de 1.920 x 1.080 e varredura progressiva, a unidade de controle de câmera (CCU) garante uma imagem sem atrasos e reprodução de cor natural."
@@ -153,17 +88,25 @@
     },
     {
       "slug": "dyonics-camera-560p",
-      "name": "Dyonics Câmera de Vídeo",
-      "model": "560P, 3CCD Digital HD",
+      "name": "Câmera de vídeo Smith & Nephew Dyonics 560P",
+      "model": "3CCD Digital HD",
       "brand": "Smith & Nephew",
-      "specialty": "video-cirurgia",
-      "category": "cameras-de-video",
+      "brandSlug": "smith-nephew",
+      "family": "cameras-de-video",
       "image": "dyonics-camera-560p",
+      "legacyName": "Dyonics Câmera de Vídeo",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Câmera de Vídeo Dyonics 560P, 3CCD Digital HD.",
       "paragraphs": [
         "O sistema de câmera de alta definição 560 série 3-CCD, com transmissão digital, produz imagem HD 1080 pura.",
         "Cabeça de câmera compatível: Smith & Nephew 560H não autoclavável, modelo 72200561."
       ],
+      "list": null,
       "specs": [
         [
           "Alimentação",
@@ -201,14 +144,22 @@
     },
     {
       "slug": "nds-monitor-26-radiance-g2",
-      "name": "NDS Monitor de Vídeo 26\"",
-      "model": "Radiance G2",
+      "name": "Monitor cirúrgico NDS Radiance G2 26\"",
+      "model": "Full HD, grau médico",
       "brand": "NDS Surgical Imaging",
-      "specialty": "video-cirurgia",
-      "category": "monitores-de-video",
+      "brandSlug": "nds",
+      "family": "monitores-cirurgicos",
       "image": "nds-monitor-26-radiance-g2",
+      "legacyName": null,
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Monitor de Vídeo NDS Radiance G2 26\" HB: sistema de visualização cirúrgica high-end com a luminância mais alta entre os monitores cirúrgicos de 26\".",
       "paragraphs": [],
+      "list": null,
       "specs": [
         [
           "Alimentação",
@@ -246,14 +197,22 @@
     },
     {
       "slug": "nds-monitor-19-endovue",
-      "name": "NDS Monitor de Vídeo 19\"",
-      "model": "EndoVue",
+      "name": "Monitor cirúrgico NDS EndoVue 19\"",
+      "model": "Grau médico, entradas analógicas e digitais",
       "brand": "NDS Surgical Imaging",
-      "specialty": "video-cirurgia",
-      "category": "monitores-de-video",
+      "brandSlug": "nds",
+      "family": "monitores-cirurgicos",
       "image": "nds-monitor-19-endovue",
+      "legacyName": null,
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Monitor de Vídeo NDS EndoVue 19\": display de endoscopia high-end que aceita sinais analógicos e digitais de alta definição de diversas fontes de imagem médica.",
       "paragraphs": [],
+      "list": null,
       "specs": [
         [
           "Tamanho da tela",
@@ -315,12 +274,19 @@
     },
     {
       "slug": "storz-monitor-wideview-24",
-      "name": "Storz Monitor de Vídeo",
-      "model": "WideView 24\" LCD HD",
+      "name": "Monitor cirúrgico Karl Storz WideView 24\"",
+      "model": "LCD HD 16:9",
       "brand": "Karl Storz",
-      "specialty": "video-cirurgia",
-      "category": "monitores-de-video",
+      "brandSlug": "karl-storz",
+      "family": "monitores-cirurgicos",
       "image": "storz-monitor-wideview-24",
+      "legacyName": "Storz Monitor de Vídeo",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Monitor de Vídeo Storz WideView 24\" no formato HD 16:9, resolução máxima de 1920 x 1200 pixels.",
       "paragraphs": [],
       "list": {
@@ -334,12 +300,19 @@
     },
     {
       "slug": "stryker-monitor-wise",
-      "name": "Stryker Monitor de Vídeo WiSe",
-      "model": "HDTV Surgical Display",
+      "name": "Monitor cirúrgico Stryker WiSe",
+      "model": "HDTV sem fio",
       "brand": "Stryker",
-      "specialty": "video-cirurgia",
-      "category": "monitores-de-video",
+      "brandSlug": "stryker",
+      "family": "monitores-cirurgicos",
       "image": "stryker-monitor-wise",
+      "legacyName": "Stryker Monitor de Vídeo WiSe",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Monitor de Vídeo Stryker WiSe HDTV Surgical Display: plataforma de exibição sem fio da Stryker.",
       "paragraphs": [],
       "list": {
@@ -356,13 +329,20 @@
     },
     {
       "slug": "stryker-fonte-de-luz-l9000-led",
-      "name": "Stryker Fonte de Luz",
-      "model": "L9000 LED",
+      "name": "Fonte de luz Stryker L9000 LED",
+      "model": "LED, tecnologia Safelight",
       "brand": "Stryker",
-      "specialty": "video-cirurgia",
-      "category": "fonte-de-luz",
+      "brandSlug": "stryker",
+      "family": "fontes-de-luz",
       "image": "stryker-fonte-de-luz-l9000-led",
-      "summary": "Fonte de Luz Stryker L9000 LED.",
+      "legacyName": "Stryker Fonte de Luz",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
+      "summary": "Fonte de luz LED Stryker L9000, com tecnologia Safelight e controle remoto pela cabeça de câmera. Seminovo revisado e testado.",
       "paragraphs": [],
       "list": {
         "title": "Características e benefícios",
@@ -394,26 +374,41 @@
     },
     {
       "slug": "storz-fonte-de-luz-300w-xenon",
-      "name": "Storz Fonte de Luz",
-      "model": "300W Xenon 20133120",
+      "name": "Fonte de luz Karl Storz Xenon 300 W",
+      "model": "Ref. 20133120",
       "brand": "Karl Storz",
-      "specialty": "video-cirurgia",
-      "category": "fonte-de-luz",
+      "brandSlug": "karl-storz",
+      "family": "fontes-de-luz",
       "image": "storz-fonte-de-luz-300w-xenon",
+      "legacyName": "Storz Fonte de Luz",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Fonte de Luz Storz 300 W Xenon, modelo 20133120.",
       "paragraphs": [
         "Fonte de luz com lâmpada xenon de arco curto de 300 W, para endoscopia cirúrgica, com refletor parabólico. A lâmpada PE300BF tem expectativa de vida de 1.000 horas e garantia de até 500 horas."
       ],
+      "list": null,
       "specs": []
     },
     {
       "slug": "dyonics-fonte-de-luz-500xl",
-      "name": "Dyonics Fonte de Luz",
-      "model": "300W Xenon 500XL",
+      "name": "Fonte de luz Smith & Nephew Dyonics 500XL",
+      "model": "Xenon 300 W",
       "brand": "Smith & Nephew",
-      "specialty": "video-cirurgia",
-      "category": "fonte-de-luz",
+      "brandSlug": "smith-nephew",
+      "family": "fontes-de-luz",
       "image": "dyonics-fonte-de-luz-500xl",
+      "legacyName": "Dyonics Fonte de Luz",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Fonte de Luz Dyonics 300 W Xenon, modelo 500XL.",
       "paragraphs": [],
       "list": {
@@ -477,16 +472,24 @@
     },
     {
       "slug": "stryker-bomba-arthropump",
-      "name": "Stryker Bomba",
-      "model": "Arthropump Hermes Ready 350-357-000",
+      "name": "Artrobomba Stryker Arthropump",
+      "model": "Hermes Ready, ref. 350-357-000",
       "brand": "Stryker",
-      "specialty": "artroscopia",
-      "category": "artrobomba",
+      "brandSlug": "stryker",
+      "family": "artrobombas",
       "image": "stryker-bomba-arthropump",
+      "legacyName": "Stryker Bomba",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Bomba Stryker Arthropump Hermes Ready, modelo 350-357-000.",
       "paragraphs": [
         "Fornece fluido para distensão das cavidades articulares em procedimentos diagnósticos ou operatórios."
       ],
+      "list": null,
       "specs": [
         [
           "Alimentação",
@@ -512,14 +515,22 @@
     },
     {
       "slug": "dyonics-bomba-access-25",
-      "name": "Dyonics Bomba",
-      "model": "Access 25",
+      "name": "Artrobomba Smith & Nephew Dyonics Access 25",
+      "model": "Sistema de gerenciamento de fluidos",
       "brand": "Smith & Nephew",
-      "specialty": "artroscopia",
-      "category": "artrobomba",
+      "brandSlug": "smith-nephew",
+      "family": "artrobombas",
       "image": "dyonics-bomba-access-25",
+      "legacyName": "Dyonics Bomba",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Bomba Dyonics Access 25 para artroscopia.",
       "paragraphs": [],
+      "list": null,
       "specs": [
         [
           "Alimentação",
@@ -560,32 +571,18 @@
       ]
     },
     {
-      "slug": "stahl-caixa-de-esterilizacao",
-      "name": "STAHL Caixa de Esterilização para Instrumentos",
-      "model": "A8006 / A8010",
-      "brand": "STAHL",
-      "specialty": "artroscopia",
-      "category": "acessorios",
-      "image": "stahl-caixa-de-esterilizacao",
-      "summary": "Bandeja para esterilização de instrumentos de artroscopia, eliminando ou inativando todas as formas de vida e outros agentes biológicos.",
-      "paragraphs": [],
-      "list": {
-        "title": "Modelos",
-        "items": [
-          "A8006 — caixa de esterilização para 6 instrumentos de artroscopia",
-          "A8010 — caixa de esterilização para 10 instrumentos de artroscopia"
-        ]
-      },
-      "specs": []
-    },
-    {
       "slug": "lampadas-p3300bf",
-      "name": "Lâmpadas",
-      "model": "P3300BF",
+      "name": "Lâmpadas xenon e HTI P3300BF",
+      "model": "Excelitas e Osram, 175 W e 300 W",
       "brand": "Excelitas / Osram",
-      "specialty": "artroscopia",
-      "category": "acessorios",
+      "brandSlug": null,
+      "family": "acessorios-de-video",
       "image": "lampadas-p3300bf",
+      "legacyName": "Lâmpadas",
+      "condition": "novo",
+      "services": [
+        "venda"
+      ],
       "summary": "Lâmpadas HTI e Xenon para fontes de luz, modelo P3300BF. Excelitas e Osram.",
       "paragraphs": [],
       "list": {
@@ -599,13 +596,18 @@
     },
     {
       "slug": "stahl-cabo-de-fibra-optica",
-      "name": "STAHL Cabo de Fibra Óptica",
-      "model": "",
-      "brand": "STAHL",
-      "specialty": "artroscopia",
-      "category": "acessorios",
+      "name": "Cabo de fibra óptica para fonte de luz",
+      "model": "Terminais Storz, Wolf, Olympus e ACMI",
+      "brand": null,
+      "brandSlug": null,
+      "family": "acessorios-de-video",
       "image": "stahl-cabo-de-fibra-optica",
-      "summary": "Meio de transmissão de luz de alta velocidade. Contém minúsculos filamentos de vidro ou plástico que transportam feixes de luz.",
+      "legacyName": "STAHL Cabo de fibra óptica",
+      "condition": "novo",
+      "services": [
+        "venda"
+      ],
+      "summary": "Cabo de fibra óptica para transmissão de luz entre a fonte e o endoscópio, com terminais compatíveis com as principais marcas.",
       "paragraphs": [],
       "list": {
         "title": "Terminais compatíveis",
@@ -619,57 +621,38 @@
       "specs": []
     },
     {
-      "slug": "stahl-acessorios-de-limpeza",
-      "name": "STAHL Acessórios de Limpeza",
-      "model": "",
-      "brand": "STAHL",
-      "specialty": "artroscopia",
-      "category": "acessorios",
-      "image": "stahl-acessorios-de-limpeza",
-      "summary": "Soluções de limpeza para instrumentos e dispositivos médicos.",
-      "paragraphs": [],
-      "list": {
-        "title": "Produtos",
-        "items": [
-          "9600 — Lubrificante para instrumentos",
-          "9700 — Detergente enzimático Surgi-clean",
-          "9800 — Sabão pré-limpeza"
-        ]
-      },
-      "specs": []
-    },
-    {
       "slug": "endocouplers",
-      "name": "Endocouplers",
-      "model": "",
-      "brand": "",
-      "specialty": "artroscopia",
-      "category": "acessorios",
+      "name": "Endocouplers para cabeça de câmera",
+      "model": "Acoplamento óptico para endoscópios",
+      "brand": null,
+      "brandSlug": null,
+      "family": "acessorios-de-video",
       "image": "endocouplers",
-      "summary": "Endocouplers para acoplar a cabeça da câmera ao artroscópio.",
+      "legacyName": "Endocouplers",
+      "condition": "novo",
+      "services": [
+        "venda"
+      ],
+      "summary": "Endocouplers para acoplar a cabeça de câmera ao endoscópio rígido, com ajuste de foco. Modelos para as principais cabeças de câmera.",
       "paragraphs": [],
-      "specs": []
-    },
-    {
-      "slug": "stahl-access",
-      "name": "STAHL Access",
-      "model": "Access",
-      "brand": "STAHL",
-      "specialty": "artroscopia",
-      "category": "instrumentos",
-      "image": "stahl-access",
-      "summary": "Instrumental STAHL Access para artroscopia de joelho e artroscopia de ombro. Permite as menores incisões possíveis com instrumento.",
-      "paragraphs": [],
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-insuflador-core-40-lpm",
-      "name": "Stryker Insuflador",
-      "model": "620-040-503, 40 lpm Core",
+      "name": "Insuflador Stryker Core 40 lpm",
+      "model": "Ref. 620-040-503",
       "brand": "Stryker",
-      "specialty": "laparoscopia",
-      "category": "insufladores",
+      "brandSlug": "stryker",
+      "family": "insufladores",
       "image": "stryker-insuflador-core-40-lpm",
+      "legacyName": "Stryker Insuflador",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Insuflador Stryker Core 40 lpm, modelo 620-040-503. Preserva o pneumoperitônio sob condições extremas durante os procedimentos.",
       "paragraphs": [],
       "list": {
@@ -684,12 +667,19 @@
     },
     {
       "slug": "storz-insuflador-30-lpm",
-      "name": "Storz Insuflador",
-      "model": "26432020, 30 lpm",
+      "name": "Insuflador Karl Storz Endoflator 30 lpm",
+      "model": "Ref. 26432020",
       "brand": "Karl Storz",
-      "specialty": "laparoscopia",
-      "category": "insufladores",
+      "brandSlug": "karl-storz",
+      "family": "insufladores",
       "image": "storz-insuflador-30-lpm",
+      "legacyName": "Storz Insuflador",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Insuflador Storz 26432020 para laparoscopias com vazão de até 30 lpm. Insuflação segura.",
       "paragraphs": [],
       "list": {
@@ -716,101 +706,106 @@
     },
     {
       "slug": "dyonics-insuflador-40-lpm",
-      "name": "Dyonics Insuflador",
-      "model": "40 lpm",
+      "name": "Insuflador Smith & Nephew Dyonics 40 lpm",
+      "model": "Com aquecimento de CO2",
       "brand": "Smith & Nephew",
-      "specialty": "laparoscopia",
-      "category": "insufladores",
+      "brandSlug": "smith-nephew",
+      "family": "insufladores",
       "image": "dyonics-insuflador-40-lpm",
-      "summary": "Insuflador Dyonics 40 lpm. O único insuflador com torneira, que oferece gás CO2 aquecido durante a cirurgia.",
+      "legacyName": "Dyonics Insuflador",
+      "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
+      "summary": "Insuflador Smith & Nephew Dyonics de 40 lpm com aquecimento do CO2 durante a cirurgia. Seminovo revisado e testado.",
       "paragraphs": [],
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-5-perfurador",
-      "name": "Stryker 5 - Perfurador",
-      "model": "System 5",
+      "name": "Perfurador Stryker System 5",
+      "model": "Seminovo revisado",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "perfuradores",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-5-perfurador",
+      "legacyName": "Stryker 5 - Perfurador",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Perfurador Stryker System 5, de grande potência e resistência. Usado em cirurgias artroscópicas e ortopédicas.",
       "paragraphs": [
-        "Acompanha carregador e bateria. Temos vários acessórios de bloca. Todos os itens com garantia."
+        "Acompanha carregador e bateria. Todos os itens com garantia."
       ],
-      "list": {
-        "title": "Condição",
-        "items": [
-          "Perfurador seminovo",
-          "Revisado e testado",
-          "Garantia de 3 meses"
-        ]
-      },
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-6-perfurador",
-      "name": "Stryker 6 - Perfurador",
-      "model": "System 6",
+      "name": "Perfurador Stryker System 6",
+      "model": "Seminovo revisado",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "perfuradores",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-6-perfurador",
+      "legacyName": "Stryker 6 - Perfurador",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Perfurador Stryker System 6: perfuração em alta velocidade e fresagem em elevado torque. Usado em cirurgias artroscópicas e ortopédicas.",
       "paragraphs": [
         "Acompanha carregador e bateria. Todos os itens com garantia."
       ],
-      "list": {
-        "title": "Condição",
-        "items": [
-          "Perfurador seminovo",
-          "Revisado e testado",
-          "Garantia de 3 meses"
-        ]
-      },
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-5-perfurador-e-serra",
-      "name": "Stryker 5 - Perfurador e Serra",
-      "model": "System 5",
+      "name": "Conjunto perfurador e serra Stryker System 5",
+      "model": "Seminovo revisado, com bateria e carregador",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "perfuradores",
-      "alsoIn": [
-        "serras"
-      ],
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-5-perfurador-e-serra",
+      "legacyName": "Stryker 5 - Perfurador e Serra",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Perfurador e Serra Stryker System 5: equipamentos para cirurgia com elevada potência e resistência.",
       "paragraphs": [
         "Acompanha carregador, bateria e vários acessórios. Todos os itens com garantia."
       ],
-      "list": {
-        "title": "Condição",
-        "items": [
-          "Equipamentos seminovos",
-          "Revisados e testados",
-          "Garantia de 3 meses"
-        ]
-      },
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-6-perfurador-e-serra",
-      "name": "Stryker 6 - Perfurador e Serra",
-      "model": "System 6",
+      "name": "Conjunto perfurador e serra Stryker System 6",
+      "model": "Seminovo revisado, com bateria e carregador",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "perfuradores",
-      "alsoIn": [
-        "serras"
-      ],
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-6-perfurador-e-serra",
+      "legacyName": "Stryker 6 - Perfurador e Serra",
       "condition": "seminovo",
-      "summary": "Perfurador e Serra Stryker System 6: equipamentos médicos para cirurgia com elevada potência e resistência, a preço incrível.",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
+      "summary": "Perfurador e Serra Stryker System 6: equipamentos médicos para cirurgia com elevada potência e resistência.",
       "paragraphs": [],
       "list": {
         "title": "O conjunto Stryker System 6 inclui",
@@ -827,59 +822,63 @@
     },
     {
       "slug": "stryker-5-serra",
-      "name": "Stryker 5 - Serra",
-      "model": "System 5",
+      "name": "Serra Stryker System 5",
+      "model": "Seminova revisada",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "serras",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-5-serra",
+      "legacyName": "Stryker 5 - Serra",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Serra Stryker System 5, de grande potência e resistência. Usada em cirurgias artroscópicas e ortopédicas.",
       "paragraphs": [
         "Acompanha carregador e bateria. Todos os itens com garantia."
       ],
-      "list": {
-        "title": "Condição",
-        "items": [
-          "Serra seminova",
-          "Revisada e testada",
-          "Garantia de 3 meses"
-        ]
-      },
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-6-serra",
-      "name": "Stryker 6 - Serra",
-      "model": "System 6",
+      "name": "Serra Stryker System 6",
+      "model": "Seminova revisada",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "serras",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
       "image": "stryker-6-serra",
+      "legacyName": "Stryker 6 - Serra",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Serra Stryker System 6, compacta e com excelente ergonomia. Usada em cirurgias artroscópicas e ortopédicas.",
       "paragraphs": [
         "Acompanha carregador e bateria. Todos os itens com garantia."
       ],
-      "list": {
-        "title": "Condição",
-        "items": [
-          "Serra seminova",
-          "Revisada e testada",
-          "Garantia de 3 meses"
-        ]
-      },
+      "list": null,
       "specs": []
     },
     {
       "slug": "stryker-5-carregador-de-bateria",
-      "name": "Stryker 5 - Carregador de Bateria",
-      "model": "System 5",
+      "name": "Carregador de baterias Stryker System 5",
+      "model": "4 baias, seminovo revisado",
       "brand": "Stryker",
-      "specialty": "ortopedia-trauma",
-      "category": "carregadores",
+      "brandSlug": "stryker",
+      "family": "baterias-e-carregadores",
       "image": "stryker-5-carregador-de-bateria",
+      "legacyName": "Stryker 5 - Carregador de Bateria",
       "condition": "seminovo",
+      "services": [
+        "manutencao",
+        "venda",
+        "locacao"
+      ],
       "summary": "Carregador para baterias Stryker System 5.",
       "paragraphs": [],
       "list": {
@@ -896,12 +895,18 @@
     },
     {
       "slug": "carregador-de-bateria-inteligente",
-      "name": "Carregador de Bateria Inteligente",
-      "model": "Séries Stryker 3, 5, 6 e 7",
-      "brand": "",
-      "specialty": "ortopedia-trauma",
-      "category": "carregadores",
+      "name": "Carregador inteligente EquimedPR",
+      "model": "Compatível com séries Stryker 3, 5, 6 e 7",
+      "brand": "EquimedPR",
+      "brandSlug": null,
+      "family": "baterias-e-carregadores",
       "image": "carregador-de-bateria-inteligente",
+      "legacyName": "Carregador de Bateria Inteligente",
+      "condition": "novo",
+      "services": [
+        "venda",
+        "manutencao"
+      ],
       "summary": "Carregador avançado para as séries Stryker 3, 5, 6 e 7, capaz de carregar e balancear baterias Li-ion, LiPo, LiFe, NiCd e NiMH.",
       "paragraphs": [],
       "list": {
@@ -915,6 +920,190 @@
         ]
       },
       "specs": []
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [
+        "Atendemos as peças de mão da linha System 7 (perfurador rotativo de gatilho duplo, serra sagital e serra recíproca), as baterias padrão, small e asséptica e os carregadores da linha.",
+        "Serviços: avaliação técnica, troca de rolamentos, vedações e componentes de gatilho, reparo de mandris e travas de lâmina, atualização de firmware e teste funcional em bancada."
+      ],
+      "list": {
+        "title": "O que atendemos na linha System 7",
+        "items": [
+          "Perfurador rotativo de gatilho duplo",
+          "Serra sagital e serra recíproca",
+          "Baterias e carregadores",
+          "Acessórios de encaixe e mandris"
+        ]
+      },
+      "specs": [],
+      "slug": "stryker-system-7",
+      "name": "Stryker System 7",
+      "model": "Perfurador rotativo, serra sagital e serra recíproca",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
+      "summary": "Linha Stryker System 7 de perfuradores e serras a bateria para ortopedia e trauma. Atendida em manutenção, com baterias e carregadores."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [
+        "Atendemos as peças de mão da linha System 8 (perfurador rotativo de gatilho duplo, serra sagital, serra recíproca e serra de esterno), as baterias e os carregadores da linha.",
+        "Serviços: avaliação técnica, troca de rolamentos, vedações e componentes de gatilho, reparo de mandris e travas de lâmina, atualização de firmware e teste funcional em bancada."
+      ],
+      "list": {
+        "title": "O que atendemos na linha System 8",
+        "items": [
+          "Perfurador rotativo de gatilho duplo",
+          "Serra sagital, serra recíproca e serra de esterno",
+          "Baterias e carregadores",
+          "Acessórios de encaixe e mandris"
+        ]
+      },
+      "specs": [],
+      "slug": "stryker-system-8",
+      "name": "Stryker System 8",
+      "model": "Perfurador rotativo, serra sagital, serra recíproca e serra de esterno",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
+      "summary": "Linha atual Stryker System 8 de perfuradores e serras a bateria. Atendida em manutenção, incluindo baterias e carregadores."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [],
+      "list": {
+        "title": "Serviços",
+        "items": [
+          "Teste de capacidade e resistência interna",
+          "Substituição de células e contatos",
+          "Reparo de carregadores e baias",
+          "Atualização de software da bateria e do carregador"
+        ]
+      },
+      "specs": [],
+      "slug": "stryker-baterias-system-7-8",
+      "name": "Baterias e carregadores Stryker System 7 e 8",
+      "model": "Recuperação, substituição de células e firmware",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "baterias-e-carregadores",
+      "summary": "Baterias e carregadores das linhas Stryker System 7 e System 8: teste de capacidade, substituição de células, reparo de carregadores e atualização de software."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [],
+      "list": {
+        "title": "O que atendemos",
+        "items": [
+          "Perfuradores e serras PowerPro, PowerPro Max e MPower 2",
+          "Baterias e carregadores",
+          "Acessórios de encaixe"
+        ]
+      },
+      "specs": [],
+      "slug": "conmed-hall-powerpro-mpower",
+      "name": "ConMed Hall PowerPro e MPower 2",
+      "model": "Perfuradores e serras a bateria",
+      "brand": "ConMed",
+      "brandSlug": "conmed",
+      "family": "perfuradores-e-serras",
+      "summary": "Peças de mão ConMed Hall PowerPro, PowerPro Max e MPower 2, com baterias e carregadores. Atendidas em manutenção."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [],
+      "list": {
+        "title": "O que atendemos",
+        "items": [
+          "Consoles Advantage Drive, Advantage Turbo, D3000 e D4000",
+          "Peças de mão de shaver",
+          "Pedais e cabos"
+        ]
+      },
+      "specs": [],
+      "slug": "linvatec-shavers-advantage",
+      "name": "Shavers ConMed Linvatec Advantage",
+      "model": "Consoles Advantage Drive e Turbo, peças de mão e pedais",
+      "brand": "Linvatec",
+      "brandSlug": "linvatec",
+      "family": "shavers",
+      "summary": "Consoles e peças de mão de shaver ConMed Linvatec Advantage Drive, Advantage Turbo, D3000 e D4000. Atendidos em manutenção."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [],
+      "list": {
+        "title": "O que atendemos",
+        "items": [
+          "Unidades de controle IMAGE1 S",
+          "Cabeças de câmera HD e 4K",
+          "Cabos e conectores"
+        ]
+      },
+      "specs": [],
+      "slug": "karl-storz-image1-s",
+      "name": "Câmera Karl Storz IMAGE1 S",
+      "model": "Plataforma de câmera HD e 4K",
+      "brand": "Karl Storz",
+      "brandSlug": "karl-storz",
+      "family": "cameras-de-video",
+      "summary": "Plataforma de câmera Karl Storz IMAGE1 S, unidades de controle e cabeças de câmera HD e 4K. Atendida em manutenção."
+    },
+    {
+      "condition": null,
+      "services": [
+        "manutencao"
+      ],
+      "image": null,
+      "legacyName": null,
+      "paragraphs": [],
+      "list": {
+        "title": "O que atendemos",
+        "items": [
+          "Consoles Core, Core 2 e CrossFire",
+          "Peças de mão de shaver Formula",
+          "Pedais e cabos"
+        ]
+      },
+      "specs": [],
+      "slug": "stryker-core-shaver",
+      "name": "Consoles de shaver Stryker Core e CrossFire",
+      "model": "Consoles, peças de mão e pedais",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "shavers",
+      "summary": "Consoles Stryker Core, Core 2 e CrossFire e peças de mão de shaver e perfuração de pequenas articulações. Atendidos em manutenção."
     }
   ]
 }

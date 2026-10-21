@@ -1,20 +1,21 @@
 {
-  "name": "Equimed",
+  "name": "EquimedPR",
+  "shortName": "Equimed",
   "legalName": "Equimed Equipamentos Médicos",
-  "tagline": "Equipamentos médico-hospitalares",
-  "shortDescription": "Assistência técnica, locação e venda de equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia. Equipamentos veterinários. Curitiba, PR.",
+  "tagline": "Assistência técnica independente multimarcas em equipamentos médicos",
+  "shortDescription": "Assistência técnica independente multimarcas para equipamentos médicos: manutenção, locação, venda e soluções de software. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses. Curitiba, PR.",
   "url": "https://www.equimedpr.com.br",
   "publishCname": false,
   "foundingYear": 2014,
   "email": "equimedpr@gmail.com",
   "phones": [
-    { "display": "+55 (41) 9 9920-1460", "e164": "+5541999201460" },
-    { "display": "+55 (41) 9 9889-3793", "e164": "+5541998893793" }
+    { "display": "(41) 9 9920-1460", "e164": "+5541999201460" },
+    { "display": "(41) 9 9889-3793", "e164": "+5541998893793" }
   ],
   "whatsapp": {
     "number": "5541998893793",
     "display": "(41) 9 9889-3793",
-    "message": "Olá, Equimed! Vim pelo site e gostaria de um orçamento.\n\nEquipamento: \nMarca/modelo: \nPreciso de: (manutenção / locação / compra)\n"
+    "message": "Olá, EquimedPR! Vim pelo site e gostaria de um orçamento.\n\nEquipamento: \nMarca/modelo: \nPreciso de: (manutenção / locação / compra / software)\n"
   },
   "address": {
     "street": "R. Paulina Ader, 72 - Imóvel 2",
@@ -30,7 +31,8 @@
   "openingHours": "Mo-Fr 08:00-18:00",
   "openingHoursDisplay": "Segunda a sexta, das 8h às 18h",
   "social": {
-    "facebook": "https://www.facebook.com/equimedpr.paulo.10"
+    "facebook": "https://www.facebook.com/equimedpr.paulo.10",
+    "instagram": ""
   },
   "sisterCompany": {
     "name": "Multmed",
@@ -38,17 +40,22 @@
     "description": "Manutenção especializada em perfuradores e serras ortopédicas, laudos e testes de segurança elétrica."
   },
   "googleSiteVerification": "IoVo5RINm8X5juaFUB7-wmZSGnumpumbML3E1sDt_io",
+  "analytics": {
+    "_comment": "Preencha para ativar. Vazio = nada é carregado. Os scripts só carregam após o consentimento de cookies.",
+    "ga4MeasurementId": "",
+    "metaPixelId": ""
+  },
   "nav": [
-    { "label": "Início", "href": "/" },
-    { "label": "Serviços", "href": "/servicos/" },
-    { "label": "Especialidades", "href": "/especialidades/" },
-    { "label": "Marcas", "href": "/marcas/" },
-    { "label": "Sobre nós", "href": "/sobre/" },
-    { "label": "Contato", "href": "/contato/" }
+    { "label": "Manutenção", "href": "/manutencao/" },
+    { "label": "Locação", "href": "/locacao/" },
+    { "label": "Venda", "href": "/venda/" },
+    { "label": "Software", "href": "/software/" },
+    { "label": "Equipamentos", "href": "/equipamentos/", "title": "Marcas e equipamentos atendidos" },
+    { "label": "Conteúdo técnico", "href": "/conteudo/" },
+    { "label": "Sobre", "href": "/sobre/" }
   ],
-  "specialtiesServed": [
-    "Artroscopia", "Endoscopia", "Laparoscopia", "Medicina veterinária",
-    "Ortopedia", "Otorrinolaringologia", "Urologia"
-  ],
-  "warranty": { "used": "3 meses", "new": "1 ano" }
+  "focusBrands": ["stryker", "conmed", "linvatec", "karl-storz"],
+  "independenceNotice": "A EquimedPR é uma assistência técnica independente. Não somos assistência autorizada, representante ou distribuidora oficial de nenhum fabricante. As marcas citadas pertencem aos seus respectivos titulares e são mencionadas apenas para identificar os equipamentos atendidos.",
+  "scopeNotice": "Não trabalhamos com implantes nem com instrumentais cirúrgicos.",
+  "warranty": { "used": "3 meses", "new": "1 ano", "service": "90 dias" }
 }

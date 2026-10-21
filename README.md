@@ -1,22 +1,23 @@
 # equimedpr.com.br
 
-Site institucional da **Equimed Equipamentos Médicos** (Curitiba, PR). Versão 2 (2026): site estático,
+Site institucional da **EquimedPR** (Equimed Equipamentos Médicos, Curitiba, PR): assistência técnica independente multimarcas. Versão 2 (2026): site estático,
 HTML e CSS puros, sem frameworks nem dependências de runtime. Substitui o app Django/Heroku de 2018.
 
 - Produção: https://www.equimedpr.com.br (GitHub Pages, publicado pelo workflow `Deploy`)
 - Edição de conteúdo sem programar: [docs/CONTENT-EDITING.md](docs/CONTENT-EDITING.md)
-- Estratégia de SEO e marketing, robô de monitoramento e opções: [docs/SEO-MARKETING.md](docs/SEO-MARKETING.md)
+- Estratégia de SEO e marketing, robô de monitoramento, mensuração e opções: [docs/SEO-MARKETING.md](docs/SEO-MARKETING.md)
+- Proposta de escopo, etapas e itens a validar (resposta às diretrizes de out/2026): [docs/PROPOSTA.md](docs/PROPOSTA.md)
 
 ## Como funciona
 
 ```
-content/         <- TODO o conteúdo editável (JSON): empresa, páginas, catálogo, marcas
+content/         <- TODO o conteúdo editável (JSON): site, pages, services, families, brands, catalog, articles
 src/templates/   <- templates (JS puro, template literals): layout + páginas
 src/styles/      <- main.css (cascade layers, custom properties, container queries, light-dark)
-src/scripts/     <- main.js (apenas progressive enhancement: formulário -> WhatsApp/e-mail)
-src/assets/      <- imagens WebP, logo SVG, favicon, manifest
+src/scripts/     <- main.js (progressive enhancement: consentimento + GA4/Meta, eventos de lead, formulário -> WhatsApp/e-mail)
+src/assets/      <- imagens WebP, fontes woff2 (Inter, Manrope), logo SVG, favicon, OG image, manifest
 build.mjs        <- gerador estático (Node >= 20, zero dependências) -> dist/
-tools/           <- seo-audit.mjs (robô), serve.mjs (preview), optimize-images.sh
+tools/           <- seo-audit.mjs (robô), serve.mjs (preview), optimize-images.sh, clean-product-photos.py
 .github/         <- deploy (Pages), ci (PR), seo-monitor (mensal)
 ```
 

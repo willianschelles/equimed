@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 import { layout } from './src/templates/layout.mjs';
 import * as pages from './src/templates/pages.mjs';
-import { imageSize } from './src/templates/helpers.mjs';
+import { imageSize, familyUrl, productUrl } from './src/templates/helpers.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 // BASE_PATH="/equimed" rewrites root-relative links for a GitHub Pages *project* preview URL.
@@ -16,15 +16,19 @@ const basePath = (process.env.BASE_PATH ?? '').replace(/\/$/, '');
 const withBase = (html) =>
   basePath
     ? html
-        .replace(/(href|src)="\/(?!\/)/g, `$1="${basePath}/`)
+        .replace(/(href|src|url)="\/(?!\/)/g, `$1="${basePath}/`)
+        .replace(/content="0; url=\//g, `content="0; url=${basePath}/`)
         .replace(/ srcset="([^"]*)"/g, (_, v) => ` srcset="${v.replace(/(^|,\s*)\//g, `$1${basePath}/`)}"`)
     : html;
 const out = join(root, 'dist');
 const json = (f) => JSON.parse(readFileSync(join(root, 'content', f), 'utf8'));
 
 const site = json('site.json');
-const catalog = json('catalog.json');
+const { products } = json('catalog.json');
+const families = json('families.json');
 const brands = json('brands.json');
+const services = json('services.json');
+const articles = json('articles.json');
 const copy = json('pages.json');
 
 // Index images once so templates can emit width/height (avoids layout shift).
@@ -32,29 +36,27 @@ const images = {};
 for (const dir of readdirSync(join(root, 'src/assets/img'))) {
   for (const f of readdirSync(join(root, 'src/assets/img', dir))) {
     const p = join(root, 'src/assets/img', dir, f);
-    if (statSync(p).isFile()) images[`/assets/img/${dir}/${f}`] = imageSize(readFileSync(p));
+    if (statSync(p).isFile() && /\.(webp|png)$/.test(f)) images[`/assets/img/${dir}/${f}`] = imageSize(readFileSync(p));
   }
 }
 
 const logoSvg = readFileSync(join(root, 'src/assets/img/site/logo.svg'), 'utf8')
   .replace(/<\?xml[^>]*>\s*/, '')
-  .replace('<svg ', '<svg class="brand__logo" ');
-const ctx = { site, catalog, brands, copy, images, logoSvg, buildDate: new Date().toISOString().slice(0, 10) };
+  .replace('<svg ', '<svg class="brand__logo" role="img" aria-label="EquimedPR" ');
 
-// Resolve catalog relations.
-for (const sp of catalog.specialties) {
-  for (const cat of sp.categories) {
-    cat.specialty = sp;
-    cat.products = catalog.products.filter(
-      (p) => p.specialty === sp.slug && (p.category === cat.slug || (p.alsoIn ?? []).includes(cat.slug)),
-    );
-  }
+// Resolve relations.
+for (const f of families) f.products = products.filter((p) => p.family === f.slug);
+for (const p of products) {
+  p.familyRef = families.find((f) => f.slug === p.family);
+  if (!p.familyRef) throw new Error(`Product ${p.slug}: unknown family ${p.family}`);
+  p.brandRef = p.brandSlug ? brands.find((b) => b.slug === p.brandSlug) : null;
+  if (p.brandSlug && !p.brandRef) throw new Error(`Product ${p.slug}: unknown brand ${p.brandSlug}`);
+  if (p.image && !images[`/assets/img/products/${p.image}.webp`]) throw new Error(`Product ${p.slug}: missing image ${p.image}`);
 }
-for (const p of catalog.products) {
-  p.specialtyRef = catalog.specialties.find((s) => s.slug === p.specialty);
-  p.categoryRef = p.specialtyRef.categories.find((c) => c.slug === p.category);
-  if (!p.categoryRef) throw new Error(`Product ${p.slug}: unknown category ${p.category}`);
-}
+for (const b of brands) for (const s of b.families) if (!families.find((f) => f.slug === s)) throw new Error(`Brand ${b.slug}: unknown family ${s}`);
+for (const a of articles) for (const s of a.families) if (!families.find((f) => f.slug === s)) throw new Error(`Article ${a.slug}: unknown family ${s}`);
+
+const ctx = { site, products, families, brands, services, articles, copy, images, logoSvg, buildDate: new Date().toISOString().slice(0, 10) };
 
 // Page registry: path -> rendered page descriptor.
 const registry = [];
@@ -62,18 +64,72 @@ const add = (path, page, { priority = 0.5, changefreq = 'monthly', sitemap = tru
   registry.push({ path, page, priority, changefreq, sitemap });
 
 add('/', pages.home(ctx), { priority: 1.0, changefreq: 'weekly' });
-add('/servicos/', pages.services(ctx), { priority: 0.9 });
-for (const s of copy.services.items) add(`/servicos/${s.slug}/`, pages.service(ctx, s), { priority: 0.9 });
-add('/especialidades/', pages.specialties(ctx), { priority: 0.8 });
-for (const sp of catalog.specialties) {
-  add(`/especialidades/${sp.slug}/`, pages.specialty(ctx, sp), { priority: 0.7 });
-  for (const cat of sp.categories) add(`/especialidades/${sp.slug}/${cat.slug}/`, pages.category(ctx, cat), { priority: 0.6 });
-}
-for (const p of catalog.products) add(`/produtos/${p.slug}/`, pages.product(ctx, p), { priority: 0.6 });
-add('/marcas/', pages.brandsPage(ctx), { priority: 0.6 });
-add('/sobre/', pages.about(ctx), { priority: 0.7 });
+add('/manutencao/', pages.maintenance(ctx), { priority: 0.9 });
+for (const f of families) if (f.maintenance) add(`/manutencao/${f.slug}/`, pages.maintenanceFamily(ctx, f), { priority: 0.8 });
+add('/locacao/', pages.rental(ctx), { priority: 0.9 });
+add('/venda/', pages.sales(ctx), { priority: 0.9 });
+add('/software/', pages.software(ctx), { priority: 0.9 });
+add('/equipamentos/', pages.equipment(ctx), { priority: 0.8 });
+for (const f of families) add(familyUrl(f), pages.family(ctx, f), { priority: 0.7 });
+for (const p of products) add(productUrl(p), pages.product(ctx, p), { priority: 0.6 });
+add('/marcas/', pages.brandsPage(ctx), { priority: 0.7 });
+for (const b of brands) add(`/marcas/${b.slug}/`, pages.brand(ctx, b), { priority: b.focus ? 0.8 : 0.5 });
+add('/conteudo/', pages.articles(ctx), { priority: 0.7, changefreq: 'weekly' });
+for (const a of articles) add(`/conteudo/${a.slug}/`, pages.article(ctx, a), { priority: 0.6 });
+add('/sobre/', pages.about(ctx), { priority: 0.6 });
 add('/contato/', pages.contact(ctx), { priority: 0.9 });
+add('/privacidade/', pages.privacy(ctx), { priority: 0.2, changefreq: 'yearly' });
 add('/404.html', pages.notFound(ctx), { sitemap: false });
+
+// Redirect stubs preserve the addresses of the previous Django site and of the first preview.
+const fam = (slug) => families.find((f) => f.slug === slug);
+const redirects = {
+  '/about': ['/sobre/', 'Sobre a EquimedPR'],
+  '/brands': ['/marcas/', 'Marcas atendidas'],
+  '/contact': ['/contato/', 'Contato e orçamento'],
+  '/our-services': ['/manutencao/', 'Manutenção'],
+  '/speciality/Vendas': ['/venda/', 'Venda'],
+  '/speciality/Vendas/Insufladores': [familyUrl(fam('insufladores')), 'Insufladores'],
+  '/speciality/Artroscopia': ['/equipamentos/', 'Equipamentos'],
+  '/speciality/Artroscopia/Acessórios': [familyUrl(fam('acessorios-de-video')), 'Acessórios de vídeo'],
+  '/speciality/Artroscopia/Artrobomba': [familyUrl(fam('artrobombas')), 'Artrobombas'],
+  '/speciality/Artroscopia/Instrumentos': ['/equipamentos/', 'Equipamentos'],
+  '/speciality/Laparoscopia': [familyUrl(fam('insufladores')), 'Insufladores'],
+  '/speciality/Laparoscopia/Insufladores': [familyUrl(fam('insufladores')), 'Insufladores'],
+  '/speciality/Ortopedia - Trauma': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/speciality/Ortopedia - Trauma/Perfuradores': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/speciality/Ortopedia - Trauma/Serras': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/speciality/Ortopedia - Trauma/Carregadores': [familyUrl(fam('baterias-e-carregadores')), 'Baterias e carregadores'],
+  '/speciality/Vídeo-Cirurgia': ['/equipamentos/', 'Equipamentos'],
+  '/speciality/Vídeo-Cirurgia/Câmeras de Vídeo': [familyUrl(fam('cameras-de-video')), 'Câmeras de vídeo'],
+  '/speciality/Vídeo-Cirurgia/Fonte de Luz': [familyUrl(fam('fontes-de-luz')), 'Fontes de luz'],
+  '/speciality/Vídeo-Cirurgia/Monitores de Vídeo': [familyUrl(fam('monitores-cirurgicos')), 'Monitores cirúrgicos'],
+  '/products/STAHL Access': ['/equipamentos/', 'Equipamentos'],
+  '/products/STAHL caixa de esterilização  para instrumentos': ['/equipamentos/', 'Equipamentos'],
+  '/products/STAHL Acessórios de limpeza': ['/equipamentos/', 'Equipamentos'],
+  '/servicos': ['/manutencao/', 'Manutenção'],
+  '/servicos/manutencao': ['/manutencao/', 'Manutenção'],
+  '/servicos/locacao': ['/locacao/', 'Locação'],
+  '/servicos/venda': ['/venda/', 'Venda'],
+  '/especialidades': ['/equipamentos/', 'Equipamentos'],
+  '/especialidades/video-cirurgia': ['/equipamentos/', 'Equipamentos'],
+  '/especialidades/video-cirurgia/cameras-de-video': [familyUrl(fam('cameras-de-video')), 'Câmeras de vídeo'],
+  '/especialidades/video-cirurgia/monitores-de-video': [familyUrl(fam('monitores-cirurgicos')), 'Monitores cirúrgicos'],
+  '/especialidades/video-cirurgia/fonte-de-luz': [familyUrl(fam('fontes-de-luz')), 'Fontes de luz'],
+  '/especialidades/artroscopia': [familyUrl(fam('artrobombas')), 'Artrobombas'],
+  '/especialidades/artroscopia/artrobomba': [familyUrl(fam('artrobombas')), 'Artrobombas'],
+  '/especialidades/artroscopia/acessorios': [familyUrl(fam('acessorios-de-video')), 'Acessórios de vídeo'],
+  '/especialidades/artroscopia/instrumentos': ['/equipamentos/', 'Equipamentos'],
+  '/especialidades/laparoscopia': [familyUrl(fam('insufladores')), 'Insufladores'],
+  '/especialidades/laparoscopia/insufladores': [familyUrl(fam('insufladores')), 'Insufladores'],
+  '/especialidades/ortopedia-trauma': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/especialidades/ortopedia-trauma/perfuradores': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/especialidades/ortopedia-trauma/serras': [familyUrl(fam('perfuradores-e-serras')), 'Perfuradores e serras'],
+  '/especialidades/ortopedia-trauma/carregadores': [familyUrl(fam('baterias-e-carregadores')), 'Baterias e carregadores'],
+};
+// Names containing a double quote (two NDS monitors) cannot be file names on every platform; they fall to the 404 page.
+for (const p of products) if (p.legacyName && !p.legacyName.includes('"')) redirects[`/products/${p.legacyName}`] = [productUrl(p), p.name];
+for (const [from, [to, name]] of Object.entries(redirects)) add(`${from}/`, pages.redirect(ctx, to, name), { sitemap: false });
 
 // Emit.
 rmSync(out, { recursive: true, force: true });
@@ -108,4 +164,4 @@ if (site.publishCname) writeFileSync(join(out, 'CNAME'), new URL(site.url).host 
 writeFileSync(join(out, '.nojekyll'), '');
 writeFileSync(join(out, `google${site.googleSiteVerification}.html`), `google-site-verification: google${site.googleSiteVerification}.html\n`);
 
-console.log(`Built ${registry.length} pages into dist/ (${urls.length} in sitemap)${basePath ? ` with BASE_PATH=${basePath}` : ''}.`);
+console.log(`Built ${registry.length} pages into dist/ (${urls.length} in sitemap, ${registry.length - urls.length - 1} redirects)${basePath ? ` with BASE_PATH=${basePath}` : ''}.`);

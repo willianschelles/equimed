@@ -9,56 +9,66 @@ Editar um deles e publicar é tudo o que você precisa. Nada de servidor, banco 
 |---|---|---|
 | Telefones, WhatsApp, e-mail, endereço, horário | `content/site.json` | `phones`, `whatsapp`, `email`, `address`, `openingHoursDisplay` |
 | Mensagem que já vem pronta no WhatsApp | `content/site.json` | `whatsapp.message` |
-| Textos da página inicial, serviços, sobre, contato | `content/pages.json` | cada bloco tem `title` (aba do navegador e Google), `description` (resumo no Google) e os textos |
-| Perguntas frequentes | `content/pages.json` | `services.items[].faq` |
-| Produtos (adicionar, remover, corrigir) | `content/catalog.json` | lista `products` |
-| Categorias e especialidades | `content/catalog.json` | lista `specialties` |
-| Marcas | `content/brands.json` + logo em `src/assets/img/brands/<slug>.webp` | |
-| Imagem de produto | `src/assets/img/products/<image>.webp` (WebP, ~1000 px de largura) | |
+| Aviso de assistência independente e de escopo (implantes/instrumentais) | `content/site.json` | `independenceNotice`, `scopeNotice` |
+| Google Analytics 4 e Pixel da Meta | `content/site.json` | `analytics.ga4MeasurementId`, `analytics.metaPixelId` (vazio = desligado) |
+| Instagram no rodapé | `content/site.json` | `social.instagram` |
+| Menu principal | `content/site.json` | `nav` |
+| Página inicial, Equipamentos, Marcas, Conteúdo, Sobre, Contato, Privacidade | `content/pages.json` | cada bloco tem `title` (aba e Google), `description` (resumo no Google) e os textos |
+| Manutenção, Locação, Venda, Software (textos, listas e FAQ) | `content/services.json` | um bloco por serviço: `intro`, `items`/`areas`, `faq` |
+| Famílias de equipamento e as páginas "Manutenção de …" | `content/families.json` | `lead`, `short`, `maintenance.intro`, `commonFailures`, `whatWeDo`, `brands[].models`, `faq` |
+| Marcas e páginas por marca | `content/brands.json` | `lead`, `paragraphs`, `families`, `focus` (true = destaque) |
+| Produtos e linhas atendidas | `content/catalog.json` | lista `products` |
+| Conteúdo técnico (artigos) | `content/articles.json` | `title`, `description`, `sections[]` |
+| Foto de produto | `src/assets/img/products/<image>.webp` + `<image>-480.webp` | |
+| Logo de marca | `src/assets/img/brands/<slug>.webp` (sem logo, o site mostra o nome em texto) | |
+
+## Produtos: atendido, à venda ou em locação
+
+Cada produto tem `services`, que decide os selos e os textos:
+
+```json
+"services": ["manutencao", "venda", "locacao"]
+"services": ["manutencao"]
+```
+
+A primeira forma é um seminovo disponível. A segunda é uma linha atendida só em manutenção (ex.: System 8).
+
+- `condition`: `"seminovo"` (mostra "garantia 3 meses"), `"novo"` ou `null`.
+- `family`: um dos `slug` de `content/families.json`.
+- `brandSlug`: um dos `slug` de `content/brands.json` (ou `null`).
+- `image`: nome do arquivo sem `.webp`, ou `null` para mostrar o ícone da família com "Foto em breve".
 
 ## Adicionar um produto
 
-1. Salve a foto como WebP em `src/assets/img/products/nome-do-produto.webp`
-   (no Mac/Linux: `cwebp -q 82 -resize 1000 0 foto.jpg -o src/assets/img/products/nome-do-produto.webp`).
-2. Em `content/catalog.json`, copie um bloco de `products` e ajuste:
+1. Salve a foto como WebP em `src/assets/img/products/nome-do-produto.webp` (~1000 px) e uma versão
+   `nome-do-produto-480.webp` (480 px). No Mac/Linux:
 
-```json
-{
-  "slug": "storz-camera-image1-s",          // vira a URL: /produtos/storz-camera-image1-s/
-  "name": "Storz Câmera de Vídeo",
-  "model": "Image1 S, 4K",
-  "brand": "Karl Storz",
-  "specialty": "video-cirurgia",            // slug de uma especialidade existente
-  "category": "cameras-de-video",           // slug de uma categoria dessa especialidade
-  "image": "storz-camera-image1-s",         // nome do arquivo sem .webp
-  "condition": "seminovo",                  // opcional; mostra o selo "seminovo revisado"
-  "summary": "Uma frase que resume o produto (vira a descrição no Google).",
-  "paragraphs": ["Parágrafos extras, opcional."],
-  "list": { "title": "Características", "items": ["item 1", "item 2"] },
-  "specs": [["Alimentação", "100–240 V"], ["Peso", "5 kg"]]
-}
-```
+   ```sh
+   cwebp -q 85 -resize 1000 0 foto.jpg -o src/assets/img/products/nome-do-produto.webp
+   cwebp -q 85 -resize 480 0 foto.jpg -o src/assets/img/products/nome-do-produto-480.webp
+   ```
 
-3. Publique (abaixo). A página do produto, a listagem da categoria, o sitemap e os dados estruturados
-   são gerados sozinhos.
+   Fundo branco ou claro funciona melhor: o site funde o branco com o fundo do cartão.
+2. Em `content/catalog.json`, copie um bloco de `products` e ajuste `slug` (vira a URL `/produtos/<slug>/`),
+   `name`, `model`, `brand`, `brandSlug`, `family`, `image`, `condition`, `services`, `summary`,
+   `paragraphs`, `list` e `specs`.
+3. Publique (abaixo).
+
+## Adicionar um artigo de conteúdo técnico
+
+Copie um bloco de `content/articles.json`. Cada item de `sections` tem `h` (subtítulo), `p` (parágrafos) e/ou
+`list` (itens). `families` liga o artigo às páginas de manutenção relacionadas. A data vai em `date`.
+
+## Regras que o robô confere
+
+- `title` com 15–65 caracteres; `description` com 50–160. O build encurta o que passar, mas é melhor escrever certo.
+- Cada página tem um único H1 (vem do template; não escreva "#" nos textos).
+- Não deixe `image` apontando para arquivo inexistente: o build falha e diz qual.
 
 ## Publicar
 
-**Pelo site do GitHub (sem instalar nada):** abra o arquivo no repositório, clique no lápis, edite, e em
-*Commit changes* escolha **Create a new branch and start a pull request**. O robô verifica o site (build,
-SEO, Lighthouse). Se passar, clique em *Merge*. Em ~2 minutos o site está no ar.
+1. Edite o arquivo no GitHub (ícone de lápis) ou localmente.
+2. Localmente: `npm run check` (constrói e audita). No GitHub: abra um Pull Request; a verificação roda sozinha.
+3. Merge/push na branch `main`. O workflow **Deploy** publica em 1–2 minutos.
 
-**No computador:**
-
-```sh
-npm run dev      # vê em http://localhost:8787
-npm run check    # confere SEO do build
-git commit -am "Adiciona câmera Storz Image1 S" && git push
-```
-
-## Regras que o robô cobra
-
-- `title`: 15 a 65 caracteres, único por página.
-- `description`/`summary`: 50 a 160 caracteres, única por página.
-- Toda imagem precisa existir no arquivo indicado (o build falha se não existir).
-- JSON válido (vírgulas e aspas). Em caso de dúvida, cole o arquivo em https://jsonlint.com.
+Preview local: `npm run dev` e abra http://localhost:8787/.

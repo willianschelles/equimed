@@ -1,0 +1,664 @@
+[
+  {
+    "slug": "perfuradores-e-serras",
+    "name": "Perfuradores e serras ortopédicas",
+    "shortName": "Perfuradores e serras",
+    "icon": "drill",
+    "lead": "Perfuradores rotativos, serras sagitais e recíprocas a bateria para ortopedia e trauma. Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, e equipamentos nacionais e chineses.",
+    "description": "Perfuradores e serras ortopédicas a bateria: manutenção de Stryker System 5, 6, 7 e 8 e ConMed Hall; seminovos System 5 e 6 revisados para venda e locação.",
+    "maintenance": {
+      "title": "Manutenção de perfuradores e serras ortopédicas",
+      "metaTitle": "Manutenção de perfuradores e serras Stryker, ConMed e Hall",
+      "metaDescription": "Manutenção de perfuradores e serras ortopédicas Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2. Avaliação técnica, orçamento e garantia. Curitiba, PR.",
+      "intro": [
+        "Perfuradores e serras a bateria trabalham em ciclos curtos de alta carga: torque elevado, vibração, esterilização a vapor a cada uso e quedas acidentais. Com o tempo aparecem perda de potência, aquecimento, ruído, vazamento de vapor para dentro da carcaça e falha de gatilho.",
+        "A EquimedPR faz a avaliação técnica completa da peça de mão, com diagnóstico do motor, do conjunto de engrenagens, dos mancais, das vedações, do sistema de gatilho e do mandril. O orçamento descreve o que foi encontrado e o que será feito. Nada é executado sem a aprovação do cliente."
+      ],
+      "commonFailures": [
+        "Perda de potência ou de rotação, motor que não parte ou que trava sob carga",
+        "Aquecimento excessivo da carcaça durante o uso",
+        "Ruído de engrenagem, folga ou travamento no mandril e nos acessórios de encaixe",
+        "Gatilho sem resposta, acionamento intermitente ou dupla velocidade que não alterna",
+        "Vedações comprometidas: entrada de vapor e umidade na autoclave, oxidação interna",
+        "Bateria que não encaixa, não é reconhecida ou descarrega rápido",
+        "Serra sagital ou recíproca com curso irregular, vibração anormal ou lâmina que não trava"
+      ],
+      "whatWeDo": [
+        "Desmontagem, limpeza técnica e inspeção de motor, engrenagens, mancais e vedações",
+        "Substituição de rolamentos, retentores, escovas, molas e componentes de gatilho",
+        "Reparo ou troca de mandris, acoplamentos e trava de lâmina",
+        "Atualização e correção de firmware quando aplicável à linha",
+        "Teste funcional em bancada: rotação, torque, temperatura, ciclo de gatilho e estanqueidade",
+        "Teste de segurança elétrica e laudo quando solicitado",
+        "Relatório de manutenção com peças substituídas e garantia do serviço"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "System 5",
+            "System 6",
+            "System 7",
+            "System 8",
+            "Core",
+            "CD3 / CD4"
+          ]
+        },
+        {
+          "brand": "ConMed Hall",
+          "slug": "conmed",
+          "models": [
+            "Hall PowerPro",
+            "Hall PowerPro Max",
+            "MPower 2",
+            "Hall Series 4"
+          ]
+        },
+        {
+          "brand": "Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "Perfuradores e serras Linvatec Hall"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Perfuradores e serras a bateria de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Vocês atendem System 7 e System 8?",
+          "a": "Sim. Além das linhas System 5 e 6, atendemos as linhas atuais System 7 e System 8 em manutenção, incluindo peças de mão, baterias e carregadores. Para venda e locação, consulte a disponibilidade de cada linha."
+        },
+        {
+          "q": "Como funciona a avaliação técnica?",
+          "a": "Você envia marca, modelo e o defeito pelo WhatsApp. Recebemos o equipamento, fazemos a avaliação em bancada e enviamos um orçamento descrevendo o diagnóstico, as peças e o prazo. O reparo só começa após a sua aprovação."
+        },
+        {
+          "q": "Vocês fornecem equipamento reserva durante o reparo?",
+          "a": "Dependendo da disponibilidade, podemos fornecer um conjunto de perfurador e serra em locação enquanto o seu equipamento está em manutenção. Consulte pelo WhatsApp."
+        },
+        {
+          "q": "A EquimedPR é assistência autorizada Stryker ou ConMed?",
+          "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados por nenhum fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
+        }
+      ]
+    },
+    "short": "Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, nacionais e chineses."
+  },
+  {
+    "slug": "baterias-e-carregadores",
+    "name": "Baterias e carregadores",
+    "shortName": "Baterias e carregadores",
+    "icon": "battery",
+    "lead": "Baterias e carregadores para perfuradores e serras Stryker System 5, 6, 7 e 8 e ConMed Hall. Recuperação, substituição de células, atualização de firmware e carregador inteligente multilinha.",
+    "description": "Baterias e carregadores de perfuradores ortopédicos: recuperação de baterias Stryker e ConMed, carregadores System 5 e carregador inteligente multilinha EquimedPR.",
+    "maintenance": {
+      "title": "Manutenção de baterias e carregadores de perfuradores",
+      "metaTitle": "Baterias e carregadores Stryker e ConMed: manutenção e recuperação",
+      "metaDescription": "Recuperação de baterias e manutenção de carregadores de perfuradores Stryker System 5, 6, 7 e 8 e ConMed Hall. Troca de células, firmware e teste de capacidade. Curitiba.",
+      "intro": [
+        "A bateria é o item que mais falha em um conjunto de perfurador e serra. Ciclos de autoclave, descarga profunda e armazenamento inadequado reduzem a capacidade das células, e a eletrônica de gerenciamento passa a bloquear a carga ou a reportar erro no carregador.",
+        "A EquimedPR avalia o conjunto de células, a placa de gerenciamento e os contatos, mede a capacidade real e orienta entre recuperação, substituição de células ou troca da bateria. Carregadores recebem revisão das baias, da fonte e do software de controle."
+      ],
+      "commonFailures": [
+        "Bateria que não segura carga ou descarrega durante o procedimento",
+        "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
+        "Contatos oxidados, travas quebradas e carcaça com vapor interno",
+        "Baia do carregador sem alimentação ou com indicação intermitente",
+        "Placa de gerenciamento bloqueada após descarga profunda"
+      ],
+      "whatWeDo": [
+        "Teste de capacidade e de resistência interna das células",
+        "Substituição de células e de contatos, reparo de travas e carcaça",
+        "Revisão e reparo de carregadores: fonte, baias, placa de controle e firmware",
+        "Atualização de software da bateria e do carregador quando aplicável",
+        "Ciclos de carga e descarga controlados antes da devolução",
+        "Carregador inteligente EquimedPR, compatível com as séries Stryker 3, 5, 6 e 7"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "Baterias e carregadores System 5",
+            "System 6",
+            "System 7 (padrão, small e asséptica)",
+            "System 8"
+          ]
+        },
+        {
+          "brand": "ConMed Hall",
+          "slug": "conmed",
+          "models": [
+            "Baterias e carregadores PowerPro e MPower 2"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Baterias e carregadores de perfuradores de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Vale a pena recuperar uma bateria ou é melhor comprar nova?",
+          "a": "Depende do estado das células e da eletrônica. Na avaliação medimos a capacidade real e informamos o custo da recuperação em comparação com a substituição. Você decide com os números na mão."
+        },
+        {
+          "q": "O que é o carregador inteligente EquimedPR?",
+          "a": "É um carregador desenvolvido pela EquimedPR que carrega e balanceia baterias das séries Stryker 3, 5, 6 e 7, com função de armazenamento, limite de tempo, monitoramento da tensão de entrada e registro de dados. Ele substitui vários carregadores de linha em uma única bancada."
+        }
+      ]
+    },
+    "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha."
+  },
+  {
+    "slug": "cameras-de-video",
+    "name": "Câmeras de vídeo cirúrgico",
+    "shortName": "Câmeras de vídeo",
+    "icon": "camera",
+    "lead": "Unidades de controle de câmera (CCU) e cabeças de câmera HD e 4K para videocirurgia: Stryker 1488, 1588 e 1688, Karl Storz IMAGE1 HUB e IMAGE1 S, Smith & Nephew 560P, ConMed Linvatec e marcas nacionais e chinesas.",
+    "description": "Câmeras de videocirurgia: CCU e cabeças de câmera Stryker, Karl Storz, Smith & Nephew Dyonics e Linvatec. Manutenção, locação e venda de seminovos revisados.",
+    "maintenance": {
+      "title": "Manutenção de câmeras de videocirurgia",
+      "metaTitle": "Manutenção de câmeras de vídeo Stryker, Karl Storz e Linvatec",
+      "metaDescription": "Manutenção de CCU e cabeças de câmera de videocirurgia Stryker 1488/1588/1688, Karl Storz IMAGE1, Smith & Nephew 560P e ConMed Linvatec. Cabo, botões, sensor e vedação. Curitiba.",
+      "intro": [
+        "A cabeça de câmera é o componente que mais sofre no centro cirúrgico: o cabo é tracionado e dobrado a cada procedimento, os botões recebem milhares de acionamentos e a vedação enfrenta reprocessamento constante. Na CCU, o desgaste aparece nas fontes de alimentação, nos conectores e nas placas de vídeo.",
+        "A EquimedPR avalia o conjunto completo: cabeça, cabo, conector e unidade de controle. O diagnóstico identifica se o problema está no cabo, no sensor, na eletrônica da cabeça ou na CCU, e o orçamento separa cada item."
+      ],
+      "commonFailures": [
+        "Imagem com ruído, linhas, cor incorreta ou perda de sinal ao movimentar o cabo",
+        "Botões da cabeça sem resposta ou com acionamento falso",
+        "Embaçamento interno, entrada de umidade e condensação na janela óptica",
+        "Conector com pinos danificados, oxidados ou com mau contato na CCU",
+        "CCU sem vídeo, sem alimentação ou com saídas DVI/SDI inoperantes",
+        "Acoplador (endocoupler) com foco travado ou desgaste no engate do endoscópio"
+      ],
+      "whatWeDo": [
+        "Substituição e reconstrução de cabos de cabeça de câmera com conector original ou compatível",
+        "Reparo de botões, vedações e janela óptica da cabeça",
+        "Reparo de CCU: fontes, placas de vídeo, conectores e saídas de vídeo",
+        "Limpeza óptica, verificação de foco e teste de imagem com padrão de referência",
+        "Teste de estanqueidade e simulação de reprocessamento quando aplicável",
+        "Relatório de manutenção e garantia do serviço"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "1188 HD",
+            "1288 HD",
+            "1488 HD",
+            "1588 AIM",
+            "1688 AIM 4K"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "TELECAM",
+            "IMAGE1 HUB HD",
+            "IMAGE1 S",
+            "cabeças H3-Z, H3-ZA, H3-FA, H3-M"
+          ]
+        },
+        {
+          "brand": "ConMed Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "IM4000",
+            "IM8000",
+            "cabeças de câmera HD e 4K"
+          ]
+        },
+        {
+          "brand": "Smith & Nephew",
+          "slug": "smith-nephew",
+          "models": [
+            "Dyonics 560P",
+            "cabeça 560H"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Câmeras Full HD e 4K de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "O cabo da cabeça de câmera pode ser trocado sem trocar a cabeça?",
+          "a": "Na maioria das linhas, sim. O cabo é substituído ou reconstruído mantendo o sensor e a eletrônica da cabeça, o que custa uma fração de uma cabeça nova. A avaliação confirma se o sensor está íntegro antes do orçamento."
+        },
+        {
+          "q": "Vocês fazem manutenção de câmeras 4K?",
+          "a": "Sim, atendemos plataformas HD e 4K. Em alguns casos, componentes de câmeras 4K dependem de disponibilidade de peças, o que é informado no orçamento."
+        }
+      ]
+    },
+    "short": "CCU e cabeças HD e 4K Stryker, Karl Storz, Linvatec, Dyonics e marcas nacionais."
+  },
+  {
+    "slug": "fontes-de-luz",
+    "name": "Fontes de luz xenon e LED",
+    "shortName": "Fontes de luz",
+    "icon": "light",
+    "lead": "Fontes de luz xenon 300 W e LED para endoscopia e videocirurgia: Stryker L9000 e L10, Karl Storz Xenon Nova 300 e Power LED, Smith & Nephew 500XL, ConMed Linvatec e marcas nacionais e chinesas. Lâmpadas e conversão de xenon para LED.",
+    "description": "Fontes de luz para videocirurgia: xenon 300 W e LED Stryker, Karl Storz, Smith & Nephew e Linvatec. Manutenção, lâmpadas de reposição e conversão de xenon para LED.",
+    "maintenance": {
+      "title": "Manutenção de fontes de luz xenon e LED",
+      "metaTitle": "Manutenção de fontes de luz Stryker, Karl Storz e Linvatec",
+      "metaDescription": "Manutenção de fontes de luz xenon e LED para videocirurgia: Stryker L9000, Karl Storz Xenon Nova e Power LED, Smith & Nephew 500XL, ConMed. Lâmpadas e conversão xenon para LED.",
+      "intro": [
+        "Fontes de luz xenon dependem de uma lâmpada de arco curto com vida útil limitada, de um ignitor de alta tensão e de ventilação eficiente. Fontes LED eliminam a troca de lâmpada, mas sofrem com drivers, módulos térmicos e ventoinhas.",
+        "A EquimedPR repara ambas as tecnologias e também converte fontes xenon antigas para LED, mantendo o gabinete e a torreta originais, o que elimina o custo recorrente de lâmpadas."
+      ],
+      "commonFailures": [
+        "Fonte que não acende, lâmpada que apaga durante o uso ou intensidade abaixo do esperado",
+        "Ignitor de alta tensão com falha ou lâmpada no fim da vida útil",
+        "Ventilação ruidosa, superaquecimento e desligamento por temperatura",
+        "Torreta ou engate do cabo de luz com folga ou mau contato",
+        "Obturador, controle de intensidade ou comunicação com a câmera inoperantes",
+        "Módulo LED ou driver com falha, intensidade oscilando"
+      ],
+      "whatWeDo": [
+        "Substituição de lâmpadas xenon e HTI de 175 W e 300 W",
+        "Reparo de ignitores, fontes de alimentação, drivers LED e módulos térmicos",
+        "Revisão de ventilação, filtros e obturador",
+        "Conversão de fonte xenon para LED com preservação do gabinete original",
+        "Reparo de torretas e engates para cabos Storz, Wolf, Olympus e ACMI",
+        "Medição de intensidade luminosa antes e depois do serviço"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "X7000",
+            "X8000",
+            "L9000 LED",
+            "L10 LED"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "Xenon Nova 175",
+            "Xenon Nova 300",
+            "Power LED 175",
+            "Power LED 300"
+          ]
+        },
+        {
+          "brand": "ConMed Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "LS7700 xenon",
+            "LS8000 LED"
+          ]
+        },
+        {
+          "brand": "Smith & Nephew",
+          "slug": "smith-nephew",
+          "models": [
+            "Dyonics 300XL",
+            "Dyonics 500XL"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Fontes LED de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Vale a pena converter a fonte xenon para LED?",
+          "a": "Para equipamentos com gabinete e torreta em bom estado, a conversão costuma se pagar em poucas trocas de lâmpada evitadas e reduz o calor e o ruído. A avaliação indica se o modelo é compatível com a conversão."
+        },
+        {
+          "q": "Vocês vendem lâmpadas avulsas?",
+          "a": "Sim. Fornecemos lâmpadas xenon e HTI de 175 W e 300 W para as principais fontes de luz do mercado. Informe o modelo da fonte para confirmarmos a compatibilidade."
+        }
+      ]
+    },
+    "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED."
+  },
+  {
+    "slug": "monitores-cirurgicos",
+    "name": "Monitores cirúrgicos",
+    "shortName": "Monitores cirúrgicos",
+    "icon": "monitor",
+    "lead": "Monitores cirúrgicos HD e 4K de 19\" a 32\": NDS Radiance e EndoVue, Karl Storz WideView, Stryker Vision Elect e WiSe, Sony e marcas nacionais e chinesas.",
+    "description": "Monitores cirúrgicos para torres de vídeo: NDS, Karl Storz, Stryker e Sony. Manutenção de fontes, painéis e entradas de vídeo, locação e venda de seminovos.",
+    "maintenance": {
+      "title": "Manutenção de monitores cirúrgicos",
+      "metaTitle": "Manutenção de monitores cirúrgicos NDS, Stryker e Karl Storz",
+      "metaDescription": "Manutenção de monitores cirúrgicos HD e 4K NDS Radiance e EndoVue, Karl Storz WideView, Stryker Vision Elect e WiSe e Sony. Fontes, placas, entradas de vídeo e backlight. Curitiba.",
+      "intro": [
+        "Monitores cirúrgicos são projetados para operar por anos em salas com reprocessamento químico constante, mas fontes de alimentação, placas de entrada de vídeo e retroiluminação têm vida útil finita.",
+        "A EquimedPR repara monitores de grau médico de 19\" a 32\", com diagnóstico de fonte, placa principal, entradas DVI, SDI e HDMI, painel e backlight."
+      ],
+      "commonFailures": [
+        "Monitor que não liga, reinicia ou desliga sozinho",
+        "Sem imagem em uma entrada específica (DVI, SDI, HDMI ou analógica)",
+        "Linhas, manchas, brilho irregular ou backlight apagado",
+        "Botões e menu sem resposta",
+        "Fonte externa de 24 V com defeito ou conector danificado"
+      ],
+      "whatWeDo": [
+        "Reparo de fontes internas e externas de 24 V",
+        "Reparo de placas de vídeo e de entradas DVI, SDI, HDMI, VGA e composto",
+        "Substituição de backlight e de componentes do painel quando disponíveis",
+        "Reparo de teclado, botões e controle de menu",
+        "Teste de todas as entradas com padrão de referência e teste de segurança elétrica"
+      ],
+      "brands": [
+        {
+          "brand": "NDS Surgical Imaging",
+          "slug": "nds",
+          "models": [
+            "Radiance G2",
+            "Radiance Ultra",
+            "EndoVue"
+          ]
+        },
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "Vision Elect",
+            "WiSe",
+            "VisionPro"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "WideView",
+            "monitores de grau médico"
+          ]
+        },
+        {
+          "brand": "Sony",
+          "slug": "sony",
+          "models": [
+            "LMD de grau médico"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Monitores de grau médico de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Compensa reparar um monitor cirúrgico antigo?",
+          "a": "Na maioria dos casos o defeito está na fonte ou na placa de entrada, e o reparo custa uma fração de um monitor novo de grau médico. A avaliação informa se o painel está íntegro antes do orçamento."
+        }
+      ]
+    },
+    "short": "NDS, Karl Storz, Stryker e Sony, de 19\" a 32\": fontes, placas e entradas de vídeo."
+  },
+  {
+    "slug": "insufladores",
+    "name": "Insufladores de CO2",
+    "shortName": "Insufladores",
+    "icon": "gas",
+    "lead": "Insufladores de CO2 de 30 a 45 lpm para videolaparoscopia: Stryker Pneumosure e Core, Karl Storz Endoflator e Thermoflator, Smith & Nephew Dyonics, ConMed e marcas nacionais e chinesas.",
+    "description": "Insufladores de CO2 para laparoscopia: Stryker, Karl Storz, Smith & Nephew e ConMed. Manutenção, calibração de pressão e vazão, locação e venda de seminovos.",
+    "maintenance": {
+      "title": "Manutenção de insufladores de CO2",
+      "metaTitle": "Manutenção de insufladores de CO2 Stryker, Karl Storz e ConMed",
+      "metaDescription": "Manutenção e calibração de insufladores de CO2 para laparoscopia: Stryker Pneumosure e Core, Karl Storz Endoflator e Thermoflator, Smith & Nephew e ConMed. Curitiba, PR.",
+      "intro": [
+        "O insuflador controla a pressão e a vazão do pneumoperitônio. Válvulas, sensores de pressão, reguladores de alta pressão e o aquecimento do gás precisam estar calibrados para o procedimento ser seguro.",
+        "A EquimedPR faz a revisão completa do circuito pneumático e eletrônico, com calibração de pressão e vazão em bancada e teste de alarmes."
+      ],
+      "commonFailures": [
+        "Pressão real diferente da configurada ou alarme de sobrepressão",
+        "Vazão insuficiente, insuflação lenta ou oscilação de pressão",
+        "Vazamento interno, válvula solenoide travada ou regulador de alta pressão com falha",
+        "Sensor de pressão descalibrado, conector de entrada de gás danificado",
+        "Aquecedor de gás inoperante, display ou teclado sem resposta"
+      ],
+      "whatWeDo": [
+        "Revisão de válvulas, reguladores, filtros e sensores de pressão e vazão",
+        "Calibração de pressão e vazão com instrumentos de referência",
+        "Reparo de placas de controle, fontes, displays e teclados",
+        "Teste de alarmes, de vazamento e de segurança elétrica",
+        "Relatório de calibração e garantia do serviço"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "Core 40 L",
+            "Pneumosure 45 L",
+            "PneumoClear"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "Endoflator 30 L",
+            "Endoflator 50",
+            "Thermoflator"
+          ]
+        },
+        {
+          "brand": "ConMed Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "Insufladores ConMed 20 L e 40 L"
+          ]
+        },
+        {
+          "brand": "Smith & Nephew",
+          "slug": "smith-nephew",
+          "models": [
+            "Dyonics 40 lpm"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Insufladores de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Com que frequência o insuflador deve ser calibrado?",
+          "a": "Recomendamos verificação anual de pressão e vazão, ou antes se houver diferença entre o valor configurado e o observado, alarmes frequentes ou após qualquer reparo."
+        }
+      ]
+    },
+    "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão."
+  },
+  {
+    "slug": "artrobombas",
+    "name": "Artrobombas",
+    "shortName": "Artrobombas",
+    "icon": "pump",
+    "lead": "Bombas de irrigação e distensão articular para artroscopia: Stryker Arthropump e Crossflow, Smith & Nephew Dyonics Access 25, Karl Storz Arthropump Power, ConMed Linvatec e marcas nacionais e chinesas.",
+    "description": "Artrobombas para artroscopia: Stryker, Smith & Nephew Dyonics, Karl Storz e Linvatec. Manutenção de bombas peristálticas, sensores de pressão, locação e venda de seminovos.",
+    "maintenance": {
+      "title": "Manutenção de artrobombas",
+      "metaTitle": "Manutenção de artrobombas Stryker, Dyonics e Karl Storz",
+      "metaDescription": "Manutenção de artrobombas para artroscopia: Stryker Arthropump e Crossflow, Smith & Nephew Dyonics Access 25, Karl Storz Arthropump Power e ConMed Linvatec. Curitiba, PR.",
+      "intro": [
+        "A artrobomba mantém a pressão e o fluxo de irrigação da articulação. Rolos peristálticos, sensores de pressão, motores e a interface com o shaver determinam a precisão e a segurança do sistema.",
+        "A EquimedPR revisa o conjunto mecânico e eletrônico, calibra a pressão e o fluxo em bancada e testa a comunicação com os consoles de shaver quando houver."
+      ],
+      "commonFailures": [
+        "Pressão instável, bomba que não atinge a pressão configurada ou alarme constante",
+        "Rolos ou cabeçote peristáltico desgastados, ruído e vibração",
+        "Sensor de pressão descalibrado ou danificado",
+        "Teclado, display ou placa de controle sem resposta",
+        "Comunicação com o shaver ou com o pedal inoperante"
+      ],
+      "whatWeDo": [
+        "Substituição de rolos, cabeçotes, motores e sensores de pressão",
+        "Reparo de placas de controle, fontes, displays e teclados",
+        "Calibração de pressão e fluxo com instrumentos de referência",
+        "Teste de alarmes, de pedais e de comunicação com outros equipamentos",
+        "Teste de segurança elétrica e relatório de manutenção"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "Arthropump",
+            "Crossflow",
+            "FloSteady"
+          ]
+        },
+        {
+          "brand": "Smith & Nephew",
+          "slug": "smith-nephew",
+          "models": [
+            "Dyonics Access 25",
+            "Dyonics Fluid Management"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "Arthropump Power",
+            "Arthropump Plus"
+          ]
+        },
+        {
+          "brand": "ConMed Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "Bombas de artroscopia ConMed Linvatec"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Artrobombas de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": []
+    },
+    "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração."
+  },
+  {
+    "slug": "shavers",
+    "name": "Shavers e consoles de artroscopia",
+    "shortName": "Shavers",
+    "icon": "shaver",
+    "lead": "Consoles e peças de mão de shaver para artroscopia: Stryker Core e CrossFire, ConMed Linvatec Advantage, Smith & Nephew Dyonics Power, Karl Storz Unidrive e marcas nacionais e chinesas. Atendemos em manutenção.",
+    "description": "Shavers e consoles de artroscopia Stryker, ConMed Linvatec, Smith & Nephew e Karl Storz. Manutenção de peças de mão, consoles e pedais.",
+    "maintenance": {
+      "title": "Manutenção de shavers e consoles de artroscopia",
+      "metaTitle": "Manutenção de shavers Stryker, Linvatec, Dyonics e Storz",
+      "metaDescription": "Manutenção de shavers e consoles de artroscopia Stryker Core e CrossFire, ConMed Linvatec Advantage, Smith & Nephew Dyonics Power e Karl Storz Unidrive. Peças de mão, consoles e pedais.",
+      "intro": [
+        "A peça de mão do shaver trabalha com rotação elevada, aspiração e reprocessamento constante. O desgaste aparece nos mancais, no cabo, nas vedações e no sistema de trava da lâmina. Nos consoles, as falhas mais comuns estão em fontes, drivers de motor, pedais e conectores.",
+        "A EquimedPR repara peças de mão e consoles das principais marcas, com teste de rotação, torque, aspiração e comunicação com a artrobomba."
+      ],
+      "commonFailures": [
+        "Peça de mão sem rotação, com rotação irregular ou travando sob carga",
+        "Ruído e aquecimento na peça de mão, trava de lâmina com folga",
+        "Cabo com mau contato, console que não reconhece a peça de mão",
+        "Pedal sem resposta ou com acionamento intermitente",
+        "Console sem alimentação, erro de driver ou display inoperante"
+      ],
+      "whatWeDo": [
+        "Substituição de rolamentos, vedações, cabos e travas de lâmina das peças de mão",
+        "Reparo de consoles: fontes, drivers, placas de controle, conectores e displays",
+        "Reparo de pedais e cabos",
+        "Teste de rotação, torque, aspiração e oscilação em bancada",
+        "Relatório de manutenção e garantia do serviço"
+      ],
+      "brands": [
+        {
+          "brand": "Stryker",
+          "slug": "stryker",
+          "models": [
+            "Core",
+            "Core 2",
+            "CrossFire",
+            "Formula"
+          ]
+        },
+        {
+          "brand": "ConMed Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "Advantage Drive",
+            "Advantage Turbo",
+            "D3000 / D4000"
+          ]
+        },
+        {
+          "brand": "Smith & Nephew",
+          "slug": "smith-nephew",
+          "models": [
+            "Dyonics Power",
+            "Dyonics Power II",
+            "EP-1"
+          ]
+        },
+        {
+          "brand": "Karl Storz",
+          "slug": "karl-storz",
+          "models": [
+            "Unidrive S III",
+            "Unidrive ENT"
+          ]
+        },
+        {
+          "brand": "Nacionais e chineses",
+          "slug": null,
+          "models": [
+            "Shavers de fabricantes nacionais e asiáticos"
+          ]
+        }
+      ],
+      "faq": []
+    },
+    "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz."
+  },
+  {
+    "slug": "acessorios-de-video",
+    "name": "Cabos de fibra óptica, endocouplers e lâmpadas",
+    "shortName": "Acessórios de vídeo",
+    "icon": "cable",
+    "lead": "Cabos de fibra óptica com terminais Storz, Wolf, Olympus e ACMI, endocouplers para cabeças de câmera e lâmpadas xenon e HTI de 175 W e 300 W.",
+    "description": "Acessórios para torres de videocirurgia: cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI de reposição para as principais fontes de luz.",
+    "maintenance": null,
+    "short": "Cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI."
+  }
+]
