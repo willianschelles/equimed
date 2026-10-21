@@ -135,6 +135,7 @@ const familyCard = (ctx, f, { level = 3, href } = {}) => {
     <span class="fam__body">
       <h${level} class="fam__title">${esc(f.shortName)}</h${level}>
       <span class="fam__text">${esc(f.short)}</span>
+      ${famBrands(f) ? `<span class="fam__brands">${esc(famBrands(f))}</span>` : ''}
       <span class="fam__tags">
         ${f.maintenance ? '<span class="fam__tag fam__tag--petrol">Manutenção</span>' : ''}
         ${available ? `<span class="fam__tag fam__tag--ok">${available} à venda / locação</span>` : ''}
@@ -206,98 +207,134 @@ const stepsBlock = (title, items, index = '04') => `
 </section>`;
 
 /* ---------------- Home ---------------- */
+const ECG_TRACE = 'M0 40 H90 l6 6 l10 -38 l12 52 l8 -20 H340 l6 6 l10 -38 l12 52 l8 -20 H590 l6 6 l10 -38 l12 52 l8 -20 H840 l6 6 l10 -38 l12 52 l8 -20 H1000';
+const famBrands = (f) => (f.maintenance?.brands ?? []).filter((b) => b.slug).map((b) => b.brand.replace('ConMed ', '')).slice(0, 4).join(', ');
+
 export function home(ctx) {
   const { site, copy, families, brands, services, articles } = ctx;
   const h = copy.home;
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
-  const fams = families.filter((f) => f.cover).slice(0, 7);
+  const rows = [
+    { href: '/manutencao/', name: 'Manutenção', text: 'Corretiva e preventiva por família, marca e modelo. Avaliação em bancada e orçamento detalhado antes de qualquer reparo.', src: '/assets/img/photos/stryker-system7-desmontado-recorte.webp' },
+    { href: '/locacao/', name: 'Locação', text: 'Conjuntos de perfurador e serra com bateria e carregador, revisados e entregues para o dia da cirurgia.', src: '/assets/img/photos/seminovo-stryker-6-conjunto-recorte.webp' },
+    { href: '/venda/', name: 'Venda', text: `Seminovos revisados em bancada, com ${site.warranty.used} de garantia e relatório do que foi feito.`, src: '/assets/img/photos/stryker-system7-recorte.webp' },
+    { href: '/software/', name: 'Software', text: 'Atualização de firmware, desbloqueio e desenvolvimento sob medida para baterias, carregadores e consoles que travam com a mecânica em ordem.', src: '/assets/img/products/carregador-de-bateria-inteligente.webp' },
+  ];
+  const ticket = ['Recebido na bancada', 'Avaliação técnica', 'Orçamento detalhado enviado', 'Reparo e teste de segurança elétrica', 'Devolução com garantia'];
   const body = `
-<section class="hero">
-  <figure class="hero__photo">${photo(ctx, 'bench-multimeter', '', { lazy: false, sizes: '100vw' })}</figure>
-  <div class="container hero__copy">
-    <p class="eyebrow">${esc(h.eyebrow)}</p>
-    <h1>Equipamento cirúrgico <strong>pronto para a próxima cirurgia.</strong></h1>
-    <p class="lead">${esc(h.lead)}</p>
-    <div class="hero__actions">
-      <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar no WhatsApp</a>
-      <a class="button button--ghost button--lg" href="/manutencao/">Conheça a bancada ${icon('arrow', 18)}</a>
+<section class="hx">
+  <canvas class="hx__monitor" data-ecg aria-hidden="true"></canvas>
+  <div class="container hx__grid">
+    <div class="hx__copy" data-hero-copy>
+      <p class="hx__kicker fx-in" style="--d:.1s"><i></i>${esc(h.eyebrow)}</p>
+      <h1 data-words>Equipamento cirúrgico pronto para a próxima cirurgia.</h1>
+      <p class="hx__lead fx-in" style="--d:.7s">${esc(h.lead)}</p>
+      <div class="hx__ctas fx-in" style="--d:.85s">
+        <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar no WhatsApp</a>
+        <a class="button button--ghost button--lg" href="#como-funciona">Ver como funciona</a>
+      </div>
+      <p class="hx__note fx-in" style="--d:1s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
+    </div>
+    <div class="hx__bench">
+      <figure class="hx__photo" data-speed="0.12">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
+      <div class="ticket fx-in" style="--d:1.1s" data-lift="-0.1" aria-label="Exemplo de acompanhamento de um equipamento na bancada">
+        <div class="ticket__head"><p class="ticket__title">Perfurador Stryker System 7</p><p class="ticket__tag">Exemplo</p></div>
+        <ol class="ticket__steps" data-ticket>
+          ${ticket.map((t) => `<li class="tstep"><span class="tstep__dot">${icon('check', 12)}</span>${esc(t)}</li>`).join('\n          ')}
+        </ol>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="container stats" role="list">
-  <div class="stat" role="listitem"><span class="stat__label">DESDE</span><span class="stat__value">${site.foundingYear}</span><span class="stat__text">atendendo hospitais e clínicas</span></div>
-  <div class="stat" role="listitem"><span class="stat__label">LINHAS STRYKER</span><span class="stat__value">5–8</span><span class="stat__text">System 5, 6, 7 e 8 atendidos</span></div>
-  <div class="stat" role="listitem"><span class="stat__label">GARANTIA</span><span class="stat__value">3<small> meses</small></span><span class="stat__text">em todo seminovo revisado</span></div>
-  <div class="stat" role="listitem"><span class="stat__label">ATENDIMENTO</span><span class="stat__value">BR</span><span class="stat__text">envio e retorno por transportadora</span></div>
+<div class="container">
+  <ul class="facts">
+    <li class="fact rise"><strong>Desde ${site.foundingYear}</strong><span>atendendo hospitais e clínicas</span></li>
+    <li class="fact rise"><strong>Stryker System 5 a 8</strong><span>perfuradores, serras e baterias</span></li>
+    <li class="fact rise"><strong>${esc(site.warranty.used)} de garantia</strong><span>em todo seminovo revisado</span></li>
+    <li class="fact rise"><strong>Todo o Brasil</strong><span>envio e retorno por transportadora</span></li>
+  </ul>
 </div>
 
-<section class="section container statement">
-  <span class="statement__label">QUEM SOMOS</span>
-  <p class="statement__text">Desde ${site.foundingYear} cuidamos do que mantém o centro cirúrgico funcionando. <strong>Diagnóstico em bancada, orçamento detalhado e garantia</strong> em perfuradores, serras, câmeras, fontes de luz e insufladores.</p>
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="sx-head rise"><h2 class="sx-title">O que a bancada faz</h2><p class="sx-lead">Diagnóstico antes do reparo, orçamento detalhado e garantia em cada serviço.</p></div>
+    <div class="idx">
+      ${rows.map((r) => `<a class="idx__row rise" href="${r.href}">
+        <h3 class="idx__name">${r.name}</h3>
+        <p class="idx__text">${esc(r.text)}</p>
+        <span class="idx__thumb">${img(ctx, r.src, '', { sizes: '11rem' })}</span>
+        <span class="idx__go">${icon('arrow', 18)}</span>
+      </a>`).join('\n      ')}
+    </div>
+  </div>
 </section>
 
-<section class="section section--dark">
-  <div class="container">
-    ${sectionHead(null, h.servicesTitle)}
-    <div class="svc">
-      <a class="svc__tile svc__tile--feature" href="/manutencao/">
-        <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado-recorte', 'Perfurador Stryker System 7 desmontado na bancada EquimedPR', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">Manutenção</span><h3 class="svc__title">Diagnóstico em bancada antes de qualquer reparo</h3><p class="svc__text">Corretiva e preventiva, com orçamento detalhado e garantia do serviço. Você aprova antes de começarmos.</p><span class="svc__more">Ver manutenção →</span></div>
-      </a>
-      <a class="svc__tile svc__tile--card" href="/locacao/">
-        <figure class="svc__media">${photo(ctx, 'seminovo-stryker-6-conjunto-recorte', 'Conjunto de perfurador e serra Stryker com carregador, pronto para locação', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">Locação</span><h3 class="svc__title">Conjunto revisado no dia da cirurgia</h3></div>
-      </a>
-      <a class="svc__tile svc__tile--card" href="/venda/">
-        <figure class="svc__media">${photo(ctx, 'stryker-system7-recorte', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">Venda</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
-      </a>
-      <a class="svc__tile svc__tile--band" href="/software/">
-        <figure class="svc__media">${img(ctx, '/assets/img/products/carregador-de-bateria-inteligente.webp', 'Carregador inteligente multilinha EquimedPR', { sizes: '(min-width: 64rem) 30rem, 60vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">Software</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
-      </a>
+<section class="band" aria-label="Diagnóstico em bancada">
+  <div class="band__media" data-speed="0.15">${photo(ctx, 'bench-hands', '', { sizes: '100vw' })}</div>
+  <div class="container band__copy" data-speed="-0.06">
+    <div><p class="band__quote">Cada equipamento é aberto, medido e testado antes do orçamento.</p>
+    <p class="band__sub">Você aprova sabendo o que vai ser trocado, por quê e quanto custa.</p></div>
+  </div>
+</section>
+
+<section class="hs" id="equipamentos" data-hs>
+  <div class="hs__sticky">
+    <div class="container">
+      <div class="sx-head rise"><h2 class="sx-title">Equipamentos que passam pela bancada</h2><p class="sx-lead">Organizados por família. Cada uma tem modelos, defeitos comuns e testes próprios.</p></div>
     </div>
+    <ul class="rail" data-rail tabindex="0" aria-label="Famílias de equipamentos">
+      ${families.map((f) => familyCard(ctx, f)).join('\n      ')}
+      <li class="fam fam--ask"><a class="fam__link" href="${wa(site, 'Olá, EquimedPR! Vim pelo site e não encontrei o meu equipamento.\n\nEquipamento: \nMarca/modelo: \n')}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="familias-ask"><span class="fam__ask">Não achou o seu? Atendemos também shavers e equipamentos nacionais e chineses.</span><span class="fam__more">Perguntar no WhatsApp ${icon('arrow', 16)}</span></a></li>
+    </ul>
+    <div class="container rail-ctrl">
+      <div class="rail-bar" aria-hidden="true"><span data-rail-bar></span></div>
+      <button type="button" class="rail-btn rail-btn--prev" data-rail-prev aria-label="Anteriores">${icon('arrow', 18)}</button>
+      <button type="button" class="rail-btn" data-rail-next aria-label="Próximos">${icon('arrow', 18)}</button>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="brandrow rise">
+    <p>Marcas que mais atendemos</p>
+    ${logoBrands.map((b) => `<a href="${brandUrl(b)}">${img(ctx, `/assets/img/brands/${b.logo}.webp`, b.name)}</a>`).join('\n    ')}
+  </div>
+</div>
+
+<section class="section" id="como-funciona">
+  <div class="container">
+    <div class="sx-head rise"><h2 class="sx-title">${esc(h.stepsTitle)}</h2><p class="sx-lead">Você sabe em que etapa o equipamento está e o que vai ser feito antes de aprovar.</p></div>
+    <ol class="flow" data-flow>
+      <svg class="flow__trace" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path class="base" d="M0 40 H1000"/><path class="live" pathLength="1" d="${ECG_TRACE}"/></svg>
+      ${copy.steps.map((s) => `<li class="flow__step"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join('\n      ')}
+    </ol>
   </div>
 </section>
 
 <section class="section section--tint">
   <div class="container">
-    ${sectionHead(null, h.familiesTitle, h.familiesLead, '<a class="button button--ghost" href="/equipamentos/">Todas as famílias ' + icon('arrow', 16) + '</a>')}
-    <ul class="fams">
-      ${fams.map((f) => familyCard(ctx, f)).join('\n      ')}
-      <li class="fam--ask"><a class="fam__link" href="${wa(site, 'Olá, EquimedPR! Vim pelo site e não encontrei o meu equipamento.\n\nEquipamento: \nMarca/modelo: \n')}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="familias-ask"><span class="fam__label">NÃO ACHOU O SEU?</span><span class="fam__ask">Atendemos também shavers, cabos de fibra óptica e equipamentos nacionais e chineses.</span><span class="fam__more">Perguntar pelo WhatsApp ${icon('arrow', 16)}</span></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section section--dark" style="padding-block: 3.5rem;">
-  <div class="container logos">
-    <span class="logos__label">MARCAS ATENDIDAS</span>
-    ${logoBrands.map((b) => `<a href="${brandUrl(b)}">${img(ctx, `/assets/img/brands/${b.logo}.webp`, b.name)}</a>`).join('\n    ')}
-  </div>
-</section>
-
-<section class="section section--petrol">
-  <div class="container">
-    ${sectionHead(null, h.stepsTitle)}
-    <ol class="steps">
-      ${copy.steps.map((s) => `<li class="step"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join('\n      ')}
-    </ol>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    ${sectionHead(null, h.articlesTitle, 'Guias escritos pela equipe técnica para quem cuida do equipamento.', '<a class="button button--ghost" href="/conteudo/">Todo o conteúdo ' + icon('arrow', 16) + '</a>')}
-    <ul class="grid grid--3">
-      ${articles.slice(0, 3).map((a) => articleCard(a, { ctx })).join('\n      ')}
-    </ul>
+    <div class="sx-head rise"><h2 class="sx-title">Escrito pela equipe técnica</h2><a class="button button--ghost" href="/conteudo/">Ver todo o conteúdo ${icon('arrow', 16)}</a></div>
+    <div class="posts">
+      ${articles.slice(0, 3).map((a) => `<a class="post rise" href="${articleUrl(a)}"><span class="post__time">${esc(a.readingMinutes)} min de leitura</span><span class="post__title">${esc(a.title)}</span><span class="post__text">${esc(a.description)}</span></a>`).join('\n      ')}
+    </div>
   </div>
 </section>
 
 ${faq(h.faq, h.faqTitle)}
-${ctaBar(site, { title: 'Equipamento parado? Fale com a bancada.', text: '(41) 9 9889-3793 · segunda a sexta, das 8h às 18h. Envie marca, modelo e o defeito.', place: 'home-cta' })}`;
+
+<section class="cta-hx">
+  <div class="cta-hx__media" data-speed="0.14">${photo(ctx, 'storz-tower-cart', '', { sizes: '100vw' })}</div>
+  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
+  <div class="container cta-hx__row">
+    <h2 class="rise">Equipamento parado? Fale com a bancada.</h2>
+    <div class="cta-hx__side rise">
+      <a class="cta-hx__phone" href="tel:${site.phones[1].e164}" data-track="phone_click" data-place="home-cta">${esc(site.phones[1].display)}</a>
+      <p>Segunda a sexta, das 8h às 18h. Envie marca, modelo e o defeito.</p>
+      <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="home-cta">${icon('whatsapp', 20)} Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>`;
 
   return { title: h.title, description: h.description, body, jsonLd: [faqJsonLd(h.faq)].filter(Boolean) };
 }

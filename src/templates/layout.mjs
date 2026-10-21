@@ -30,6 +30,7 @@ const header = (ctx, path) => {
       </div>
     </nav>
   </div>
+  <div class="site-header__progress" aria-hidden="true"></div>
 </header>`;
 };
 
@@ -171,6 +172,7 @@ export function layout(ctx, page) {
   return `<!doctype html>
 <html lang="pt-BR"${process.env.THEME ? ` data-theme="${process.env.THEME}"` : ''}>
 <head>
+<script>document.documentElement.classList.add('js')</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(page.title)}</title>
