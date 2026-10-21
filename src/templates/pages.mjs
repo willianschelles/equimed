@@ -192,7 +192,7 @@ export function home(ctx) {
         <span class="bento__label">Perfuradores e serras · Stryker System 5–8, ConMed Hall</span>
       </a>
       <a class="bento__tile" href="/manutencao/cameras-de-video/">
-        <span class="bento__media">${photo(ctx, 'storz-or-towers', 'Sala cirúrgica com torres de vídeo e monitores Karl Storz', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
+        <span class="bento__media">${photo(ctx, 'laparoscopy-team', 'Equipe cirúrgica em videolaparoscopia com monitor HD e torre de vídeo', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}</span>
         <span class="bento__label">Torres de vídeo</span>
       </a>
       <a class="bento__tile" href="/manutencao/artrobombas/">
