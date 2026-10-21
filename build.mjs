@@ -30,6 +30,7 @@ const brands = json('brands.json');
 const services = json('services.json');
 const articles = json('articles.json');
 const copy = json('pages.json');
+const credits = json('credits.json');
 
 // Index images once so templates can emit width/height (avoids layout shift).
 const images = {};
@@ -56,7 +57,7 @@ for (const p of products) {
 for (const b of brands) for (const s of b.families) if (!families.find((f) => f.slug === s)) throw new Error(`Brand ${b.slug}: unknown family ${s}`);
 for (const a of articles) for (const s of a.families) if (!families.find((f) => f.slug === s)) throw new Error(`Article ${a.slug}: unknown family ${s}`);
 
-const ctx = { site, products, families, brands, services, articles, copy, images, logoSvg, buildDate: new Date().toISOString().slice(0, 10) };
+const ctx = { site, products, families, brands, services, articles, copy, credits, images, logoSvg, buildDate: new Date().toISOString().slice(0, 10) };
 
 // Page registry: path -> rendered page descriptor.
 const registry = [];

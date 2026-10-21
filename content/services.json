@@ -72,7 +72,8 @@
         "q": "A EquimedPR é assistência autorizada?",
         "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
       }
-    ]
+    ],
+    "photo": "drill-powerpro"
   },
   "locacao": {
     "slug": "locacao",
@@ -130,7 +131,8 @@
         "q": "É possível comprar o equipamento locado ao final do período?",
         "a": "Para equipamentos seminovos do nosso estoque, sim. Consulte as condições."
       }
-    ]
+    ],
+    "photo": "storz-or-towers"
   },
   "venda": {
     "slug": "venda",
@@ -173,7 +175,8 @@
         "q": "Vocês vendem implantes ou instrumentais?",
         "a": "Não. A EquimedPR trabalha com equipamentos eletromédicos. Não trabalhamos com implantes nem com instrumentais cirúrgicos."
       }
-    ]
+    ],
+    "photo": "operating-theatre"
   },
   "software": {
     "slug": "software",
@@ -233,6 +236,7 @@
         "q": "Vocês desenvolvem software para outros equipamentos?",
         "a": "Sim. Descreva a necessidade pelo WhatsApp ou pelo e-mail e avaliamos a viabilidade técnica, o prazo e o investimento."
       }
-    ]
+    ],
+    "photo": "storz-optic"
   }
 }

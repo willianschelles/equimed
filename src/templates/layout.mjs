@@ -82,6 +82,7 @@ const footer = (ctx) => {
       <a href="${site.social.facebook}" target="_blank" rel="noopener">${icon('facebook', 18)} Facebook</a>
       ${site.social.instagram ? `· <a href="${site.social.instagram}" target="_blank" rel="noopener">${icon('instagram', 18)} Instagram</a>` : ''}
       · <a href="/privacidade/">Privacidade e cookies</a>
+      · <a href="/privacidade/#creditos">Créditos de imagens</a>
       · <a href="/sitemap.xml">Mapa do site</a>
     </p>
   </div>

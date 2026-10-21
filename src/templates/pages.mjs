@@ -20,12 +20,16 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
 const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
 
 /* ---------------- Shared blocks ---------------- */
-const pageHeader = (heading, lead, { eyebrow, extra = '' } = {}) => `
-<header class="page-header container">
-  ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
-  <h1>${esc(heading)}</h1>
-  ${lead ? `<p class="lead">${esc(lead)}</p>` : ''}
-  ${extra}
+const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...opts });
+const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photoAlt = '' } = {}) => `
+<header class="page-header container${photoName ? ' page-header--media' : ''}">
+  <div class="page-header__copy">
+    ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
+    <h1>${esc(heading)}</h1>
+    ${lead ? `<p class="lead">${esc(lead)}</p>` : ''}
+    ${extra}
+  </div>
+  ${photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
 </header>`;
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
@@ -154,9 +158,7 @@ const stepsBlock = (title, items) => `
 export function home(ctx) {
   const { site, copy, families, brands, services, articles, products } = ctx;
   const h = copy.home;
-  const pick = (slug) => products.find((p) => p.slug === slug);
-  const tiles = [pick('stryker-6-perfurador-e-serra'), pick('storz-camera-image1-hub'), pick('stryker-fonte-de-luz-l9000-led')];
-  const body = `
+      const body = `
 <section class="hero">
   <div class="container hero__grid">
     <div class="hero__copy">
@@ -172,23 +174,20 @@ export function home(ctx) {
         <li>${icon('pin', 16)} Curitiba, PR · atendemos todo o Brasil</li>
       </ul>
     </div>
-    <div class="hero__media bento" aria-hidden="true">
-      <a class="bento__tile bento__tile--big" href="${productUrl(tiles[0])}" tabindex="-1">
-        ${img(ctx, `/assets/img/products/${tiles[0].image}.webp`, '', { lazy: false, sizes: '(min-width: 64rem) 30vw, 60vw' })}
-        <span class="bento__label">Perfuradores e serras Stryker System 5 a 8</span>
+    <div class="hero__media bento">
+      <a class="bento__tile bento__tile--big frame" href="/manutencao/perfuradores-e-serras/">
+        ${photo(ctx, 'drill-powerpro', 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico', { lazy: false, sizes: '(min-width: 64rem) 32vw, 100vw' })}
+        <span class="bento__chip">Desde ${site.foundingYear} · independente multimarcas</span>
+        <span class="bento__label">Perfuradores e serras: Stryker System 5 a 8, ConMed Hall</span>
       </a>
-      <a class="bento__tile" href="${productUrl(tiles[1])}" tabindex="-1">
-        ${img(ctx, `/assets/img/products/${tiles[1].image}.webp`, '', { lazy: false, sizes: '(min-width: 64rem) 15vw, 40vw' })}
-        <span class="bento__label">Câmeras HD e 4K</span>
+      <a class="bento__tile frame" href="/manutencao/cameras-de-video/">
+        ${photo(ctx, 'storz-or-towers', 'Sala cirúrgica com torres de vídeo e monitores Karl Storz', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}
+        <span class="bento__label">Torres de vídeo</span>
       </a>
-      <a class="bento__tile" href="${productUrl(tiles[2])}" tabindex="-1">
-        ${img(ctx, `/assets/img/products/${tiles[2].image}.webp`, '', { lazy: false, sizes: '(min-width: 64rem) 15vw, 40vw' })}
-        <span class="bento__label">Fontes xenon e LED</span>
+      <a class="bento__tile frame" href="/manutencao/artrobombas/">
+        ${photo(ctx, 'arthroscopy-or', 'Equipe cirúrgica em artroscopia de joelho com monitor', { lazy: false, sizes: '(min-width: 64rem) 16vw, 50vw' })}
+        <span class="bento__label">Artroscopia</span>
       </a>
-      <div class="bento__tile bento__tile--stat">
-        <strong>Desde ${site.foundingYear}</strong>
-        <span>assistência independente multimarcas</span>
-      </div>
     </div>
   </div>
 </section>
@@ -275,7 +274,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photoAlt: 'Perfurador ortopédico ConMed Hall PowerPro sobre campo cirúrgico' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -324,7 +323,7 @@ export function maintenanceFamily(ctx, f) {
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção em ${f.shortName.toLowerCase()}.\n\nMarca/modelo: \nDefeito: \n`;
   const related = articles.filter((a) => a.families.includes(f.slug)).slice(0, 3);
   const body = `
-${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento' })}
+${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento', ctx, photoName: f.photo, photoAlt: f.name + ' em uso no centro cirúrgico' })}
 <section class="section container service-layout">
   <div class="prose">
     ${m.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -361,7 +360,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photoAlt: 'Sala cirúrgica com torres de vídeo e monitores' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -388,7 +387,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photoAlt: 'Centro cirúrgico equipado para videolaparoscopia' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -414,7 +413,7 @@ export function software(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e preciso de uma solução de software.\n\nEquipamento: \nMarca/modelo: \nSituação: (atualização / desbloqueio / desenvolvimento)\n`;
   const charger = products.find((p) => p.slug === 'carregador-de-bateria-inteligente');
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvolvimento' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvolvimento', ctx, photoName: s.photo, photoAlt: 'Óptica de laparoscopia Karl Storz' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -477,7 +476,7 @@ export function family(ctx, f) {
   <ul class="grid grid--3">${list.map((p, i) => productCard(ctx, p, { level: 3, eager: i < 3 })).join('')}</ul>
 </section>` : '';
   const body = `
-${pageHeader(f.name, f.lead, { eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
+${pageHeader(f.name, f.lead, { ctx, photoName: f.photo, photoAlt: f.name + ' em uso no centro cirúrgico', eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
 ${grid(available, 'Disponíveis para venda ou locação')}
 ${grid(serviced, 'Atendidos em manutenção')}
 ${f.maintenance ? `<section class="section section--tint"><div class="container prose"><h2>Marcas e modelos atendidos em manutenção</h2><dl class="models">${f.maintenance.brands.map((b) => `<div><dt>${b.slug ? `<a href="${brandUrl({ slug: b.slug })}">${esc(b.brand)}</a>` : esc(b.brand)}</dt><dd>${esc(b.models.join(' · '))}</dd></div>`).join('')}</dl><p><a class="button button--ghost" href="${maintenanceUrl(f)}">Defeitos comuns e o que fazemos ${icon('arrow', 16)}</a></p></div></section>` : ''}
@@ -499,7 +498,7 @@ export function product(ctx, p) {
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `
 <article class="product container">
-  ${p.image ? `<figure class="product__media">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}</figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto do equipamento seminovo do estoque EquimedPR' : 'Foto ilustrativa do modelo'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
   <div class="product__body">
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>
@@ -761,6 +760,9 @@ ${pageHeader(p.heading, 'Como tratamos os dados de quem entra em contato pelo si
   <p>Você pode pedir confirmação, acesso, correção, anonimização ou eliminação dos seus dados, e revogar o consentimento, pelo e-mail <a href="mailto:${site.email}">${esc(site.email)}</a>. Respondemos nos prazos previstos na LGPD (Lei 13.709/2018).</p>
   <h2>Links e marcas</h2>
   <p>Links externos (WhatsApp, Google Maps, Facebook) estão sujeitos às políticas dos respectivos serviços. ${esc(site.independenceNotice)}</p>
+  <h2 id="creditos">Créditos de imagens</h2>
+  <p>Fotos de produtos: acervo EquimedPR. Fotos de ambiente cirúrgico, usadas com atribuição conforme a licença de cada autor:</p>
+  <ul>${ctx.credits.map((c) => `<li><a href="${c.source}" rel="noopener">${esc(c.title)}</a>, ${esc(c.author)}, ${c.licenseUrl ? `<a href="${c.licenseUrl}" rel="noopener">${esc(c.license)}</a>` : esc(c.license)}, via Wikimedia Commons.</li>`).join('')}</ul>
 </section>`;
   return { title: p.title, description: p.description, body, breadcrumbs: [{ name: 'Privacidade', href: '/privacidade/' }] };
 }

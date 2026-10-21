@@ -89,7 +89,8 @@
         }
       ]
     },
-    "short": "Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, nacionais e chineses."
+    "short": "Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, nacionais e chineses.",
+    "photo": "drill-powerpro"
   },
   {
     "slug": "baterias-e-carregadores",
@@ -158,7 +159,8 @@
         }
       ]
     },
-    "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha."
+    "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha.",
+    "photo": "operating-theatre"
   },
   {
     "slug": "cameras-de-video",
@@ -249,7 +251,8 @@
         }
       ]
     },
-    "short": "CCU e cabeças HD e 4K Stryker, Karl Storz, Linvatec, Dyonics e marcas nacionais."
+    "short": "CCU e cabeças HD e 4K Stryker, Karl Storz, Linvatec, Dyonics e marcas nacionais.",
+    "photo": "storz-or-towers"
   },
   {
     "slug": "fontes-de-luz",
@@ -338,7 +341,8 @@
         }
       ]
     },
-    "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED."
+    "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED.",
+    "photo": "laparoscopy-or"
   },
   {
     "slug": "monitores-cirurgicos",
@@ -418,7 +422,8 @@
         }
       ]
     },
-    "short": "NDS, Karl Storz, Stryker e Sony, de 19\" a 32\": fontes, placas e entradas de vídeo."
+    "short": "NDS, Karl Storz, Stryker e Sony, de 19\" a 32\": fontes, placas e entradas de vídeo.",
+    "photo": "laparoscopy-or"
   },
   {
     "slug": "insufladores",
@@ -497,7 +502,8 @@
         }
       ]
     },
-    "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão."
+    "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão.",
+    "photo": "operating-theatre"
   },
   {
     "slug": "artrobombas",
@@ -571,7 +577,8 @@
       ],
       "faq": []
     },
-    "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração."
+    "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração.",
+    "photo": "arthroscopy-or"
   },
   {
     "slug": "shavers",
@@ -649,7 +656,8 @@
       ],
       "faq": []
     },
-    "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz."
+    "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz.",
+    "photo": "arthroscopy-or"
   },
   {
     "slug": "acessorios-de-video",
@@ -659,6 +667,7 @@
     "lead": "Cabos de fibra óptica com terminais Storz, Wolf, Olympus e ACMI, endocouplers para cabeças de câmera e lâmpadas xenon e HTI de 175 W e 300 W.",
     "description": "Acessórios para torres de videocirurgia: cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI de reposição para as principais fontes de luz.",
     "maintenance": null,
-    "short": "Cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI."
+    "short": "Cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI.",
+    "photo": "storz-optic"
   }
 ]

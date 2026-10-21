@@ -59,7 +59,7 @@ e `/marcas/stryker/`; "assistência em equipamentos ConMed/Linvatec" leva a `/ma
 1. **Modelos citados** por família e marca (`content/families.json`): a lista foi montada por pesquisa e precisa
    da revisão técnica de vocês. Em especial: ConMed/Linvatec (PowerPro, MPower 2, Advantage, LS7700/LS8000,
    IM4000/IM8000), Storz (IMAGE1 S, Power LED, Endoflator 50) e Stryker (1688, L10, Pneumosure, Core 2).
-2. **Fotos reais** das 7 linhas sem foto (System 7, System 8, baterias 7/8, Hall PowerPro/MPower, Linvatec
+2. **Fotos reais**: as fotos de ambiente (hero, cabeçalhos de serviço e família) são do Wikimedia Commons, com licença livre e crédito em `/privacidade/#creditos`; fotos próprias da bancada e da equipe devem substituí-las. Também faltam fotos das 7 linhas sem foto (System 7, System 8, baterias 7/8, Hall PowerPro/MPower, Linvatec
    Advantage, IMAGE1 S, Stryker Core) e, se possível, fotos novas dos seminovos em fundo branco.
 3. **Serviços de software**: confirmar o texto de desbloqueio (o site diz que não remove bloqueios com função de
    segurança e atende só equipamento do próprio cliente).
