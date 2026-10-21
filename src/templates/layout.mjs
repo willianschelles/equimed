@@ -180,7 +180,7 @@ ${page.noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots"
 ${page.redirect ? `<meta http-equiv="refresh" content="0; url=${page.redirect}">` : ''}
 <meta name="google-site-verification" content="${site.googleSiteVerification}">
 <meta name="theme-color" content="#0f3d5c">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="${page.ogType ?? 'website'}">
 <meta property="og:site_name" content="${esc(site.name)}">
