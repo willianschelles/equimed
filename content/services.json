@@ -6,8 +6,8 @@
     "icon": "wrench",
     "title": "Manutenção de equipamentos médicos: Stryker, ConMed, Karl Storz",
     "description": "Assistência técnica independente multimarcas: manutenção de perfuradores, serras, baterias, câmeras, fontes de luz, insufladores, artrobombas e shavers.",
-    "lead": "Assistência técnica independente multimarcas, com avaliação técnica em bancada, orçamento descritivo e garantia do serviço. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses.",
-    "summary": "Corretiva e preventiva por família de equipamento, marca e modelo. Avaliação técnica em bancada e orçamento descritivo antes de qualquer reparo.",
+    "lead": "Assistência técnica independente multimarcas, com avaliação técnica em bancada, orçamento detalhado e garantia do serviço. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses.",
+    "summary": "Corretiva e preventiva por família de equipamento, marca e modelo. Avaliação técnica em bancada e orçamento detalhado antes de qualquer reparo.",
     "intro": [
       "A EquimedPR mantém equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia desde 2014. O trabalho é organizado por família de equipamento, porque cada uma tem modos de falha, peças e testes próprios: um perfurador a bateria não se avalia como uma câmera, e uma fonte de luz xenon não se repara como um insuflador.",
       "Somos uma assistência técnica independente. Isso significa que não dependemos da política de peças ou de prazos do fabricante, e que podemos reparar componentes em vez de trocar módulos inteiros quando isso é tecnicamente adequado. Também significa que não somos autorizados nem representantes de nenhuma marca, e dizemos isso com clareza."
@@ -28,7 +28,7 @@
           "text": "Desmontagem, inspeção e testes para identificar a causa. Verificamos também itens que podem falhar em seguida."
         },
         {
-          "title": "Orçamento descritivo",
+          "title": "Orçamento detalhado",
           "text": "Você recebe o diagnóstico, as peças, o prazo e o valor. O reparo só começa com a sua aprovação."
         },
         {

@@ -3,14 +3,14 @@
     "slug": "avaliacao-tecnica-como-funciona",
     "title": "Como funciona a avaliação técnica de um equipamento médico",
     "metaTitle": "Avaliação técnica de equipamento médico: como funciona",
-    "description": "O passo a passo da avaliação técnica na EquimedPR: recebimento, inspeção em bancada, diagnóstico, orçamento descritivo e o que você recebe junto com o equipamento.",
+    "description": "O passo a passo da avaliação técnica na EquimedPR: recebimento, inspeção em bancada, diagnóstico, orçamento detalhado e o que você recebe junto com o equipamento.",
     "date": "2026-10-20",
     "readingMinutes": 4,
     "families": ["perfuradores-e-serras", "cameras-de-video", "fontes-de-luz"],
     "sections": [
       { "h": "Por que a avaliação vem antes do orçamento", "p": ["Um orçamento sem avaliação é um chute. Dois perfuradores com o mesmo sintoma, perda de potência, podem ter causas diferentes: escovas gastas, rolamento travado, bateria no fim da vida ou vedação rompida que deixou vapor entrar. Cada causa tem custo e prazo próprios.", "Por isso o fluxo da EquimedPR começa pela avaliação em bancada e só depois chega ao orçamento. Você aprova sabendo o que será feito."] },
       { "h": "O que acontece quando o equipamento chega", "list": ["Registro de entrada com fotos do estado do equipamento, acessórios e número de série.", "Teste inicial para reproduzir o defeito relatado.", "Desmontagem e inspeção visual e elétrica dos subconjuntos: motor, engrenagens, vedações, placas, cabos e conectores.", "Medições: resistência de isolamento, consumo, rotação, torque, temperatura, pressão ou intensidade luminosa, conforme a família.", "Lista de itens que já falharam e dos que estão no fim da vida útil."] },
-      { "h": "O que o orçamento descritivo contém", "p": ["O orçamento separa o diagnóstico (o que foi encontrado), a intervenção (o que será feito), as peças (o que será trocado), o prazo e o valor. Quando há mais de um caminho, por exemplo recuperar uma bateria ou substituí-la, os dois são apresentados com os números.", "Nada é executado sem a sua aprovação por escrito, por WhatsApp ou e-mail."] },
+      { "h": "O que o orçamento detalhado contém", "p": ["O orçamento separa o diagnóstico (o que foi encontrado), a intervenção (o que será feito), as peças (o que será trocado), o prazo e o valor. Quando há mais de um caminho, por exemplo recuperar uma bateria ou substituí-la, os dois são apresentados com os números.", "Nada é executado sem a sua aprovação por escrito, por WhatsApp ou e-mail."] },
       { "h": "O que você recebe na devolução", "list": ["Relatório de manutenção com as peças substituídas e os testes realizados.", "Teste de segurança elétrica e laudo, quando aplicável ou solicitado.", "Garantia do serviço, descrita no relatório.", "Equipamento embalado para transporte, com rastreio quando enviado por transportadora."] },
       { "h": "Como agilizar", "p": ["Envie pelo WhatsApp marca, modelo, número de série, o defeito e, se possível, um vídeo curto do sintoma. Isso permite separar peças antes da chegada e reduz o prazo."] }
     ]
@@ -57,7 +57,7 @@
       { "h": "O que a EquimedPR é", "p": ["A EquimedPR é uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores de nenhum fabricante. As marcas citadas no site identificam os equipamentos que atendemos, e pertencem aos seus titulares."] },
       { "h": "Quando a autorizada é o caminho", "list": ["Equipamento dentro do prazo de garantia do fabricante.", "Reparos que exigem peças ou calibrações disponíveis apenas no fabricante.", "Exigência contratual ou de licitação por assistência autorizada."] },
       { "h": "Quando a independente faz sentido", "list": ["Equipamento fora de garantia, que é a maior parte do parque instalado.", "Linhas descontinuadas ou sem suporte do fabricante no Brasil.", "Necessidade de reparo em nível de componente, em vez de troca de módulo inteiro.", "Prazo e custo: a independente costuma ter fila menor e orçamento por item.", "Parque multimarcas, em que uma única assistência atende torres de vídeo e perfuradores de fabricantes diferentes."] },
-      { "h": "O que exigir de qualquer assistência", "list": ["Avaliação técnica e orçamento descritivo antes do reparo.", "Relatório de manutenção com peças substituídas e testes realizados.", "Teste de segurança elétrica quando aplicável.", "Garantia do serviço por escrito.", "Clareza sobre o que a empresa é: independente ou autorizada."] }
+      { "h": "O que exigir de qualquer assistência", "list": ["Avaliação técnica e orçamento detalhado antes do reparo.", "Relatório de manutenção com peças substituídas e testes realizados.", "Teste de segurança elétrica quando aplicável.", "Garantia do serviço por escrito.", "Clareza sobre o que a empresa é: independente ou autorizada."] }
     ]
   },
   {

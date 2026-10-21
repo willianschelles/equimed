@@ -20,7 +20,7 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
 const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
 
 /* ---------------- Shared blocks ---------------- */
-const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div>${index ? `<span class="section__index">${index}</span>` : ''}<h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
+const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
@@ -166,7 +166,7 @@ const articleCard = (a, { level = 3 } = {}) => `
 </li>`;
 
 const SERVICE_META = {
-  manutencao: ['Avaliação em bancada', 'Orçamento descritivo', 'Relatório e garantia'],
+  manutencao: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'],
   locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante reparo'],
   venda: ['Seminovos revisados', '3 meses de garantia', 'Proposta para licitação'],
   software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
@@ -232,28 +232,28 @@ export function home(ctx) {
 
 <section class="section container statement">
   <span class="statement__label">QUEM SOMOS</span>
-  <p class="statement__text">Desde ${site.foundingYear} cuidamos do que mantém o centro cirúrgico funcionando. <strong>Diagnóstico em bancada, orçamento descritivo e garantia</strong> em perfuradores, serras, câmeras, fontes de luz e insufladores.</p>
+  <p class="statement__text">Desde ${site.foundingYear} cuidamos do que mantém o centro cirúrgico funcionando. <strong>Diagnóstico em bancada, orçamento detalhado e garantia</strong> em perfuradores, serras, câmeras, fontes de luz e insufladores.</p>
 </section>
 
 <section class="section section--dark">
   <div class="container">
-    ${sectionHead(null, h.servicesTitle, null, '<span class="section__index">Manutenção · Locação · Venda · Software</span>')}
+    ${sectionHead(null, h.servicesTitle)}
     <div class="svc">
       <a class="svc__tile svc__tile--feature" href="/manutencao/">
         <figure class="svc__media">${photo(ctx, 'stryker-system7-desmontado-recorte', 'Perfurador Stryker System 7 desmontado na bancada EquimedPR', { sizes: '(min-width: 64rem) 52rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">01 — MANUTENÇÃO</span><h3 class="svc__title">Avaliação técnica antes de qualquer reparo</h3><p class="svc__text">${esc(services.manutencao.summary)}</p><span class="svc__more">Ver manutenção →</span></div>
+        <div class="svc__body"><span class="svc__label">Manutenção</span><h3 class="svc__title">Diagnóstico em bancada antes de qualquer reparo</h3><p class="svc__text">Corretiva e preventiva, com orçamento detalhado e garantia do serviço. Você aprova antes de começarmos.</p><span class="svc__more">Ver manutenção →</span></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/locacao/">
         <figure class="svc__media">${photo(ctx, 'seminovo-stryker-6-conjunto-recorte', 'Conjunto de perfurador e serra Stryker com carregador, pronto para locação', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">02 — LOCAÇÃO</span><h3 class="svc__title">Conjunto revisado no dia da cirurgia</h3></div>
+        <div class="svc__body"><span class="svc__label">Locação</span><h3 class="svc__title">Conjunto revisado no dia da cirurgia</h3></div>
       </a>
       <a class="svc__tile svc__tile--card" href="/venda/">
         <figure class="svc__media">${photo(ctx, 'stryker-system7-recorte', 'Perfurador Stryker System 7', { sizes: '(min-width: 64rem) 26rem, 100vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">03 — VENDA</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
+        <div class="svc__body"><span class="svc__label">Venda</span><h3 class="svc__title">Seminovos com ${esc(site.warranty.used)} de garantia</h3></div>
       </a>
       <a class="svc__tile svc__tile--band" href="/software/">
         <figure class="svc__media">${img(ctx, '/assets/img/products/carregador-de-bateria-inteligente.webp', 'Carregador inteligente multilinha EquimedPR', { sizes: '(min-width: 64rem) 30rem, 60vw' })}</figure>
-        <div class="svc__body"><span class="svc__label">04 — SOFTWARE</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
+        <div class="svc__body"><span class="svc__label">Software</span><h3 class="svc__title">Atualização de firmware, desbloqueio e desenvolvimento sob medida</h3><p class="svc__text">Baterias, carregadores e consoles que travam mesmo com a mecânica em ordem.</p></div>
       </a>
     </div>
   </div>
@@ -271,7 +271,7 @@ export function home(ctx) {
 
 <section class="section section--dark" style="padding-block: 3.5rem;">
   <div class="container logos">
-    <span class="logos__label">MARCAS EM FOCO</span>
+    <span class="logos__label">MARCAS ATENDIDAS</span>
     ${logoBrands.map((b) => `<a href="${brandUrl(b)}">${img(ctx, `/assets/img/brands/${b.logo}.webp`, b.name)}</a>`).join('\n    ')}
   </div>
 </section>
