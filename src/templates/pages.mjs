@@ -61,10 +61,10 @@ const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipame
 
 const faq = (items, title = 'Perguntas frequentes') =>
   items?.length
-    ? `<section class="section container"><div class="prose">
-  <h2>${esc(title)}</h2>
-  ${items.map((f) => `<details class="faq" name="faq"><summary>${esc(f.q)}${icon('chevron', 20)}</summary><p>${esc(f.a)}</p></details>`).join('\n  ')}
-</div></section>`
+    ? `<section class="section container faq-block">
+  <div class="faq-block__head"><h2 class="section__title">${esc(title)}</h2><p class="lead">Não encontrou a resposta? Fale com a equipe técnica pelo WhatsApp.</p></div>
+  <div class="faq-block__list">${items.map((f) => `<details class="faq" name="faq"><summary>${esc(f.q)}${icon('chevron', 20)}</summary><p>${esc(f.a)}</p></details>`).join('\n  ')}</div>
+</section>`
     : '';
 
 const faqJsonLd = (items) =>
@@ -75,8 +75,9 @@ const faqJsonLd = (items) =>
 
 const brandHead = (ctx, slug, name) => {
   const b = slug ? ctx.brands.find((x) => x.slug === slug) : null;
-  const logo = b?.logo ? img(ctx, `/assets/img/brands/${b.logo}.webp`, '') : `<span class="mcard__word">${esc(name)}</span>`;
-  return slug ? `<a class="mcard__head" href="${brandUrl({ slug })}" aria-label="${esc(name)}">${logo}</a>` : `<span class="mcard__head">${logo}</span>`;
+  if (!b?.logo) return '';
+  const logo = img(ctx, `/assets/img/brands/${b.logo}.webp`, '');
+  return `<a class="mcard__head" href="${brandUrl({ slug })}" aria-label="${esc(name)}">${logo}</a>`;
 };
 /** items: [{ ctx, slug, name, title, models: [] }] */
 const modelCards = (ctx, items) => `<ul class="mcards">${items.map((it) => `<li class="mcard">

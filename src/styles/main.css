@@ -2,6 +2,13 @@
    Tailwind CSS v4 (CLI standalone, sem npm): tokens em @theme, componentes semânticos em @layer components.
    Utilitários do Tailwind podem ser usados direto nos templates (src/templates/*.mjs são escaneados). */
 @import "tailwindcss";
+
+/* Override Tailwind's breakpoint container: fluid width with a fixed gutter. */
+@utility container {
+  width: min(100% - 2.5rem, 80rem);
+  max-width: none;
+  margin-inline: auto;
+}
 @source "../templates";
 @source "../scripts";
 
@@ -61,7 +68,6 @@
 
 @layer components {
   /* ---------- Layout ---------- */
-  .container { width: min(100% - 3rem, 80rem); margin-inline: auto; }
   .section { padding-block: clamp(4rem, 8vw, 6.5rem); }
   .section--tint { background: var(--color-mist); }
   .section--dark { background: var(--color-navy); color: var(--color-on-dark); }
@@ -186,6 +192,7 @@
 
   .stats { position: relative; z-index: 2; margin-block-start: -7.5rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
   .stat { display: grid; gap: 0.35rem; align-content: start; padding: 1.6rem; background: var(--color-navy-2); color: var(--color-on-dark); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-card); box-shadow: 0 24px 48px -24px rgba(0,0,0,0.5); }
+  @media (width < 40rem) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; } .stat { padding: 1.1rem; } .stat__value { font-size: 2.1rem; } .stat__text { font-size: 0.8125rem; } }
   .stat__label { font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.06em; font-weight: 600; color: var(--color-on-dark-3); }
   .stat__value { font-size: 2.75rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: var(--color-glow); }
   .stat__value small { font-size: 1.25rem; font-weight: 400; color: var(--color-on-dark-3); letter-spacing: 0; }
@@ -220,7 +227,7 @@
   .svc__tile--photo .svc__media, .svc__tile--photo .svc__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .svc__tile--band .svc__media { position: absolute; inset: 1.25rem 3rem 1.25rem auto; width: min(36%, 21rem); display: grid; place-items: center; }
   .svc__tile--band .svc__media img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 30px rgba(0,0,0,0.55)); }
-  @media (width < 48rem) { .svc__tile--band .svc__media { opacity: 0.25; width: 100%; } }
+  @media (width < 48rem) { .svc__tile--band .svc__media { display: none; } }
   .svc__tile--photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,26,0.05) 25%, rgba(10,18,26,0.92) 100%); }
   .svc__tile--photo .svc__body, .svc__tile--band .svc__body { position: relative; z-index: 1; margin-block-start: auto; display: grid; gap: 0.35rem; padding: 1.5rem; }
   .svc__tile--card { background: var(--color-navy-2); border: 1px solid rgba(255,255,255,0.08); }
@@ -270,6 +277,7 @@
   .fam__link:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -26px rgba(10,18,26,0.45); color: var(--color-ink); }
   .fam__media { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 1.25rem 1.5rem; background: var(--plate-studio); overflow: hidden; border-bottom: 1px solid var(--color-line); }
   .fam__media img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s var(--ease-out-soft); }
+  @media (width < 40rem) { .fam__media { aspect-ratio: 16 / 10; } }
   .fam__glyph { display: grid; place-items: center; width: 6.5rem; height: 6.5rem; border-radius: 999px; background: #FFFFFF; color: var(--color-petrol-link); box-shadow: 0 18px 36px -22px rgba(10,18,26,0.45); }
   .fam__link:hover .fam__media img { transform: scale(1.05); }
   .fam__body { display: flex; flex-direction: column; gap: 0.45rem; padding: 1.25rem 1.5rem 0.25rem; flex: 1; }
@@ -345,6 +353,10 @@
   .pills li a { display: inline-block; padding: 0.4em 0.9em; color: inherit; text-decoration: none; }
   .pills li:not(:has(a)) { padding: 0.4em 0.9em; }
   .pills li:has(a):hover { background: var(--color-navy); color: #FFFFFF; }
+  .faq-block { display: grid; gap: 2rem; }
+  @media (width >= 64rem) { .faq-block { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 5rem; align-items: start; } }
+  .faq-block__head .lead { margin-block-start: 0.75rem; }
+  .mcard:not(:has(.mcard__head)) .mcard__body { border-block-start: 3px solid var(--color-petrol); }
   .faq { border-block-end: 1px solid var(--color-line); padding-block: 1.1rem; margin: 0 !important; }
   .faq:first-of-type { border-block-start: 1px solid var(--color-line); }
   .faq summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-weight: 600; font-size: 1.0625rem; }
@@ -360,8 +372,9 @@
   /* Product */
   .product { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; padding-block: 2.5rem 5rem; align-items: start; }
   @media (width >= 64rem) { .product { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 5rem; } }
-  .product__media { position: sticky; top: 6rem; display: grid; place-items: center; min-height: 20rem; padding: 2.5rem; margin: 0; background: var(--plate-studio); border: 1px solid var(--color-line); border-radius: var(--radius-panel); overflow: hidden; }
+  .product__media { position: relative; display: grid; place-items: center; min-height: 20rem; padding: 2.5rem; margin: 0; background: var(--plate-studio); border: 1px solid var(--color-line); border-radius: var(--radius-panel); overflow: hidden; }
   .product__media img { width: 100%; object-fit: contain; }
+  @media (width >= 64rem) { .product__media { position: sticky; top: 6rem; } }
   .product__media figcaption { position: absolute; left: 1rem; bottom: 1rem; font-family: var(--font-sans); font-size: 0.6875rem; letter-spacing: 0.06em; font-weight: 600; text-transform: uppercase; color: var(--color-ink-3); background: rgba(255,255,255,0.9); padding: 0.3rem 0.6rem; border-radius: 6px; }
   .product__media--icon { color: var(--color-ink-3); gap: 0.75rem; grid-auto-rows: max-content; align-content: center; }
   .product__media--icon figcaption { position: static; background: none; }
