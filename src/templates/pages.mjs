@@ -695,7 +695,7 @@ export function about(ctx) {
   const { site, copy } = ctx;
   const a = copy.about;
   const body = `
-${pageHeader(a.heading, a.lead)}
+${pageHeader(a.heading, a.lead, { ctx, photoName: 'bench-hands', photoAlt: 'Técnico inspecionando um equipamento na bancada' })}
 <section class="section container service-layout">
   <div class="prose">
     ${a.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
