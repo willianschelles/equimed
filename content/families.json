@@ -95,7 +95,8 @@
       "stryker-system7",
       "stryker-system7-desmontado",
       "stryker-system7-pecas"
-    ]
+    ],
+    "cover": "stryker-system-7"
   },
   {
     "slug": "baterias-e-carregadores",
@@ -165,7 +166,8 @@
       ]
     },
     "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha.",
-    "photo": "operating-theatre"
+    "photo": "operating-theatre",
+    "cover": "carregador-de-bateria-inteligente"
   },
   {
     "slug": "cameras-de-video",
@@ -257,7 +259,8 @@
       ]
     },
     "short": "CCU e cabeças HD e 4K Stryker, Karl Storz, Linvatec, Dyonics e marcas nacionais.",
-    "photo": "laparoscopy-team"
+    "photo": "laparoscopy-team",
+    "cover": "storz-camera-image1-hub"
   },
   {
     "slug": "fontes-de-luz",
@@ -347,7 +350,8 @@
       ]
     },
     "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED.",
-    "photo": "laparoscopy-or"
+    "photo": "laparoscopy-or",
+    "cover": "stryker-fonte-de-luz-l9000-led"
   },
   {
     "slug": "monitores-cirurgicos",
@@ -428,7 +432,8 @@
       ]
     },
     "short": "NDS, Karl Storz, Stryker e Sony, de 19\" a 32\": fontes, placas e entradas de vídeo.",
-    "photo": "storz-tower-cart"
+    "photo": "storz-tower-cart",
+    "cover": "nds-monitor-26-radiance-g2"
   },
   {
     "slug": "insufladores",
@@ -508,7 +513,8 @@
       ]
     },
     "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão.",
-    "photo": "operating-theatre"
+    "photo": "operating-theatre",
+    "cover": "stryker-insuflador-core-40-lpm"
   },
   {
     "slug": "artrobombas",
@@ -583,7 +589,8 @@
       "faq": []
     },
     "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração.",
-    "photo": "arthroscopy-or"
+    "photo": "arthroscopy-or",
+    "cover": "stryker-bomba-arthropump"
   },
   {
     "slug": "shavers",
@@ -662,7 +669,8 @@
       "faq": []
     },
     "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz.",
-    "photo": "arthroscopy-or"
+    "photo": "arthroscopy-or",
+    "cover": null
   },
   {
     "slug": "acessorios-de-video",
@@ -673,6 +681,7 @@
     "description": "Acessórios para torres de videocirurgia: cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI de reposição para as principais fontes de luz.",
     "maintenance": null,
     "short": "Cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI.",
-    "photo": "storz-optic"
+    "photo": "storz-optic",
+    "cover": "stahl-cabo-de-fibra-optica"
   }
 ]

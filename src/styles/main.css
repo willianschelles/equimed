@@ -273,6 +273,30 @@
   .status__pill--petrol { background: var(--petrol); }
   .status__pill--warm { background: var(--signal-tint); color: oklch(40% 0.12 50); border: 1px solid var(--signal); }
 
+  /* Family cards: real equipment photo, icon, brands, what we do */
+  .fams { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+  .fam__link { display: flex; flex-direction: column; height: 100%; background: var(--surface); border: 1px solid var(--rule); border-block-end: 3px solid var(--petrol); text-decoration: none; color: inherit; transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease); }
+  .fam__link:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -22px oklch(25% 0.06 235 / 0.55); border-block-end-color: var(--signal); }
+  .fam__media { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: var(--space-5) var(--space-8); background: radial-gradient(75% 85% at 50% 50%, white 55%, var(--petrol-col) 100%); overflow: hidden; }
+  .fam__media img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.4s var(--ease); }
+  .fam__link:hover .fam__media img { transform: scale(1.05); }
+  .fam__media--photo { padding: 0; }
+  .fam__media--photo img { object-fit: cover; mix-blend-mode: normal; filter: none; }
+  .fam__icon { position: absolute; inset-block-start: var(--space-3); inset-inline-start: var(--space-3); display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; background: var(--petrol); color: white; }
+  .fam__link:hover .fam__icon { background: var(--signal); }
+  .fam__body { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-5) var(--space-3); flex: 1; }
+  .fam__title { font-size: var(--step-1); font-weight: 700; letter-spacing: -0.015em; }
+  .fam__link:hover .fam__title { color: var(--petrol); }
+  .fam__text { color: var(--text-muted); font-size: var(--step--1); }
+  .fam__brands { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); font-family: var(--font-mono); font-size: var(--step--2); letter-spacing: 0.04em; text-transform: uppercase; color: var(--petrol); }
+  
+  .fam__tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-block-start: auto; padding-block-start: var(--space-2); }
+  .fam__tag { font-size: 0.75rem; font-weight: 600; padding: 0.25em 0.6em; border-radius: var(--radius); color: white; }
+  .fam__tag--petrol { background: var(--petrol); }
+  .fam__tag--ok { background: var(--whatsapp); }
+  .fam__more { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-5) var(--space-4); font-weight: 600; font-size: var(--step--1); color: var(--petrol); }
+  .fam__link:hover .fam__more { color: var(--signal); }
+
   /* Spec grid: equipment families as a ruled table of rows */
   .spec { border-block-start: 1px solid var(--rule-strong); }
   .spec__row { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) minmax(0, 1.4fr) 9rem auto; gap: var(--space-4); align-items: center; padding-block: var(--space-4); border-block-end: 1px solid var(--rule); text-decoration: none; color: inherit; background: transparent; }
@@ -292,7 +316,7 @@
   .card:has(.card__link:hover) { outline: 1px solid var(--ink); outline-offset: -1px; }
   .card__link { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; }
   .card__media { position: relative; aspect-ratio: 4 / 3; background: var(--plate); display: grid; place-items: center; padding: var(--space-5); border-block-end: 1px solid var(--rule); }
-  .card__media img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 8px 10px oklch(0% 0 0 / 0.12)); }
+  .card__media img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
   .card__media--icon { color: var(--ink-3); gap: var(--space-2); grid-auto-rows: max-content; align-content: center; }
   .card__media--icon span { font-family: var(--font-mono); font-size: var(--step--2); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
   .card__body { padding: var(--space-4) var(--space-4) var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
@@ -394,7 +418,7 @@
   .product { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); padding-block: var(--space-6) var(--space-12); align-items: start; }
   @media (width >= 64rem) { .product { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--space-16); } }
   .product__media { background: var(--plate); border: 1px solid var(--rule-strong); padding: var(--space-8) var(--space-8) var(--space-10); position: sticky; inset-block-start: 5.25rem; display: grid; place-items: center; min-height: 18rem; }
-  .product__media img { width: 100%; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 14px 16px oklch(0% 0 0 / 0.14)); }
+  .product__media img { width: 100%; object-fit: contain; mix-blend-mode: multiply; }
   .product__media--icon { color: var(--ink-3); gap: var(--space-3); grid-auto-rows: max-content; align-content: center; }
   .product__media--icon figcaption { position: static; }
   .product__model { font-size: var(--step-1); color: var(--text-muted); margin-block: var(--space-2) var(--space-3); }
