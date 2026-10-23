@@ -558,7 +558,7 @@ export function product(ctx, p) {
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `
 <article class="product container">
-  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : p.condition === 'novo' ? 'Foto · produto EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
   <div class="product__body">
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>

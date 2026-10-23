@@ -955,7 +955,7 @@
       "services": [
         "manutencao"
       ],
-      "image": null,
+      "image": "stryker-system-8",
       "legacyName": null,
       "paragraphs": [
         "Atendemos as peças de mão da linha System 8 (perfurador rotativo de gatilho duplo, serra sagital, serra recíproca e serra de esterno), as baterias e os carregadores da linha.",
@@ -984,7 +984,7 @@
       "services": [
         "manutencao"
       ],
-      "image": null,
+      "image": "stryker-baterias-system-7-8",
       "legacyName": null,
       "paragraphs": [],
       "list": {

@@ -93,8 +93,10 @@
     "photo": "stryker-system7-recorte",
     "photos": [
       "stryker-system7-recorte",
-      "stryker-system7-desmontado-recorte",
-      "stryker-system7-pecas-recorte"
+      "stryker-system8-perfurador-recorte",
+      "stryker-system8-serra-recorte",
+      "stryker-system7-serra-recorte",
+      "stryker-system7-desmontado-recorte"
     ],
     "cover": "stryker-system-7"
   },
@@ -166,7 +168,11 @@
       ]
     },
     "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha.",
-    "photo": "bench-hands",
+    "photo": "equimed-smart-charger-duo-recorte",
+    "photos": [
+      "equimed-smart-charger-duo-recorte",
+      "stryker-system7-bateria-recorte"
+    ],
     "cover": "carregador-de-bateria-inteligente"
   },
   {
