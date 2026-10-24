@@ -35,54 +35,34 @@ const header = (ctx, path) => {
 };
 
 const footer = (ctx) => {
-  const { site, families, brands, services } = ctx;
+  const { site } = ctx;
   const a = site.address;
   return `
 <footer class="site-footer">
   <div class="container site-footer__grid">
-    <section class="site-footer__col site-footer__col--about">
-      <h2 class="site-footer__title">${esc(site.name)}</h2>
-      <p>${esc(site.tagline)}. Manutenção, locação, venda e soluções de software para equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia.</p>
-      <p class="site-footer__notice">${esc(site.independenceNotice)} ${esc(site.scopeNotice)}</p>
+    <div class="site-footer__brand">
+      ${ctx.logoSvg}
+      <p>${esc(site.tagline)}. Curitiba, PR. Recebemos equipamentos de todo o Brasil.</p>
       <p><a href="${site.sisterCompany.url}" rel="noopener">${esc(site.sisterCompany.name)}</a>, empresa do grupo: ${esc(site.sisterCompany.description)}</p>
-    </section>
-    <section class="site-footer__col">
-      <h2 class="site-footer__title">Serviços</h2>
-      <ul class="site-footer__list">
-        ${Object.values(services).map((s) => `<li><a href="/${s.slug}/">${esc(s.name)}</a></li>`).join('\n        ')}
-        <li><a href="/equipamentos/">Marcas e equipamentos</a></li>
-        <li><a href="/conteudo/">Conteúdo técnico</a></li>
-        <li><a href="/sobre/">Sobre a EquimedPR</a></li>
-        <li><a href="/contato/">Contato e orçamento</a></li>
-      </ul>
-    </section>
-    <section class="site-footer__col">
-      <h2 class="site-footer__title">Equipamentos</h2>
-      <ul class="site-footer__list">
-        ${families.map((f) => `<li><a href="${familyUrl(f)}">${esc(f.shortName)}</a></li>`).join('\n        ')}
-      </ul>
-      <h2 class="site-footer__title">Marcas em foco</h2>
-      <ul class="site-footer__list">
-        ${brands.filter((b) => b.focus).map((b) => `<li><a href="${brandUrl(b)}">${esc(b.name)}</a></li>`).join('\n        ')}
-      </ul>
-    </section>
+    </div>
     <section class="site-footer__col">
       <h2 class="site-footer__title">Contato</h2>
       <address class="site-footer__address">
-        <p>${icon('pin', 18)} <a href="${site.address.mapsUrl}" target="_blank" rel="noopener">${esc(a.street)}<br>${esc(a.neighborhood)}, ${esc(a.city)} - ${esc(a.state)}, CEP ${esc(a.postalCode)}</a></p>
-        ${site.phones.map((p) => `<p>${icon('phone', 18)} <a href="tel:${p.e164}" data-track="phone_click">${esc(p.display)}</a></p>`).join('\n        ')}
+        <p>${icon('pin', 18)} <a href="${site.address.mapsUrl}" target="_blank" rel="noopener">${esc(a.street)}, ${esc(a.neighborhood)}, ${esc(a.city)} - ${esc(a.state)}</a></p>
         <p>${icon('whatsapp', 18)} <a href="${whatsappUrl(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="footer">WhatsApp ${esc(site.whatsapp.display)}</a></p>
+        ${site.phones.filter((p) => p.display !== site.whatsapp.display).map((p) => `<p>${icon('phone', 18)} <a href="tel:${p.e164}" data-track="phone_click">${esc(p.display)}</a></p>`).join('\n        ')}
         <p>${icon('mail', 18)} <a href="mailto:${site.email}" data-track="email_click">${esc(site.email)}</a></p>
         <p>${icon('clock', 18)} ${esc(site.openingHoursDisplay)}</p>
       </address>
     </section>
   </div>
   <div class="container site-footer__bottom">
-    <p>© ${new Date().getFullYear()} ${esc(site.legalName)}. Todos os direitos reservados.</p>
+    <p class="site-footer__legal">${esc(site.independenceNotice)} ${esc(site.scopeNotice)}</p>
+    <p>© ${new Date().getFullYear()} ${esc(site.legalName)}</p>
     <p>
       <a href="${site.social.facebook}" target="_blank" rel="noopener">${icon('facebook', 18)} Facebook</a>
       ${site.social.instagram ? `· <a href="${site.social.instagram}" target="_blank" rel="noopener">${icon('instagram', 18)} Instagram</a>` : ''}
-      · <a href="/privacidade/">Privacidade e cookies</a>
+      · <a href="/privacidade/">Privacidade</a>
       · <a href="/privacidade/#creditos">Créditos de imagens</a>
       · <a href="/sitemap.xml">Mapa do site</a>
     </p>

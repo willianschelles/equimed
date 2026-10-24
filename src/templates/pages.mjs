@@ -212,7 +212,7 @@ export function home(ctx) {
   <canvas class="hx__monitor" data-ecg aria-hidden="true"></canvas>
   <div class="container hx__grid" data-hero>
     <div class="hx__copy" data-hero-copy>
-      <p class="hx__kicker fx-in" style="--d:.1s"><i></i>${esc(h.eyebrow)}</p>
+      <p class="hx__kicker fx-in" style="--d:.1s">${esc(h.eyebrow)}</p>
       <h1 data-words>Equipamento cirúrgico pronto para a próxima cirurgia.</h1>
       <p class="hx__lead fx-in" style="--d:.45s">${esc(h.lead)}</p>
       <div class="hx__ctas fx-in" style="--d:.55s">
@@ -558,7 +558,11 @@ export function product(ctx, p) {
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `
 <article class="product container">
-  ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 45vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : p.condition === 'novo' ? 'Foto · produto EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+  <div class="product__side">
+    ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 40vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : p.condition === 'novo' ? 'Foto · produto EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+    ${p.condition === 'seminovo' ? `<div class="product__facts"><h2>Condição</h2><ul>${['Seminovo revisado em bancada', 'Testado conforme a especificação da linha', `Garantia de ${site.warranty.used}`, 'Relatório de revisão acompanha o equipamento'].map((t) => `<li>${icon('check', 16)} <span>${t}</span></li>`).join('')}</ul></div>` : ''}
+    ${independence(site)}
+  </div>
   <div class="product__body">
     <p class="eyebrow"><a href="${familyUrl(p.familyRef)}">${esc(p.familyRef.name)}</a>${p.brandRef ? ` · <a href="${brandUrl(p.brandRef)}">${esc(p.brandRef.name)}</a>` : p.brand ? ` · ${esc(p.brand)}` : ''}</p>
     <h1>${esc(p.name)}</h1>
@@ -567,13 +571,16 @@ export function product(ctx, p) {
       ${p.services.includes('venda') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para venda</li>` : ''}
       ${p.services.includes('locacao') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para locação</li>` : ''}
       ${p.services.includes('manutencao') ? `<li class="status__pill status__pill--petrol">${icon('wrench', 16)} Atendido em manutenção</li>` : ''}
-      ${p.condition === 'seminovo' ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} Seminovo revisado · 3 meses de garantia</li>` : ''}
+      ${p.condition === 'seminovo' ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} Seminovo revisado · ${site.warranty.used} de garantia</li>` : ''}
     </ul>
+    <div class="product__cta">
+      <a class="button button--whatsapp button--lg" href="${wa(site, message)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="produto">${icon('whatsapp', 20)} Solicitar orçamento pelo WhatsApp</a>
+      <a class="button button--ghost button--lg" href="/contato/?produto=${encodeURIComponent(fullName)}">Enviar por e-mail</a>
+    </div>
     <div class="prose">
       <p>${esc(p.summary)}</p>
       ${(p.paragraphs ?? []).map((t) => `<p>${esc(t)}</p>`).join('\n      ')}
       ${p.list ? `<h2>${esc(p.list.title)}</h2>${checklist(p.list.items)}` : ''}
-      ${p.condition === 'seminovo' ? `<h2>Condição</h2>${checklist(['Seminovo revisado em bancada', 'Testado conforme a especificação da linha', `Garantia de ${site.warranty.used}`, 'Relatório de revisão acompanha o equipamento'])}` : ''}
       ${
         p.specs?.length
           ? `<h2>Especificações</h2>
@@ -582,11 +589,6 @@ export function product(ctx, p) {
       }
       ${p.familyRef.maintenance ? `<h2>Manutenção</h2><p>Atendemos ${esc(p.familyRef.shortName.toLowerCase())} desta linha em manutenção corretiva e preventiva. <a href="${maintenanceUrl(p.familyRef)}">Veja os defeitos mais comuns e o que fazemos</a>.</p>` : ''}
     </div>
-    <div class="product__cta">
-      <a class="button button--whatsapp button--lg" href="${wa(site, message)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="produto">${icon('whatsapp', 20)} Solicitar orçamento pelo WhatsApp</a>
-      <a class="button button--ghost button--lg" href="/contato/?produto=${encodeURIComponent(fullName)}">Enviar por e-mail</a>
-    </div>
-    ${independence(site)}
   </div>
 </article>
 ${
