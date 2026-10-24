@@ -125,9 +125,8 @@
   .site-header__row { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 4.75rem; }
   .brand { display: inline-flex; color: #FFFFFF; text-decoration: none; flex: none; }
   .brand:hover { color: #FFFFFF; }
-  .brand__logo { width: auto; height: 2.25rem; }
-  .brand__logo rect { fill: #FFFFFF; }
-  .brand__logo path[stroke="#fff"] { stroke: var(--color-navy); }
+  .brand__logo { width: auto; height: 2.75rem; }
+  @media (width < 40rem) { .brand__logo { height: 2.4rem; } }
   .site-nav__toggle, .site-nav__close { display: none; background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.5rem; color: #FFFFFF; }
   .site-nav__top, .site-nav__brand { display: none; }
   .site-nav__panel { display: flex; align-items: center; gap: 1.75rem; position: static; inset: auto; width: auto; height: auto; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; overflow: visible; }
@@ -394,7 +393,7 @@
   .site-footer__grid { display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 1fr); }
   @media (width >= 48rem) { .site-footer__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; } }
   .site-footer__brand { display: grid; gap: 1rem; justify-items: start; align-content: start; }
-  .site-footer__brand .logo, .site-footer__brand svg { height: 2rem; width: auto; }
+  .site-footer__brand svg { height: 2.5rem; width: auto; }
   .site-footer__brand p { margin: 0; max-width: 28rem; }
   .site-footer__brand p a { text-decoration: underline; text-underline-offset: 0.2em; }
   .site-footer__title { margin: 0 0 1rem; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.06em; font-weight: 600; text-transform: uppercase; color: #FFFFFF; }
