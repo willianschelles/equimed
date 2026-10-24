@@ -1,9 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-labelledby="t">
-  <title id="t">Equimed Equipamentos Médicos</title>
-  <!-- Mark: open ECG trace ending in a glowing dot -->
-  <path d="M4 60h30l8-12 8 12h20l12-40 14 72 12-40 8 8h22" fill="none" stroke="#5BB8E0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="142" cy="60" r="7" fill="#9ADBF2"/>
-  <!-- Wordmark -->
-  <text x="172" y="72" font-family="IBM Plex Sans, Plex Sans Fallback, system-ui, sans-serif" font-size="64" font-weight="600" letter-spacing="1" fill="currentColor">EQUIMED</text>
-  <text x="176" y="104" font-family="IBM Plex Sans, Plex Sans Fallback, system-ui, sans-serif" font-size="17" font-weight="500" letter-spacing="5" fill="currentColor" opacity="0.7">EQUIPAMENTOS MÉDICOS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 648 148" role="img" aria-labelledby="t">
+  <title id="t">EquimedPR Equipamentos Médicos</title>
+  <g fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(8 18)">
+    <!-- E -->
+    <path d="M6 6h44M6 6v58M6 35h34M6 64h44"/>
+    <!-- Q: ring with the life line inside and a short tail -->
+    <circle cx="114" cy="35" r="37"/>
+    <path d="M138 59l14 14"/>
+    <path class="logo-pulse" d="M84 35h12l5-7 5 7h7l6-20 7 40 6-20 4 5h8" stroke="#5BB8E0" stroke-width="6"/>
+    <g transform="translate(12 0)">
+      <!-- U I M E D -->
+      <path d="M166 6v34a24 24 0 0 0 48 0V6"/>
+      <path d="M244 6v58"/>
+      <path d="M280 64V6l28 40 28-40v58"/>
+      <path d="M366 6h44M366 6v58M366 35h34M366 64h44"/>
+      <path d="M440 6h20a29 29 0 0 1 0 58h-20z"/>
+      <!-- PR -->
+      <g class="logo-pr" stroke="#5BB8E0" stroke-width="9" transform="translate(506 0)">
+        <path d="M0 64V6h20a17 17 0 0 1 0 34H0"/>
+        <path d="M44 64V6h20a17 17 0 0 1 0 34H44M62 40l16 24"/>
+      </g>
+    </g>
+  </g>
+  <text x="14" y="136" textLength="586" lengthAdjust="spacing" font-family="IBM Plex Sans, Plex Sans Fallback, system-ui, sans-serif" font-size="26" font-weight="500" fill="currentColor" opacity="0.85">EQUIPAMENTOS MÉDICOS</text>
 </svg>
