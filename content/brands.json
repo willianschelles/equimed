@@ -9,7 +9,7 @@
     "paragraphs": [
       "A linha Stryker é a mais atendida pela EquimedPR. Em ortopedia e trauma, trabalhamos com as peças de mão, baterias e carregadores das linhas System 5, System 6, System 7 e System 8, incluindo perfurador rotativo de gatilho duplo, serra sagital, serra recíproca e serra de esterno.",
       "Em videocirurgia, atendemos câmeras 1188, 1288, 1488, 1588 AIM e 1688 AIM, fontes de luz X8000, L9000 e L10, monitores Vision Elect e WiSe, insufladores Core e Pneumosure, artrobombas Arthropump e Crossflow e consoles de shaver Core e CrossFire.",
-      "Equipamentos seminovos Stryker System 5 e System 6 revisados e testados estão disponíveis para venda e locação, com garantia de 3 meses."
+      "Equipamentos Stryker System 5 e System 6 revisados e testados estão disponíveis para venda e locação, com garantia de 3 meses."
     ],
     "families": [
       "perfuradores-e-serras",
@@ -92,7 +92,8 @@
     "description": "Assistência técnica em equipamentos de videocirurgia e ortopedia de fabricantes nacionais e chineses: câmeras Full HD e 4K, fontes LED, insufladores, artrobombas, perfuradores e serras.",
     "paragraphs": [
       "Equipamentos de fabricantes nacionais e chineses são cada vez mais comuns em clínicas e hospitais brasileiros, e muitas vezes ficam sem suporte quando o distribuidor muda ou encerra a linha.",
-      "A EquimedPR atende câmeras Full HD e 4K, fontes de luz LED, insufladores, artrobombas, shavers, perfuradores e serras a bateria dessas origens, com diagnóstico em bancada e reparo de placas, fontes, motores e peças mecânicas. Para peças sem fornecimento, avaliamos componentes compatíveis e informamos no orçamento."
+      "A EquimedPR atende câmeras Full HD e 4K, fontes de luz LED, insufladores, artrobombas, shavers, perfuradores e serras a bateria dessas origens, com diagnóstico em bancada e reparo de placas, fontes, motores e peças mecânicas. Para peças sem fornecimento, avaliamos componentes compatíveis e informamos no orçamento.",
+      "Em perfuradores e serras a bateria, atendemos em manutenção as marcas Bojin, Taimin e Ruijin e outros modelos genéricos de fabricantes chineses. Essas linhas são atendidas só em manutenção: não fazem parte da locação."
     ],
     "families": [
       "cameras-de-video",
@@ -103,7 +104,9 @@
       "perfuradores-e-serras",
       "baterias-e-carregadores",
       "monitores-cirurgicos"
-    ]
+    ],
+    "photo": "nacionais-chineses-perfurador-serra-recorte",
+    "photoAlt": "Perfurador e serra a bateria de fabricante chinês, atendidos na manutenção da EquimedPR"
   },
   {
     "slug": "smith-nephew",

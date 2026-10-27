@@ -105,7 +105,7 @@
       {
         "h": "Atendido, à venda ou em locação?",
         "p": [
-          "Na EquimedPR, as quatro linhas são atendidas em manutenção. Para venda e locação, o estoque recorrente é de System 5 e System 6 seminovos revisados; System 7 e 8 dependem de disponibilidade. Consulte pelo WhatsApp."
+          "Na EquimedPR, as quatro linhas são atendidas em manutenção. Para venda e locação, o estoque recorrente é de System 5 e System 6 revisados; System 7 e 8 dependem de disponibilidade. Consulte pelo WhatsApp."
         ]
       }
     ]
@@ -117,7 +117,7 @@
     "description": "Perda de potência, aquecimento, ruído, gatilho intermitente, vapor na carcaça, bateria que não dura e vibração na serra: o que cada sinal indica e o que fazer antes do próximo procedimento.",
     "date": "2026-10-20",
     "readingMinutes": 4,
-    "cover": "/assets/img/photos/seminovo-stryker-6-perfurador-recorte.webp",
+    "cover": "/assets/img/photos/stryker-system6-perfurador-recorte.webp",
     "families": [
       "perfuradores-e-serras",
       "baterias-e-carregadores"

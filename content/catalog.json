@@ -15,7 +15,7 @@
         "venda",
         "locacao"
       ],
-      "summary": "Unidade de controle de câmera Stryker 1488 HD, 3CCD Digital HD, ref. 1488-010-000, para torres de videocirurgia. Seminovo revisado e testado.",
+      "summary": "Unidade de controle de câmera Stryker 1488 HD, 3CCD Digital HD, ref. 1488-010-000, para torres de videocirurgia. Seminovo e revisado, testado em bancada.",
       "paragraphs": [],
       "list": null,
       "specs": [
@@ -342,7 +342,7 @@
         "venda",
         "locacao"
       ],
-      "summary": "Fonte de luz LED Stryker L9000, com tecnologia Safelight e controle remoto pela cabeça de câmera. Seminovo revisado e testado.",
+      "summary": "Fonte de luz LED Stryker L9000, com tecnologia Safelight e controle remoto pela cabeça de câmera. Seminovo e revisado, testado em bancada.",
       "paragraphs": [],
       "list": {
         "title": "Características e benefícios",
@@ -719,7 +719,7 @@
         "venda",
         "locacao"
       ],
-      "summary": "Insuflador Smith & Nephew Dyonics de 40 lpm com aquecimento do CO2 durante a cirurgia. Seminovo revisado e testado.",
+      "summary": "Insuflador Smith & Nephew Dyonics de 40 lpm com aquecimento do CO2 durante a cirurgia. Seminovo e revisado, testado em bancada.",
       "paragraphs": [],
       "list": null,
       "specs": []
@@ -727,13 +727,13 @@
     {
       "slug": "stryker-5-perfurador",
       "name": "Perfurador Stryker System 5",
-      "model": "Seminovo revisado",
+      "model": "Revisado",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
-      "image": "stryker-5-perfurador",
+      "image": null,
       "legacyName": "Stryker 5 - Perfurador",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -749,13 +749,13 @@
     {
       "slug": "stryker-6-perfurador",
       "name": "Perfurador Stryker System 6",
-      "model": "Seminovo revisado",
+      "model": "Revisado",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
       "image": "stryker-6-perfurador",
       "legacyName": "Stryker 6 - Perfurador",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -771,13 +771,13 @@
     {
       "slug": "stryker-5-perfurador-e-serra",
       "name": "Conjunto perfurador e serra Stryker System 5",
-      "model": "Seminovo revisado, com bateria e carregador",
+      "model": "Revisado, com bateria e carregador",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
       "image": "stryker-5-perfurador-e-serra",
       "legacyName": "Stryker 5 - Perfurador e Serra",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -793,13 +793,13 @@
     {
       "slug": "stryker-6-perfurador-e-serra",
       "name": "Conjunto perfurador e serra Stryker System 6",
-      "model": "Seminovo revisado, com bateria e carregador",
+      "model": "Revisado, com bateria e carregador",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
       "image": "stryker-6-perfurador-e-serra",
       "legacyName": "Stryker 6 - Perfurador e Serra",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -814,7 +814,7 @@
           "Serra",
           "Bateria",
           "Carregador inteligente para séries Stryker 3, 5, 6 e 7",
-          "Equipamentos seminovos, revisados e testados",
+          "Equipamentos revisados e testados",
           "Todos os itens com garantia"
         ]
       },
@@ -823,13 +823,13 @@
     {
       "slug": "stryker-5-serra",
       "name": "Serra Stryker System 5",
-      "model": "Seminova revisada",
+      "model": "Revisada",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
       "image": "stryker-5-serra",
       "legacyName": "Stryker 5 - Serra",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -845,13 +845,13 @@
     {
       "slug": "stryker-6-serra",
       "name": "Serra Stryker System 6",
-      "model": "Seminova revisada",
+      "model": "Revisada",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "perfuradores-e-serras",
       "image": "stryker-6-serra",
       "legacyName": "Stryker 6 - Serra",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -867,13 +867,13 @@
     {
       "slug": "stryker-5-carregador-de-bateria",
       "name": "Carregador de baterias Stryker System 5",
-      "model": "4 baias, seminovo revisado",
+      "model": "4 baias, revisado",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "baterias-e-carregadores",
       "image": "stryker-5-carregador-de-bateria",
       "legacyName": "Stryker 5 - Carregador de Bateria",
-      "condition": "seminovo",
+      "condition": "revisado",
       "services": [
         "manutencao",
         "venda",
@@ -887,7 +887,7 @@
           "Carrega até 4 baterias simultaneamente",
           "Aviso de carga completa",
           "Aviso de problemas na bateria",
-          "Equipamento seminovo, revisado e testado",
+          "Equipamento revisado e testado",
           "Garantia de 3 meses"
         ]
       },
@@ -1010,7 +1010,7 @@
       "services": [
         "manutencao"
       ],
-      "image": null,
+      "image": "conmed-mpower-2",
       "legacyName": null,
       "paragraphs": [],
       "list": {

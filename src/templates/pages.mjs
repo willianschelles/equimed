@@ -21,6 +21,9 @@ const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Lo
 
 /* ---------------- Shared blocks ---------------- */
 const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
+/** Used units: System 5 and 6 are sold as "Revisado", every other used unit as "Seminovo e revisado". */
+const USED = new Set(['seminovo', 'revisado']);
+const conditionLabel = (p) => (p.condition === 'revisado' ? 'Revisado' : 'Seminovo e revisado');
 const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
@@ -95,7 +98,7 @@ const independence = (site) => `<p class="notice">${icon('shield', 18)} <span>${
 
 const statusBadges = (p) => {
   const b = [];
-  if (p.condition === 'seminovo') b.push('<span class="badge badge--warm">Seminovo revisado · 3 meses de garantia</span>');
+  if (USED.has(p.condition)) b.push(`<span class="badge badge--warm">${conditionLabel(p)} · 3 meses de garantia</span>`);
   if (p.condition === 'novo') b.push('<span class="badge badge--warm">Novo</span>');
   const sells = p.services.includes('venda') || p.services.includes('locacao');
   if (!sells) b.push('<span class="badge badge--manutencao">Atendido em manutenção</span>');
@@ -172,7 +175,7 @@ const articleCard = (a, { level = 3, ctx } = {}) => `
 const SERVICE_META = {
   manutencao: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'],
   locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante o reparo'],
-  venda: ['Seminovos revisados', '3 meses de garantia', 'Proposta para licitação'],
+  venda: ['Seminovos e revisados', '3 meses de garantia', 'Proposta para licitação'],
   software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
 };
 const aside = (site, { title = 'Solicite um orçamento', text = 'Envie marca, modelo, número de série e o defeito. Respondemos em horário comercial.', message, place = 'aside' } = {}) => `
@@ -231,7 +234,7 @@ export function home(ctx) {
   <ul class="facts">
     <li class="fact rise"><strong>Desde ${site.foundingYear}</strong><span>atendendo hospitais e clínicas</span></li>
     <li class="fact rise"><strong>Stryker System 5 a 8</strong><span>perfuradores, serras e baterias</span></li>
-    <li class="fact rise"><strong>${esc(site.warranty.used)} de garantia</strong><span>em todo seminovo revisado</span></li>
+    <li class="fact rise"><strong>${esc(site.warranty.used)} de garantia</strong><span>em todo equipamento revisado</span></li>
     <li class="fact rise"><strong>Todo o Brasil</strong><span>envio e retorno por transportadora</span></li>
   </ul>
 </div>
@@ -338,7 +341,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfurador Stryker System 7 na bancada da EquimedPR' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Equipamentos atendidos na manutenção da EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -384,7 +387,7 @@ export function maintenanceFamily(ctx, f) {
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção em ${f.shortName.toLowerCase()}.\n\nMarca/modelo: \nDefeito: \n`;
   const related = articles.filter((a) => a.families.includes(f.slug)).slice(0, 3);
   const body = `
-${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento', ctx, photoName: f.photo, photos: f.photos, photoAlt: f.name })}
+${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamento', ctx, photoName: f.photo, photos: m.photos ?? f.photos, photoAlt: f.name })}
 <section class="section container service-layout">
   <div class="prose">
     ${m.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -420,7 +423,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfurador Stryker System 7' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker para locação' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -447,7 +450,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos revisados com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker revisados' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos e revisados, com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker revisados' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -559,8 +562,8 @@ export function product(ctx, p) {
   const body = `
 <article class="product container">
   <div class="product__side">
-    ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 40vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : p.condition === 'novo' ? 'Foto · produto EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
-    ${p.condition === 'seminovo' ? `<div class="product__facts"><h2>Condição</h2><ul>${['Seminovo revisado em bancada', 'Testado conforme a especificação da linha', `Garantia de ${site.warranty.used}`, 'Relatório de revisão acompanha o equipamento'].map((t) => `<li>${icon('check', 16)} <span>${t}</span></li>`).join('')}</ul></div>` : ''}
+    ${p.image ? `<figure class="product__media frame">${img(ctx, `/assets/img/products/${p.image}.webp`, fullName, { lazy: false, sizes: '(min-width: 64rem) 40vw, 100vw' })}<figcaption>${p.condition === 'seminovo' ? 'Foto · equipamento seminovo do estoque EquimedPR' : p.condition === 'revisado' ? 'Foto · equipamento revisado do estoque EquimedPR' : p.condition === 'novo' ? 'Foto · produto EquimedPR' : 'Foto · equipamento atendido na bancada EquimedPR'}</figcaption></figure>` : `<figure class="product__media product__media--icon">${icon(p.familyRef.icon, 96)}<figcaption>Foto real em breve</figcaption></figure>`}
+    ${USED.has(p.condition) ? `<div class="product__facts"><h2>Condição</h2><ul>${[`${conditionLabel(p)} em bancada`, 'Testado conforme a especificação da linha', `Garantia de ${site.warranty.used}`, 'Relatório de revisão acompanha o equipamento'].map((t) => `<li>${icon('check', 16)} <span>${t}</span></li>`).join('')}</ul></div>` : ''}
     ${independence(site)}
   </div>
   <div class="product__body">
@@ -571,7 +574,7 @@ export function product(ctx, p) {
       ${p.services.includes('venda') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para venda</li>` : ''}
       ${p.services.includes('locacao') ? `<li class="status__pill status__pill--ok">${icon('check', 16)} Disponível para locação</li>` : ''}
       ${p.services.includes('manutencao') ? `<li class="status__pill status__pill--petrol">${icon('wrench', 16)} Atendido em manutenção</li>` : ''}
-      ${p.condition === 'seminovo' ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} Seminovo revisado · ${site.warranty.used} de garantia</li>` : ''}
+      ${USED.has(p.condition) ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} ${conditionLabel(p)} · ${site.warranty.used} de garantia</li>` : ''}
     </ul>
     <div class="product__cta">
       <a class="button button--whatsapp button--lg" href="${wa(site, message)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="produto">${icon('whatsapp', 20)} Solicitar orçamento pelo WhatsApp</a>
@@ -608,7 +611,7 @@ ${
         category: p.familyRef.name,
         offers: {
           '@type': 'Offer', availability: 'https://schema.org/InStock',
-          itemCondition: p.condition === 'seminovo' ? 'https://schema.org/RefurbishedCondition' : 'https://schema.org/NewCondition',
+          itemCondition: USED.has(p.condition) ? 'https://schema.org/RefurbishedCondition' : 'https://schema.org/NewCondition',
           priceCurrency: 'BRL', seller: { '@id': `${site.url}/#organization` }, url: site.url + productUrl(p),
         },
       }]
@@ -652,7 +655,7 @@ export function brand(ctx, b) {
   const title = fitTitle(b.focus ? `Assistência técnica ${b.name}: manutenção e equipamentos` : `Equipamentos ${b.name}: manutenção`);
   const description = fitDescription(b.description ?? `Assistência técnica independente em equipamentos ${b.name}: ${b.lead}`);
   const body = `
-${pageHeader(b.focus ? `Assistência técnica em equipamentos ${b.name}` : `Equipamentos ${b.name}`, b.lead, { eyebrow: 'Assistência técnica independente' })}
+${pageHeader(b.focus ? `Assistência técnica em ${/^Equipamentos /.test(b.name) ? b.name.replace(/^Equipamentos /, 'equipamentos ') : `equipamentos ${b.name}`}` : `Equipamentos ${b.name}`, b.lead, { eyebrow: 'Assistência técnica independente', ctx, photoName: b.photo, photoAlt: b.photoAlt ?? b.name })}
 <section class="section container service-layout">
   <div class="prose">
     ${(b.paragraphs ?? [`Atendemos equipamentos ${b.name} em manutenção, conforme a família do equipamento. Envie o modelo e o defeito pelo WhatsApp para a avaliação técnica.`]).map((p) => `<p>${esc(p)}</p>`).join('\n    ')}

@@ -5,7 +5,7 @@
     "shortName": "Perfuradores e serras",
     "icon": "drill",
     "lead": "Perfuradores rotativos, serras sagitais e recíprocas a bateria para ortopedia e trauma. Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, e equipamentos nacionais e chineses.",
-    "description": "Perfuradores e serras ortopédicas a bateria: manutenção de Stryker System 5, 6, 7 e 8 e ConMed Hall; seminovos System 5 e 6 revisados para venda e locação.",
+    "description": "Perfuradores e serras ortopédicas a bateria: manutenção de Stryker System 5, 6, 7 e 8 e ConMed Hall; System 5 e 6 revisados para venda e locação.",
     "maintenance": {
       "title": "Manutenção de perfuradores e serras ortopédicas",
       "metaTitle": "Manutenção de perfuradores e serras Stryker, ConMed e Hall",
@@ -66,7 +66,10 @@
           "brand": "Nacionais e chineses",
           "slug": null,
           "models": [
-            "Perfuradores e serras a bateria de fabricantes nacionais e asiáticos"
+            "Bojin",
+            "Taimin",
+            "Ruijin",
+            "Perfuradores e serras genéricos de outros fabricantes nacionais e asiáticos"
           ]
         }
       ],
@@ -87,16 +90,26 @@
           "q": "A EquimedPR é assistência autorizada Stryker ou ConMed?",
           "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados por nenhum fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
         }
+      ],
+      "photos": [
+        "stryker-system7-linha-recorte",
+        "stryker-system8-perfurador-recorte",
+        "stryker-system8-serra-recorte",
+        "stryker-system7-serra-bateria-recorte",
+        "nacionais-chineses-perfurador-serra-recorte",
+        "stryker-wire-collet-mandril-recorte",
+        "stryker-system7-desmontado-recorte"
       ]
     },
     "short": "Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, nacionais e chineses.",
-    "photo": "stryker-system7-recorte",
+    "photo": "stryker-system6-conjunto-recorte",
     "photos": [
-      "stryker-system7-recorte",
+      "stryker-system6-conjunto-recorte",
+      "stryker-system6-perfurador-recorte",
+      "stryker-system6-serra-recorte",
+      "stryker-system5-serra-recorte",
       "stryker-system8-perfurador-recorte",
-      "stryker-system8-serra-recorte",
-      "stryker-system7-serra-recorte",
-      "stryker-system7-desmontado-recorte"
+      "stryker-system7-serra-recorte"
     ],
     "cover": "stryker-system-7"
   },
@@ -181,7 +194,7 @@
     "shortName": "Câmeras de vídeo",
     "icon": "camera",
     "lead": "Unidades de controle de câmera (CCU) e cabeças de câmera HD e 4K para videocirurgia: Stryker 1488, 1588 e 1688, Karl Storz IMAGE1 HUB e IMAGE1 S, Smith & Nephew 560P, ConMed Linvatec e marcas nacionais e chinesas.",
-    "description": "Câmeras de videocirurgia: CCU e cabeças de câmera Stryker, Karl Storz, Smith & Nephew Dyonics e Linvatec. Manutenção, locação e venda de seminovos revisados.",
+    "description": "Câmeras de videocirurgia: CCU e cabeças de câmera Stryker, Karl Storz, Smith & Nephew Dyonics e Linvatec. Manutenção, locação e venda de seminovos e revisados.",
     "maintenance": {
       "title": "Manutenção de câmeras de videocirurgia",
       "metaTitle": "Manutenção de câmeras de vídeo Stryker, Karl Storz e Linvatec",
@@ -675,8 +688,12 @@
       "faq": []
     },
     "short": "Consoles e peças de mão Stryker, Linvatec, Dyonics e Karl Storz.",
-    "photo": "bench-hands",
-    "cover": null
+    "photo": "canetas-shaver-recorte",
+    "cover": null,
+    "photos": [
+      "canetas-shaver-recorte",
+      "ponteiras-micromotor-recorte"
+    ]
   },
   {
     "slug": "acessorios-de-video",

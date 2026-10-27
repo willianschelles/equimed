@@ -73,9 +73,10 @@
         "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
       }
     ],
-    "photo": "stryker-system7-recorte",
+    "photo": "stryker-system7-linha-recorte",
     "photos": [
-      "stryker-system7-recorte",
+      "stryker-system7-linha-recorte",
+      "bancada-manutencao-luvas",
       "stryker-system8-perfurador-recorte",
       "stryker-system7-desmontado-recorte",
       "stryker-system7-pecas-recorte"
@@ -138,9 +139,11 @@
         "a": "Para equipamentos seminovos do nosso estoque, sim. Consulte as condições."
       }
     ],
-    "photo": "stryker-system7-recorte",
+    "photo": "stryker-system6-conjunto-recorte",
     "photos": [
-      "seminovo-stryker-6-conjunto-recorte",
+      "stryker-system6-conjunto-recorte",
+      "stryker-system6-perfurador-recorte",
+      "stryker-system5-serra-recorte",
       "stryker-system7-recorte"
     ]
   },
@@ -149,10 +152,10 @@
     "name": "Venda",
     "heading": "Venda de equipamentos médicos novos e seminovos",
     "icon": "handshake",
-    "title": "Venda de equipamentos médicos seminovos revisados com garantia",
+    "title": "Venda de equipamentos médicos seminovos e revisados com garantia",
     "description": "Equipamentos de videocirurgia e ortopedia seminovos, revisados e testados, com garantia de 3 meses. Perfuradores Stryker, câmeras, fontes de luz e monitores.",
-    "lead": "Equipamentos seminovos revisados e testados conforme a especificação da linha, com garantia de 3 meses, e equipamentos novos conforme a disponibilidade. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
-    "summary": "Seminovos revisados e testados com garantia de 3 meses. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
+    "lead": "Equipamentos seminovos e revisados, testados conforme a especificação da linha, com garantia de 3 meses, e equipamentos novos conforme a disponibilidade. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
+    "summary": "Seminovos e revisados, testados e com garantia de 3 meses. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
     "intro": [
       "Todo equipamento seminovo vendido pela EquimedPR passa pela mesma avaliação técnica da manutenção: desmontagem, inspeção, substituição do que está no fim da vida útil, testes funcionais e teste de segurança elétrica quando aplicável. O relatório acompanha o equipamento.",
       "A garantia é de 3 meses para seminovos e de 1 ano para a maioria dos equipamentos novos. Aceitamos o seu equipamento usado como parte do pagamento, mediante avaliação."
@@ -186,12 +189,13 @@
         "a": "Não. A EquimedPR trabalha com equipamentos eletromédicos. Não trabalhamos com implantes nem com instrumentais cirúrgicos."
       }
     ],
-    "photo": "stryker-system7-recorte",
+    "photo": "stryker-system6-conjunto-recorte",
     "photos": [
-      "stryker-system7-recorte",
-      "seminovo-stryker-6-perfurador-recorte",
-      "seminovo-stryker-6-conjunto-recorte",
-      "seminovo-stryker-6-serra-recorte"
+      "stryker-system6-conjunto-recorte",
+      "stryker-system6-perfurador-recorte",
+      "stryker-system6-serra-recorte",
+      "stryker-system5-serra-recorte",
+      "stryker-system7-recorte"
     ]
   },
   "software": {
