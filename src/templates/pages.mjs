@@ -31,7 +31,7 @@ const gallery = (ctx, names, alt) => names.length <= 1
     <div class="gallery__track frame">
       ${names.map((n, i) => `<figure class="gallery__slide" id="foto-${i + 1}">${photo(ctx, n, `${alt} (foto ${i + 1} de ${names.length})`, { lazy: i > 0 })}</figure>`).join('')}
     </div>
-    <div class="gallery__nav">
+    <div class="gallery__nav" data-fab-avoid>
       <button type="button" class="gallery__btn" data-dir="-1" aria-label="Foto anterior">${icon('arrow', 18)}</button>
       <span class="gallery__dots">${names.map((_, i) => `<button type="button" class="gallery__dot${i === 0 ? ' is-active' : ''}" data-index="${i}" aria-label="Foto ${i + 1}"></button>`).join('')}</span>
       <button type="button" class="gallery__btn" data-dir="1" aria-label="Próxima foto">${icon('arrow', 18)}</button>
@@ -576,7 +576,7 @@ export function product(ctx, p) {
       ${p.services.includes('manutencao') ? `<li class="status__pill status__pill--petrol">${icon('wrench', 16)} Atendido em manutenção</li>` : ''}
       ${USED.has(p.condition) ? `<li class="status__pill status__pill--warm">${icon('shield', 16)} ${conditionLabel(p)} · ${site.warranty.used} de garantia</li>` : ''}
     </ul>
-    <div class="product__cta">
+    <div class="product__cta" data-fab-avoid>
       <a class="button button--whatsapp button--lg" href="${wa(site, message)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="produto">${icon('whatsapp', 20)} Solicitar orçamento pelo WhatsApp</a>
       <a class="button button--ghost button--lg" href="/contato/?produto=${encodeURIComponent(fullName)}">Enviar por e-mail</a>
     </div>

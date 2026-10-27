@@ -212,6 +212,8 @@ const flow = $('[data-flow]');
 const flowSteps = flow ? $$('.flow__step', flow) : [];
 if (flow && !reduce) flow.dataset.armed = '';
 const cta = $('.cta-hx, .cta-bar');
+// Controls the floating button must never sit on (gallery arrows, the product's own WhatsApp CTA).
+const fabAvoid = $$('[data-fab-avoid]');
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (a, b, v) => { const t = clamp01((v - a) / (b - a)); return t * t * (3 - 2 * t); };
 
@@ -264,7 +266,10 @@ function frame() {
   header?.classList.toggle('is-light', hero ? y > heroH - 80 : y > 120);
   progress?.style.setProperty('--p', maxY > 0 ? (y / maxY).toFixed(4) : 0);
   // The floating WhatsApp button steps aside on the hero and once the closing CTA (which has its own) is on screen.
-  if (fab) fab.classList.toggle('is-hidden', (hero && y < heroH * 0.6) || (ctaBox ? ctaBox.top < vh * 0.85 : false));
+  // It also steps aside while it would cover a gallery's arrows or the product's own WhatsApp button.
+  const fabTop = vh - (fab ? fab.offsetHeight + 24 : 0), fabLeft = innerWidth - (fab ? fab.offsetWidth + 24 : 0);
+  const covers = fabAvoid.some((el) => { const r = el.getBoundingClientRect(); return r.bottom > fabTop && r.top < vh && r.right > fabLeft; });
+  if (fab) fab.classList.toggle('is-hidden', (hero && y < heroH * 0.6) || (ctaBox ? ctaBox.top < vh * 0.85 : false) || covers);
   // Hero: copy and photo drift together, gently, and the copy fades on an eased curve.
   if (heroGrid && !reduce && y <= heroH) {
     heroGrid.style.transform = `translate3d(0, ${(y * 0.12).toFixed(1)}px, 0)`;
