@@ -459,6 +459,10 @@
   .js .hx__photo { clip-path: inset(100% 0 0 0 round var(--radius-panel)); transition: clip-path 1.1s var(--ease-out-soft) .2s; }
   .is-loaded .hx__photo { clip-path: inset(0 0 0 0 round var(--radius-panel)); }
   .hx__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 36% 60%; filter: brightness(1.08) contrast(1.04); }
+  /* Cut-out cover (equipment line-up): straight on the navy, a soft signal-blue glow behind and a floor shadow. */
+  .hx__photo:has(.is-cutout) { background: radial-gradient(60% 55% at 50% 55%, rgba(91,184,224,.22) 0%, rgba(91,184,224,.06) 45%, transparent 70%); box-shadow: none; overflow: visible; }
+  .hx__photo img.is-cutout { filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); padding: 0; transform: scale(1.08); }
+  .is-loaded .hx__photo:has(.is-cutout) { clip-path: inset(-12% -10% -22% -10%); }
   @keyframes beat { 0%, 100% { box-shadow: 0 0 0 4px rgba(91,184,224,.18); } 50% { box-shadow: 0 0 0 7px rgba(91,184,224,.1); } }
 
   /* Facts */

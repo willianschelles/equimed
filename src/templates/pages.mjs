@@ -225,7 +225,7 @@ export function home(ctx) {
       <p class="hx__note fx-in" style="--d:.65s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo">${photo(ctx, 'bench-multimeter', 'Técnico medindo um equipamento com multímetro na bancada', { lazy: false, sizes: '(min-width: 64rem) 36rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 40rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
