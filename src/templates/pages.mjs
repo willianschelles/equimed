@@ -225,7 +225,7 @@ export function home(ctx) {
       <p class="hx__note fx-in" style="--d:.65s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 40rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
@@ -244,7 +244,7 @@ export function home(ctx) {
     <div class="sx-head rise"><h2 class="sx-title">O que a bancada faz</h2><p class="sx-lead">Diagnóstico antes do reparo, orçamento detalhado e garantia em cada serviço.</p></div>
     <div class="scards">
       ${cards.map((c) => `<a class="scard rise" href="${c.href}">
-        <figure class="scard__media">${photo(ctx, c.photo, '', { sizes: '(min-width: 64rem) 40rem, 100vw' })}</figure>
+        <figure class="scard__media">${photo(ctx, c.photo, '', { sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
         <div class="scard__body">
           <h3 class="scard__name">${c.name}</h3>
           <p class="scard__text">${esc(c.text)}</p>

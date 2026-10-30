@@ -263,7 +263,6 @@ function frame() {
   const ctaBox = cta ? cta.getBoundingClientRect() : null;
 
   header?.classList.toggle('is-scrolled', y > 8);
-  header?.classList.toggle('is-light', hero ? y > heroH - 80 : y > 120);
   progress?.style.setProperty('--p', maxY > 0 ? (y / maxY).toFixed(4) : 0);
   // The floating WhatsApp button steps aside on the hero and once the closing CTA (which has its own) is on screen.
   // It also steps aside while it would cover a gallery's arrows or the product's own WhatsApp button.

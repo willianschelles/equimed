@@ -125,8 +125,8 @@
   .site-header__row { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 4.75rem; }
   .brand { display: inline-flex; color: #FFFFFF; text-decoration: none; flex: none; }
   .brand:hover { color: #FFFFFF; }
-  .brand__logo { width: auto; height: 3rem; }
-  @media (width < 40rem) { .brand__logo { height: 2.6rem; } }
+  .brand__logo { width: auto; height: 2.35rem; }
+  @media (width < 40rem) { .brand__logo { height: 2.2rem; } }
   .site-nav__toggle, .site-nav__close { display: none; background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.5rem; color: #FFFFFF; }
   .site-nav__top, .site-nav__brand { display: none; }
   .site-nav__panel { display: flex; align-items: center; gap: 1.75rem; position: static; inset: auto; width: auto; height: auto; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; overflow: visible; }
@@ -393,7 +393,7 @@
   .site-footer__grid { display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 1fr); }
   @media (width >= 48rem) { .site-footer__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; } }
   .site-footer__brand { display: grid; gap: 1rem; justify-items: start; align-content: start; }
-  .site-footer__brand svg { height: 3rem; width: auto; color: #FFFFFF; }
+  .site-footer__brand svg { height: 2.6rem; width: auto; color: #FFFFFF; }
   .site-footer__brand p { margin: 0; max-width: 28rem; }
   .site-footer__brand p a { text-decoration: underline; text-underline-offset: 0.2em; }
   .site-footer__title { margin: 0 0 1rem; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.06em; font-weight: 600; text-transform: uppercase; color: #FFFFFF; }
@@ -422,20 +422,10 @@
   .is-loaded .fx-in { opacity: 1; translate: 0 0; }
   [data-speed] > *, [data-hero] { will-change: transform; }
 
-  /* Header: becomes light glass after the first screen; progress line */
+  /* Header: stays on the navy ground of the logo (owner 27/10); glass once scrolled; progress line */
   .site-header { transition: background-color .3s, border-color .3s, color .3s; }
   .site-header--overlay { position: fixed; }
   .site-header--overlay.is-scrolled { background: rgba(10,18,26,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-  .site-header.is-light { background: #FFFFFF; color: var(--color-ink); border-block-end-color: var(--color-line); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); }
-  .site-header.is-light .brand__logo .logo-pulse { stroke: var(--color-petrol); }
-  .site-header.is-light .brand, .site-header.is-light .brand:hover { color: var(--color-ink); }
-  @media (width >= 68rem) {
-    .site-header.is-light .site-nav__list a { color: var(--color-ink-2); }
-    .site-header.is-light .site-nav__list a:hover, .site-header.is-light .site-nav__list a[aria-current="page"] { color: var(--color-ink); }
-    .site-header.is-light .site-nav__phone { color: var(--color-ink); border-color: var(--color-line); }
-    .site-header.is-light .button--light { background: var(--color-navy); color: #FFFFFF; }
-  }
-  .site-header.is-light .site-nav__toggle { color: var(--color-ink); border-color: var(--color-line); }
   .site-header__progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--color-signal); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); pointer-events: none; }
 
   /* Hero */
@@ -461,7 +451,10 @@
   .hx__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 36% 60%; filter: brightness(1.08) contrast(1.04); }
   /* Cut-out cover (equipment line-up): straight on the navy, a soft signal-blue glow behind and a floor shadow. */
   .hx__photo:has(.is-cutout) { background: radial-gradient(60% 55% at 50% 55%, rgba(91,184,224,.22) 0%, rgba(91,184,224,.06) 45%, transparent 70%); box-shadow: none; overflow: visible; }
-  .hx__photo img.is-cutout { filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); padding: 0; transform: scale(1.08); }
+  .hx__photo:has(.is-cutout) { aspect-ratio: 2 / 1; }
+  .hx__photo img.is-cutout { filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); padding: 0; transform: scale(1.1); }
+  /* Owner 27/10: bigger equipment. On desktop the cover takes the wider column and runs into the right gutter. */
+  @media (width >= 64rem) { .hx__grid:has(.is-cutout) { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.5rem; } .hx__photo:has(.is-cutout) { margin-inline-end: -1.5rem; } }
   .is-loaded .hx__photo:has(.is-cutout) { clip-path: inset(-12% -10% -22% -10%); }
   @keyframes beat { 0%, 100% { box-shadow: 0 0 0 4px rgba(91,184,224,.18); } 50% { box-shadow: 0 0 0 7px rgba(91,184,224,.1); } }
 
