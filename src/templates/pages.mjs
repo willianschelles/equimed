@@ -208,7 +208,7 @@ export function home(ctx) {
     { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
     { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'seminovo-stryker-6-conjunto', points: SERVICE_META.locacao },
     { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
-    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'bench-soldering', points: SERVICE_META.software },
+    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'luvas-montagem', points: SERVICE_META.software },
   ];
   const body = `
 <section class="hx">
@@ -257,7 +257,7 @@ export function home(ctx) {
 </section>
 
 <section class="band" aria-label="Diagnóstico em bancada">
-  <div class="band__media" data-speed="0.15">${photo(ctx, 'bench-hands', '', { sizes: '100vw' })}</div>
+  <div class="band__media" data-speed="0.15">${photo(ctx, 'luvas-bancada-solda', '', { sizes: '100vw' })}</div>
   <div class="container band__copy" data-speed="-0.06">
     <div><p class="band__quote">Cada equipamento é aberto, medido e testado antes do orçamento.</p>
     <p class="band__sub">Você aprova sabendo o que vai ser trocado, por quê e quanto custa.</p></div>
@@ -723,7 +723,7 @@ export function about(ctx) {
   const { site, copy } = ctx;
   const a = copy.about;
   const body = `
-${pageHeader(a.heading, a.lead, { ctx, photoName: 'bench-hands', photoAlt: 'Técnico inspecionando um equipamento na bancada' })}
+${pageHeader(a.heading, a.lead, { ctx, photoName: 'luvas-bancada-solda-43', photoAlt: 'Técnico de luvas soldando um equipamento na bancada da EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${a.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
