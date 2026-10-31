@@ -99,7 +99,6 @@ const independence = (site) => `<p class="notice">${icon('shield', 18)} <span>${
 const statusBadges = (p) => {
   const b = [];
   if (USED.has(p.condition)) b.push(`<span class="badge badge--warm">${conditionLabel(p)} · 3 meses de garantia</span>`);
-  if (p.condition === 'novo') b.push('<span class="badge badge--warm">Novo</span>');
   const sells = p.services.includes('venda') || p.services.includes('locacao');
   if (!sells) b.push('<span class="badge badge--manutencao">Atendido em manutenção</span>');
   else b.push(`<span class="badge badge--venda">${p.services.filter((s) => s !== 'manutencao').map((s) => SERVICE_LABEL[s]).join(' · ')}</span>`);
