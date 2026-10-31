@@ -164,7 +164,6 @@
   .breadcrumbs a:hover { color: #FFFFFF; text-decoration: underline; }
   .page-hero { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(45% 90% at 85% 40%, rgba(91,184,224,.1) 0%, transparent 70%), var(--color-navy); color: #FFFFFF; }
   .pulse--hero { z-index: -1; height: 110px; }
-  .pulse--hero path { opacity: .45; }
   .js .pulse--hero path { stroke-dashoffset: 1; }
   .is-loaded .pulse--hero path { animation: draw 2.4s .2s var(--ease-out-soft) forwards; }
   @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -452,7 +451,10 @@
   /* Cut-out cover (equipment line-up): straight on the navy, a soft signal-blue glow behind and a floor shadow. */
   .hx__photo:has(.is-cutout) { background: radial-gradient(60% 55% at 50% 55%, rgba(91,184,224,.22) 0%, rgba(91,184,224,.06) 45%, transparent 70%); box-shadow: none; overflow: visible; }
   .hx__photo:has(.is-cutout) { aspect-ratio: 2 / 1; }
-  .hx__photo img.is-cutout { filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); padding: 0; transform: scale(1.1); }
+  /* Lit floor under the battery bases so the black packs read against the navy (fades past the box edge). */
+  .hx__photo:has(.is-cutout) { position: relative; isolation: isolate; }
+  .hx__photo:has(.is-cutout)::after { content: ''; position: absolute; z-index: -1; inset: auto 8% -14% 8%; height: 34%; background: radial-gradient(50% 50% at 50% 50%, rgba(140,200,235,.40) 0%, rgba(91,184,224,.14) 50%, transparent 100%); pointer-events: none; }
+  .hx__photo img.is-cutout { filter: drop-shadow(0 0 1px rgba(190,220,240,.55)) drop-shadow(0 0 10px rgba(91,184,224,.22)) drop-shadow(0 26px 30px rgba(0,0,0,.45)); padding: 0; transform: scale(1.1); }
   /* Owner 27/10: bigger equipment. On desktop the cover takes the wider column and runs into the right gutter. */
   @media (width >= 64rem) { .hx__grid:has(.is-cutout) { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.5rem; } .hx__photo:has(.is-cutout) { margin-inline-end: -1.5rem; } }
   .is-loaded .hx__photo:has(.is-cutout) { clip-path: inset(-12% -10% -22% -10%); }
