@@ -143,7 +143,7 @@ if (words && !reduce) {
 // ECG monitor sweeping the bottom of the hero.
 function monitor(canvas) {
   const g = canvas.getContext('2d');
-  const dpr = Math.min(1.5, devicePixelRatio || 1);
+  const dpr = Math.min(3, devicePixelRatio || 1);
   let W = 0, H = 0, base = 0, amp = 0, beat = 0, buf = new Float32Array(0), head = 0, last = performance.now(), visible = true, travelled = 0;
   const wave = (t, k) => {
     if (t > 0.1 && t < 0.2) return 0.12 * Math.sin((Math.PI * (t - 0.1)) / 0.1);
@@ -155,7 +155,7 @@ function monitor(canvas) {
     return 0;
   };
   const gains = Array.from({ length: 64 }, () => 0.86 + Math.random() * 0.2);
-  const sample = (x) => wave((x % beat) / beat, gains[Math.floor(x / beat) % 64]) + (Math.random() - 0.5) * 0.012;
+  const sample = (x) => wave((x % beat) / beat, gains[Math.floor(x / beat) % 64]);
   function size() {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     canvas.width = w * dpr; canvas.height = h * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -166,25 +166,33 @@ function monitor(canvas) {
   size(); addEventListener('resize', size);
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = performance.now(); }).observe(canvas);
   const GAP = 46;
-  function render() {
-    g.clearRect(0, 0, W, H); g.lineJoin = 'round'; g.lineCap = 'round';
-    for (let x0 = 0; x0 < W; x0 += 6) {
-      const ahead = (x0 - head + W) % W;
-      if (ahead < GAP) continue;
-      const a = Math.max(0.08, 1 - ((W - ahead) / W) * 0.9);
-      g.beginPath(); let on = false;
-      for (let x = x0; x <= Math.min(W - 1, x0 + 6); x++) {
-        const v = buf[x]; if (Number.isNaN(v)) { on = false; continue; }
-        const y = base - v * amp; if (on) g.lineTo(x, y); else { g.moveTo(x, y); on = true; }
-      }
-      g.strokeStyle = `rgba(91,184,224,${(a * 0.22).toFixed(3)})`; g.lineWidth = 6; g.stroke();
-      g.strokeStyle = `rgba(91,184,224,${a.toFixed(3)})`; g.lineWidth = 2; g.stroke();
+  // Same look as the CTA's SVG pulse: one continuous 2px stroke with a soft 6px glow, drawn at full
+  // device resolution. The trace fades out with age through a gradient (no overlapping chunks).
+  const alpha = (ahead) => Math.max(0.1, 0.75 * (1 - ((W - ahead) / W) * 0.85));
+  function trace(from, to) {
+    if (to - from < 2) return;
+    const grad = g.createLinearGradient(from, 0, to, 0);
+    const a0 = alpha((from - head + W) % W), a1 = alpha((to - 1 - head + W) % W);
+    grad.addColorStop(0, `rgba(91,184,224,${a0.toFixed(3)})`); grad.addColorStop(1, `rgba(91,184,224,${a1.toFixed(3)})`);
+    g.beginPath(); let on = false;
+    for (let x = from; x < to; x++) {
+      const v = buf[x]; if (Number.isNaN(v)) { on = false; continue; }
+      const y = base - v * amp; if (on) g.lineTo(x, y); else { g.moveTo(x, y); on = true; }
     }
-    const hv = buf[Math.floor(head) % buf.length];
+    g.strokeStyle = grad; g.stroke();
+  }
+  function render() {
+    g.clearRect(0, 0, W, H); g.lineJoin = 'round'; g.lineCap = 'round'; g.lineWidth = 2;
+    g.shadowColor = 'rgba(91,184,224,.7)'; g.shadowBlur = 6 * dpr;
+    const h = Math.floor(head);
+    trace(Math.min(W, h + GAP), Math.ceil(W));
+    trace(Math.max(0, h + GAP - Math.ceil(W)), h + 1);
+    g.shadowBlur = 0;
+    const hv = buf[h % buf.length];
     if (!Number.isNaN(hv)) {
       const hy = base - hv * amp;
-      g.fillStyle = 'rgba(160,215,240,.25)'; g.beginPath(); g.arc(head, hy, 9, 0, Math.PI * 2); g.fill();
-      g.fillStyle = '#EAF6FC'; g.beginPath(); g.arc(head, hy, 3, 0, Math.PI * 2); g.fill();
+      g.fillStyle = 'rgba(91,184,224,.3)'; g.beginPath(); g.arc(head, hy, 5, 0, Math.PI * 2); g.fill();
+      g.fillStyle = '#EAF6FC'; g.beginPath(); g.arc(head, hy, 2.2, 0, Math.PI * 2); g.fill();
     }
   }
   return {
