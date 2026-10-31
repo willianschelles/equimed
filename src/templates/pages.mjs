@@ -206,7 +206,7 @@ export function home(ctx) {
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
   const cards = [
     { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
-    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'seminovo-stryker-6-conjunto', points: SERVICE_META.locacao },
+    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'stryker-system6-conjunto-locacao', points: SERVICE_META.locacao },
     { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
     { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'luvas-montagem', points: SERVICE_META.software },
   ];
