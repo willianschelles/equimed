@@ -125,6 +125,9 @@ const productCard = (ctx, p, { level = 3, eager = false } = {}) => `
   </a>
 </li>`;
 
+// Rental is only perfuradores, serras and their accessories (owner 01/11); other families say venda only.
+const rents = (f) => f.products.some((p) => p.services.includes('locacao'));
+
 const familyCard = (ctx, f, { level = 3, href } = {}) => {
   const serviced = f.products.filter((p) => !p.services.includes('venda') && !p.services.includes('locacao')).length;
   const available = f.products.length - serviced;
@@ -141,7 +144,7 @@ const familyCard = (ctx, f, { level = 3, href } = {}) => {
       ${famBrands(f) ? `<span class="fam__brands">${esc(famBrands(f))}</span>` : ''}
       <span class="fam__tags">
         ${f.maintenance ? '<span class="fam__tag fam__tag--petrol">Manutenção</span>' : ''}
-        ${available ? `<span class="fam__tag fam__tag--ok">${available} à venda / locação</span>` : ''}
+        ${available ? `<span class="fam__tag fam__tag--ok">${available} à venda${rents(f) ? ' / locação' : ''}</span>` : ''}
       </span>
     </span>
     <span class="fam__more">Ver ${esc(f.shortName.toLowerCase())} ${icon('arrow', 16)}</span>
@@ -205,7 +208,7 @@ export function home(ctx) {
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
   const cards = [
     { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
-    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'stryker-system6-conjunto-locacao', points: SERVICE_META.locacao },
+    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'stryker-system7-conjunto-locacao', points: SERVICE_META.locacao },
     { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
     { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'luvas-montagem', points: SERVICE_META.software },
   ];
@@ -398,7 +401,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
     ${modelCards(ctx, m.brands.map((b) => ({ slug: b.slug, name: b.brand, models: b.models })))}
     <p class="small">A lista não é exaustiva. Se o seu modelo não está aqui, pergunte pelo WhatsApp.</p>
     ${independence(site)}
-    ${f.products.length ? `<p><a class="button button--ghost" href="${familyUrl(f)}">Ver ${f.shortName.toLowerCase()} para venda e locação ${icon('arrow', 16)}</a></p>` : ''}
+    ${f.products.length ? `<p><a class="button button--ghost" href="${familyUrl(f)}">Ver ${f.shortName.toLowerCase()} para venda${rents(f) ? ' e locação' : ''} ${icon('arrow', 16)}</a></p>` : ''}
   </div>
   ${aside(site, { message, place: `manutencao-${f.slug}` })}
 </section>
@@ -529,7 +532,7 @@ ${ctaBar(site)}`;
 export function family(ctx, f) {
   const { site } = ctx;
   const title = fitTitle(f.name);
-  const message = `Olá, EquimedPR! Vim pelo site e procuro ${f.shortName.toLowerCase()}.\n\nMarca/modelo: \nPreciso de: (manutenção / locação / compra)\n`;
+  const message = `Olá, EquimedPR! Vim pelo site e procuro ${f.shortName.toLowerCase()}.\n\nMarca/modelo: \nPreciso de: (manutenção / ${rents(f) ? 'locação / ' : ''}compra)\n`;
   const serviced = f.products.filter((p) => !p.services.includes('venda') && !p.services.includes('locacao'));
   const available = f.products.filter((p) => p.services.includes('venda') || p.services.includes('locacao'));
   const grid = (list, label) => list.length ? `
@@ -539,7 +542,7 @@ export function family(ctx, f) {
 </section>` : '';
   const body = `
 ${pageHeader(f.name, f.lead, { ctx, photoName: f.photo, photos: f.photos, photoAlt: f.name, eyebrow: 'Equipamentos atendidos', extra: f.maintenance ? `<p><a class="button button--primary" href="${maintenanceUrl(f)}">${icon('wrench', 18)} Manutenção de ${esc(f.shortName.toLowerCase())}</a></p>` : '' })}
-${grid(available, 'Disponíveis para venda ou locação')}
+${grid(available, rents(f) ? 'Disponíveis para venda ou locação' : 'Disponíveis para venda')}
 ${grid(serviced, 'Atendidos em manutenção')}
 ${f.maintenance ? `<section class="section section--tint"><div class="container">${sectionHead(null, 'Marcas e modelos atendidos em manutenção')}${modelCards(ctx, f.maintenance.brands.map((b) => ({ slug: b.slug, name: b.brand, models: b.models })))}<p><a class="button button--ghost" href="${maintenanceUrl(f)}">Defeitos comuns e o que fazemos ${icon('arrow', 16)}</a></p></div></section>` : ''}
 ${ctaBar(site, { title: `Não encontrou o modelo? Consulte-nos sobre ${f.shortName.toLowerCase()}.`, message, place: `familia-${f.slug}` })}`;
@@ -555,7 +558,7 @@ export function product(ctx, p) {
   const fullName = p.name;
   const title = fitTitle(fullName);
   const sells = p.services.includes('venda') || p.services.includes('locacao');
-  const description = fitDescription(p.summary, sells ? ' Venda, locação e manutenção. EquimedPR, Curitiba.' : ' Manutenção pela EquimedPR, Curitiba.');
+  const description = fitDescription(p.summary, sells ? (p.services.includes('locacao') ? ' Venda, locação e manutenção. EquimedPR, Curitiba.' : ' Venda e manutenção. EquimedPR, Curitiba.') : ' Manutenção pela EquimedPR, Curitiba.');
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em:\n${fullName}\n${site.url}${productUrl(p)}\n\nPreciso de: (${p.services.map((s) => SERVICE_LABEL[s].toLowerCase()).join(' / ')})\n`;
   const related = p.familyRef.products.filter((x) => x.slug !== p.slug).slice(0, 3);
   const body = `

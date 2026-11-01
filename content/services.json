@@ -85,12 +85,12 @@
   "locacao": {
     "slug": "locacao",
     "name": "Locação",
-    "heading": "Locação de equipamentos médicos",
+    "heading": "Locação de perfuradores e serras",
     "icon": "cycle",
-    "title": "Locação de equipamentos cirúrgicos e perfuradores | EquimedPR",
-    "description": "Locação de torres de videocirurgia, artrobombas, insufladores e perfuradores e serras Stryker, por procedimento ou período, com manutenção incluída. Curitiba.",
-    "lead": "Torres de vídeo, artrobombas, insufladores e conjuntos de perfurador e serra Stryker para hospitais, clínicas e equipes cirúrgicas. Por procedimento, por período ou como equipamento reserva durante um reparo.",
-    "summary": "Torres de vídeo, artrobombas, insufladores e conjuntos de perfurador e serra, por procedimento ou por período, com manutenção incluída.",
+    "title": "Locação de perfuradores e serras Stryker | EquimedPR",
+    "description": "Locação de perfuradores, serras e acessórios Stryker, com baterias e carregador, por procedimento ou período e com manutenção incluída. Curitiba.",
+    "lead": "Perfuradores, serras e acessórios Stryker para hospitais, clínicas e equipes cirúrgicas. Por procedimento, por período ou como equipamento reserva durante um reparo.",
+    "summary": "Perfuradores, serras e acessórios Stryker, por procedimento ou por período, com manutenção incluída.",
     "intro": [
       "A locação resolve três situações: um procedimento pontual sem equipamento próprio, a cobertura enquanto o seu equipamento está em manutenção e a operação regular de uma clínica que prefere não imobilizar capital.",
       "Os equipamentos locados saem revisados e testados, e a manutenção durante o período é por nossa conta. A entrega pode ser feita em Curitiba e região, ou por transportadora para o restante do país, conforme o prazo e o tipo de equipamento."
@@ -98,10 +98,11 @@
     "items": {
       "title": "Equipamentos disponíveis para locação",
       "list": [
-        "Torre de videocirurgia completa: câmera HD, fonte de luz, monitor e carrinho",
-        "Artrobombas e insufladores de CO2",
-        "Conjunto de perfurador e serra Stryker System 5 ou System 6 com baterias e carregador",
-        "Equipamento reserva durante manutenção de equipamento próprio"
+        "Perfuradores Stryker",
+        "Serras sagitais e recíprocas Stryker",
+        "Conjunto de perfurador e serra com baterias e carregador",
+        "Acessórios: baterias, carregadores e caixas de esterilização",
+        "Equipamento reserva durante a manutenção do seu perfurador ou serra"
       ]
     },
     "modes": {
@@ -139,12 +140,12 @@
         "a": "Para equipamentos seminovos do nosso estoque, sim. Consulte as condições."
       }
     ],
-    "photo": "stryker-system6-conjunto-recorte",
+    "photo": "stryker-system7-conjunto-locacao",
     "photos": [
-      "stryker-system6-conjunto-recorte",
-      "stryker-system6-perfurador-recorte",
-      "stryker-system5-serra-recorte",
-      "stryker-system7-recorte"
+      "stryker-system7-sagital-recorte",
+      "stryker-system7-serra-angulo-recorte",
+      "stryker-system7-linha-recorte",
+      "stryker-system7-carregador-recorte"
     ]
   },
   "venda": {

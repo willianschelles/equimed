@@ -194,7 +194,7 @@
     "shortName": "Câmeras de vídeo",
     "icon": "camera",
     "lead": "Unidades de controle de câmera (CCU) e cabeças de câmera HD e 4K para videocirurgia: Stryker 1488, 1588 e 1688, Karl Storz IMAGE1 HUB e IMAGE1 S, Smith & Nephew 560P, ConMed Linvatec e marcas nacionais e chinesas.",
-    "description": "Câmeras de videocirurgia: CCU e cabeças de câmera Stryker, Karl Storz, Smith & Nephew Dyonics e Linvatec. Manutenção, locação e venda de seminovos e revisados.",
+    "description": "Câmeras de videocirurgia: CCU e cabeças de câmera Stryker, Karl Storz, Smith & Nephew Dyonics e Linvatec. Manutenção e venda de seminovos e revisados.",
     "maintenance": {
       "title": "Manutenção de câmeras de videocirurgia",
       "metaTitle": "Manutenção de câmeras de vídeo Stryker, Karl Storz e Linvatec",
@@ -378,7 +378,7 @@
     "shortName": "Monitores cirúrgicos",
     "icon": "monitor",
     "lead": "Monitores cirúrgicos HD e 4K de 19\" a 32\": NDS Radiance e EndoVue, Karl Storz WideView, Stryker Vision Elect e WiSe, Sony e marcas nacionais e chinesas.",
-    "description": "Monitores cirúrgicos para torres de vídeo: NDS, Karl Storz, Stryker e Sony. Manutenção de fontes, painéis e entradas de vídeo, locação e venda de seminovos.",
+    "description": "Monitores cirúrgicos para torres de vídeo: NDS, Karl Storz, Stryker e Sony. Manutenção de fontes, painéis e entradas de vídeo, e venda de seminovos.",
     "maintenance": {
       "title": "Manutenção de monitores cirúrgicos",
       "metaTitle": "Manutenção de monitores cirúrgicos NDS, Stryker e Karl Storz",
@@ -460,7 +460,7 @@
     "shortName": "Insufladores",
     "icon": "gas",
     "lead": "Insufladores de CO2 de 30 a 45 lpm para videolaparoscopia: Stryker Pneumosure e Core, Karl Storz Endoflator e Thermoflator, Smith & Nephew Dyonics, ConMed e marcas nacionais e chinesas.",
-    "description": "Insufladores de CO2 para laparoscopia: Stryker, Karl Storz, Smith & Nephew e ConMed. Manutenção, calibração de pressão e vazão, locação e venda de seminovos.",
+    "description": "Insufladores de CO2 para laparoscopia: Stryker, Karl Storz, Smith & Nephew e ConMed. Manutenção, calibração de pressão e vazão e venda de seminovos.",
     "maintenance": {
       "title": "Manutenção de insufladores de CO2",
       "metaTitle": "Manutenção de insufladores de CO2 Stryker, Karl Storz e ConMed",
@@ -541,7 +541,7 @@
     "shortName": "Artrobombas",
     "icon": "pump",
     "lead": "Bombas de irrigação e distensão articular para artroscopia: Stryker Arthropump e Crossflow, Smith & Nephew Dyonics Access 25, Karl Storz Arthropump Power, ConMed Linvatec e marcas nacionais e chinesas.",
-    "description": "Artrobombas para artroscopia: Stryker, Smith & Nephew Dyonics, Karl Storz e Linvatec. Manutenção de bombas peristálticas, sensores de pressão, locação e venda de seminovos.",
+    "description": "Artrobombas para artroscopia: Stryker, Smith & Nephew Dyonics, Karl Storz e Linvatec. Manutenção de bombas peristálticas, sensores de pressão, e venda de seminovos.",
     "maintenance": {
       "title": "Manutenção de artrobombas",
       "metaTitle": "Manutenção de artrobombas Stryker, Dyonics e Karl Storz",
