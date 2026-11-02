@@ -710,6 +710,77 @@
       "specs": []
     },
     {
+      "slug": "stryker-7-perfurador",
+      "name": "Perfurador Stryker System 7",
+      "model": "Revisado, para locação",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
+      "image": "stryker-7-perfurador",
+      "legacyName": null,
+      "condition": "revisado",
+      "services": [
+        "manutencao",
+        "locacao"
+      ],
+      "summary": "Perfurador rotativo Stryker System 7 para cirurgias ortopédicas e de trauma. Disponível para locação, revisado e testado em bancada.",
+      "paragraphs": [
+        "Acompanha bateria e carregador. Locação por procedimento ou por período, com manutenção incluída."
+      ],
+      "list": null,
+      "specs": []
+    },
+    {
+      "slug": "stryker-7-serra",
+      "name": "Serra Stryker System 7",
+      "model": "Revisada, para locação",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
+      "image": "stryker-7-serra",
+      "legacyName": null,
+      "condition": "revisado",
+      "services": [
+        "manutencao",
+        "locacao"
+      ],
+      "summary": "Serra sagital Stryker System 7 para cirurgias ortopédicas e de trauma. Disponível para locação, revisada e testada em bancada.",
+      "paragraphs": [
+        "Acompanha bateria e carregador. Locação por procedimento ou por período, com manutenção incluída."
+      ],
+      "list": null,
+      "specs": []
+    },
+    {
+      "slug": "stryker-7-perfurador-e-serra",
+      "name": "Conjunto perfurador e serra Stryker System 7",
+      "model": "Revisado, com baterias e carregador",
+      "brand": "Stryker",
+      "brandSlug": "stryker",
+      "family": "perfuradores-e-serras",
+      "image": "stryker-7-perfurador-e-serra",
+      "legacyName": null,
+      "condition": "revisado",
+      "services": [
+        "manutencao",
+        "locacao"
+      ],
+      "summary": "Conjunto Stryker System 7 com perfurador e serra para cirurgias ortopédicas e de trauma. Disponível para locação, com manutenção incluída.",
+      "paragraphs": [],
+      "list": {
+        "title": "O conjunto Stryker System 7 inclui",
+        "items": [
+          "Perfurador",
+          "Serra",
+          "Baterias",
+          "Carregador",
+          "Equipamentos revisados e testados",
+          "Manutenção incluída durante a locação"
+        ]
+      },
+      "specs": []
+    },
+    {
       "slug": "stryker-5-perfurador",
       "name": "Perfurador Stryker System 5",
       "model": "Revisado",
