@@ -207,10 +207,10 @@ export function home(ctx) {
   const h = copy.home;
   const logoBrands = ['stryker', 'conmed', 'karl-storz', 'smith-nephew', 'olympus'].map((s) => brands.find((b) => b.slug === s)).filter((b) => b?.logo);
   const cards = [
-    { href: '/manutencao/', name: 'Manutenção', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
-    { href: '/locacao/', name: 'Locação', text: services.locacao.summary, photo: 'stryker-system7-conjunto-locacao', points: SERVICE_META.locacao },
-    { href: '/venda/', name: 'Venda', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
-    { href: '/software/', name: 'Soluções de software', text: services.software.summary, photo: 'luvas-montagem', points: SERVICE_META.software },
+    { href: '/manutencao/', name: 'Manutenção', kicker: 'Diagnóstico e reparo', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
+    { href: '/locacao/', name: 'Locação', kicker: 'Perfuradores e serras', text: services.locacao.summary, photo: 'stryker-system7-conjunto-locacao', points: SERVICE_META.locacao },
+    { href: '/venda/', name: 'Venda', kicker: 'Equipamentos e acessórios', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
+    { href: '/software/', name: 'Software e tecnologia', kicker: 'Software e eletrônica', text: services.software.summary, photo: 'luvas-montagem', points: SERVICE_META.software },
   ];
   const body = `
 <section class="hx">
@@ -218,16 +218,17 @@ export function home(ctx) {
   <div class="container hx__grid" data-hero>
     <div class="hx__copy" data-hero-copy>
       <p class="hx__kicker fx-in" style="--d:.1s">${esc(h.eyebrow)}</p>
-      <h1 data-words>Equipamento cirúrgico pronto para a próxima cirurgia.</h1>
+      <h1 data-words>${esc(h.headline)}</h1>
       <p class="hx__lead fx-in" style="--d:.45s">${esc(h.lead)}</p>
       <div class="hx__ctas fx-in" style="--d:.55s">
-        <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar no WhatsApp</a>
-        <a class="button button--ghost button--lg" href="#como-funciona">Ver como funciona</a>
+        <a class="button button--whatsapp button--lg" href="${wa(site)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="hero">${icon('whatsapp', 20)} Falar com nossa equipe</a>
+        <a class="button button--ghost button--lg" href="#servicos">Conhecer soluções</a>
       </div>
       <p class="hx__note fx-in" style="--d:.65s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
+      <nav class="hx__quick fx-in" style="--d:.7s" aria-label="Nossas soluções">${cards.map((c) => `<a href="${c.href}">${c.name === 'Software e tecnologia' ? 'Tecnologia' : c.name}</a>`).join('')}</nav>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'stryker-solucoes-capa-recorte', 'Câmera Stryker 1488 HD e fonte de luz L9000 LED ao lado de perfuradores e serras Stryker System 7', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
@@ -243,17 +244,29 @@ export function home(ctx) {
 
 <section class="section" id="servicos">
   <div class="container">
-    <div class="sx-head rise"><h2 class="sx-title">O que a bancada faz</h2><p class="sx-lead">Diagnóstico antes do reparo, orçamento detalhado e garantia em cada serviço.</p></div>
+    <div class="sx-head rise"><h2 class="sx-title">Nossas soluções</h2><p class="sx-lead">Manutenção, locação, venda e tecnologia para manter o seu equipamento em uso.</p></div>
     <div class="scards">
       ${cards.map((c) => `<a class="scard rise" href="${c.href}">
         <figure class="scard__media">${photo(ctx, c.photo, '', { sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
         <div class="scard__body">
+          <p class="scard__kicker">${esc(c.kicker)}</p>
           <h3 class="scard__name">${c.name}</h3>
           <p class="scard__text">${esc(c.text)}</p>
           <ul class="scard__points">${c.points.map((t) => `<li>${icon('check', 14)} ${esc(t)}</li>`).join('')}</ul>
-          <span class="scard__go">Ver ${c.name.toLowerCase()} ${icon('arrow', 16)}</span>
+          <span class="scard__go">Conhecer a solução ${icon('arrow', 16)}</span>
         </div>
       </a>`).join('\n      ')}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint why-sm" id="solucoes-medicas">
+  <div class="container why-sm__grid">
+    <div class="sx-head rise"><p class="why-sm__kicker">EquimedPR Soluções Médicas</p><h2 class="sx-title">${esc(copy.whySolutions.title)}</h2></div>
+    <div class="why-sm__text rise">
+      <p class="why-sm__lead">${esc(copy.whySolutions.lead)}</p>
+      ${copy.whySolutions.paragraphs.map((t) => `<p>${esc(t)}</p>`).join('\n      ')}
+      <p class="why-sm__close">${esc(copy.whySolutions.close)}</p>
     </div>
   </div>
 </section>
@@ -269,7 +282,7 @@ export function home(ctx) {
 <section class="hs" id="equipamentos">
   <div class="hs__inner">
     <div class="container">
-      <div class="sx-head rise"><h2 class="sx-title">Equipamentos que passam pela bancada</h2><p class="sx-lead">Organizados por família. Cada uma tem modelos, defeitos comuns e testes próprios.</p></div>
+      <div class="sx-head rise"><h2 class="sx-title">Equipamentos que atendemos</h2><p class="sx-lead">Organizados por família. Cada uma tem modelos, defeitos comuns e testes próprios.</p></div>
     </div>
     <ul class="rail" data-rail tabindex="0" aria-label="Famílias de equipamentos">
       ${families.map((f) => familyCard(ctx, f)).join('\n      ')}
@@ -316,7 +329,7 @@ ${faq(h.faq, h.faqTitle)}
   <div class="cta-hx__media" data-speed="0.14">${photo(ctx, 'storz-tower-cart', '', { sizes: '100vw' })}</div>
   <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
   <div class="container cta-hx__row">
-    <h2 class="rise">Equipamento parado? Fale com a bancada.</h2>
+    <h2 class="rise">Equipamento parado? Fale com nossa equipe técnica.</h2>
     <div class="cta-hx__side rise">
       <a class="cta-hx__phone" href="tel:${site.phones[1].e164}" data-track="phone_click" data-place="home-cta">${esc(site.phones[1].display)}</a>
       <p>Segunda a sexta, das 8h às 18h. Envie marca, modelo e o defeito.</p>
@@ -408,7 +421,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
 ${f.products.length ? `<section class="section container"><h2 class="section__title">Modelos com página própria</h2><p class="lead">Fotos, especificações e o que fazemos em cada um.</p><ul class="grid grid--3">${f.products.map((p) => productCard(ctx, p)).join('')}</ul></section>` : ''}
 ${related.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a, { ctx })).join('')}</ul></div></section>` : ''}
 ${faq(m.faq)}
-${ctaBar(site, { title: `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, message, place: `manutencao-${f.slug}-cta` })}`;
+${ctaBar(site, { title: m.ctaTitle ?? `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, message, place: `manutencao-${f.slug}-cta` })}`;
   return {
     title: fitTitle(m.metaTitle), description: fitDescription(m.metaDescription), body,
     jsonLd: [
@@ -431,10 +444,11 @@ ${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou co
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
     <h2>${esc(s.items.title)}</h2>
     ${checklist(s.items.list)}
+    <p>${s.landings.map((l) => `<a class="button button--ghost" href="/locacao/${l.slug}/">${esc(l.name)} ${icon('arrow', 16)}</a>`).join(' ')}</p>
     <h2>${esc(s.modes.title)}</h2>
     <ul class="modes">${s.modes.list.map((m) => `<li><h3>${esc(m.title)}</h3><p>${esc(m.text)}</p></li>`).join('')}</ul>
   </div>
-  ${aside(site, { message, place: 'locacao' })}
+  ${aside(site, { text: 'Informe o equipamento, a data do procedimento ou o período e a cidade. Respondemos em horário comercial.', message, place: 'locacao' })}
 </section>
 <section class="section section--tint"><div class="container">
   <h2 class="section__title">Equipamentos com locação disponível</h2>
@@ -446,10 +460,38 @@ ${ctaBar(site, { title: 'Precisa de um equipamento para o próximo procedimento?
   return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/locacao/' }] };
 }
 
+// One page per rental search (owner audio 02/11: "locação de perfurador Stryker", "locação de serra Stryker").
+export function rentalLanding(ctx, l) {
+  const { site, services, products } = ctx;
+  const s = services.locacao;
+  const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de ${l.name.toLowerCase()}.\n\nLinha (System 5, 6 ou 7): \nPeríodo ou procedimento: \nCidade: \n`;
+  const list = products.filter((p) => p.services.includes('locacao') && p.brandSlug === 'stryker' && l.match.some((m) => p.name.includes(m)));
+  const url = `/locacao/${l.slug}/`;
+  const body = `
+${pageHeader(l.heading, l.lead, { eyebrow: 'Locação por procedimento ou período', ctx, photoName: l.photos[0], photos: l.photos, photoAlt: l.heading })}
+<section class="section container service-layout">
+  <div class="prose">
+    ${l.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <h2>${esc(s.modes.title)}</h2>
+    <ul class="modes">${s.modes.list.map((m) => `<li><h3>${esc(m.title)}</h3><p>${esc(m.text)}</p></li>`).join('')}</ul>
+    <p><a class="button button--ghost" href="/locacao/">Tudo sobre a locação ${icon('arrow', 16)}</a></p>
+  </div>
+  ${aside(site, { text: 'Informe o equipamento, a data do procedimento ou o período e a cidade. Respondemos em horário comercial.', message, place: `locacao-${l.slug}` })}
+</section>
+${list.length ? `<section class="section section--tint"><div class="container">
+  <h2 class="section__title">Disponíveis para locação</h2>
+  <ul class="grid grid--3">${list.map((p, i) => productCard(ctx, p, { eager: i < 3 })).join('')}</ul>
+</div></section>` : ''}
+${faq([...l.faq, ...s.faq])}
+${ctaBar(site, { title: 'Precisa de um equipamento para o próximo procedimento?', message, place: `locacao-${l.slug}-cta` })}`;
+  return { title: l.title, description: l.description, body, jsonLd: [serviceJsonLd(site, { heading: l.heading, name: 'Locação' }, l.description), faqJsonLd([...l.faq, ...s.faq])].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/locacao/' }, { name: l.name, href: url }] };
+}
+
 export function sales(ctx) {
   const { site, services, products, families } = ctx;
   const s = services.venda;
-  const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento: \nMarca/modelo: \n`;
+  // Paulo 02/11: a buyer is asked for the equipment, application and configuration (not serial number and defect).
+  const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento desejado: \nAplicação: \nConfiguração: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
 ${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos e revisados, com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker revisados' })}
@@ -460,7 +502,7 @@ ${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos e revisados, com garantia'
     ${checklist(s.items.list)}
     <p class="notice">${icon('tag', 18)} <span>${esc(site.scopeNotice)}</span></p>
   </div>
-  ${aside(site, { message, place: 'venda' })}
+  ${aside(site, { title: 'Solicite uma proposta', text: 'Informe o equipamento desejado, a aplicação e a configuração. Respondemos em horário comercial com a proposta.', message, place: 'venda' })}
 </section>
 ${families.filter((f) => forSale.some((p) => p.family === f.slug)).map((f, fi) => `
 <section class="section${fi % 2 ? '' : ' section--tint'}"><div class="container">
@@ -468,7 +510,7 @@ ${families.filter((f) => forSale.some((p) => p.family === f.slug)).map((f, fi) =
   <ul class="grid grid--3">${forSale.filter((p) => p.family === f.slug).map((p, i) => productCard(ctx, p, { eager: fi === 0 && i < 3 })).join('')}</ul>
 </div></section>`).join('')}
 ${faq(s.faq)}
-${ctaBar(site, { title: 'Não encontrou o modelo? Consulte-nos.', message, place: 'venda-cta' })}`;
+${ctaBar(site, { title: 'Não encontrou o modelo? Consulte-nos.', text: 'Informe o equipamento desejado, a aplicação e a configuração. Respondemos em horário comercial com a proposta.', message, place: 'venda-cta' })}`;
   return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/venda/' }] };
 }
 
@@ -663,7 +705,7 @@ ${pageHeader(b.focus ? `Assistência técnica em ${/^Equipamentos /.test(b.name)
     ${(b.paragraphs ?? [`Atendemos equipamentos ${b.name} em manutenção, conforme a família do equipamento. Envie o modelo e o defeito pelo WhatsApp para a avaliação técnica.`]).map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
     ${independence(site)}
     ${fams.length ? `<h2>Famílias atendidas</h2><ul class="pills">${fams.map((f) => `<li><a href="${f.maintenance ? maintenanceUrl(f) : familyUrl(f)}">${esc(f.shortName)}</a></li>`).join('')}</ul>` : ''}
-    ${(() => { const rows = fams.filter((f) => f.maintenance).map((f) => { const m = f.maintenance.brands.find((x) => x.slug === b.slug || (b.slug === 'conmed' && x.slug === 'linvatec') || (b.slug === 'nacionais-e-chineses' && x.slug === null)); return m ? { head: `<a class="mcard__head mcard__head--icon" href="${maintenanceUrl(f)}" aria-label="${esc(f.shortName)}">${icon(f.icon, 26)}</a>`, name: f.shortName, models: m.models } : null; }).filter(Boolean); return rows.length ? `<h2>Modelos atendidos</h2>${modelCards(ctx, rows)}` : ''; })()}
+    ${(() => { const rows = fams.filter((f) => f.maintenance).map((f) => { const m = f.maintenance.brands.find((x) => x.slug === b.slug || (b.slug === 'conmed' && x.slug === 'linvatec') || (b.slug === 'nacionais-e-chineses' && x.slug === null && /nacionais/i.test(x.brand))); return m ? { head: `<a class="mcard__head mcard__head--icon" href="${maintenanceUrl(f)}" aria-label="${esc(f.shortName)}">${icon(f.icon, 26)}</a>`, name: f.shortName, models: m.models } : null; }).filter(Boolean); return rows.length ? `<h2>Modelos atendidos</h2>${modelCards(ctx, rows)}` : ''; })()}
   </div>
   ${aside(site, { message, place: `marca-${b.slug}` })}
 </section>
@@ -729,6 +771,10 @@ ${pageHeader(a.heading, a.lead, { ctx, photoName: 'luvas-bancada-solda-43', phot
 <section class="section container service-layout">
   <div class="prose">
     ${a.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <h2>${esc(copy.whySolutions.title)}</h2>
+    <p><strong>${esc(copy.whySolutions.lead)}</strong></p>
+    ${copy.whySolutions.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <p>${esc(copy.whySolutions.close)}</p>
     <h2>${esc(a.valuesTitle)}</h2>
     <ul class="modes">${a.values.map((v) => `<li><h3>${esc(v.title)}</h3><p>${esc(v.text)}</p></li>`).join('')}</ul>
     ${independence(site)}
@@ -764,19 +810,19 @@ ${pageHeader(c.heading, c.lead)}
       <label for="f-assunto">Preciso de</label>
       <select id="f-assunto" name="assunto" required>
         <option value="Manutenção">Manutenção / assistência técnica</option>
-        <option value="Locação">Locação</option>
+        <option value="Locação">Locação de perfuradores e serras</option>
         <option value="Compra">Compra de equipamento</option>
-        <option value="Software">Software: atualização ou desbloqueio</option>
+        <option value="Software">Software e tecnologia</option>
         <option value="Outro">Outro assunto</option>
       </select>
     </div>
     <div class="field">
-      <label for="f-equipamento">Equipamento (marca, modelo e número de série)</label>
+      <label for="f-equipamento">Equipamento (marca e modelo; na manutenção, também o número de série)</label>
       <input id="f-equipamento" name="equipamento" type="text" placeholder="Ex.: Perfurador Stryker System 7">
     </div>
     <div class="field">
       <label for="f-mensagem">Mensagem</label>
-      <textarea id="f-mensagem" name="mensagem" rows="5" required minlength="4" placeholder="Descreva o defeito ou a necessidade."></textarea>
+      <textarea id="f-mensagem" name="mensagem" rows="5" required minlength="4" placeholder="Na manutenção, descreva o defeito. Na compra ou locação, a aplicação e a configuração desejada."></textarea>
     </div>
     <div class="contact-form__actions">
       <button class="button button--whatsapp button--lg" type="submit" value="whatsapp" name="via">${icon('whatsapp', 20)} Enviar pelo WhatsApp</button>

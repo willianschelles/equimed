@@ -1,6 +1,6 @@
 # equimedpr.com.br
 
-Site institucional da **EquimedPR** (Equimed Equipamentos Médicos, Curitiba, PR): assistência técnica independente multimarcas. Versão 2 (2026): site estático,
+Site institucional da **EquimedPR** (EquimedPR Soluções Médicas Ltda., Curitiba, PR): assistência técnica independente multimarcas. Versão 2 (2026): site estático,
 HTML e CSS puros, sem frameworks nem dependências de runtime. Substitui o app Django/Heroku de 2018.
 
 - Produção: https://www.equimedpr.com.br (GitHub Pages, publicado pelo workflow `Deploy`)

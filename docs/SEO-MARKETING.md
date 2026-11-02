@@ -89,8 +89,10 @@ Local: + Curitiba · + Paraná · + Brasil (envio por transportadora).
 ## 6. Mensuração e marketing
 
 - **GA4**: preencha `analytics.ga4MeasurementId` em `content/site.json` (formato `G-XXXXXXX`). Eventos enviados:
-  `whatsapp_click`, `phone_click`, `email_click`, `form_submit` e `generate_lead` (com `place` = hero, header,
-  footer, fab, produto, cta). Marque `generate_lead` como conversão no GA4 para ver a origem dos contatos.
+  `whatsapp_click`, `phone_click`, `email_click`, `form_submit` e `contact_intent` (com `place` = hero, header,
+  footer, fab, produto, cta). Um clique só abre o WhatsApp ou o telefone: não confirma contato recebido. Por isso o
+  site não dispara `generate_lead`. Meça em separado: clique (`contact_intent`), contato recebido, orçamento
+  qualificado e venda (estes três fora do site, por exemplo importando conversões offline no Google Ads).
 - **Meta**: preencha `analytics.metaPixelId`. O pixel dispara `PageView` e os mesmos eventos como `trackCustom`.
   Para campanhas, verifique o domínio no Meta Business e use os eventos acima como conversões personalizadas.
 - **Consentimento**: o aviso só aparece quando há algum ID preenchido; nada é carregado antes do "Aceitar".

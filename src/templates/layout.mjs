@@ -1,5 +1,9 @@
 import { esc, join, whatsappUrl, icon, familyUrl, brandUrl } from './helpers.mjs';
 
+// The project-path preview (BASE_PATH set, before publishCname) is kept out of search results; the real domain
+// build has no BASE_PATH and stays index,follow. robots.txt still allows crawling so the noindex is read.
+const PREVIEW = Boolean((process.env.BASE_PATH ?? '').replace(/\/$/, ''));
+
 const navLink = (item, path) => {
   const active = item.href === '/' ? path === '/' : path.startsWith(item.href);
   return `<li><a href="${item.href}"${active ? ' aria-current="page"' : ''}${item.title ? ` title="${esc(item.title)}"` : ''}>${esc(item.label)}</a></li>`;
@@ -158,7 +162,7 @@ export function layout(ctx, page) {
 <title>${esc(page.title)}</title>
 <meta name="description" content="${esc(page.description)}">
 <link rel="canonical" href="${canonical}">
-${page.noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index,follow,max-image-preview:large">'}
+${page.noindex || PREVIEW ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index,follow,max-image-preview:large">'}
 ${page.redirect ? `<meta http-equiv="refresh" content="0; url=${page.redirect}">` : ''}
 <meta name="google-site-verification" content="${site.googleSiteVerification}">
 <meta name="theme-color" content="#0A121A">

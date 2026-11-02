@@ -48,7 +48,7 @@ e `/marcas/stryker/`; "assistência em equipamentos ConMed/Linvatec" leva a `/ma
   nomeadas (marca, modelo, família), aviso claro de independência. Sem promessa de posicionamento.
 - Compartilhamento: imagem Open Graph 1200×630 própria, título e descrição por página (WhatsApp, Facebook, Instagram).
 - Mensuração: Google Analytics 4 e Pixel da Meta prontos, ativados ao preencher o ID em `content/site.json`.
-  Eventos: `whatsapp_click`, `phone_click`, `email_click`, `form_submit` e `generate_lead`, com a posição do
+  Eventos: `whatsapp_click`, `phone_click`, `email_click`, `form_submit` e `contact_intent`, com a posição do
   clique (hero, rodapé, produto, CTA). Nada carrega antes do consentimento de cookies (LGPD); política em `/privacidade/`.
 - Validação técnica: sitemap, robots, canonical, 404 real, auditoria automática mensal (ver `docs/SEO-MARKETING.md`).
 - Desempenho e acessibilidade: Lighthouse 100/100/100/100 nas 6 páginas de referência (desktop), fontes

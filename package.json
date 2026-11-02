@@ -2,7 +2,7 @@
   "name": "equimedpr.com.br",
   "version": "2.0.0",
   "private": true,
-  "description": "Site institucional da Equimed Equipamentos Médicos. Estático, sem dependências.",
+  "description": "Site institucional da EquimedPR Soluções Médicas Ltda. Estático, sem dependências.",
   "type": "module",
   "engines": {
     "node": ">=20"

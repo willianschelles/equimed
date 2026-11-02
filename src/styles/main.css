@@ -458,6 +458,12 @@
   /* Owner 27/10: bigger equipment. On desktop the cover takes the wider column and runs into the right gutter. */
   @media (width >= 64rem) { .hx__grid:has(.is-cutout) { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.5rem; } .hx__photo:has(.is-cutout) { margin-inline-end: -1.5rem; } }
   .is-loaded .hx__photo:has(.is-cutout) { clip-path: inset(-12% -10% -22% -10%); }
+  @media (width < 64rem) { .hx__photo img.is-cutout { transform: none; } }
+  /* Paulo 02/11 (mobile): the four solutions as a 2x2 shortcut grid under the hero buttons */
+  .hx__quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; width: 100%; }
+  .hx__quick a { padding: .8rem 1rem; border: 1px solid rgba(255,255,255,.18); border-radius: 6px; background: rgba(255,255,255,.04); color: #FFFFFF; font-weight: 600; font-size: .9375rem; text-decoration: none; text-align: center; }
+  .hx__quick a:hover { border-color: var(--color-signal); }
+  @media (width >= 56rem) { .hx__quick { display: none; } }
   @keyframes beat { 0%, 100% { box-shadow: 0 0 0 4px rgba(91,184,224,.18); } 50% { box-shadow: 0 0 0 7px rgba(91,184,224,.1); } }
 
   /* Facts */
@@ -493,6 +499,19 @@
   .scard__points .icon { color: var(--color-signal); }
   .scard__go { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; margin-top: .4rem; padding: .7rem 1.1rem; border-radius: 6px; background: #FFFFFF; color: var(--color-navy); font-weight: 600; font-size: .9375rem; transition: background-color .2s, gap .2s; }
   .scard:hover .scard__go { gap: .8rem; }
+  .scard__kicker { margin: 0; font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-signal); }
+  /* Paulo 02/11: the four solutions side by side early in the scroll on wide screens */
+  @media (width >= 72rem) { .scards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; } .scard { min-height: 33rem; } .scard__body { padding: 1.5rem; gap: .7rem; } .scard__name { font-size: 1.85rem; } .scard__text { font-size: .9375rem; } }
+
+  /* Why "Soluções Médicas" */
+  .why-sm__grid { display: grid; gap: 1.5rem 4rem; grid-template-columns: minmax(0, 1fr); }
+  @media (width >= 56rem) { .why-sm__grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; } }
+  .why-sm .sx-head { display: grid; gap: .8rem; margin: 0; }
+  .why-sm__kicker { margin: 0; font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-petrol); }
+  .why-sm__text { display: grid; gap: 1rem; max-width: 62ch; color: var(--color-ink-2); }
+  .why-sm__text p { margin: 0; }
+  .why-sm__lead { font-size: clamp(1.2rem, 1.05rem + .6vw, 1.5rem); line-height: 1.35; font-weight: 600; letter-spacing: -.015em; color: var(--color-ink); }
+  .why-sm__close { font-weight: 600; color: var(--color-ink); }
 
   /* Parallax band */
   .band { position: relative; isolation: isolate; overflow: hidden; min-height: clamp(26rem, 75vh, 42rem); display: grid; align-items: end; color: #FFFFFF; background: var(--color-navy); }

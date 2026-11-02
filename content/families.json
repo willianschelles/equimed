@@ -118,15 +118,17 @@
     "name": "Baterias e carregadores",
     "shortName": "Baterias e carregadores",
     "icon": "battery",
-    "lead": "Baterias e carregadores para perfuradores e serras Stryker System 5, 6, 7 e 8 e ConMed Hall. Recuperação, substituição de células, atualização de firmware e carregador inteligente multilinha.",
+    "lead": "Recuperação e substituição de células de baterias cirúrgicas para perfuradores e serras Stryker, Linvatec, Synthes, Aesculap/B. Braun, ConMed Hall e fabricantes chineses. Reparo de carregadores e carregador inteligente multilinha.",
     "description": "Baterias e carregadores de perfuradores ortopédicos: recuperação de baterias Stryker e ConMed, carregadores System 5 e carregador inteligente multilinha EquimedPR.",
     "maintenance": {
-      "title": "Manutenção de baterias e carregadores de perfuradores",
-      "metaTitle": "Baterias e carregadores Stryker e ConMed: manutenção e recuperação",
-      "metaDescription": "Recuperação de baterias e manutenção de carregadores de perfuradores Stryker System 5, 6, 7 e 8 e ConMed Hall. Troca de células, firmware e teste de capacidade. Curitiba.",
+      "title": "Especialistas em recuperação e substituição de células de baterias cirúrgicas",
+      "metaTitle": "Recuperação de baterias cirúrgicas e troca de células | EquimedPR",
+      "metaDescription": "Recondicionamento e troca de células de baterias de perfuradores e serras Stryker, Linvatec, Synthes, Aesculap/B. Braun e chinesas. NiCd, NiMH, lítio e LiFePO₄.",
       "intro": [
-        "A bateria é o item que mais falha em um conjunto de perfurador e serra. Ciclos de autoclave, descarga profunda e armazenamento inadequado reduzem a capacidade das células, e a eletrônica de gerenciamento passa a bloquear a carga ou a reportar erro no carregador.",
-        "A EquimedPR avalia o conjunto de células, a placa de gerenciamento e os contatos, mede a capacidade real e orienta entre recuperação, substituição de células ou troca da bateria. Carregadores recebem revisão das baias, da fonte e do software de controle."
+        "Realizamos recondicionamento e replacement de células em baterias para perfuradores e serras Stryker, Linvatec, Synthes, Aesculap/B. Braun e outras marcas, incluindo fabricantes chineses.",
+        "Atuamos com tecnologias NiCd, NiMH, íons de lítio e LiFePO₄, com avaliação das células, da eletrônica de gerenciamento e da compatibilidade de cada conjunto.",
+        "Nosso trabalho vai além da troca de células: analisamos o funcionamento da bateria e, quando necessário e tecnicamente viável, desenvolvemos soluções de hardware e software para sua recuperação.",
+        "Cada serviço depende da avaliação do modelo e inclui testes antes da devolução. Carregadores recebem revisão das baias, da fonte e do software de controle."
       ],
       "commonFailures": [
         "Bateria que não segura carga ou descarrega durante o procedimento",
@@ -162,6 +164,27 @@
           ]
         },
         {
+          "brand": "Linvatec",
+          "slug": "linvatec",
+          "models": [
+            "Baterias de perfuradores e serras Linvatec"
+          ]
+        },
+        {
+          "brand": "Synthes",
+          "slug": null,
+          "models": [
+            "Baterias de perfuradores e serras Synthes"
+          ]
+        },
+        {
+          "brand": "Aesculap/B. Braun",
+          "slug": null,
+          "models": [
+            "Baterias de perfuradores e serras Aesculap/B. Braun"
+          ]
+        },
+        {
           "brand": "Nacionais e chineses",
           "slug": null,
           "models": [
@@ -178,9 +201,10 @@
           "q": "O que é o carregador inteligente EquimedPR?",
           "a": "É um carregador desenvolvido pela EquimedPR que carrega e balanceia baterias das séries Stryker 3, 5, 6 e 7, com função de armazenamento, limite de tempo, monitoramento da tensão de entrada e registro de dados. Ele substitui vários carregadores de linha em uma única bancada."
         }
-      ]
+      ],
+      "ctaTitle": "Solicite uma avaliação técnica da sua bateria."
     },
-    "short": "Recuperação de baterias Stryker e ConMed, reparo de carregadores e carregador inteligente multilinha.",
+    "short": "Recuperação e troca de células de baterias cirúrgicas, reparo de carregadores e carregador inteligente multilinha.",
     "photo": "equimed-smart-charger-duo-recorte",
     "photos": [
       "equimed-smart-charger-duo-recorte",

@@ -1,9 +1,9 @@
 {
   "name": "EquimedPR",
   "shortName": "Equimed",
-  "legalName": "Equimed Equipamentos Médicos",
-  "tagline": "Assistência técnica independente multimarcas em equipamentos médicos",
-  "shortDescription": "Assistência técnica independente multimarcas para equipamentos médicos: manutenção, locação, venda e soluções de software. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses. Curitiba, PR.",
+  "legalName": "EquimedPR Soluções Médicas Ltda.",
+  "tagline": "Soluções médicas: assistência técnica independente multimarcas em equipamentos médicos",
+  "shortDescription": "Assistência técnica independente multimarcas para equipamentos médicos: manutenção, locação, venda e tecnologia (software e eletrônica). Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses. Curitiba, PR.",
   "url": "https://www.equimedpr.com.br",
   "publishCname": false,
   "foundingYear": 2014,
@@ -68,7 +68,7 @@
       "href": "/venda/"
     },
     {
-      "label": "Software",
+      "label": "Tecnologia",
       "href": "/software/"
     },
     {

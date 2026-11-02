@@ -84,6 +84,7 @@ add('/', pages.home(ctx), { priority: 1.0, changefreq: 'weekly' });
 add('/manutencao/', pages.maintenance(ctx), { priority: 0.9 });
 for (const f of families) if (f.maintenance) add(`/manutencao/${f.slug}/`, pages.maintenanceFamily(ctx, f), { priority: 0.8 });
 add('/locacao/', pages.rental(ctx), { priority: 0.9 });
+for (const l of services.locacao.landings) add(`/locacao/${l.slug}/`, pages.rentalLanding(ctx, l), { priority: 0.8 });
 add('/venda/', pages.sales(ctx), { priority: 0.9 });
 add('/software/', pages.software(ctx), { priority: 0.9 });
 add('/equipamentos/', pages.equipment(ctx), { priority: 0.8 });

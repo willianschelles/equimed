@@ -1,10 +1,10 @@
 {
   "home": {
-    "title": "EquimedPR | Assistência técnica em equipamentos médicos, Curitiba",
+    "title": "EquimedPR Soluções Médicas | Equipamentos médicos, Curitiba",
     "description": "Assistência técnica independente multimarcas: manutenção, locação, venda e software para equipamentos de videocirurgia e ortopedia. Stryker, ConMed, Storz.",
-    "eyebrow": "Assistência técnica independente multimarcas desde 2014",
-    "headline": "Manutenção, locação, venda e software para equipamentos médicos",
-    "lead": "Manutenção e venda de perfuradores, câmeras, fontes de luz e insufladores, e locação de perfuradores e serras. Stryker, ConMed, Linvatec, Karl Storz e linhas nacionais, com orçamento detalhado e garantia.",
+    "eyebrow": "Assistência independente multimarcas",
+    "headline": "Soluções para seus equipamentos médicos.",
+    "lead": "Manutenção, locação, venda e desenvolvimento tecnológico para hospitais, clínicas e empresas do setor médico. Stryker, ConMed, Linvatec, Karl Storz e linhas nacionais.",
     "proof": [
       {
         "value": "2014",
@@ -98,10 +98,10 @@
     "title": "Sobre a EquimedPR: assistência técnica independente desde 2014",
     "description": "Assistência técnica independente multimarcas em equipamentos médicos desde 2014, em Curitiba. Manutenção, locação, venda e soluções de software.",
     "heading": "Sobre a EquimedPR",
-    "lead": "Assistência técnica independente multimarcas em equipamentos médicos, fundada em 2014 em Curitiba, PR.",
+    "lead": "EquimedPR Soluções Médicas Ltda.: assistência técnica independente multimarcas em equipamentos médicos, fundada em 2014 em Curitiba, PR.",
     "paragraphs": [
       "A EquimedPR nasceu em 2014 para atender hospitais, clínicas, cirurgiões e distribuidoras que precisavam de uma alternativa técnica para equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia fora da garantia ou sem suporte do fabricante no Brasil.",
-      "Hoje o trabalho é organizado em quatro frentes: manutenção, locação, venda e soluções de software. O foco de atendimento está nas marcas Stryker, ConMed, Linvatec e Karl Storz, além de equipamentos nacionais e chineses, e se estende a outras marcas conforme a família do equipamento.",
+      "Hoje o trabalho é organizado em quatro frentes: manutenção, locação, venda e tecnologia (software e eletrônica). O foco de atendimento está nas marcas Stryker, ConMed, Linvatec e Karl Storz, além de equipamentos nacionais e chineses, e se estende a outras marcas conforme a família do equipamento.",
       "Somos uma assistência independente. Não somos autorizados, representantes nem distribuidores de nenhum fabricante, e não trabalhamos com implantes nem com instrumentais cirúrgicos. O que entregamos é diagnóstico em bancada, orçamento detalhado, reparo em nível de componente, testes e garantia do serviço.",
       "A EquimedPR faz parte do mesmo grupo da Multmed, especializada em manutenção de perfuradores e serras ortopédicas, laudos e testes de segurança elétrica. As duas empresas compartilham bancada, instrumentos e experiência."
     ],
@@ -150,5 +150,14 @@
       "title": "Devolução com garantia",
       "text": "Relatório de manutenção, garantia do serviço e devolução embalada e rastreada."
     }
-  ]
+  ],
+  "whySolutions": {
+    "title": "Por que somos Soluções Médicas?",
+    "lead": "A falta de uma peça não encerra nossa busca por uma solução.",
+    "paragraphs": [
+      "Quando a reposição convencional não é possível, estudamos alternativas para recuperar seu equipamento. Isso pode envolver a recuperação de componentes ou o desenvolvimento e a atualização de hardware e software, conforme a viabilidade técnica.",
+      "Nosso compromisso é buscar caminhos para prolongar a vida útil do equipamento e preservar seu investimento, com testes e transparência em cada etapa."
+    ],
+    "close": "É por isso que somos EquimedPR Soluções Médicas."
+  }
 }

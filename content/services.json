@@ -146,6 +146,68 @@
       "stryker-system7-serra-angulo-recorte",
       "stryker-system7-linha-recorte",
       "stryker-system7-carregador-recorte"
+    ],
+    "landings": [
+      {
+        "slug": "perfurador-stryker",
+        "name": "Locação de perfurador Stryker",
+        "heading": "Locação de perfurador Stryker",
+        "title": "Locação de perfurador Stryker System 5, 6 e 7 | EquimedPR",
+        "description": "Locação de perfurador Stryker System 5, 6 e 7 com bateria e carregador, por procedimento ou período, com manutenção incluída. Curitiba e todo o Brasil.",
+        "lead": "Perfuradores Stryker System 5, 6 e 7 revisados e testados, com bateria e carregador. Por procedimento, por período ou como reserva enquanto o seu está em manutenção.",
+        "intro": [
+          "Cada perfurador sai revisado e testado em rotação, torque e ciclo de gatilho, com bateria e carregador. A manutenção durante o período de locação é por nossa conta.",
+          "Também locamos o conjunto completo de perfurador e serra para quem precisa dos dois no mesmo procedimento."
+        ],
+        "match": [
+          "Perfurador",
+          "Conjunto"
+        ],
+        "photos": [
+          "stryker-system7-linha-recorte",
+          "stryker-system7-recorte"
+        ],
+        "faq": [
+          {
+            "q": "O perfurador locado vem com bateria e carregador?",
+            "a": "Sim. O perfurador sai com bateria e carregador, revisado e testado."
+          },
+          {
+            "q": "Quais linhas de perfurador Stryker estão disponíveis para locação?",
+            "a": "System 5, System 6 e System 7, conforme a disponibilidade. Consulte pelo WhatsApp com a data do procedimento."
+          }
+        ]
+      },
+      {
+        "slug": "serra-stryker",
+        "name": "Locação de serra Stryker",
+        "heading": "Locação de serra Stryker",
+        "title": "Locação de serra Stryker System 5, 6 e 7 | EquimedPR",
+        "description": "Locação de serra sagital e recíproca Stryker System 5, 6 e 7 com bateria e carregador, por procedimento ou período, com manutenção incluída. Curitiba.",
+        "lead": "Serras Stryker System 5, 6 e 7 revisadas e testadas, com bateria e carregador. Por procedimento, por período ou como reserva enquanto a sua está em manutenção.",
+        "intro": [
+          "Cada serra sai revisada e testada em oscilação, trava de lâmina e ciclo de gatilho, com bateria e carregador. A manutenção durante o período de locação é por nossa conta.",
+          "Também locamos o conjunto completo de perfurador e serra para quem precisa dos dois no mesmo procedimento."
+        ],
+        "match": [
+          "Serra",
+          "Conjunto"
+        ],
+        "photos": [
+          "stryker-system7-sagital-recorte",
+          "stryker-system7-serra-angulo-recorte"
+        ],
+        "faq": [
+          {
+            "q": "A serra locada vem com bateria e carregador?",
+            "a": "Sim. A serra sai com bateria e carregador, revisada e testada."
+          },
+          {
+            "q": "Quais linhas de serra Stryker estão disponíveis para locação?",
+            "a": "System 5, System 6 e System 7, conforme a disponibilidade. Consulte pelo WhatsApp com a data do procedimento."
+          }
+        ]
+      }
     ]
   },
   "venda": {

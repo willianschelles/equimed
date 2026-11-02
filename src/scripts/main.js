@@ -59,7 +59,9 @@ document.querySelector('[data-consent="reset"]')?.addEventListener('click', () =
   else location.reload();
 });
 
-/* 2. Lead tracking: WhatsApp, phone and e-mail clicks, wherever they are. */
+/* 2. Contact intent: WhatsApp, phone and e-mail clicks, wherever they are. A click is not a lead (Paulo 02/11): it only
+   opens the app. Received contacts, qualified quotes and sales are counted outside the site, so generate_lead is not
+   fired here; contact_intent is the click-side event to compare against them. */
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a[href]');
   if (!a) return;
@@ -68,7 +70,7 @@ document.addEventListener('click', (e) => {
   if (!name) return;
   const params = { place: a.dataset.place ?? 'inline', page_path: location.pathname };
   track(name, params);
-  if (name === 'whatsapp_click' || name === 'phone_click') track('generate_lead', { method: name.replace('_click', ''), ...params });
+  if (name === 'whatsapp_click' || name === 'phone_click') track('contact_intent', { method: name.replace('_click', ''), ...params });
 });
 
 /* 3. Contact form: compose a WhatsApp or e-mail message from the fields. No data leaves the browser. */
@@ -99,7 +101,7 @@ if (form) {
     ].filter((l) => l !== false);
     const text = lines.join('\n');
     track('form_submit', { via, subject: f.assunto.value, page_path: location.pathname });
-    track('generate_lead', { method: `form_${via}` });
+    track('contact_intent', { method: `form_${via}` });
 
     if (via === 'email') {
       const subject = `[Site] ${f.assunto.value}${f.equipamento.value.trim() ? ` - ${f.equipamento.value.trim()}` : ''}`;
