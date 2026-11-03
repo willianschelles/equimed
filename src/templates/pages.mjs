@@ -434,6 +434,7 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
     <p class="small">A lista não é exaustiva. Se o seu modelo não está aqui, pergunte pelo WhatsApp.</p>
     ${independence(site)}
     ${f.products.length ? `<p><a class="button button--ghost" href="${familyUrl(f)}">Ver ${f.shortName.toLowerCase()} para venda${rents(f) ? ' e locação' : ''} ${icon('arrow', 16)}</a></p>` : ''}
+    ${landingLinks(ctx.services.manutencao.landings.filter((l) => l.family === f.slug))}
   </div>
   ${aside(site, { message, place: `manutencao-${f.slug}` })}
 </section>
@@ -449,6 +450,50 @@ ${ctaBar(site, { title: m.ctaTitle ?? `Precisa de manutenção em ${f.shortName.
       faqJsonLd(m.faq),
     ].filter(Boolean),
     breadcrumbs: [{ name: 'Manutenção', href: '/manutencao/' }, { name: f.shortName, href: maintenanceUrl(f) }],
+  };
+}
+
+// Buttons to the one-search pages (Paulo, WhatsApp audio: one page per search, e.g. "manutenção em perfurador Stryker").
+const landingLinks = (list, base = '/manutencao/') => list.length ? `<h2>Páginas específicas</h2>
+    <p>${list.map((l) => `<a class="button button--ghost" href="${base}${l.slug}/">${esc(l.name)} ${icon('arrow', 16)}</a>`).join(' ')}</p>` : '';
+
+// One page per maintenance search (Paulo, WhatsApp audio: "manutenção em perfurador Stryker"). Built from the family's
+// own content; no commercial terms (warranty, spare unit) until Paulo confirms them.
+export function maintenanceLanding(ctx, l) {
+  const { site, products, articles, families } = ctx;
+  const what = l.name.charAt(0).toLowerCase() + l.name.slice(1); // keeps the brand capitalized
+  const f = families.find((x) => x.slug === l.family);
+  const message = `Olá, EquimedPR! Vim pelo site e preciso de ${what}.\n\nLinha/modelo: \nDefeito: \n`;
+  const list = l.products.map((s) => products.find((p) => p.slug === s)).filter(Boolean);
+  const related = l.articles.map((s) => articles.find((a) => a.slug === s)).filter(Boolean);
+  const url = `/manutencao/${l.slug}/`;
+  const body = `
+${pageHeader(l.heading, l.lead, { eyebrow: 'Assistência técnica independente', ctx, photoName: l.photos[0], photos: l.photos, photoAlt: l.heading })}
+<section class="section container service-layout">
+  <div class="prose">
+    ${l.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <h2>Defeitos mais comuns</h2>
+    ${checklist(l.failures)}
+    <h2>O que fazemos</h2>
+    ${checklist(l.work)}
+    <h2>Linhas e modelos atendidos</h2>
+    ${modelCards(ctx, [{ slug: 'stryker', name: 'Stryker', models: l.models }])}
+    ${independence(site)}
+    <p><a class="button button--ghost" href="${maintenanceUrl(f)}">Tudo sobre a manutenção de ${esc(f.shortName.toLowerCase())} ${icon('arrow', 16)}</a></p>
+  </div>
+  ${aside(site, { text: 'Informe a linha, o modelo e o defeito. Respondemos em horário comercial.', message, place: `manutencao-${l.slug}` })}
+</section>
+${list.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Modelos com página própria</h2><ul class="grid grid--3">${list.map((p, i) => productCard(ctx, p, { eager: i < 3 })).join('')}</ul></div></section>` : ''}
+${related.length ? `<section class="section container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a, { ctx })).join('')}</ul></section>` : ''}
+${faq(l.faq)}
+${ctaBar(site, { title: `Precisa de ${what}?`, message, place: `manutencao-${l.slug}-cta` })}`;
+  return {
+    title: fitTitle(l.title), description: fitDescription(l.description), body,
+    jsonLd: [
+      { '@type': 'Service', name: l.heading, serviceType: 'Manutenção', provider: { '@id': `${site.url}/#organization` }, areaServed: { '@type': 'Country', name: 'Brasil' }, description: l.description },
+      faqJsonLd(l.faq),
+    ].filter(Boolean),
+    breadcrumbs: [{ name: 'Manutenção', href: '/manutencao/' }, { name: l.name, href: url }],
   };
 }
 
@@ -480,7 +525,7 @@ ${ctaBar(site, { title: 'Precisa de um equipamento para o próximo procedimento?
   return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/locacao/' }] };
 }
 
-// One page per rental search (owner audio 02/11: "locação de perfurador Stryker", "locação de serra Stryker").
+// One page per rental search (Paulo, WhatsApp audio: "locação de perfurador Stryker", "locação de serra Stryker").
 export function rentalLanding(ctx, l) {
   const { site, services, products } = ctx;
   const s = services.locacao;
@@ -724,6 +769,7 @@ ${pageHeader(b.focus ? `Assistência técnica em ${/^Equipamentos /.test(b.name)
   <div class="prose">
     ${(b.paragraphs ?? [`Atendemos equipamentos ${b.name} em manutenção, conforme a família do equipamento. Envie o modelo e o defeito pelo WhatsApp para a avaliação técnica.`]).map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
     ${independence(site)}
+    ${b.slug === 'stryker' ? landingLinks(ctx.services.manutencao.landings) + landingLinks(ctx.services.locacao.landings, '/locacao/').replace('<h2>Páginas específicas</h2>', '') : ''}
     ${fams.length ? `<h2>Famílias atendidas</h2><ul class="pills">${fams.map((f) => `<li><a href="${f.maintenance ? maintenanceUrl(f) : familyUrl(f)}">${esc(f.shortName)}</a></li>`).join('')}</ul>` : ''}
     ${(() => { const rows = fams.filter((f) => f.maintenance).map((f) => { const m = f.maintenance.brands.find((x) => x.slug === b.slug || (b.slug === 'conmed' && x.slug === 'linvatec') || (b.slug === 'nacionais-e-chineses' && x.slug === null && /nacionais/i.test(x.brand))); return m ? { head: `<a class="mcard__head mcard__head--icon" href="${maintenanceUrl(f)}" aria-label="${esc(f.shortName)}">${icon(f.icon, 26)}</a>`, name: f.shortName, models: m.models } : null; }).filter(Boolean); return rows.length ? `<h2>Modelos atendidos</h2>${modelCards(ctx, rows)}` : ''; })()}
   </div>

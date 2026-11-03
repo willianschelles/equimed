@@ -80,6 +80,271 @@
       "stryker-system8-perfurador-recorte",
       "stryker-system7-desmontado-recorte",
       "stryker-system7-pecas-recorte"
+    ],
+    "landings": [
+      {
+        "slug": "perfurador-stryker",
+        "family": "perfuradores-e-serras",
+        "name": "Manutenção de perfurador Stryker",
+        "heading": "Manutenção de perfurador Stryker",
+        "title": "Manutenção de perfurador Stryker System 5, 6, 7 e 8",
+        "description": "Manutenção de perfurador Stryker System 5, 6, 7 e 8: diagnóstico de motor, engrenagens, gatilho, mandril e vedações, com orçamento antes do reparo. Curitiba.",
+        "lead": "Avaliação técnica completa da peça de mão Stryker System 5, 6, 7 e 8, com orçamento detalhado antes de qualquer reparo e testes em bancada antes da devolução.",
+        "intro": [
+          "Perfuradores Stryker trabalham em ciclos curtos de alta carga: torque elevado, vibração, esterilização a vapor a cada uso e quedas acidentais. Com o tempo aparecem perda de potência, aquecimento, ruído, entrada de vapor na carcaça e falha de gatilho.",
+          "A EquimedPR avalia o motor, o conjunto de engrenagens, os mancais, as vedações, o gatilho e o mandril. O orçamento descreve o que foi encontrado e o que será feito, e nada é executado sem a sua aprovação."
+        ],
+        "failures": [
+          "Perda de potência ou de rotação, motor que não parte ou que trava sob carga",
+          "Aquecimento excessivo da carcaça durante o uso",
+          "Ruído de engrenagem, folga ou travamento no mandril e nos acessórios de encaixe",
+          "Gatilho sem resposta, acionamento intermitente ou dupla velocidade que não alterna",
+          "Vedações comprometidas: entrada de vapor e umidade na autoclave, oxidação interna",
+          "Bateria que não encaixa, não é reconhecida ou descarrega rápido"
+        ],
+        "work": [
+          "Desmontagem, limpeza técnica e inspeção de motor, engrenagens, mancais e vedações",
+          "Substituição de rolamentos, retentores, escovas, molas e componentes de gatilho",
+          "Reparo ou troca de mandris e acoplamentos",
+          "Atualização e correção de firmware quando aplicável à linha",
+          "Teste funcional em bancada: rotação, torque, temperatura, ciclo de gatilho e estanqueidade",
+          "Teste de segurança elétrica e laudo quando solicitado",
+          "Relatório de manutenção com as peças substituídas"
+        ],
+        "models": [
+          "System 5",
+          "System 6",
+          "System 7",
+          "System 8",
+          "Core",
+          "CD3 / CD4"
+        ],
+        "products": [
+          "stryker-system-7",
+          "stryker-system-8",
+          "stryker-7-perfurador",
+          "stryker-6-perfurador",
+          "stryker-5-perfurador"
+        ],
+        "articles": [
+          "sinais-perfurador-precisa-manutencao",
+          "stryker-system-5-6-7-8-diferencas"
+        ],
+        "photos": [
+          "stryker-system7-recorte",
+          "stryker-system8-perfurador-recorte",
+          "stryker-system7-desmontado-recorte"
+        ],
+        "faq": [
+          {
+            "q": "Vocês fazem manutenção de perfurador Stryker System 7 e System 8?",
+            "a": "Sim. Atendemos em manutenção as linhas System 5, 6, 7 e 8, incluindo peças de mão, baterias e carregadores."
+          },
+          {
+            "q": "O orçamento é feito antes do reparo?",
+            "a": "Sim. Você envia o modelo e o defeito pelo WhatsApp, recebemos o perfurador, fazemos a avaliação em bancada e enviamos o orçamento com o diagnóstico, as peças e o prazo. O reparo só começa após a sua aprovação."
+          },
+          {
+            "q": "A EquimedPR é assistência autorizada Stryker?",
+            "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados pela Stryker ou por qualquer outro fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
+          }
+        ]
+      },
+      {
+        "slug": "serra-stryker",
+        "family": "perfuradores-e-serras",
+        "name": "Manutenção de serra Stryker",
+        "heading": "Manutenção de serra Stryker",
+        "title": "Manutenção de serra Stryker System 5, 6, 7 e 8",
+        "description": "Manutenção de serra sagital e recíproca Stryker System 5, 6, 7 e 8: curso, vibração, trava de lâmina, gatilho e vedações, com orçamento antes do reparo.",
+        "lead": "Avaliação técnica de serras sagitais e recíprocas Stryker System 5, 6, 7 e 8, com orçamento detalhado antes de qualquer reparo e testes em bancada antes da devolução.",
+        "intro": [
+          "Serras Stryker trabalham com vibração constante, alta carga e esterilização a vapor a cada uso. Com o tempo aparecem curso irregular, vibração anormal, lâmina que não trava, falha de gatilho e entrada de vapor na carcaça.",
+          "A EquimedPR avalia o motor, os mancais, as vedações, o gatilho e a trava de lâmina. O orçamento descreve o que foi encontrado e o que será feito, e nada é executado sem a sua aprovação."
+        ],
+        "failures": [
+          "Serra sagital ou recíproca com curso irregular ou vibração anormal",
+          "Lâmina que não trava ou folga na trava de lâmina",
+          "Perda de potência, motor que não parte ou que trava sob carga",
+          "Aquecimento excessivo da carcaça durante o uso",
+          "Gatilho sem resposta ou acionamento intermitente",
+          "Vedações comprometidas: entrada de vapor e umidade na autoclave, oxidação interna",
+          "Bateria que não encaixa, não é reconhecida ou descarrega rápido"
+        ],
+        "work": [
+          "Desmontagem, limpeza técnica e inspeção de motor, mancais e vedações",
+          "Substituição de rolamentos, retentores, escovas, molas e componentes de gatilho",
+          "Reparo ou troca da trava de lâmina e dos acoplamentos",
+          "Atualização e correção de firmware quando aplicável à linha",
+          "Teste funcional em bancada: oscilação, trava de lâmina, temperatura, ciclo de gatilho e estanqueidade",
+          "Teste de segurança elétrica e laudo quando solicitado",
+          "Relatório de manutenção com as peças substituídas"
+        ],
+        "models": [
+          "System 5",
+          "System 6",
+          "System 7",
+          "System 8"
+        ],
+        "products": [
+          "stryker-7-serra",
+          "stryker-6-serra",
+          "stryker-5-serra",
+          "stryker-system-7",
+          "stryker-system-8"
+        ],
+        "articles": [
+          "stryker-system-5-6-7-8-diferencas",
+          "avaliacao-tecnica-como-funciona"
+        ],
+        "photos": [
+          "stryker-system7-sagital-recorte",
+          "stryker-system8-serra-recorte",
+          "stryker-system7-serra-angulo-recorte"
+        ],
+        "faq": [
+          {
+            "q": "Vocês fazem manutenção de serra sagital e recíproca Stryker?",
+            "a": "Sim. Atendemos em manutenção as serras sagitais e recíprocas das linhas System 5, 6, 7 e 8."
+          },
+          {
+            "q": "O orçamento é feito antes do reparo?",
+            "a": "Sim. Você envia o modelo e o defeito pelo WhatsApp, recebemos a serra, fazemos a avaliação em bancada e enviamos o orçamento com o diagnóstico, as peças e o prazo. O reparo só começa após a sua aprovação."
+          },
+          {
+            "q": "A EquimedPR é assistência autorizada Stryker?",
+            "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados pela Stryker ou por qualquer outro fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
+          }
+        ]
+      },
+      {
+        "slug": "stryker-system-7",
+        "family": "perfuradores-e-serras",
+        "name": "Manutenção Stryker System 7",
+        "heading": "Manutenção Stryker System 7",
+        "title": "Manutenção Stryker System 7: perfurador, serra e bateria",
+        "description": "Manutenção de perfurador, serra, baterias e carregador Stryker System 7: avaliação técnica, troca de células, firmware e testes em bancada. Curitiba.",
+        "lead": "Peças de mão, baterias e carregador da linha Stryker System 7, com avaliação técnica, orçamento antes do reparo e testes antes da devolução.",
+        "intro": [
+          "A System 7 é uma das linhas de perfuradores e serras a bateria da Stryker para ortopedia e trauma. A EquimedPR atende em manutenção o perfurador, as serras, as baterias padrão, small e asséptica e o carregador da linha.",
+          "Nessa linha, a comunicação entre bateria, peça de mão e carregador pode bloquear o uso mesmo com células boas. Por isso a avaliação cobre a parte mecânica, as células, a eletrônica de gerenciamento e o firmware."
+        ],
+        "failures": [
+          "Perda de potência ou de rotação, motor que trava sob carga",
+          "Gatilho sem resposta ou acionamento intermitente",
+          "Folga no mandril ou lâmina que não trava",
+          "Vedações comprometidas: entrada de vapor e umidade na autoclave, oxidação interna",
+          "Bateria que não segura carga, não é reconhecida ou bloqueia o uso",
+          "Carregador que acusa erro ou não conclui o ciclo"
+        ],
+        "work": [
+          "Desmontagem, limpeza técnica e inspeção de motor, engrenagens, mancais e vedações",
+          "Substituição de rolamentos, retentores, molas e componentes de gatilho",
+          "Reparo ou troca de mandris, acoplamentos e trava de lâmina",
+          "Teste de capacidade e substituição de células das baterias",
+          "Revisão do carregador: fonte, baias, placa de controle e firmware",
+          "Atualização e correção de firmware quando aplicável",
+          "Teste funcional em bancada antes da devolução"
+        ],
+        "models": [
+          "Perfurador System 7",
+          "Serras System 7",
+          "Baterias System 7 (padrão, small e asséptica)",
+          "Carregador System 7"
+        ],
+        "products": [
+          "stryker-system-7",
+          "stryker-7-perfurador",
+          "stryker-7-serra",
+          "stryker-7-perfurador-e-serra",
+          "stryker-baterias-system-7-8"
+        ],
+        "articles": [
+          "stryker-system-5-6-7-8-diferencas",
+          "bateria-perfurador-nao-segura-carga"
+        ],
+        "photos": [
+          "stryker-system7-linha-recorte",
+          "stryker-system7-bateria-recorte",
+          "stryker-system7-desmontado-recorte"
+        ],
+        "faq": [
+          {
+            "q": "Vocês trocam as células da bateria System 7?",
+            "a": "Sim, quando a avaliação mostra que é tecnicamente viável. Medimos a capacidade real das células e verificamos a eletrônica de gerenciamento antes de propor a recuperação ou a substituição."
+          },
+          {
+            "q": "A bateria System 7 serve em outra linha Stryker?",
+            "a": "Não é garantido. Cada linha tem sua família de baterias e carregadores. Confirme que as baterias e o carregador pertencem à mesma linha da peça de mão."
+          },
+          {
+            "q": "A EquimedPR é assistência autorizada Stryker?",
+            "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados pela Stryker ou por qualquer outro fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
+          }
+        ]
+      },
+      {
+        "slug": "bateria-stryker",
+        "family": "baterias-e-carregadores",
+        "name": "Recuperação de bateria Stryker",
+        "heading": "Recuperação de bateria Stryker",
+        "title": "Recuperação de bateria Stryker e reparo de carregador",
+        "description": "Recuperação e troca de células de baterias Stryker System 5, 6, 7 e 8 e reparo de carregadores, com teste de capacidade e ciclos de carga antes da devolução.",
+        "lead": "Baterias e carregadores de perfuradores e serras Stryker System 5, 6, 7 e 8, com teste de capacidade, troca de células quando viável e ciclos de carga antes da devolução.",
+        "intro": [
+          "Realizamos recondicionamento e substituição de células em baterias Stryker, com avaliação das células, da eletrônica de gerenciamento e da compatibilidade de cada conjunto.",
+          "Nas linhas System 7 e 8, a comunicação entre bateria, peça de mão e carregador pode bloquear o uso mesmo com células boas. Quando necessário e tecnicamente viável, desenvolvemos soluções de hardware e software para a recuperação.",
+          "Cada serviço depende da avaliação do modelo e inclui testes antes da devolução."
+        ],
+        "failures": [
+          "Bateria que não segura carga ou descarrega durante o procedimento",
+          "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
+          "Contatos oxidados, travas quebradas e carcaça com vapor interno",
+          "Baia do carregador sem alimentação ou com indicação intermitente",
+          "Placa de gerenciamento bloqueada após descarga profunda"
+        ],
+        "work": [
+          "Teste de capacidade e de resistência interna das células",
+          "Substituição de células e de contatos, reparo de travas e carcaça",
+          "Revisão e reparo de carregadores: fonte, baias, placa de controle e firmware",
+          "Atualização de software da bateria e do carregador quando aplicável",
+          "Ciclos de carga e descarga controlados antes da devolução",
+          "Carregador inteligente EquimedPR, compatível com as séries Stryker 3, 5, 6 e 7"
+        ],
+        "models": [
+          "Baterias e carregadores System 5",
+          "System 6",
+          "System 7 (padrão, small e asséptica)",
+          "System 8"
+        ],
+        "products": [
+          "stryker-baterias-system-7-8",
+          "stryker-5-carregador-de-bateria",
+          "carregador-de-bateria-inteligente"
+        ],
+        "articles": [
+          "bateria-perfurador-nao-segura-carga",
+          "stryker-system-5-6-7-8-diferencas"
+        ],
+        "photos": [
+          "stryker-system7-bateria-recorte",
+          "stryker-system7-carregador-recorte"
+        ],
+        "faq": [
+          {
+            "q": "Vale a pena recuperar uma bateria Stryker ou é melhor comprar nova?",
+            "a": "Depende do estado das células e da eletrônica. Na avaliação medimos a capacidade real e informamos o custo da recuperação em comparação com a substituição. Você decide com os números na mão."
+          },
+          {
+            "q": "Não sei qual é a minha bateria. O que envio?",
+            "a": "Envie pelo WhatsApp uma foto da etiqueta da bateria e o modelo do equipamento. Com isso identificamos a linha e a tecnologia das células."
+          },
+          {
+            "q": "A EquimedPR é assistência autorizada Stryker?",
+            "a": "Não. Somos uma assistência técnica independente multimarcas. Não representamos nem somos autorizados pela Stryker ou por qualquer outro fabricante. Trabalhamos com peças, procedimentos e testes compatíveis com as especificações de cada linha."
+          }
+        ]
+      }
     ]
   },
   "locacao": {

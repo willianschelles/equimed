@@ -83,6 +83,10 @@ const add = (path, page, { priority = 0.5, changefreq = 'monthly', sitemap = tru
 add('/', pages.home(ctx), { priority: 1.0, changefreq: 'weekly' });
 add('/manutencao/', pages.maintenance(ctx), { priority: 0.9 });
 for (const f of families) if (f.maintenance) add(`/manutencao/${f.slug}/`, pages.maintenanceFamily(ctx, f), { priority: 0.8 });
+for (const l of services.manutencao.landings) {
+  if (families.some((f) => f.slug === l.slug)) throw new Error(`Maintenance landing ${l.slug}: clashes with a family page`);
+  add(`/manutencao/${l.slug}/`, pages.maintenanceLanding(ctx, l), { priority: 0.8 });
+}
 add('/locacao/', pages.rental(ctx), { priority: 0.9 });
 for (const l of services.locacao.landings) add(`/locacao/${l.slug}/`, pages.rentalLanding(ctx, l), { priority: 0.8 });
 add('/venda/', pages.sales(ctx), { priority: 0.9 });
