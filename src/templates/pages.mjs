@@ -396,6 +396,25 @@ ${ctaBar(site, { message, place: 'manutencao-cta' })}`;
   };
 }
 
+// Cell technologies inside a battery (Paulo 03/11): what each chemistry is and why a pack that fits the housing is
+// not necessarily compatible.
+const chemistry = (site, c, slug) => `
+<section class="section section--tint chem" id="tecnologias">
+  <div class="container">
+    <div class="sx-head rise"><h2 class="sx-title chem__title">${esc(c.title)}</h2><p class="sx-lead">${esc(c.lead)}</p></div>
+    <ul class="chem__grid rise">${c.items.map((i) => `
+      <li class="chem__card"><p class="chem__code">${esc(i.code)}</p><h3 class="chem__name">${esc(i.name)}</h3><p>${esc(i.text)}</p></li>`).join('')}
+    </ul>
+    <div class="chem__why rise">
+      <h3 class="chem__why-title">${esc(c.whyTitle)}</h3>
+      <div class="chem__why-text">${c.why.map((p) => `<p>${esc(p)}</p>`).join('')}
+        <p class="chem__close">${esc(c.close)}</p>
+        <p><a class="button button--whatsapp" href="${wa(site, c.message)}" target="_blank" rel="noopener" data-track="whatsapp_click" data-place="manutencao-${slug}-tecnologias">${icon('whatsapp', 20)} Enviar foto da etiqueta</a></p>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 export function maintenanceFamily(ctx, f) {
   const { site, brands, articles } = ctx;
   const m = f.maintenance;
@@ -418,10 +437,11 @@ ${pageHeader(m.title, f.lead, { eyebrow: 'Manutenção por família de equipamen
   </div>
   ${aside(site, { message, place: `manutencao-${f.slug}` })}
 </section>
+${m.chemistry ? chemistry(site, m.chemistry, f.slug) : ''}
 ${f.products.length ? `<section class="section container"><h2 class="section__title">Modelos com página própria</h2><p class="lead">Fotos, especificações e o que fazemos em cada um.</p><ul class="grid grid--3">${f.products.map((p) => productCard(ctx, p)).join('')}</ul></section>` : ''}
 ${related.length ? `<section class="section section--tint"><div class="container"><h2 class="section__title">Leitura relacionada</h2><ul class="grid grid--3">${related.map((a) => articleCard(a, { ctx })).join('')}</ul></div></section>` : ''}
 ${faq(m.faq)}
-${ctaBar(site, { title: m.ctaTitle ?? `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, message, place: `manutencao-${f.slug}-cta` })}`;
+${ctaBar(site, { title: m.ctaTitle ?? `Precisa de manutenção em ${f.shortName.toLowerCase()}?`, ...(m.ctaText && { text: m.ctaText }), message, place: `manutencao-${f.slug}-cta` })}`;
   return {
     title: fitTitle(m.metaTitle), description: fitDescription(m.metaDescription), body,
     jsonLd: [

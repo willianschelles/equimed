@@ -512,6 +512,22 @@
   .why-sm__text p { margin: 0; }
   .why-sm__lead { font-size: clamp(1.2rem, 1.05rem + .6vw, 1.5rem); line-height: 1.35; font-weight: 600; letter-spacing: -.015em; color: var(--color-ink); }
   .why-sm__close { font-weight: 600; color: var(--color-ink); }
+  .chem .sx-head { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+  .chem__title { max-width: 22ch; }
+  .chem .sx-lead { max-width: 44rem; }
+  .chem__grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  @media (width >= 40rem) { .chem__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (width >= 72rem) { .chem__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .chem__card { margin: 0; display: grid; align-content: start; gap: .5rem; padding: 1.5rem; background: #FFFFFF; border: 1px solid var(--color-line); border-top: 3px solid var(--color-petrol); border-radius: var(--radius-card); }
+  .chem__card p { margin: 0; color: var(--color-ink-2); font-size: .9375rem; }
+  .chem__card .chem__code { font-family: var(--font-mono); font-size: 1.75rem; font-weight: 500; line-height: 1; letter-spacing: -.02em; color: var(--color-petrol); }
+  .chem__name { margin: 0 0 .25rem; font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink); }
+  .chem__why { display: grid; gap: 1rem 4rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--color-line); }
+  @media (width >= 56rem) { .chem__why { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); } }
+  .chem__why-title { margin: 0; font-size: clamp(1.35rem, 1.15rem + .8vw, 1.85rem); line-height: 1.15; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; max-width: 18ch; }
+  .chem__why-text { display: grid; gap: 1rem; max-width: 62ch; color: var(--color-ink-2); }
+  .chem__why-text p { margin: 0; }
+  .chem__close { font-weight: 600; color: var(--color-ink); }
 
   /* Parallax band */
   .band { position: relative; isolation: isolate; overflow: hidden; min-height: clamp(26rem, 75vh, 42rem); display: grid; align-items: end; color: #FFFFFF; background: var(--color-navy); }
