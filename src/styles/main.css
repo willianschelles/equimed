@@ -433,7 +433,7 @@
   .hx__monitor { position: absolute; inset: auto 0 0 0; z-index: -1; width: 100%; height: 150px; pointer-events: none; }
   .hx__grid { display: grid; gap: 3rem; grid-template-columns: minmax(0, 1fr); padding-block: 8.5rem 9rem; align-items: center; }
   @media (width >= 64rem) { .hx__grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 4.5rem; padding-block: 9rem 10rem; } }
-  @media (width < 64rem) { .hx__monitor { height: 110px; } .hx__grid { padding-block: 7.5rem 5.5rem; gap: 2.5rem; } }
+  @media (width < 64rem) { .hx__monitor { height: 110px; } .hx__grid { padding-block: 7.5rem 9rem; gap: 2.5rem; } }
   .hx__copy { display: grid; gap: 1.6rem; justify-items: start; }
   .hx__kicker { margin: 0; font-size: .9375rem; color: var(--color-on-dark-2); }
   .hx h1 { margin: 0; font-size: clamp(2.4rem, 1.5rem + 3vw, 4rem); line-height: 1.02; font-weight: 600; letter-spacing: -.04em; max-width: 13ch; color: #FFFFFF; }
