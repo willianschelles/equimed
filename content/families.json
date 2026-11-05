@@ -519,8 +519,14 @@
       ]
     },
     "short": "NDS, Karl Storz, Stryker e Sony, de 19\" a 32\": fontes, placas e entradas de vídeo.",
-    "photo": "storz-tower-cart",
-    "cover": "nds-monitor-26-radiance-g2"
+    "photo": "products/nds-monitor-26-radiance-g2",
+    "cover": "nds-monitor-26-radiance-g2",
+    "photos": [
+      "products/nds-monitor-26-radiance-g2",
+      "products/storz-monitor-wideview-24",
+      "products/stryker-monitor-wise",
+      "products/nds-monitor-19-endovue"
+    ]
   },
   {
     "slug": "insufladores",
@@ -681,8 +687,12 @@
       "faq": []
     },
     "short": "Stryker, Dyonics, Karl Storz e Linvatec: rolos, sensores e calibração.",
-    "photo": "luvas-montagem",
-    "cover": "stryker-bomba-arthropump"
+    "photo": "products/stryker-bomba-arthropump",
+    "cover": "stryker-bomba-arthropump",
+    "photos": [
+      "products/stryker-bomba-arthropump",
+      "products/dyonics-bomba-access-25"
+    ]
   },
   {
     "slug": "shavers",
@@ -777,7 +787,12 @@
     "description": "Acessórios para torres de videocirurgia: cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI de reposição para as principais fontes de luz.",
     "maintenance": null,
     "short": "Cabos de fibra óptica, endocouplers e lâmpadas xenon e HTI.",
-    "photo": "storz-optic",
-    "cover": "stahl-cabo-de-fibra-optica"
+    "photo": "products/stahl-cabo-de-fibra-optica",
+    "cover": "stahl-cabo-de-fibra-optica",
+    "photos": [
+      "products/stahl-cabo-de-fibra-optica",
+      "products/endocouplers",
+      "products/lampadas-p3300bf"
+    ]
   }
 ]
