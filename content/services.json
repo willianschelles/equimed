@@ -9,7 +9,7 @@
     "lead": "Assistência técnica independente multimarcas, com avaliação técnica em bancada, orçamento detalhado e garantia do serviço. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses.",
     "summary": "Corretiva e preventiva por família de equipamento, marca e modelo. Avaliação técnica em bancada e orçamento detalhado antes de qualquer reparo.",
     "intro": [
-      "A EquimedPR mantém equipamentos de videocirurgia, artroscopia, laparoscopia e ortopedia desde 2014. O trabalho é organizado por família de equipamento, porque cada uma tem modos de falha, peças e testes próprios: um perfurador a bateria não se avalia como uma câmera, e uma fonte de luz xenon não se repara como um insuflador.",
+      "A EquimedPR mantém equipamentos de ortopedia, videocirurgia, artroscopia e laparoscopia desde 2014. O trabalho é organizado por família de equipamento, porque cada uma tem modos de falha, peças e testes próprios: um perfurador a bateria não se avalia como uma câmera, e uma fonte de luz xenon não se repara como um insuflador.",
       "Somos uma assistência técnica independente. Isso significa que não dependemos da política de peças ou de prazos do fabricante, e que podemos reparar componentes em vez de trocar módulos inteiros quando isso é tecnicamente adequado. Também significa que não somos autorizados nem representantes de nenhuma marca, e dizemos isso com clareza."
     ],
     "process": {
@@ -298,10 +298,10 @@
         ],
         "failures": [
           "Bateria que não segura carga ou descarrega durante o procedimento",
-          "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
           "Contatos oxidados, travas quebradas e carcaça com vapor interno",
-          "Baia do carregador sem alimentação ou com indicação intermitente",
-          "Placa de gerenciamento bloqueada após descarga profunda"
+          "Placa de gerenciamento bloqueada após descarga profunda",
+          "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
+          "Baia do carregador sem alimentação ou com indicação intermitente"
         ],
         "work": [
           "Teste de capacidade e de resistência interna das células",
@@ -481,7 +481,7 @@
     "heading": "Venda de equipamentos médicos seminovos",
     "icon": "handshake",
     "title": "Venda de equipamentos médicos seminovos e revisados com garantia",
-    "description": "Equipamentos de videocirurgia e ortopedia seminovos, revisados e testados, com garantia de 3 meses. Perfuradores Stryker, câmeras, fontes de luz e monitores.",
+    "description": "Equipamentos de ortopedia e videocirurgia seminovos, revisados e testados, com garantia de 3 meses. Perfuradores Stryker, câmeras, fontes de luz e monitores.",
     "lead": "Equipamentos seminovos e revisados, testados conforme a especificação da linha, com garantia de 3 meses. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
     "summary": "Seminovos e revisados, testados e com garantia de 3 meses. Perfuradores e serras Stryker, câmeras, fontes de luz, monitores, insufladores e artrobombas.",
     "intro": [

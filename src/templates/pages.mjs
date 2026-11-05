@@ -24,7 +24,7 @@ const sectionHead = (index, title, lead, action = '') => `<div class="section__h
 /** Used units: System 5 and 6 are sold as "Revisado", every other used unit as "Seminovo e revisado". */
 const USED = new Set(['seminovo', 'revisado']);
 const conditionLabel = (p) => (p.condition === 'revisado' ? 'Revisado' : 'Seminovo e revisado');
-const photo = (ctx, name, alt, opts = {}) => img(ctx, `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
+const photo = (ctx, name, alt, opts = {}) => img(ctx, name.startsWith('products/') ? `/assets/img/${name}.webp` : `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
 const gallery = (ctx, names, alt) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
   : `<div class="gallery" data-gallery>

@@ -47,7 +47,6 @@ const footer = (ctx) => {
     <div class="site-footer__brand">
       ${ctx.logoSvg}
       <p>${esc(site.tagline)}. Curitiba, PR. Recebemos equipamentos de todo o Brasil.</p>
-      <p><a href="${site.sisterCompany.url}" rel="noopener">${esc(site.sisterCompany.name)}</a>, empresa do grupo: ${esc(site.sisterCompany.description)}</p>
     </div>
     <section class="site-footer__col">
       <h2 class="site-footer__title">Contato</h2>
@@ -132,7 +131,7 @@ const organizationJsonLd = (site) => ({
   geo: { '@type': 'GeoCoordinates', latitude: site.geo.latitude, longitude: site.geo.longitude },
   openingHours: site.openingHours,
   areaServed: [{ '@type': 'City', name: 'Curitiba' }, { '@type': 'State', name: 'Paraná' }, { '@type': 'Country', name: 'Brasil' }],
-  knowsAbout: ['Stryker System 5, 6, 7 e 8', 'ConMed Hall', 'Linvatec', 'Karl Storz', 'Videocirurgia', 'Artroscopia', 'Laparoscopia', 'Ortopedia'],
+  knowsAbout: ['Stryker System 5, 6, 7 e 8', 'ConMed Hall', 'Linvatec', 'Karl Storz', 'Ortopedia', 'Videocirurgia', 'Artroscopia', 'Laparoscopia'],
   contactPoint: [
     { '@type': 'ContactPoint', contactType: 'sales', telephone: site.phones[0].e164, availableLanguage: 'Portuguese' },
     { '@type': 'ContactPoint', contactType: 'customer support', telephone: site.phones[1].e164, availableLanguage: 'Portuguese' },

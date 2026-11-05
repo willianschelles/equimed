@@ -165,10 +165,10 @@
       },
       "commonFailures": [
         "Bateria que não segura carga ou descarrega durante o procedimento",
-        "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
         "Contatos oxidados, travas quebradas e carcaça com vapor interno",
-        "Baia do carregador sem alimentação ou com indicação intermitente",
-        "Placa de gerenciamento bloqueada após descarga profunda"
+        "Placa de gerenciamento bloqueada após descarga profunda",
+        "Carregador que acusa erro, não reconhece a bateria ou não conclui o ciclo",
+        "Baia do carregador sem alimentação ou com indicação intermitente"
       ],
       "whatWeDo": [
         "Teste de capacidade e de resistência interna das células",
@@ -336,8 +336,13 @@
       ]
     },
     "short": "CCU e cabeças HD e 4K Stryker, Karl Storz, Linvatec, Dyonics e marcas nacionais.",
-    "photo": "luvas-pecas",
-    "cover": "storz-camera-image1-hub"
+    "photo": "products/storz-camera-image1-hub",
+    "cover": "storz-camera-image1-hub",
+    "photos": [
+      "products/storz-camera-image1-hub",
+      "products/stryker-camera-1488hd",
+      "products/dyonics-camera-560p"
+    ]
   },
   {
     "slug": "fontes-de-luz",
@@ -427,8 +432,13 @@
       ]
     },
     "short": "Xenon 300 W e LED, lâmpadas de reposição e conversão de xenon para LED.",
-    "photo": "luvas-pecas",
-    "cover": "stryker-fonte-de-luz-l9000-led"
+    "photo": "products/stryker-fonte-de-luz-l9000-led",
+    "cover": "stryker-fonte-de-luz-l9000-led",
+    "photos": [
+      "products/stryker-fonte-de-luz-l9000-led",
+      "products/storz-fonte-de-luz-300w-xenon",
+      "products/dyonics-fonte-de-luz-500xl"
+    ]
   },
   {
     "slug": "monitores-cirurgicos",
@@ -590,8 +600,13 @@
       ]
     },
     "short": "Stryker, Karl Storz, Dyonics e ConMed: calibração de pressão e vazão.",
-    "photo": "luvas-pecas",
-    "cover": "stryker-insuflador-core-40-lpm"
+    "photo": "products/stryker-insuflador-core-40-lpm",
+    "cover": "stryker-insuflador-core-40-lpm",
+    "photos": [
+      "products/stryker-insuflador-core-40-lpm",
+      "products/storz-insuflador-30-lpm",
+      "products/dyonics-insuflador-40-lpm"
+    ]
   },
   {
     "slug": "artrobombas",
