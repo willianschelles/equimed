@@ -209,7 +209,7 @@ export function home(ctx) {
   const cards = [
     { href: '/manutencao/', name: 'Manutenção', kicker: 'Diagnóstico e reparo', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
     { href: '/locacao/', name: 'Locação', kicker: 'Perfuradores e serras', text: services.locacao.summary, photo: 'stryker-system7-conjunto-locacao', points: SERVICE_META.locacao },
-    { href: '/venda/', name: 'Venda', kicker: 'Equipamentos e acessórios', text: services.venda.summary, photo: 'stryker-system6-conjunto-venda', points: SERVICE_META.venda },
+    { href: '/venda/', name: 'Venda', kicker: 'Equipamentos e acessórios', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
     { href: '/software/', name: 'Software e tecnologia', kicker: 'Software e eletrônica', text: services.software.summary, photo: 'equimed-smart-charger-duo-estudio', points: SERVICE_META.software },
   ];
   const body = `
