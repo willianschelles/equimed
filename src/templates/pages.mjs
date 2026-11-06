@@ -228,7 +228,7 @@ export function home(ctx) {
       <nav class="hx__quick fx-in" style="--d:.7s" aria-label="Nossas soluções">${cards.map((c) => `<a href="${c.href}">${c.name === 'Software e tecnologia' ? 'Tecnologia' : c.name}</a>`).join('')}</nav>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo">${photo(ctx, 'stryker-capa-perfuradores-e-video-recorte', 'Perfuradores e serras Stryker System 7 e, ao lado, câmera Stryker 1488 HD e fonte de luz L9000 LED', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'stryker-conmed-capa-recorte', 'Perfuradores e serras Stryker System 7 e, ao lado, sistema de câmera ConMed IM8000 sobre a fonte de luz Stryker L9000 LED', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
