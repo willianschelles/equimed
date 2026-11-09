@@ -150,6 +150,7 @@ const redirects = {
   '/especialidades/ortopedia-trauma/carregadores': [familyUrl(fam('baterias-e-carregadores')), 'Baterias e carregadores'],
 };
 // Names containing a double quote (two NDS monitors) cannot be file names on every platform; they fall to the 404 page.
+redirects['/produtos/stryker-camera-1488hd'] = ['/produtos/stryker-camera-1288hd/', 'Câmera de vídeo Stryker 1288 HD'];   // renamed 09/11: the unit is a 1288 HD
 for (const p of products) if (p.legacyName && !p.legacyName.includes('"')) redirects[`/products/${p.legacyName}`] = [productUrl(p), p.name];
 for (const [from, [to, name]] of Object.entries(redirects)) add(`${from}/`, pages.redirect(ctx, to, name), { sitemap: false });
 

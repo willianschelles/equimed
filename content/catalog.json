@@ -1,20 +1,20 @@
 {
   "products": [
     {
-      "slug": "stryker-camera-1488hd",
-      "name": "Câmera de vídeo Stryker 1488 HD",
-      "model": "3CCD Digital HD, ref. 1488-010-000",
+      "slug": "stryker-camera-1288hd",
+      "name": "Câmera de vídeo Stryker 1288 HD",
+      "model": "3CCD Digital HD, ref. 1288-010-000",
       "brand": "Stryker",
       "brandSlug": "stryker",
       "family": "cameras-de-video",
-      "image": "stryker-camera-1488hd",
+      "image": "stryker-camera-1288hd",
       "legacyName": "Stryker Câmera de Vídeo",
       "condition": "seminovo",
       "services": [
         "manutencao",
         "venda"
       ],
-      "summary": "Unidade de controle de câmera Stryker 1488 HD, 3CCD Digital HD, ref. 1488-010-000, para torres de videocirurgia. Seminovo e revisado, testado em bancada.",
+      "summary": "Unidade de controle de câmera Stryker 1288 HD, 3CCD Digital HD, ref. 1288-010-000, para torres de videocirurgia. Seminovo e revisado, testado em bancada.",
       "paragraphs": [],
       "list": null,
       "specs": [
