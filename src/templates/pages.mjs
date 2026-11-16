@@ -38,7 +38,7 @@ const gallery = (ctx, names, alt) => names.length <= 1
     </div>
   </div>`;
 const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '' } = {}) => `
-<div class="page-hero"><svg class="pulse pulse--hero" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/></svg><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
+<div class="page-hero"><svg class="pulse pulse--hero" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/><path class="blip" pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/></svg><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
   <div class="page-header__copy">
     ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
     <h1>${esc(heading)}</h1>
@@ -50,7 +50,7 @@ const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
 <section class="cta-bar">
-  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
+  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/><path class="blip" pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
   <div class="container cta-bar__row">
     <div>
       <h2 class="cta-bar__title">${esc(title)}</h2>
@@ -228,7 +228,7 @@ export function home(ctx) {
       <nav class="hx__quick fx-in" style="--d:.7s" aria-label="Nossas soluções">${cards.map((c) => `<a href="${c.href}">${c.name === 'Software e tecnologia' ? 'Tecnologia' : c.name}</a>`).join('')}</nav>
     </div>
     <div class="hx__bench">
-      <figure class="hx__photo">${photo(ctx, 'stryker-conmed-capa-recorte', 'Perfuradores e serras Stryker System 7 e, ao lado, sistema de câmera ConMed IM8000 sobre a fonte de luz Stryker L9000 LED', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
+      <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
     </div>
   </div>
 </section>
@@ -271,11 +271,12 @@ export function home(ctx) {
   </div>
 </section>
 
-<section class="band" aria-label="Diagnóstico em bancada">
-  <div class="band__media" data-speed="0.15">${photo(ctx, 'luvas-bancada-solda', '', { sizes: '100vw' })}</div>
-  <div class="container band__copy" data-speed="-0.06">
-    <div><p class="band__quote">Cada equipamento é aberto, medido e testado antes do orçamento.</p>
-    <p class="band__sub">Você aprova sabendo o que vai ser trocado, por quê e quanto custa.</p></div>
+<section class="band band--console" aria-label="Manutenção de consoles e canetas shaver">
+  <div class="band__media">${photo(ctx, 'stryker-1288hd-canetas-shaver', 'Console de câmera Stryker 1288 HD e três canetas shaver sobre uma bancada de aço inox', { sizes: '100vw' })}</div>
+  <div class="container band__copy">
+    <div><p class="band__quote">Manutenção com qualidade e confiança.</p>
+    <p class="band__sub">Consoles, câmeras e canetas shaver recebem o cuidado técnico que merecem.</p>
+    <ul class="band__points"><li>Diagnóstico especializado</li><li>Testes precisos</li><li>Suporte em todo o Brasil</li></ul></div>
   </div>
 </section>
 
@@ -308,7 +309,7 @@ export function home(ctx) {
   <div class="container">
     <div class="sx-head rise"><h2 class="sx-title">${esc(h.stepsTitle)}</h2><p class="sx-lead">Você sabe em que etapa o equipamento está e o que vai ser feito antes de aprovar.</p></div>
     <ol class="flow" data-flow>
-      <svg class="flow__trace" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path class="base" d="M0 40 H1000"/><path class="live" pathLength="1" d="${ECG_TRACE}"/></svg>
+      <svg class="flow__trace" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-hidden="true"><path class="base" d="M0 40 H1000"/><path class="live" pathLength="1" d="${ECG_TRACE}"/><path class="blip" pathLength="1" d="${ECG_TRACE}"/></svg>
       ${copy.steps.map((s) => `<li class="flow__step"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join('\n      ')}
     </ol>
   </div>
@@ -327,7 +328,7 @@ ${faq(h.faq, h.faqTitle)}
 
 <section class="cta-hx">
   <div class="cta-hx__media" data-speed="0.14">${photo(ctx, 'storz-tower-cart', '', { sizes: '100vw' })}</div>
-  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
+  <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/><path class="blip" pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
   <div class="container cta-hx__row">
     <h2 class="rise">Equipamento parado? Fale com nossa equipe técnica.</h2>
     <div class="cta-hx__side rise">

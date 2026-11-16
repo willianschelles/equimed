@@ -346,6 +346,10 @@
   .gallery__slide img { width: 100%; height: 100%; object-fit: cover; }
   .gallery__slide:has(.is-cutout), .frame:has(> .is-cutout) { background: var(--plate-studio); }
   img.is-cutout { object-fit: contain !important; padding: 4%; }
+  /* Dark page headers: cut-outs sit straight on the navy like the home cover (no white plate), with a soft signal glow and floor shadow. */
+  .page-header .gallery__slide:has(.is-cutout), .page-header .frame:has(> .is-cutout) { background: radial-gradient(60% 55% at 50% 52%, rgba(91,184,224,.20) 0%, rgba(91,184,224,.05) 45%, transparent 72%); }
+  .page-header .gallery__track:has(.is-cutout) { background: transparent; }
+  .page-header img.is-cutout { padding: 1%; filter: drop-shadow(0 0 1px rgba(190,220,240,.55)) drop-shadow(0 0 10px rgba(91,184,224,.22)) drop-shadow(0 22px 26px rgba(0,0,0,.5)); }
   .gallery__nav { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
   .gallery__btn { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid rgba(255,255,255,0.35); background: transparent; color: #FFFFFF; border-radius: 999px; cursor: pointer; }
   .gallery__btn:hover { background: #FFFFFF; color: var(--color-navy); }
@@ -537,6 +541,23 @@
   .band__copy { padding-block: 4rem clamp(3.5rem, 7vw, 5.5rem); }
   .band__quote { margin: 0 0 1rem; font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.25rem); line-height: 1.06; font-weight: 600; letter-spacing: -.035em; max-width: 18ch; text-wrap: balance; }
   .band__sub { margin: 0; max-width: 34rem; color: var(--color-on-dark-2); font-size: 1.125rem; }
+  /* Console + shaver banner (feedback 10-11/11): the whole composition stays in view, copy sits on the blurred room at the top left. */
+  .band--console { min-height: 0; aspect-ratio: 1600 / 630; align-items: start; }
+  .band--console .band__media { inset: 0; }
+  .band--console::after { background: radial-gradient(58% 80% at 16% 10%, rgba(10,18,26,.9) 0%, rgba(10,18,26,.66) 48%, rgba(10,18,26,0) 88%), linear-gradient(180deg, rgba(10,18,26,.35) 0%, rgba(10,18,26,0) 40%); }
+  .band--console .band__copy { text-shadow: 0 1px 12px rgba(10,18,26,.55); }
+  .band--console .band__copy { padding-block: clamp(2rem, 4vw, 4rem) 2rem; }
+  .band--console .band__quote { font-size: clamp(1.75rem, 1rem + 2.2vw, 3rem); max-width: 14ch; margin-bottom: .75rem; }
+  .band--console .band__sub { max-width: 28rem; font-size: clamp(1rem, .9rem + .3vw, 1.125rem); }
+  .band__points { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 1.1rem 0 0; padding: 0; list-style: none; font-size: .9375rem; font-weight: 600; color: #FFFFFF; }
+  .band__points li { display: flex; align-items: center; gap: .5rem; }
+  .band__points li::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--color-signal); }
+  @media (width < 56rem) {
+    .band--console { aspect-ratio: auto; display: flex; flex-direction: column; }
+    .band--console .band__media { position: relative; inset: auto; order: 2; aspect-ratio: 1600 / 630; z-index: 0; }
+    .band--console::after { display: none; }
+    .band--console .band__copy { padding-block: 3rem 1.75rem; }
+  }
 
   /* Horizontal rail (pinned on desktop) */
   .hs { position: relative; isolation: isolate; background: radial-gradient(55% 70% at 12% 0%, rgba(91,184,224,.16) 0%, transparent 60%), radial-gradient(50% 70% at 100% 100%, rgba(31,74,99,.14) 0%, transparent 60%), linear-gradient(180deg, #EDF3F7 0%, #E4ECF1 100%); }
@@ -589,6 +610,14 @@
   @media (width >= 56rem) { .flow__trace { display: block; } }
   .flow__trace .base { fill: none; stroke: var(--color-line); stroke-width: 1.5; }
   .flow__trace .live { fill: none; stroke: var(--color-signal); stroke-width: 2.25; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--fp, 1)); filter: drop-shadow(0 0 4px rgba(91,184,224,.5)); }
+  /* Once a trace is fully drawn, a bright blip keeps running along it, like the hero monitor's sweep head. */
+  .flow__trace .blip, .pulse .blip { fill: none; stroke: #EAF6FC; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: .035 2; stroke-dashoffset: .035; filter: drop-shadow(0 0 3px rgba(91,184,224,.95)) drop-shadow(0 0 8px rgba(91,184,224,.6)); animation: blip 5.5s linear infinite; }
+  .flow__trace .blip { stroke: var(--color-petrol-link); stroke-width: 3.25; stroke-dasharray: .03 2; stroke-dashoffset: .03; filter: drop-shadow(0 0 4px rgba(91,184,224,.9)); animation-duration: 6s; opacity: clamp(0, (var(--fp, 1) - .97) * 34, 1); transition: opacity .4s; }
+  .pulse .blip { opacity: clamp(0, (var(--cp, 1) - .97) * 34, 1); }
+  .pulse--hero .blip { opacity: 0; animation-delay: 2.6s; }
+  .is-loaded .pulse--hero .blip { opacity: 1; stroke-dashoffset: .035; animation: blip 5.5s linear 2.6s infinite; }
+  @keyframes blip { to { stroke-dashoffset: -1; } }
+  @media (prefers-reduced-motion: reduce) { .flow__trace .blip, .pulse .blip { display: none; } }
   .flow__step { position: relative; display: grid; gap: .6rem; align-content: start; padding-left: 3.5rem; }
   @media (width >= 56rem) { .flow__step { padding-left: 0; } }
   .flow__step::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: -.15rem; width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border-radius: 50%; background: #FFFFFF; border: 1.5px solid var(--color-line); font-weight: 600; color: var(--color-ink-3); transition: background-color .4s, border-color .4s, color .4s, box-shadow .4s; }
