@@ -396,7 +396,7 @@ ${ctaBar(site, { message, place: 'manutencao-cta' })}`;
   };
 }
 
-// Cell technologies inside a battery (Paulo 03/11): what each chemistry is and why a pack that fits the housing is
+// Cell technologies inside a battery: what each chemistry is and why a pack that fits the housing is
 // not necessarily compatible.
 const chemistry = (site, c, slug) => `
 <section class="section section--tint chem" id="tecnologias">
@@ -453,12 +453,12 @@ ${ctaBar(site, { title: m.ctaTitle ?? `Precisa de manutenção em ${f.shortName.
   };
 }
 
-// Buttons to the one-search pages (Paulo, WhatsApp audio: one page per search, e.g. "manutenção em perfurador Stryker").
+// Buttons to the one-search pages (one page per search, e.g. "manutenção em perfurador Stryker").
 const landingLinks = (list, base = '/manutencao/') => list.length ? `<h2>Páginas específicas</h2>
     <p>${list.map((l) => `<a class="button button--ghost" href="${base}${l.slug}/">${esc(l.name)} ${icon('arrow', 16)}</a>`).join(' ')}</p>` : '';
 
-// One page per maintenance search (Paulo, WhatsApp audio: "manutenção em perfurador Stryker"). Built from the family's
-// own content; no commercial terms (warranty, spare unit) until Paulo confirms them.
+// One page per maintenance search ("manutenção em perfurador Stryker"). Built from the family's
+// own content; no commercial terms (warranty, spare unit) until they are confirmed.
 export function maintenanceLanding(ctx, l) {
   const { site, products, articles, families } = ctx;
   const what = l.name.charAt(0).toLowerCase() + l.name.slice(1); // keeps the brand capitalized
@@ -525,7 +525,7 @@ ${ctaBar(site, { title: 'Precisa de um equipamento para o próximo procedimento?
   return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/locacao/' }] };
 }
 
-// One page per rental search (Paulo, WhatsApp audio: "locação de perfurador Stryker", "locação de serra Stryker").
+// One page per rental search ("locação de perfurador Stryker", "locação de serra Stryker").
 export function rentalLanding(ctx, l) {
   const { site, services, products } = ctx;
   const s = services.locacao;
@@ -555,7 +555,7 @@ ${ctaBar(site, { title: 'Precisa de um equipamento para o próximo procedimento?
 export function sales(ctx) {
   const { site, services, products, families } = ctx;
   const s = services.venda;
-  // Paulo 02/11: a buyer is asked for the equipment, application and configuration (not serial number and defect).
+  // A buyer is asked for the equipment, application and configuration (not serial number and defect).
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento desejado: \nAplicação: \nConfiguração: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `

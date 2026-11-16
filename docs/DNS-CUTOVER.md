@@ -54,7 +54,7 @@ vai junto, sem efeito porque o DNS já estará no Registro.br.
 ## Depois da virada
 
 Search Console (propriedade `www.equimedpr.com.br`, enviar o sitemap), Google Business Profile, e os IDs de GA4 e
-Meta em `content/site.json`. Ver `docs/SEO-MARKETING.md`.
+Meta em `content/site.json`.
 
 ## Se algo der errado
 

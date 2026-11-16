@@ -9,3 +9,12 @@ seo-report.md
 incoming/
 tools/bin/
 .cache/
+
+# Private material (this repo is public): internal docs, handoffs, client files
+docs/PROPOSTA.md
+docs/SEO-MARKETING.md
+docs/PROXIMOS-PASSOS.md
+docs/LEFT-OFF-*.md
+*.pdf
+*.zip
+*-screenshot-logos/

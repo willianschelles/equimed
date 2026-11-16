@@ -5,9 +5,6 @@ HTML e CSS puros, sem frameworks nem dependências de runtime. Substitui o app D
 
 - Produção: https://www.equimedpr.com.br (GitHub Pages, publicado pelo workflow `Deploy`)
 - Edição de conteúdo sem programar: [docs/CONTENT-EDITING.md](docs/CONTENT-EDITING.md)
-- Estratégia de SEO e marketing, robô de monitoramento, mensuração e opções: [docs/SEO-MARKETING.md](docs/SEO-MARKETING.md)
-- Proposta de escopo, etapas e itens a validar (resposta às diretrizes de out/2026): [docs/PROPOSTA.md](docs/PROPOSTA.md)
-- Checklist do que falta (validação, virada de DNS, contas Google/Meta): [docs/PROXIMOS-PASSOS.md](docs/PROXIMOS-PASSOS.md)
 
 ## Linguagem visual (v4, out/2026)
 

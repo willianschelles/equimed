@@ -59,7 +59,7 @@ document.querySelector('[data-consent="reset"]')?.addEventListener('click', () =
   else location.reload();
 });
 
-/* 2. Contact intent: WhatsApp, phone and e-mail clicks, wherever they are. A click is not a lead (Paulo 02/11): it only
+/* 2. Contact intent: WhatsApp, phone and e-mail clicks, wherever they are. A click is not a lead: it only
    opens the app. Received contacts, qualified quotes and sales are counted outside the site, so generate_lead is not
    fired here; contact_intent is the click-side event to compare against them. */
 document.addEventListener('click', (e) => {
