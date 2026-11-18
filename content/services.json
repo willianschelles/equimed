@@ -73,13 +73,11 @@
         "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
       }
     ],
-    "photo": "stryker-system7-linha-recorte",
+    "photo": "stryker-system7-kit-carregador-recorte",
     "photos": [
-      "stryker-system7-linha-recorte",
-      "bancada-manutencao-luvas",
-      "stryker-system8-perfurador-recorte",
-      "stryker-system7-desmontado-recorte",
-      "stryker-system7-pecas-recorte"
+      "stryker-system7-kit-carregador-recorte",
+      "manutencao-wire-collet-mandril-recorte",
+      "manutencao-carcacas-bateria-recorte"
     ],
     "landings": [
       {
@@ -407,10 +405,9 @@
     ],
     "photo": "stryker-system7-conjunto-locacao",
     "photos": [
-      "stryker-system8-dupla-serra-baixa-recorte",
-      "stryker-system7-serra-angulo-recorte",
-      "stryker-system7-linha-recorte",
-      "stryker-system7-carregador-recorte"
+      "stryker-system7-kit-carregador-recorte",
+      "manutencao-wire-collet-mandril-recorte",
+      "manutencao-carcacas-bateria-recorte"
     ],
     "landings": [
       {
@@ -519,31 +516,37 @@
     ],
     "photo": "stryker-system6-conjunto-recorte",
     "photos": [
-      "stryker-system8-perfurador-foto-recorte",
-      "stryker-system7-kit-mesa-recorte",
-      "stryker-system6-conjunto-recorte",
-      "stryker-system6-perfurador-recorte",
-      "stryker-system6-serra-recorte",
-      "stryker-system5-serra-recorte",
-      "stryker-system7-recorte"
+      "stryker-system7-kit-carregador-recorte",
+      "manutencao-wire-collet-mandril-recorte",
+      "manutencao-carcacas-bateria-recorte"
     ]
   },
   "software": {
-    "slug": "software",
-    "name": "Soluções de software",
-    "heading": "Soluções de software para equipamentos médicos",
+    "slug": "eletronica",
+    "name": "Eletrônica",
+    "heading": "Eletrônica para equipamentos médicos",
     "icon": "code",
-    "title": "Software para equipamentos médicos: atualização e desbloqueio",
-    "description": "Atualização e desbloqueio de software de perfuradores, baterias, carregadores e consoles, e desenvolvimento de soluções sob medida. Stryker, ConMed, Storz.",
-    "lead": "Atualização e correção de firmware, desbloqueio de funções e de contadores de serviço, e desenvolvimento de soluções sob medida para equipamentos médicos, como o carregador inteligente multilinha da EquimedPR.",
-    "summary": "Atualização e desbloqueio de firmware de perfuradores, baterias e consoles, e desenvolvimento de soluções sob medida.",
+    "title": "Eletrônica para equipamentos médicos: reparo e firmware",
+    "description": "Reparo eletrônico de consoles, carregadores e baterias, firmware, desbloqueio e projetos sob medida para equipamentos médicos. Stryker, ConMed e Storz.",
+    "lead": "Diagnóstico e reparo em nível de componente, atualização e correção de firmware, desbloqueio de funções e desenvolvimento de soluções eletrônicas sob medida, como o carregador inteligente multilinha da EquimedPR.",
+    "summary": "Reparo eletrônico de consoles, carregadores e baterias, firmware e desenvolvimento de soluções sob medida.",
     "intro": [
-      "Boa parte dos equipamentos atuais depende de software: a peça de mão verifica a bateria, a bateria registra ciclos, o carregador decide se carrega, e o console bloqueia funções por contador ou por senha de serviço. Quando algo nessa cadeia trava, o equipamento fica parado mesmo com a mecânica em ordem.",
-      "A EquimedPR desenvolve e aplica soluções de software para esses casos, sempre para equipamentos de titularidade do cliente, com registro do que foi feito e sem alterar funções de segurança."
+      "Boa parte dos equipamentos atuais depende de eletrônica: a peça de mão verifica a bateria, a bateria registra ciclos, o carregador decide se carrega e o console controla o motor, a câmera ou a bomba. Quando uma placa, um componente ou o firmware falha, o equipamento fica parado mesmo com a mecânica em ordem.",
+      "A EquimedPR diagnostica e repara essa eletrônica em bancada, atualiza o firmware quando necessário e desenvolve soluções próprias, sempre para equipamentos de titularidade do cliente, com registro do que foi feito e sem alterar funções de segurança."
     ],
     "areas": [
       {
-        "title": "Atualização de software e firmware",
+        "title": "Reparo eletrônico",
+        "icon": "wrench",
+        "text": "Diagnóstico e reparo em nível de componente de placas, fontes e consoles, de carregadores e da eletrônica de baterias, com testes de funcionamento antes da devolução.",
+        "list": [
+          "Consoles de shaver, câmeras e fontes de luz",
+          "Carregadores e baterias Stryker e ConMed",
+          "Placas de controle de perfuradores e serras"
+        ]
+      },
+      {
+        "title": "Atualização de firmware",
         "icon": "update",
         "text": "Atualização e correção de firmware de perfuradores, serras, baterias, carregadores e consoles, incluindo correção de erros que bloqueiam o uso após descarga profunda ou após a troca de células.",
         "list": [
@@ -565,7 +568,7 @@
       {
         "title": "Desenvolvimento sob medida",
         "icon": "code",
-        "text": "Projetos de software e eletrônica para necessidades específicas: bancadas de teste, carregadores multilinha, interfaces de diagnóstico e registro de dados de equipamentos.",
+        "text": "Projetos de eletrônica e software para necessidades específicas: bancadas de teste, carregadores multilinha, interfaces de diagnóstico e registro de dados de equipamentos.",
         "list": [
           "Carregador inteligente EquimedPR para séries Stryker 3, 5, 6 e 7",
           "Bancadas e rotinas de teste para engenharia clínica",
@@ -583,10 +586,14 @@
         "a": "Equipamentos dentro da garantia do fabricante devem ser tratados com a assistência autorizada. Nossos serviços são indicados para equipamentos fora da garantia, que é o caso da maior parte do parque instalado."
       },
       {
-        "q": "Vocês desenvolvem software para outros equipamentos?",
+        "q": "Vocês desenvolvem soluções para outros equipamentos?",
         "a": "Sim. Descreva a necessidade pelo WhatsApp ou pelo e-mail e avaliamos a viabilidade técnica, o prazo e o investimento."
       }
     ],
-    "photo": "luvas-bancada-solda-43"
+    "photo": "stryker-core2-kit-recorte",
+    "photos": [
+      "stryker-core2-kit-recorte",
+      "canetas-shaver-17-11-recorte"
+    ]
   }
 }

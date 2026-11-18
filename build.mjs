@@ -90,7 +90,7 @@ for (const l of services.manutencao.landings) {
 add('/locacao/', pages.rental(ctx), { priority: 0.9 });
 for (const l of services.locacao.landings) add(`/locacao/${l.slug}/`, pages.rentalLanding(ctx, l), { priority: 0.8 });
 add('/venda/', pages.sales(ctx), { priority: 0.9 });
-add('/software/', pages.software(ctx), { priority: 0.9 });
+add('/eletronica/', pages.software(ctx), { priority: 0.9 });
 add('/equipamentos/', pages.equipment(ctx), { priority: 0.8 });
 for (const f of families) add(familyUrl(f), pages.family(ctx, f), { priority: 0.7 });
 for (const p of products) add(productUrl(p), pages.product(ctx, p), { priority: 0.6 });
@@ -150,6 +150,7 @@ const redirects = {
   '/especialidades/ortopedia-trauma/carregadores': [familyUrl(fam('baterias-e-carregadores')), 'Baterias e carregadores'],
 };
 // Names containing a double quote (two NDS monitors) cannot be file names on every platform; they fall to the 404 page.
+redirects['/software'] = ['/eletronica/', 'Eletrônica'];   // renamed 17/11: the solution is electronics, software is part of it
 redirects['/produtos/stryker-camera-1488hd'] = ['/produtos/stryker-camera-1288hd/', 'Câmera de vídeo Stryker 1288 HD'];   // renamed 09/11: the unit is a 1288 HD
 for (const p of products) if (p.legacyName && !p.legacyName.includes('"')) redirects[`/products/${p.legacyName}`] = [productUrl(p), p.name];
 for (const [from, [to, name]] of Object.entries(redirects)) add(`${from}/`, pages.redirect(ctx, to, name), { sitemap: false });

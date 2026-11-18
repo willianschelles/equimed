@@ -3,7 +3,7 @@
   "shortName": "Equimed",
   "legalName": "EquimedPR Soluções Médicas Ltda.",
   "tagline": "Soluções médicas: assistência técnica independente multimarcas em equipamentos médicos",
-  "shortDescription": "Assistência técnica independente multimarcas para equipamentos médicos: manutenção, locação, venda e tecnologia (software e eletrônica). Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses. Curitiba, PR.",
+  "shortDescription": "Assistência técnica independente multimarcas para equipamentos médicos: manutenção, locação, venda e eletrônica. Stryker, ConMed, Linvatec, Karl Storz e equipamentos nacionais e chineses. Curitiba, PR.",
   "url": "https://www.equimedpr.com.br",
   "publishCname": false,
   "foundingYear": 2014,
@@ -21,7 +21,7 @@
   "whatsapp": {
     "number": "5541998893793",
     "display": "(41) 9 9889-3793",
-    "message": "Olá, EquimedPR! Vim pelo site e gostaria de um orçamento.\n\nEquipamento: \nMarca/modelo: \nPreciso de: (manutenção / locação / compra / software)\n"
+    "message": "Olá, EquimedPR! Vim pelo site e gostaria de um orçamento.\n\nEquipamento: \nMarca/modelo: \nPreciso de: (manutenção / locação / compra / eletrônica)\n"
   },
   "address": {
     "street": "R. Paulina Ader, 72 - Imóvel 2",
@@ -63,8 +63,8 @@
       "href": "/venda/"
     },
     {
-      "label": "Tecnologia",
-      "href": "/software/"
+      "label": "Eletrônica",
+      "href": "/eletronica/"
     },
     {
       "label": "Equipamentos",

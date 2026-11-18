@@ -17,7 +17,7 @@ export const fitDescription = (text, filler = ' EquimedPR, Curitiba, PR.') => {
   return d.length > 160 ? d.slice(0, 157).replace(/\s+\S*$/, '') + '…' : d;
 };
 
-const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Software' };
+const SERVICE_LABEL = { manutencao: 'Manutenção', venda: 'Venda', locacao: 'Locação', software: 'Eletrônica' };
 
 /* ---------------- Shared blocks ---------------- */
 const sectionHead = (index, title, lead, action = '') => `<div class="section__head"><div><h2 class="section__title">${esc(title)}</h2>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}</div>${action}</div>`;
@@ -48,7 +48,7 @@ const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos
   ${photos?.length ? gallery(ctx, photos, photoAlt) : photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
 </header></div>`;
 
-const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
+const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou reparo eletrônico?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
 <section class="cta-bar">
   <svg class="pulse" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/><path class="blip" pathLength="1" d="M0 96 H520 l10 -6 l10 6 H600 l8 10 l14 -78 l16 112 l10 -44 H1440"/></svg>
   <div class="container cta-bar__row">
@@ -178,7 +178,7 @@ const SERVICE_META = {
   manutencao: ['Avaliação em bancada', 'Orçamento detalhado', 'Relatório e garantia'],
   locacao: ['Por procedimento ou período', 'Manutenção incluída', 'Reserva durante o reparo'],
   venda: ['Seminovos e revisados', '3 meses de garantia', 'Proposta para licitação'],
-  software: ['Atualização de firmware', 'Desbloqueio de contadores', 'Desenvolvimento sob medida'],
+  software: ['Reparo de placas e consoles', 'Firmware e desbloqueio', 'Desenvolvimento sob medida'],
 };
 const aside = (site, { title = 'Solicite um orçamento', text = 'Envie marca, modelo, número de série e o defeito. Respondemos em horário comercial.', message, place = 'aside' } = {}) => `
 <aside class="aside-card">
@@ -210,7 +210,7 @@ export function home(ctx) {
     { href: '/manutencao/', name: 'Manutenção', kicker: 'Diagnóstico e reparo', text: services.manutencao.summary, photo: 'stryker-system7-desmontado', points: SERVICE_META.manutencao },
     { href: '/locacao/', name: 'Locação', kicker: 'Perfuradores e serras', text: services.locacao.summary, photo: 'stryker-system7-conjunto-locacao', points: SERVICE_META.locacao },
     { href: '/venda/', name: 'Venda', kicker: 'Equipamentos e acessórios', text: services.venda.summary, photo: 'stryker-system7', points: SERVICE_META.venda },
-    { href: '/software/', name: 'Software e tecnologia', kicker: 'Software e eletrônica', text: services.software.summary, photo: 'equimed-smart-charger-duo-estudio', points: SERVICE_META.software },
+    { href: '/eletronica/', name: 'Eletrônica', kicker: 'Reparo, firmware e projetos', text: services.software.summary, photo: 'stryker-core2-card-recorte', points: SERVICE_META.software },
   ];
   const body = `
 <section class="hx">
@@ -225,7 +225,7 @@ export function home(ctx) {
         <a class="button button--ghost button--lg" href="#servicos">Conhecer soluções</a>
       </div>
       <p class="hx__note fx-in" style="--d:.65s">Segunda a sexta, das 8h às 18h. Recebemos equipamentos de todo o Brasil.</p>
-      <nav class="hx__quick fx-in" style="--d:.7s" aria-label="Nossas soluções">${cards.map((c) => `<a href="${c.href}">${c.name === 'Software e tecnologia' ? 'Tecnologia' : c.name}</a>`).join('')}</nav>
+      <nav class="hx__quick fx-in" style="--d:.7s" aria-label="Nossas soluções">${cards.map((c) => `<a href="${c.href}">${c.name}</a>`).join('')}</nav>
     </div>
     <div class="hx__bench">
       <figure class="hx__photo">${photo(ctx, 'stryker-system7-linha-capa-recorte', 'Perfuradores e serras Stryker System 7 lado a lado', { lazy: false, sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
@@ -244,7 +244,7 @@ export function home(ctx) {
 
 <section class="section" id="servicos">
   <div class="container">
-    <div class="sx-head rise"><h2 class="sx-title">Nossas soluções</h2><p class="sx-lead">Manutenção, locação, venda e tecnologia para manter o seu equipamento em uso.</p></div>
+    <div class="sx-head rise"><h2 class="sx-title">Nossas soluções</h2><p class="sx-lead">Manutenção, locação, venda e eletrônica para manter o seu equipamento em uso.</p></div>
     <div class="scards">
       ${cards.map((c) => `<a class="scard rise" href="${c.href}">
         <figure class="scard__media">${photo(ctx, c.photo, '', { sizes: '(min-width: 64rem) 50rem, 100vw' })}</figure>
@@ -272,7 +272,7 @@ export function home(ctx) {
 </section>
 
 <section class="band band--console" aria-label="Manutenção de consoles e canetas shaver">
-  <div class="band__media">${photo(ctx, 'stryker-1288hd-canetas-shaver', 'Console de câmera Stryker 1288 HD e três canetas shaver sobre uma bancada de aço inox', { sizes: '100vw' })}</div>
+  <div class="band__media">${photo(ctx, 'stryker-1288hd-canetas-shaver-esquerda', 'Console de câmera Stryker 1288 HD e três canetas shaver sobre uma bancada de aço inox', { sizes: '100vw' })}</div>
   <div class="container band__copy">
     <div><p class="band__quote">Manutenção com qualidade e confiança.</p>
     <p class="band__sub">Consoles, câmeras e canetas shaver recebem o cuidado técnico que merecem.</p>
@@ -583,18 +583,18 @@ ${ctaBar(site, { title: 'Não encontrou o modelo? Consulte-nos.', text: 'Informe
 export function software(ctx) {
   const { site, services, products } = ctx;
   const s = services.software;
-  const message = `Olá, EquimedPR! Vim pelo site e preciso de uma solução de software.\n\nEquipamento: \nMarca/modelo: \nSituação: (atualização / desbloqueio / desenvolvimento)\n`;
+  const message = `Olá, EquimedPR! Vim pelo site e preciso de um serviço de eletrônica.\n\nEquipamento: \nMarca/modelo: \nSituação: (reparo / firmware / desbloqueio / desenvolvimento)\n`;
   const charger = products.find((p) => p.slug === 'carregador-de-bateria-inteligente');
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvolvimento', ctx, photoName: s.photo, photoAlt: 'Técnico reparando uma placa eletrônica na bancada' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Reparo, firmware e desenvolvimento', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Equipamentos eletrônicos atendidos pela EquimedPR' })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
   </div>
-  ${aside(site, { message, place: 'software' })}
+  ${aside(site, { message, place: 'eletronica' })}
 </section>
 <section class="section section--tint"><div class="container">
-  <ul class="grid grid--3">
+  <ul class="grid grid--4">
     ${s.areas.map((a, i) => `<li class="card"><div class="card__link"><div class="card__body"><p class="card__brand">0${i + 1}</p><h2 class="card__title">${esc(a.title)}</h2><p class="card__text">${esc(a.text)}</p>${checklist(a.list)}</div></div></li>`).join('\n    ')}
   </ul>
 </div></section>
@@ -609,8 +609,8 @@ ${pageHeader(s.heading, s.lead, { eyebrow: 'Atualização, desbloqueio e desenvo
   </div>
 </section>
 ${faq(s.faq)}
-${ctaBar(site, { title: 'Equipamento bloqueado ou desatualizado?', message, place: 'software-cta' })}`;
-  return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/software/' }] };
+${ctaBar(site, { title: 'Equipamento parado por falha eletrônica ou bloqueio?', message, place: 'eletronica-cta' })}`;
+  return { title: s.title, description: s.description, body, jsonLd: [serviceJsonLd(site, s, s.description), faqJsonLd(s.faq)].filter(Boolean), breadcrumbs: [{ name: s.name, href: '/eletronica/' }] };
 }
 
 /* ---------------- Equipment ---------------- */
@@ -761,7 +761,7 @@ export function brand(ctx, b) {
   const { site, families, products } = ctx;
   const fams = b.families.map((s) => families.find((f) => f.slug === s)).filter(Boolean);
   const list = products.filter((p) => p.brandSlug === b.slug);
-  const message = `Olá, EquimedPR! Vim pelo site e tenho um equipamento ${b.name}.\n\nModelo: \nPreciso de: (manutenção / locação / compra / software)\n`;
+  const message = `Olá, EquimedPR! Vim pelo site e tenho um equipamento ${b.name}.\n\nModelo: \nPreciso de: (manutenção / locação / compra / eletrônica)\n`;
   const title = fitTitle(b.focus ? `Assistência técnica ${b.name}: manutenção e equipamentos` : `Equipamentos ${b.name}: manutenção`);
   const description = fitDescription(b.description ?? `Assistência técnica independente em equipamentos ${b.name}: ${b.lead}`);
   const body = `
@@ -879,7 +879,7 @@ ${pageHeader(c.heading, c.lead)}
         <option value="Manutenção">Manutenção / assistência técnica</option>
         <option value="Locação">Locação de perfuradores e serras</option>
         <option value="Compra">Compra de equipamento</option>
-        <option value="Software">Software e tecnologia</option>
+        <option value="Eletrônica">Eletrônica</option>
         <option value="Outro">Outro assunto</option>
       </select>
     </div>
