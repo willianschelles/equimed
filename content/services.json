@@ -76,7 +76,6 @@
     "photo": "stryker-serras-geracoes-shaver-recorte",
     "photos": [
       "stryker-serras-geracoes-shaver-recorte",
-      "stryker-core2-kit-recorte",
       "stryker-system7-kit-carregador-recorte",
       "manutencao-wire-collet-mandril-recorte",
       "manutencao-carcaca-bateria-recorte",
@@ -349,8 +348,7 @@
       "stryker-system7-kit-carregador-recorte": "Kit Stryker System 7: perfuradores, carregador com duas baterias e mandris",
       "manutencao-wire-collet-mandril-recorte": "Wire collet, mandril e adaptadores Stryker",
       "manutencao-carcaca-bateria-recorte": "Carcaça de bateria Stryker",
-      "stryker-system7-sagital-recorte": "Serra sagital Stryker System 7 com lâmina e bateria",
-      "stryker-core2-kit-recorte": "Console Stryker Core 2 com pedal, caixa de peças de mão e cabo"
+      "stryker-system7-sagital-recorte": "Serra sagital Stryker System 7 com lâmina e bateria"
     }
   },
   "locacao": {
