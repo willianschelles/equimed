@@ -85,6 +85,9 @@
   .optional { color: var(--color-ink-3); font-weight: 400; }
   .grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
   .grid--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+  .grid--4 { grid-template-columns: minmax(0, 1fr); }
+  @media (width >= 40rem) { .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (width >= 72rem) { .grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .prose { max-width: 44rem; }
   .prose > * + * { margin-block-start: 1rem; }
   .prose h2 { margin-block-start: 3rem; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.015em; }
@@ -340,9 +343,12 @@
   .frame { position: relative; overflow: hidden; border-radius: var(--radius-panel); background: var(--color-plate); margin: 0; }
   .frame img { display: block; }
   .gallery { display: grid; gap: 0.75rem; }
-  .gallery__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; aspect-ratio: 16 / 10; }
+  /* A neighbouring slide must never show at the edge. A fractional track width or position, browser zoom or a trackpad stop
+     leaves a sub-pixel sliver of it (a thin line next to a cut-out when the neighbour is a photo): whole-pixel width, and
+     every slide clipped 1px at the sides, which no one sees on the slide in view. */
+  .gallery__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; aspect-ratio: 16 / 10; width: round(down, 100%, 1px); }
   .gallery__track::-webkit-scrollbar { display: none; }
-  .gallery__slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; background: var(--color-plate); }
+  .gallery__slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; background: var(--color-plate); clip-path: inset(0 1px); }
   .gallery__slide img { width: 100%; height: 100%; object-fit: cover; }
   .gallery__slide:has(.is-cutout), .frame:has(> .is-cutout) { background: var(--plate-studio); }
   img.is-cutout { object-fit: contain !important; padding: 4%; }
@@ -495,6 +501,10 @@
   .scard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(18,50,74,.5) 0%, rgba(18,50,74,.93) 40%, rgba(10,18,26,.98) 70%); mix-blend-mode: multiply; }
   .scard::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 30%, rgba(10,18,26,.55) 100%); }
   .scard:hover .scard__media img { scale: 1.05; filter: grayscale(.6) contrast(1.05); }
+  /* A cut-out (no background) sits in the top half and is cropped like a photo, so the middle of a wide set (the console) stays in view on narrow cards. */
+  .scard__media:has(.is-cutout) { inset: 0 0 auto; height: 48%; background: radial-gradient(70% 80% at 50% 58%, rgba(91,184,224,.16) 0%, transparent 72%); }
+  .scard__media img.is-cutout { object-fit: cover !important; object-position: 50% 45%; padding: 1.25rem 0 0; filter: grayscale(1) contrast(1.05) drop-shadow(0 14px 18px rgba(0,0,0,.45)); }
+  .scard:hover .scard__media img.is-cutout { filter: grayscale(.6) contrast(1.05) drop-shadow(0 14px 18px rgba(0,0,0,.45)); }
   .scard__body { display: grid; gap: .8rem; padding: clamp(1.5rem, 3vw, 2.25rem); max-width: 34rem; }
   .scard__name { margin: 0; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.4rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
   .scard__text { margin: 0; color: rgba(255,255,255,.86); }
