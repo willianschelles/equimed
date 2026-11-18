@@ -73,13 +73,13 @@
         "a": "Não. Somos uma assistência técnica independente multimarcas. Não somos autorizados, representantes nem distribuidores oficiais de nenhum fabricante."
       }
     ],
-    "photo": "stryker-system7-linha-recorte",
+    "photo": "stryker-serras-geracoes-shaver-recorte",
     "photos": [
-      "stryker-system7-linha-recorte",
-      "bancada-manutencao-luvas",
+      "stryker-serras-geracoes-shaver-recorte",
       "stryker-system8-perfurador-recorte",
-      "stryker-system7-desmontado-recorte",
-      "stryker-system7-pecas-recorte"
+      "stryker-system7-sagital-recorte",
+      "stryker-system7-bateria-recorte",
+      "bancada-manutencao-luvas"
     ],
     "landings": [
       {
@@ -132,8 +132,7 @@
         ],
         "photos": [
           "stryker-system7-recorte",
-          "stryker-system8-perfurador-recorte",
-          "stryker-system7-desmontado-recorte"
+          "stryker-system8-perfurador-recorte"
         ],
         "faq": [
           {
@@ -264,9 +263,7 @@
           "bateria-perfurador-nao-segura-carga"
         ],
         "photos": [
-          "stryker-system7-linha-recorte",
-          "stryker-system7-bateria-recorte",
-          "stryker-system7-desmontado-recorte"
+          "stryker-system7-bateria-recorte"
         ],
         "faq": [
           {
@@ -345,7 +342,14 @@
           }
         ]
       }
-    ]
+    ],
+    "photoAlts": {
+      "stryker-serras-geracoes-shaver-recorte": "Serras sagitais Stryker de quatro gerações, uma bateria e três canetas shaver",
+      "bancada-manutencao-luvas": "Técnico de luvas trabalhando em um perfurador na bancada da EquimedPR",
+      "stryker-system8-perfurador-recorte": "Perfurador rotativo Stryker System 8",
+      "stryker-system7-sagital-recorte": "Serra sagital Stryker System 7 com lâmina e bateria",
+      "stryker-system7-bateria-recorte": "Bateria Stryker System 7"
+    }
   },
   "locacao": {
     "slug": "locacao",
@@ -407,10 +411,11 @@
     ],
     "photo": "stryker-system7-conjunto-locacao",
     "photos": [
+      "stryker-kit-perfuradores-serras-v2-recorte",
       "stryker-system8-dupla-serra-baixa-recorte",
       "stryker-system7-serra-angulo-recorte",
-      "stryker-system7-linha-recorte",
-      "stryker-system7-carregador-recorte"
+      "stryker-system7-carregador-recorte",
+      "stryker-torre-video-1188-recorte"
     ],
     "landings": [
       {
@@ -429,7 +434,6 @@
           "Conjunto"
         ],
         "photos": [
-          "stryker-system7-linha-recorte",
           "stryker-system7-recorte"
         ],
         "faq": [
@@ -473,7 +477,11 @@
           }
         ]
       }
-    ]
+    ],
+    "photoAlts": {
+      "stryker-kit-perfuradores-serras-v2-recorte": "Kit Stryker: perfuradores e serras System 7 e System 8, carregador com duas baterias e mandril",
+      "stryker-torre-video-1188-recorte": "Torre de vídeo Stryker com monitor e consoles, vista de frente"
+    }
   },
   "venda": {
     "slug": "venda",
@@ -519,14 +527,17 @@
     ],
     "photo": "stryker-system6-conjunto-recorte",
     "photos": [
+      "stryker-serras-geracoes-recorte",
       "stryker-system8-perfurador-foto-recorte",
-      "stryker-system7-kit-mesa-recorte",
-      "stryker-system6-conjunto-recorte",
-      "stryker-system6-perfurador-recorte",
-      "stryker-system6-serra-recorte",
-      "stryker-system5-serra-recorte",
-      "stryker-system7-recorte"
-    ]
+      "stryker-kit-perfuradores-serras-v2-recorte",
+      "stryker-system7-recorte",
+      "stryker-torre-video-1288-recorte"
+    ],
+    "photoAlts": {
+      "stryker-kit-perfuradores-serras-v2-recorte": "Kit Stryker: perfuradores e serras System 7 e System 8, carregador com duas baterias e mandril",
+      "stryker-serras-geracoes-recorte": "Serras sagitais Stryker de quatro gerações, entre elas System 6, System 7 e System 8, e uma bateria",
+      "stryker-torre-video-1288-recorte": "Torre de vídeo Stryker com monitor e consoles"
+    }
   },
   "software": {
     "slug": "software",

@@ -92,13 +92,11 @@
         }
       ],
       "photos": [
-        "stryker-system7-linha-recorte",
         "stryker-system8-perfurador-recorte",
         "stryker-system8-serra-recorte",
         "stryker-system7-serra-bateria-recorte",
         "nacionais-chineses-perfurador-serra-recorte",
-        "stryker-wire-collet-mandril-recorte",
-        "stryker-system7-desmontado-recorte"
+        "stryker-wire-collet-mandril-recorte"
       ]
     },
     "short": "Stryker System 5, 6, 7 e 8, ConMed Hall PowerPro e MPower 2, nacionais e chineses.",

@@ -25,11 +25,11 @@ const sectionHead = (index, title, lead, action = '') => `<div class="section__h
 const USED = new Set(['seminovo', 'revisado']);
 const conditionLabel = (p) => (p.condition === 'revisado' ? 'Revisado' : 'Seminovo e revisado');
 const photo = (ctx, name, alt, opts = {}) => img(ctx, name.startsWith('products/') ? `/assets/img/${name}.webp` : `/assets/img/photos/${name}.webp`, alt, { sizes: '(min-width: 64rem) 40vw, 100vw', ...(name.endsWith('-recorte') ? { cls: 'is-cutout' } : {}), ...opts });
-const gallery = (ctx, names, alt) => names.length <= 1
+const gallery = (ctx, names, alt, alts = {}) => names.length <= 1
   ? `<figure class="page-header__media frame">${photo(ctx, names[0], alt, { lazy: false })}</figure>`
   : `<div class="gallery" data-gallery>
     <div class="gallery__track frame">
-      ${names.map((n, i) => `<figure class="gallery__slide" id="foto-${i + 1}">${photo(ctx, n, `${alt} (foto ${i + 1} de ${names.length})`, { lazy: i > 0 })}</figure>`).join('')}
+      ${names.map((n, i) => `<figure class="gallery__slide" id="foto-${i + 1}">${photo(ctx, n, alts[n] ?? `${alt} (foto ${i + 1} de ${names.length})`, { lazy: i > 0 })}</figure>`).join('')}
     </div>
     <div class="gallery__nav" data-fab-avoid>
       <button type="button" class="gallery__btn" data-dir="-1" aria-label="Foto anterior">${icon('arrow', 18)}</button>
@@ -37,7 +37,7 @@ const gallery = (ctx, names, alt) => names.length <= 1
       <button type="button" class="gallery__btn" data-dir="1" aria-label="Próxima foto">${icon('arrow', 18)}</button>
     </div>
   </div>`;
-const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '' } = {}) => `
+const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos, photoAlt = '', photoAlts } = {}) => `
 <div class="page-hero"><svg class="pulse pulse--hero" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/><path class="blip" pathLength="1" d="M0 110 H980 l8 -5 l8 5 H1060 l7 8 l12 -60 l14 86 l9 -34 H1440"/></svg><header class="page-header container${photoName || photos?.length ? ' page-header--media' : ''}">
   <div class="page-header__copy">
     ${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ''}
@@ -45,7 +45,7 @@ const pageHeader = (heading, lead, { eyebrow, extra = '', ctx, photoName, photos
     ${lead ? `<p class="lead">${esc(lead)}</p>` : ''}
     ${extra}
   </div>
-  ${photos?.length ? gallery(ctx, photos, photoAlt) : photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
+  ${photos?.length ? gallery(ctx, photos, photoAlt, photoAlts) : photoName ? `<figure class="page-header__media frame">${photo(ctx, photoName, photoAlt, { lazy: false })}</figure>` : ''}
 </header></div>`;
 
 const ctaBar = (site, { title = 'Precisa de manutenção, locação, um equipamento ou software?', text = 'Envie marca, modelo e o defeito. Respondemos em horário comercial com a avaliação e o orçamento.', message, place = 'cta' } = {}) => `
@@ -357,7 +357,7 @@ export function maintenance(ctx) {
   const s = services.manutencao;
   const message = `Olá, EquimedPR! Vim pelo site e preciso de manutenção.\n\nEquipamento: \nMarca/modelo: \nDefeito: \n`;
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Equipamentos atendidos na manutenção da EquimedPR' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Assistência técnica independente multimarcas', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Equipamentos atendidos na manutenção da EquimedPR', photoAlts: s.photoAlts })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -504,7 +504,7 @@ export function rental(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e gostaria de um orçamento de locação.\n\nEquipamento: \nPeríodo ou procedimento: \nCidade: \n`;
   const list = products.filter((p) => p.services.includes('locacao')).slice(0, 6);
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker para locação' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Por procedimento, por período ou como reserva', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker para locação', photoAlts: s.photoAlts })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
@@ -560,7 +560,7 @@ export function sales(ctx) {
   const message = `Olá, EquimedPR! Vim pelo site e tenho interesse em comprar um equipamento.\n\nEquipamento desejado: \nAplicação: \nConfiguração: \n`;
   const forSale = products.filter((p) => p.services.includes('venda'));
   const body = `
-${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos e revisados, com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker revisados' })}
+${pageHeader(s.heading, s.lead, { eyebrow: 'Seminovos e revisados, com garantia', ctx, photoName: s.photo, photos: s.photos, photoAlt: 'Perfuradores e serras Stryker revisados', photoAlts: s.photoAlts })}
 <section class="section container service-layout">
   <div class="prose">
     ${s.intro.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
