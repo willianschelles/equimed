@@ -78,7 +78,7 @@
       "stryker-serras-geracoes-shaver-recorte",
       "stryker-system7-kit-carregador-recorte",
       "manutencao-wire-collet-mandril-recorte",
-      "manutencao-carcacas-bateria-recorte",
+      "manutencao-carcacas-bateria-v2-recorte",
       "stryker-system7-sagital-recorte"
     ],
     "landings": [
@@ -347,7 +347,7 @@
       "stryker-serras-geracoes-shaver-recorte": "Serras sagitais Stryker de quatro gerações, uma bateria e três canetas shaver",
       "stryker-system7-kit-carregador-recorte": "Kit Stryker System 7: perfuradores, carregador com duas baterias e mandris",
       "manutencao-wire-collet-mandril-recorte": "Wire collet, mandril e adaptadores Stryker",
-      "manutencao-carcacas-bateria-recorte": "Duas carcaças de bateria Stryker",
+      "manutencao-carcacas-bateria-v2-recorte": "Duas carcaças de bateria Stryker",
       "stryker-system7-sagital-recorte": "Serra sagital Stryker System 7 com lâmina e bateria"
     }
   },
@@ -611,7 +611,8 @@
     "photo": "stryker-core2-kit-recorte",
     "photos": [
       "stryker-core2-kit-recorte",
-      "canetas-shaver-17-11-recorte"
+      "canetas-shaver-17-11-recorte",
+      "stryker-torre-video-zoom-recorte"
     ]
   }
 }
